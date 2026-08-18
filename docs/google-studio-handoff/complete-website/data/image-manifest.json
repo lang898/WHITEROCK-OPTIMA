@@ -1,0 +1,1002 @@
+{
+  "assets/applications/bathroom-render.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/bathroom-render.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/hospitality-render.jpg": {
+    "width": 1717,
+    "height": 916
+  },
+  "assets/applications/hospitality-render.webp": {
+    "width": 1717,
+    "height": 916
+  },
+  "assets/applications/hotel-bath-inspiration.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/hotel-bath-inspiration.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/hotel-lobby-inspiration.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/hotel-lobby-inspiration.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/kitchen-render.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/kitchen-render.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/master-bath-inspiration.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/master-bath-inspiration.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/modern-kitchen-inspiration.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/modern-kitchen-inspiration.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/multifamily-bath-inspiration.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/multifamily-bath-inspiration.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/outdoor-terrace-table-inspiration.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/outdoor-terrace-table-inspiration.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/restaurant-counter-inspiration.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/restaurant-counter-inspiration.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/retail-showroom-inspiration.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/applications/retail-showroom-inspiration.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/brand/hero-stone-v2.jpg": {
+    "width": 1586,
+    "height": 992
+  },
+  "assets/brand/hero-stone-v2.webp": {
+    "width": 1586,
+    "height": 992
+  },
+  "assets/brand/hero-stone.jpg": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/brand/hero-stone.webp": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/brand/og-image.jpg": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/brand/og-image.webp": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/colors/alpine-carrara.jpg": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/colors/alpine-carrara.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/colors/arctic-calcite.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/arctic-calcite.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/bianco-mist.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/bianco-mist.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/black-galaxy.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/black-galaxy.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/calacatta-crest.jpg": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/colors/calacatta-crest.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/colors/cloud-veil.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/cloud-veil.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/crema-luna.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/crema-luna.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/dove-concrete.jpg": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/colors/dove-concrete.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/colors/graphite-crystal.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/graphite-crystal.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/honey-travertine.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/honey-travertine.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/jade-river.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/jade-river.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/midnight-pearl.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/midnight-pearl.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/mist-grey.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/mist-grey.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/moss-agate.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/moss-agate.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/noir-marquina.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/noir-marquina.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/pearl-carrara.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/pearl-carrara.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/sage-verde.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/sage-verde.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/sand-dune.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/sand-dune.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/silver-ash.jpg": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/colors/silver-ash.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/colors/smoke-terrazzo.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/smoke-terrazzo.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/snow-drift.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/snow-drift.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/steel-cloud.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/steel-cloud.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/storm-basalt.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/storm-basalt.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/taupe-limestone.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/taupe-limestone.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/verde-forest.jpg": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/colors/verde-forest.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/colors/warm-ivory.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/colors/warm-ivory.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/edges/bevel-render.jpg": {
+    "width": 1448,
+    "height": 1086
+  },
+  "assets/edges/bevel-render.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "assets/edges/bullnose-render.jpg": {
+    "width": 1448,
+    "height": 1086
+  },
+  "assets/edges/bullnose-render.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "assets/edges/eased-render.jpg": {
+    "width": 1402,
+    "height": 1122
+  },
+  "assets/edges/eased-render.webp": {
+    "width": 1402,
+    "height": 1122
+  },
+  "assets/edges/mitered-render.jpg": {
+    "width": 1448,
+    "height": 1086
+  },
+  "assets/edges/mitered-render.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "assets/edges/ogee-render.jpg": {
+    "width": 1448,
+    "height": 1086
+  },
+  "assets/edges/ogee-render.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "assets/edges/waterfall-render.jpg": {
+    "width": 1448,
+    "height": 1086
+  },
+  "assets/edges/waterfall-render.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "assets/equipment/heating-machine-illustrative.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/equipment/heating-machine-illustrative.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/factory/china-edge-processing.jpg": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-edge-processing.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-factory-exterior.jpg": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-factory-exterior.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-hand-finishing.jpg": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-hand-finishing.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-kete-machine.jpg": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-kete-machine.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-polishing-line.jpg": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-polishing-line.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-processing-machine.jpg": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/china-processing-machine.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/vietnam-factory-exterior.jpg": {
+    "width": 1707,
+    "height": 1280
+  },
+  "assets/factory/vietnam-factory-exterior.webp": {
+    "width": 1707,
+    "height": 1280
+  },
+  "assets/factory/vietnam-production-hall.jpg": {
+    "width": 595,
+    "height": 339
+  },
+  "assets/factory/vietnam-production-hall.webp": {
+    "width": 595,
+    "height": 339
+  },
+  "assets/factory/vietnam-vanity-qc-wide.jpg": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/vietnam-vanity-qc-wide.webp": {
+    "width": 1800,
+    "height": 1350
+  },
+  "assets/factory/vietnam-vanity-qc.jpg": {
+    "width": 1800,
+    "height": 2400
+  },
+  "assets/factory/vietnam-vanity-qc.webp": {
+    "width": 1800,
+    "height": 2400
+  },
+  "assets/finishes/honed-render.jpg": {
+    "width": 1402,
+    "height": 1122
+  },
+  "assets/finishes/honed-render.webp": {
+    "width": 1402,
+    "height": 1122
+  },
+  "assets/finishes/leathered-render.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/finishes/leathered-render.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/finishes/polished-render.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/finishes/polished-render.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/materials/engineered-marble-texture.jpg": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/materials/engineered-marble-texture.webp": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/materials/engineered-marble-v2.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/materials/engineered-marble-v2.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/materials/granite-texture.jpg": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/materials/granite-texture.webp": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/materials/granite-v2.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/materials/granite-v2.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/materials/quartz-texture.jpg": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/materials/quartz-texture.webp": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/materials/quartz-v2.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/materials/quartz-v2.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/materials/white-marble-texture.jpg": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/materials/white-marble-texture.webp": {
+    "width": 1600,
+    "height": 1000
+  },
+  "assets/materials/white-marble-v2.jpg": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/materials/white-marble-v2.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/news/prepare-stone-rfq-drawings.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/news/prepare-stone-rfq-drawings.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/news/stone-sample-approval-checklist.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/news/stone-sample-approval-checklist.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/news/trade-show-visit-draft.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/news/trade-show-visit-draft.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/kitchen-countertop-render-v2.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/kitchen-countertop-render-v2.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/rectangular-table-render-v2.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/rectangular-table-render-v2.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/round-table-render-v2.jpg": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/products/round-table-render-v2.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/products/sample-kit-render-v2.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/sample-kit-render-v2.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/vanity-double-render-v2.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/vanity-double-render-v2.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/vanity-single-render-v2.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/vanity-single-render-v2.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-CB-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-CB-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-CB-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-CB-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-FR-OT-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-FR-OT-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-FR-OT-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-FR-OT-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-FR-RM-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-FR-RM-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-FR-RM-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-FR-RM-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-HT-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-HT-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-HT-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-HT-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-KT-NS-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-KT-NS-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-KT-NS-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-KT-NS-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-KT-QC-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-KT-QC-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-KT-QC-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-KT-QC-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-SM-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-SM-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-SM-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-SM-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-VT24-photo.jpg": {
+    "width": 583,
+    "height": 333
+  },
+  "assets/products/WR-VT24-photo.webp": {
+    "width": 583,
+    "height": 333
+  },
+  "assets/products/WR-VT24-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-VT24-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-VT24-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-VT24-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-VT31-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-VT31-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-VT31-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-VT31-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-VT49-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-VT49-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-VT49-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-VT49-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-VT61D-render-v3.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-VT61D-render-v3.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/products/WR-VT61D-render.jpg": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/products/WR-VT61D-render.webp": {
+    "width": 1400,
+    "height": 1000
+  },
+  "assets/projects/commercial-reception-counter-render.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/projects/commercial-reception-counter-render.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/projects/hotel-vanity-program-render.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/projects/hotel-vanity-program-render.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/projects/multifamily-bath-program-render.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/projects/multifamily-bath-program-render.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/sustainability/stone-nature-illustrative.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/sustainability/stone-nature-illustrative.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/sustainability/wet-processing-illustrative.jpg": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/sustainability/wet-processing-illustrative.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "assets/gallery/china/factory-01.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-01.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-02.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-02.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-03.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-03.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-04.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-04.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-05.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-05.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-06.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-06.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-07.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-07.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-08.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-08.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-09.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/china/factory-09.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/factory-01.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/factory-01.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/factory-02.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/factory-02.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/factory-03.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/factory-03.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/factory-04.jpg": {
+    "width": 1280,
+    "height": 853
+  },
+  "assets/gallery/vietnam/factory-04.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "assets/gallery/vietnam/factory-05.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/factory-05.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/factory-06.jpg": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/factory-06.webp": {
+    "width": 1600,
+    "height": 1066
+  },
+  "assets/gallery/vietnam/vanity-01.jpg": {
+    "width": 508,
+    "height": 339
+  },
+  "assets/gallery/vietnam/vanity-01.webp": {
+    "width": 508,
+    "height": 339
+  },
+  "assets/gallery/vietnam/vanity-02.jpg": {
+    "width": 490,
+    "height": 327
+  },
+  "assets/gallery/vietnam/vanity-02.webp": {
+    "width": 490,
+    "height": 327
+  },
+  "assets/gallery/vietnam/vanity-03.jpg": {
+    "width": 499,
+    "height": 333
+  },
+  "assets/gallery/vietnam/vanity-03.webp": {
+    "width": 499,
+    "height": 333
+  },
+  "assets/gallery/vietnam/vanity-04.jpg": {
+    "width": 498,
+    "height": 332
+  },
+  "assets/gallery/vietnam/vanity-04.webp": {
+    "width": 498,
+    "height": 332
+  },
+  "assets/gallery/vietnam/vanity-05.jpg": {
+    "width": 1039,
+    "height": 693
+  },
+  "assets/gallery/vietnam/vanity-05.webp": {
+    "width": 1039,
+    "height": 693
+  }
+}

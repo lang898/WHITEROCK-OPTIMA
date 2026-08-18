@@ -1,0 +1,321 @@
+{
+  "heroCopy": "WHITEROCK's Vietnam factory is the primary production base, supported by OPTIMA STONE in Yunfu, China. Together they support drawing review, fabrication, quality checks, labeling, and shipment-ready packing.",
+  "stats": [
+    {
+      "label": "Published industry expertise",
+      "value": "20+ years",
+      "confirmed": true
+    },
+    {
+      "label": "Vietnam factory area",
+      "value": "20,000 m²",
+      "confirmed": true
+    },
+    {
+      "label": "Production staff",
+      "value": "Pending",
+      "confirmed": false
+    },
+    {
+      "label": "Production lines",
+      "value": "Pending",
+      "confirmed": false
+    },
+    {
+      "label": "Published annual capacity",
+      "value": "100,000+ m²",
+      "confirmed": true
+    },
+    {
+      "label": "Export markets",
+      "value": "Pending",
+      "confirmed": false
+    },
+    {
+      "label": "On-time delivery",
+      "value": "Pending",
+      "confirmed": false
+    }
+  ],
+  "equipment": [
+    {
+      "name": "Infrared Bridge Cutting",
+      "function": "Straight cutting, slab breakdown, and repeat cut-to-size work.",
+      "brand": "Model pending owner confirmation",
+      "quantity": "Pending owner confirmation",
+      "keySpec": "Cutting tolerance confirmed by approved drawing",
+      "drawing": "assets/equipment/bridge-saw.svg",
+      "media": "assets/gallery/china/factory-07.jpg",
+      "location": "China factory",
+      "imageType": "real",
+      "alt": "Owner-supplied China factory photo showing bridge cutting equipment"
+    },
+    {
+      "name": "CNC Processing",
+      "function": "Sink cutouts, faucet and drain holes, drainboards, curves, and drawing-based shapes.",
+      "brand": "Model pending owner confirmation",
+      "quantity": "Pending owner confirmation",
+      "keySpec": "CNC precision confirmed by approved drawing",
+      "drawing": "assets/equipment/cnc-router.svg",
+      "media": "assets/gallery/china/factory-09.jpg",
+      "location": "China factory",
+      "imageType": "real",
+      "alt": "Owner-supplied China factory photo showing CNC-style stone processing equipment"
+    },
+    {
+      "name": "Edge Polishing",
+      "function": "Repeatable polishing for vanity, countertop, furniture, and panel edges.",
+      "brand": "Model pending owner confirmation",
+      "quantity": "Pending owner confirmation",
+      "keySpec": "Supported thickness range confirmed by order specification",
+      "drawing": "assets/equipment/edge-polishing.svg",
+      "media": "assets/factory/china-edge-processing.jpg",
+      "location": "China factory",
+      "imageType": "real"
+    },
+    {
+      "name": "Automatic Surface Polishing",
+      "function": "Controlled surface finishing for batch and project production.",
+      "brand": "Model pending owner confirmation",
+      "quantity": "Pending owner confirmation",
+      "keySpec": "Maximum working width pending owner confirmation",
+      "drawing": "assets/equipment/surface-polishing.svg",
+      "media": "assets/factory/china-polishing-line.jpg",
+      "location": "China factory",
+      "imageType": "real"
+    },
+    {
+      "name": "Profiling",
+      "function": "Eased, bevel, bullnose, ogee, and project-specific edge shaping.",
+      "brand": "Model pending owner confirmation",
+      "quantity": "Pending owner confirmation",
+      "keySpec": "Profile range confirmed by approved edge drawing",
+      "drawing": "assets/equipment/profiling.svg",
+      "media": "assets/gallery/china/factory-05.jpg",
+      "location": "China factory",
+      "imageType": "real",
+      "alt": "Owner-supplied China factory photo showing long stone profiling and edge-processing line"
+    },
+    {
+      "name": "Heating Machine",
+      "function": "Specialized heat-processing steps used where the approved fabrication route requires them.",
+      "brand": "Model pending owner confirmation",
+      "quantity": "Pending owner confirmation",
+      "keySpec": "Process specification confirmed by approved fabrication route",
+      "drawing": "assets/equipment/heating-machine.svg",
+      "media": "assets/equipment/heating-machine-illustrative.jpg",
+      "location": "Illustrative equipment image",
+      "imageType": "render",
+      "alt": "Heating Machine illustrative equipment image",
+      "caption": "Illustrative image — not our actual equipment."
+    },
+    {
+      "name": "KETE KTM-S20/1600 Machine",
+      "function": "Processing equipment photographed at the China factory. Production role and operating specification will be confirmed before a final equipment claim is published.",
+      "brand": "KETE KTM-S20/1600 (visible in supplied photo)",
+      "quantity": "Pending owner confirmation",
+      "keySpec": "Process and working range pending owner confirmation",
+      "drawing": "",
+      "media": "assets/factory/china-kete-machine.jpg",
+      "location": "China factory",
+      "imageType": "real"
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Cut-to-size & calibration",
+      "copy": "Straight cutting, thickness calibration, and repeat production. Final tolerance is confirmed by approved drawing and order specification."
+    },
+    {
+      "title": "CNC fabrication",
+      "copy": "Sink cutouts, faucet/drain holes, drainboards, curved pieces, and shaped components from approved drawings."
+    },
+    {
+      "title": "Edges & lamination",
+      "copy": "Eased, bevel, bullnose, ogee, mitered/laminated, waterfall, and approved custom profiles."
+    },
+    {
+      "title": "Project production",
+      "copy": "Large-format and BOQ-based production with dimensional tolerance and flatness standards confirmed before production."
+    }
+  ],
+  "flowSteps": [
+    {
+      "number": "01",
+      "title": "Material Selection",
+      "copy": "Confirm category, color, thickness, finish, sample reference, slab lot, and traceability requirements."
+    },
+    {
+      "number": "02",
+      "title": "Cutting & CNC",
+      "copy": "Plan yield, cut to size, machine openings, and process approved shaped pieces."
+    },
+    {
+      "number": "03",
+      "title": "Edge & Surface",
+      "copy": "Complete profiles, lamination, polishing or honing, cleaning, and in-process checks."
+    },
+    {
+      "number": "04",
+      "title": "Inspection & Export",
+      "copy": "Check dimensions and finish, label pieces, protect edges, crate, and plan container loading."
+    }
+  ],
+  "qc": {
+    "inspectionPoints": [
+      "Incoming slab and lot review",
+      "In-process dimensional checks",
+      "Pre-packing finish and edge review",
+      "Pre-shipment quantity and label check"
+    ],
+    "aql": "Sampling plan confirmed per order or buyer inspection requirement.",
+    "tools": "Calipers, gauges, templates, and flatness tools used for routine dimensional checks; full tool list pending owner confirmation.",
+    "thirdParty": "Third-party inspection by SGS, Bureau Veritas, Intertek, or a buyer-appointed inspector is welcome by arrangement."
+  },
+  "rnd": {
+    "capabilities": [
+      "Drawing-based and reverse-from-sample development",
+      "Sample development and color matching",
+      "3D modeling / shop drawings support; software and team size pending owner confirmation",
+      "OEM/ODM and private-label product development"
+    ],
+    "sampleLeadTime": "Confirmed by sample scope and material availability"
+  },
+  "materials": {
+    "copy": "Material lots are reviewed against the approved sample and order requirements. Natural stone variation is documented by lot; engineered materials are sourced against the approved color and specification.",
+    "traceability": "Lot coding and repeat-order traceability are documented during order review; final process details pending owner confirmation."
+  },
+  "packing": {
+    "copy": "Packing routes can include foam, corner guards, inner cartons, labeled plywood crates, pallets, or A-frames according to product weight and shipment method.",
+    "loadability": "Container loadability and pieces per crate are confirmed per SKU and drawing; final load plans are issued before shipment.",
+    "drawing": "assets/equipment/packing.svg"
+  },
+  "tourVideo": "assets/factory/vietnam-factory-tour.mp4",
+  "gallery": [
+    {
+      "title": "Vietnam factory entrance",
+      "image": "assets/factory/vietnam-factory-exterior.jpg",
+      "alt": "Entrance to the WHITEROCK factory in Vietnam"
+    },
+    {
+      "title": "Vietnam production hall and finished slabs",
+      "image": "assets/factory/vietnam-production-hall.jpg",
+      "alt": "Stone slabs and lifting equipment inside the WHITEROCK Vietnam factory"
+    },
+    {
+      "title": "Vietnam vanity-top quality control",
+      "image": "assets/factory/vietnam-vanity-qc-wide.jpg",
+      "alt": "Rows of finished vanity tops under quality-control lights in Vietnam"
+    },
+    {
+      "title": "Vietnam finished-product inspection",
+      "image": "assets/factory/vietnam-vanity-qc.jpg",
+      "alt": "Finished marble vanity tops in the WHITEROCK Vietnam factory"
+    },
+    {
+      "title": "China hand-finishing area",
+      "image": "assets/factory/china-hand-finishing.jpg",
+      "alt": "Workers hand-finishing stone vanity tops at the OPTIMA STONE China factory"
+    },
+    {
+      "title": "China factory exterior",
+      "image": "assets/factory/china-factory-exterior.jpg",
+      "alt": "Exterior of the OPTIMA STONE factory in Yunfu, China"
+    },
+    {
+      "title": "China processing equipment — function pending owner confirmation",
+      "image": "assets/factory/china-processing-machine.jpg",
+      "alt": "Stone-processing equipment inside the OPTIMA STONE China factory"
+    },
+    {
+      "title": "Vietnam warehouse — finished vanity tops on racks",
+      "image": "assets/gallery/vietnam/factory-01.jpg",
+      "imageWebp": "assets/gallery/vietnam/factory-01.webp",
+      "alt": "WHITEROCK Vietnam: Vietnam warehouse — finished vanity tops on racks"
+    },
+    {
+      "title": "Vietnam warehouse — engineered stone vanity stock",
+      "image": "assets/gallery/vietnam/factory-02.jpg",
+      "imageWebp": "assets/gallery/vietnam/factory-02.webp",
+      "alt": "WHITEROCK Vietnam: Vietnam warehouse — engineered stone vanity stock"
+    },
+    {
+      "title": "Vietnam warehouse — batch order staging",
+      "image": "assets/gallery/vietnam/factory-03.jpg",
+      "imageWebp": "assets/gallery/vietnam/factory-03.webp",
+      "alt": "WHITEROCK Vietnam: Vietnam warehouse — batch order staging"
+    },
+    {
+      "title": "Export packing — foam and carton protection",
+      "image": "assets/gallery/vietnam/factory-04.jpg",
+      "imageWebp": "assets/gallery/vietnam/factory-04.webp",
+      "alt": "WHITEROCK Vietnam: Export packing — foam and carton protection"
+    },
+    {
+      "title": "Export packing — crated vanity tops",
+      "image": "assets/gallery/vietnam/factory-05.jpg",
+      "imageWebp": "assets/gallery/vietnam/factory-05.webp",
+      "alt": "WHITEROCK Vietnam: Export packing — crated vanity tops"
+    },
+    {
+      "title": "Export packing — labeled cartons ready to load",
+      "image": "assets/gallery/vietnam/factory-06.jpg",
+      "imageWebp": "assets/gallery/vietnam/factory-06.webp",
+      "alt": "WHITEROCK Vietnam: Export packing — labeled cartons ready to load"
+    },
+    {
+      "title": "China (Yunfu) workshop — cutting line",
+      "image": "assets/gallery/china/factory-01.jpg",
+      "imageWebp": "assets/gallery/china/factory-01.webp",
+      "alt": "OPTIMA China: China (Yunfu) workshop — cutting line"
+    },
+    {
+      "title": "China (Yunfu) workshop — slab processing",
+      "image": "assets/gallery/china/factory-02.jpg",
+      "imageWebp": "assets/gallery/china/factory-02.webp",
+      "alt": "OPTIMA China: China (Yunfu) workshop — slab processing"
+    },
+    {
+      "title": "China (Yunfu) workshop — fabrication area",
+      "image": "assets/gallery/china/factory-03.jpg",
+      "imageWebp": "assets/gallery/china/factory-03.webp",
+      "alt": "OPTIMA China: China (Yunfu) workshop — fabrication area"
+    },
+    {
+      "title": "China (Yunfu) — polishing line",
+      "image": "assets/gallery/china/factory-04.jpg",
+      "imageWebp": "assets/gallery/china/factory-04.webp",
+      "alt": "OPTIMA China: China (Yunfu) — polishing line"
+    },
+    {
+      "title": "China (Yunfu) — finished slabs",
+      "image": "assets/gallery/china/factory-05.jpg",
+      "imageWebp": "assets/gallery/china/factory-05.webp",
+      "alt": "OPTIMA China: China (Yunfu) — finished slabs"
+    },
+    {
+      "title": "China (Yunfu) — slab warehouse",
+      "image": "assets/gallery/china/factory-06.jpg",
+      "imageWebp": "assets/gallery/china/factory-06.webp",
+      "alt": "OPTIMA China: China (Yunfu) — slab warehouse"
+    },
+    {
+      "title": "China (Yunfu) — slab racks",
+      "image": "assets/gallery/china/factory-07.jpg",
+      "imageWebp": "assets/gallery/china/factory-07.webp",
+      "alt": "OPTIMA China: China (Yunfu) — slab racks"
+    },
+    {
+      "title": "China (Yunfu) — packing and crating",
+      "image": "assets/gallery/china/factory-08.jpg",
+      "imageWebp": "assets/gallery/china/factory-08.webp",
+      "alt": "OPTIMA China: China (Yunfu) — packing and crating"
+    },
+    {
+      "title": "China (Yunfu) — loading area",
+      "image": "assets/gallery/china/factory-09.jpg",
+      "imageWebp": "assets/gallery/china/factory-09.webp",
+      "alt": "OPTIMA China: China (Yunfu) — loading area"
+    }
+  ]
+}

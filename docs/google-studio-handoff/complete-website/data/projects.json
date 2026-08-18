@@ -1,0 +1,38 @@
+{
+  "intro": "Illustrative planning studies are shown to explain product scope and quotation paths. They are not completed WHITEROCK project claims. Replace with owner-approved case studies and photography when available.",
+  "items": [
+    {
+      "title": "Hotel Vanity Program Planning Study",
+      "location": "Illustrative study - not a completed project",
+      "summary": "A planning example for guestroom vanity tops, backsplashes, and repeat room schedules.",
+      "material": "Quartz or engineered marble",
+      "scope": "Vanity tops, backsplashes, sink cutouts, labels, export crates",
+      "quantity": "Quoted by room schedule",
+      "image": "assets/projects/hotel-vanity-program-render.jpg",
+      "alt": "illustrative render of hotel vanity top planning study",
+      "imageType": "render"
+    },
+    {
+      "title": "Multi-family Bathroom Program Planning Study",
+      "location": "Illustrative study - not a completed project",
+      "summary": "A planning example for repeated 25, 31, 49, and 61 inch vanity top programs.",
+      "material": "Quartz or engineered marble",
+      "scope": "Repeat vanity SKUs, sample approval, packing and unit labels",
+      "quantity": "Program quote by SKU mix",
+      "image": "assets/projects/multifamily-bath-program-render.jpg",
+      "alt": "illustrative render of multi-family bathroom stone program",
+      "imageType": "render"
+    },
+    {
+      "title": "Commercial Reception Counter Planning Study",
+      "location": "Illustrative study - not a completed project",
+      "summary": "A planning example for commercial counters, wall panels, and durable dark stone accents.",
+      "material": "Granite, quartz, or natural stone",
+      "scope": "Countertop, backsplash panels, edge profile, shop drawing review",
+      "quantity": "Project quote by drawing",
+      "image": "assets/projects/commercial-reception-counter-render.jpg",
+      "alt": "illustrative render of commercial stone reception counter planning study",
+      "imageType": "render"
+    }
+  ]
+}

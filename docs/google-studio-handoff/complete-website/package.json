@@ -1,0 +1,20 @@
+{
+  "name": "whiterock-optima-static-site",
+  "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "build:deploy": "npm run build && node scripts/prepare-deploy.mjs",
+    "images": "node scripts/optimize-images.mjs",
+    "check": "node scripts/check-static-output.mjs",
+    "i18n:sync": "node scripts/sync-i18n-catalogs.mjs",
+    "verify:i18n": "node scripts/verify-i18n.mjs"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/libre-baskerville": "^5.2.10",
+    "sharp": "^0.35.2"
+  }
+}

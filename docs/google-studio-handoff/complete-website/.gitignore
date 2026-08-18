@@ -1,0 +1,5 @@
+node_modules/
+dist/
+oauth-worker/node_modules/
+oauth-worker/.dev.vars
+.env

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Library | WHITEROCK Stone</title>
+    <meta
+      name="description"
+      content="WHITEROCK image library tool for stone product, material, factory, and application image candidates."
+    />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 42'><rect width='42' height='42' rx='4' fill='%23242424'/><text x='21' y='29' font-family='Arial,sans-serif' font-size='20' font-weight='800' fill='white' text-anchor='middle'>WR</text></svg>" />
+    <link rel="canonical" href="https://www.whiterockstone.com/assets.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">WR</span><span><strong>WHITEROCK</strong><small>Marble & Granite</small></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="products.html">Products</a><a href="materials.html">Materials</a><a href="factory.html">Factory</a><a href="lookbook.html">Lookbook</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="button primary small" href="contact.html#inquiry">Request a Quote</a>
+        <button class="menu-button" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+      <a href="products.html">Products</a><a href="materials.html">Materials</a><a href="factory.html">Factory</a><a href="lookbook.html">Lookbook</a><a href="contact.html">Contact</a>
+    </div>
+
+    <main>
+      <section class="page-hero">
+        <div>
+          <p class="eyebrow">Image Library</p>
+          <h1>Find image candidates for product categories, materials, and applications.</h1>
+          <p>
+            Search stone-related imagery for product pages, material pages, lookbook layouts, and application scenes.
+          </p>
+        </div>
+        <picture><source srcset="assets/materials/white-marble-v2.webp" type="image/webp" /><img loading="lazy" decoding="async" src="assets/materials/white-marble-v2.jpg" alt="White marble surface texture" width="1254" height="1254" /></picture>
+      </section>
+
+      <section class="section media-tool">
+        <div class="section-heading">
+          <p class="eyebrow">Search</p>
+          <h2>Build a stronger image set for the WHITEROCK catalog.</h2>
+        </div>
+
+        <form class="media-controls" id="mediaForm">
+          <label>
+            Provider
+            <select id="mediaProvider">
+              <option value="pixabay">Pixabay API</option>
+              <option value="pexels">Pexels API</option>
+              <option value="unsplash">Unsplash API</option>
+            </select>
+          </label>
+          <label>
+            API Key
+            <input id="mediaApiKey" type="password" autocomplete="off" placeholder="Paste official API key" />
+          </label>
+          <label>
+            Search
+            <input id="mediaQuery" type="search" value="marble bathroom vanity top" />
+          </label>
+          <label>
+            Category
+            <select id="mediaCategory">
+              <option value="vanity">Vanity tops</option>
+              <option value="countertop">Kitchen countertops</option>
+              <option value="material">Stone material</option>
+              <option value="factory">Factory and equipment</option>
+              <option value="application">Application inspiration</option>
+            </select>
+          </label>
+          <button class="button primary" type="submit">Search Images</button>
+        </form>
+
+        <div class="media-status" id="mediaStatus">Ready. Choose a provider and search term.</div>
+        <div class="media-grid" id="mediaGrid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">WR</span><span><strong>WHITEROCK</strong><small>Marble & Granite</small></span></a><p>Natural and engineered stone products for North America and international markets.</p></div>
+      <div class="footer-links"><a href="products.html">Products</a><a href="materials.html">Materials</a><a href="factory.html">Factory</a><a href="contact.html">Request a Quote</a></div>
+      <div class="footer-contact"><span>Tel / Fax: +84 0798 858 220</span><a href="mailto:lynn@whiterockstone.com">lynn@whiterockstone.com</a><span>© 2026 WHITEROCK LIMITED</span></div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="asset-loader.js"></script>
+  </body>
+</html>

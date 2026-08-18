@@ -1,0 +1,41 @@
+{
+  "intro": "Practical specification notes for distributors, builders, fabricators, designers, and project buyers.",
+  "items": [
+    {
+      "slug": "stone-sample-approval-checklist",
+      "title": "A B2B stone sample approval checklist",
+      "date": "2026-06-29",
+      "category": "Buyer Guide",
+      "excerpt": "What to record before approving color, finish, thickness, edge, and production lot.",
+      "body": "Approve the physical sample, material category, finish, thickness, edge profile, opening details, acceptable natural variation, labeling, and packing reference together. Keep the approved sample or signed reference available during production and final inspection.",
+      "image": "assets/news/stone-sample-approval-checklist.jpg",
+      "imageAlt": "Stone samples, color fan, calipers, and approval sheet illustrative cover image",
+      "imageType": "render",
+      "caption": "Illustrative cover image."
+    },
+    {
+      "slug": "prepare-stone-rfq-drawings",
+      "title": "How to prepare drawings for a faster stone RFQ",
+      "date": "2026-06-29",
+      "category": "Specification",
+      "excerpt": "The dimensions and fabrication details that reduce quotation revisions.",
+      "body": "Include overall dimensions, thickness, exposed edges, cutouts, hole centers, backsplash pieces, seam intent, finish, quantity by item, packaging requirements, destination, and target timing. Mark critical dimensions and provide a revision number on every drawing.",
+      "image": "assets/news/prepare-stone-rfq-drawings.jpg",
+      "imageAlt": "Stone countertop drawings and samples illustrative cover image",
+      "imageType": "render",
+      "caption": "Illustrative cover image."
+    },
+    {
+      "slug": "draft-trade-show-visit-checklist",
+      "title": "[DRAFT] Trade-show visit checklist for stone buyers",
+      "date": "2026-07-08",
+      "category": "Draft Buyer Guide",
+      "excerpt": "Questions to bring when reviewing a potential stone supplier at a trade show or factory visit.",
+      "body": "Use this draft checklist to compare supplier capability, sample availability, drawing review process, packaging references, inspection workflow, document readiness, communication speed, and follow-up responsibilities. Replace or approve the wording before publishing as a final guide.",
+      "image": "assets/news/trade-show-visit-draft.jpg",
+      "imageAlt": "Trade show stone sample display illustrative cover image",
+      "imageType": "render",
+      "caption": "Illustrative cover image."
+    }
+  ]
+}
