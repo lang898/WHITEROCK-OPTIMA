@@ -1,0 +1,6 @@
+{
+  "name": "WHITEROCK Stone",
+  "description": "B2B website for WHITEROCK / OPTIMA stone manufacturer in Vietnam specializing in quartz, marble, granite, countertops, and vanity tops.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,65 @@
+{
+  "intro": "Common questions from wholesale, project, and distributor buyers.",
+  "items": [
+    {
+      "question": "What information is needed for a quotation?",
+      "answer": "Send product type, material, dimensions or drawings, finish, edge profile, cutouts, quantity, packaging requirements, destination, and target timing."
+    },
+    {
+      "question": "Can WHITEROCK make custom sizes and shapes?",
+      "answer": "Yes. Custom work is reviewed against drawings, material limits, tooling, tolerance, quantity, packing, and handling requirements before quotation."
+    },
+    {
+      "question": "How are samples approved?",
+      "answer": "The buyer confirms material, color direction, finish, thickness, and acceptable variation. Natural stone remains subject to lot variation, so final approval should use a physical sample or lot reference."
+    },
+    {
+      "question": "What is the minimum order quantity?",
+      "answer": "MOQ depends on material, product type, fabrication complexity, packing method, and production planning. Final MOQ is confirmed in the quotation, not assumed from the website."
+    },
+    {
+      "question": "What production lead time should buyers expect?",
+      "answer": "Lead time is confirmed after drawings, sample approval, deposit terms, material availability, and packaging requirements are reviewed. The website guidance is indicative only."
+    },
+    {
+      "question": "Can third-party inspection be arranged?",
+      "answer": "Yes. Buyer-appointed or recognized third-party inspection can be coordinated before shipment by agreement. Inspection scope and timing should be confirmed before production."
+    },
+    {
+      "question": "How are stone products packed for export?",
+      "answer": "Packing may include foam, corner protection, cartons, labeled plywood crates, pallets, or A-frames according to product weight, fragility, and shipment method."
+    },
+    {
+      "question": "Do you provide private-label or OEM/ODM development?",
+      "answer": "Yes. WHITEROCK can review samples, drawings, packaging, labels, and repeat production needs for qualified programs."
+    },
+    {
+      "question": "Which drawing files are most helpful?",
+      "answer": "Dimensioned PDFs are the safest starting point. CAD, DXF, shop drawings, sink templates, hole-center details, and marked revision numbers help reduce clarification cycles."
+    },
+    {
+      "question": "Can one order mix multiple SKUs, sizes, or colors?",
+      "answer": "Mixed orders can be reviewed when packing, labeling, production sequence, and container planning are clear. The quotation will confirm whether the mix is practical."
+    },
+    {
+      "question": "Can WHITEROCK support color or finish matching?",
+      "answer": "The team can review a physical sample, reference color, finish target, or approved swatch. Final matching must be confirmed by buyer approval before production."
+    },
+    {
+      "question": "Are all website product visuals real photos?",
+      "answer": "Owner-supplied photos are used where available. Any generated product, application, or equipment image is labeled as illustrative and should be replaced by real photography when available."
+    },
+    {
+      "question": "How do we request a sample kit?",
+      "answer": "Use the color sample builder or inquiry form with your target material, color family, project type, and shipping region. Sample availability and shipping details are confirmed before dispatch."
+    },
+    {
+      "question": "Can packaging use buyer labels or private marks?",
+      "answer": "Private-label packaging, carton labels, crate marks, and SKU labels can be reviewed during order setup. Final artwork and marking rules should be approved before production."
+    },
+    {
+      "question": "What documents can be prepared for shipment?",
+      "answer": "Commercial documents, packing lists, inspection references, and product-specific documents can be discussed at quotation stage. Certification and test-report claims are published only after owner verification."
+    }
+  ]
+}

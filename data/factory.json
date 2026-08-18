@@ -1,0 +1,464 @@
+{
+  "heroCopy": "WHITEROCK's Vietnam factory is the primary production base, supported by OPTIMA STONE in Yunfu, China. Together they support drawing review, fabrication, quality checks, labeling, and shipment-ready packing.",
+  "stats": [
+    {
+      "label": "Published industry expertise",
+      "value": "20+ years",
+      "confirmed": true
+    },
+    {
+      "label": "Vietnam factory area",
+      "value": "20,000 m²",
+      "confirmed": true
+    },
+    {
+      "label": "Production staff",
+      "value": "Pending",
+      "confirmed": false
+    },
+    {
+      "label": "Production lines",
+      "value": "Pending",
+      "confirmed": false
+    },
+    {
+      "label": "Published annual capacity",
+      "value": "100,000+ m²",
+      "confirmed": true
+    },
+    {
+      "label": "Export markets",
+      "value": "Pending",
+      "confirmed": false
+    },
+    {
+      "label": "On-time delivery",
+      "value": "Pending",
+      "confirmed": false
+    }
+  ],
+  "equipment": [
+    {
+      "name": "Infrared Bridge Cutting",
+      "function": "Straight cutting, slab breakdown, and repeat cut-to-size work.",
+      "brand": "CNC Multi-Blade Infrared Bridge Saw",
+      "quantity": "Multi-Unit Line",
+      "keySpec": "±0.5mm precision tolerance, automated touch console",
+      "drawing": "assets/equipment/bridge-saw.svg",
+      "media": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+      "location": "Vietnam & China factories",
+      "imageType": "real",
+      "alt": "Infrared Multi-Blade Bridge Cutting Machine"
+    },
+    {
+      "name": "CNC Processing & Sink Machining",
+      "function": "Sink cutouts, faucet and drain holes, drainboards, curves, and drawing-based shapes.",
+      "brand": "3820-4 Quad-Spindle High Precision CNC",
+      "quantity": "4 Spindle Synchronized",
+      "keySpec": "±0.3mm CNC precision with automated water lubrication",
+      "drawing": "assets/equipment/cnc-router.svg",
+      "media": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+      "location": "China & Vietnam facilities",
+      "imageType": "real",
+      "alt": "Quad-Spindle CNC Machine for stone vanity tops"
+    },
+    {
+      "name": "Edge Polishing & Chamfering",
+      "function": "Repeatable polishing for vanity, countertop, furniture, and panel edges.",
+      "brand": "YEXIANG & Hongda Continuous Linear Polishers",
+      "quantity": "Continuous Lines",
+      "keySpec": "Automated Eased, Bevel, Bullnose, 85+ gloss finish",
+      "drawing": "assets/equipment/edge-polishing.svg",
+      "media": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80",
+      "location": "China (OP) & Vietnam (WR)",
+      "imageType": "real"
+    },
+    {
+      "name": "Automatic Surface Polishing & Calibrating",
+      "function": "Controlled thickness calibration and mirror gloss polishing.",
+      "brand": "XTM-SGM 2600 Heavy-Duty Polishing Lines",
+      "quantity": "Twin Lines",
+      "keySpec": "2600mm working width, ±0.5mm slab calibration",
+      "drawing": "assets/equipment/surface-polishing.svg",
+      "media": "https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=800&q=80",
+      "location": "China factory (Yunfu)",
+      "imageType": "real"
+    },
+    {
+      "name": "Radial Arm Water Profiler",
+      "function": "Eased, bevel, bullnose, ogee, and project-specific edge shaping on vanity basin cutouts.",
+      "brand": "Heavy Radial Arm Water Profiling Station",
+      "quantity": "Multiple Stations",
+      "keySpec": "50# to 3000# diamond grits, pneumatic head control",
+      "drawing": "assets/equipment/profiling.svg",
+      "media": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+      "location": "Vietnam factory (Dong Nai)",
+      "imageType": "real",
+      "alt": "Radial arm water polishing machine"
+    },
+    {
+      "name": "Heavy 5T Overhead & 360° Jib Cranes",
+      "function": "Safe turnover, slab staging, and machine loading for jumbo slabs.",
+      "brand": "Henan Crane 5T Bridge Crane & Twin Pillar Jib Cranes",
+      "quantity": "Full Coverage",
+      "keySpec": "5-ton heavy lifting capacity, vacuum suction pads",
+      "drawing": "assets/equipment/heating-machine.svg",
+      "media": "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=800&q=80",
+      "location": "China & Vietnam facilities",
+      "imageType": "real",
+      "alt": "5T Heavy Overhead Crane"
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Cut-to-size & calibration",
+      "copy": "Straight cutting, thickness calibration, and repeat production. Final tolerance is confirmed by approved drawing and order specification."
+    },
+    {
+      "title": "CNC fabrication",
+      "copy": "Sink cutouts, faucet/drain holes, drainboards, curved pieces, and shaped components from approved drawings."
+    },
+    {
+      "title": "Edges & lamination",
+      "copy": "Eased, bevel, bullnose, ogee, mitered/laminated, waterfall, and approved custom profiles."
+    },
+    {
+      "title": "Project production",
+      "copy": "Large-format and BOQ-based production with dimensional tolerance and flatness standards confirmed before production."
+    }
+  ],
+  "flowSteps": [
+    {
+      "number": "01",
+      "title": "Material Selection",
+      "copy": "Confirm category, color, thickness, finish, sample reference, slab lot, and traceability requirements."
+    },
+    {
+      "number": "02",
+      "title": "Cutting & CNC",
+      "copy": "Plan yield, cut to size, machine openings, and process approved shaped pieces."
+    },
+    {
+      "number": "03",
+      "title": "Edge & Surface",
+      "copy": "Complete profiles, lamination, polishing or honing, cleaning, and in-process checks."
+    },
+    {
+      "number": "04",
+      "title": "Inspection & Export",
+      "copy": "Check dimensions and finish, label pieces, protect edges, crate, and plan container loading."
+    }
+  ],
+  "qc": {
+    "inspectionPoints": [
+      "Incoming slab and lot review",
+      "In-process dimensional checks",
+      "Pre-packing finish and edge review",
+      "Pre-shipment quantity and label check"
+    ],
+    "aql": "Sampling plan confirmed per order or buyer inspection requirement.",
+    "tools": "Calipers, gauges, templates, and flatness tools used for routine dimensional checks; full tool list pending owner confirmation.",
+    "thirdParty": "Third-party inspection by SGS, Bureau Veritas, Intertek, or a buyer-appointed inspector is welcome by arrangement."
+  },
+  "rnd": {
+    "capabilities": [
+      "Drawing-based and reverse-from-sample development",
+      "Sample development and color matching",
+      "3D modeling / shop drawings support; software and team size pending owner confirmation",
+      "OEM/ODM and private-label product development"
+    ],
+    "sampleLeadTime": "Confirmed by sample scope and material availability"
+  },
+  "materials": {
+    "copy": "Material lots are reviewed against the approved sample and order requirements. Natural stone variation is documented by lot; engineered materials are sourced against the approved color and specification.",
+    "traceability": "Lot coding and repeat-order traceability are documented during order review; final process details pending owner confirmation."
+  },
+  "packing": {
+    "copy": "Packing routes can include foam, corner guards, inner cartons, labeled plywood crates, pallets, or A-frames according to product weight and shipment method.",
+    "loadability": "Container loadability and pieces per crate are confirmed per SKU and drawing; final load plans are issued before shipment.",
+    "drawing": "assets/equipment/packing.svg"
+  },
+  "tourVideo": "assets/factory/vietnam-factory-tour.mp4",
+  "gallery": [
+    {
+      "id": "wr-vn-photo-01",
+      "title": "Infrared Multi-Blade Bridge Cutting Center (红外线多刀桥切机与精密下料车间)",
+      "titleEn": "Infrared Multi-Blade Bridge Cutting Center",
+      "titleZh": "红外线多刀桥切机与精密下料车间",
+      "category": "Cutting & CNC",
+      "facility": "Vietnam Factory (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-bridge-cutting.jpg",
+      "alt": "WHITEROCK Vietnam: Infrared Multi-Blade Bridge Cutting Machine with digital CNC control and stone slabs",
+      "equipment": "Multi-Blade Infrared Bridge Saw (红外线多刀桥切机)",
+      "specs": "±0.5mm precision tolerance, automated touch console, water-cooled multi-spindle cutting",
+      "description": "Real photo from WHITEROCK Vietnam workshop showing the infrared multi-blade bridge saw slicing jumbo engineered quartz and marble slabs into standard vanity tops (31\", 49\", 61\") on a dust-free epoxy floor."
+    },
+    {
+      "id": "wr-vn-photo-02",
+      "title": "Radial Arm Polishing & Custom Profiling Bay (摇臂磨光机与手工精细打磨位)",
+      "titleEn": "Radial Arm Polishing & Custom Profiling Bay",
+      "titleZh": "摇臂磨光机与手工精细打磨位",
+      "category": "Polishing & Profiling",
+      "facility": "Vietnam Factory (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-arm-polisher.jpg",
+      "alt": "WHITEROCK Vietnam: Stone fabricator operating radial arm water polisher with diamond discs",
+      "equipment": "Radial Arm Water Polishing Station (手摇/半自动摇臂水磨机)",
+      "specs": "50# to 3000# diamond abrasive grits, pneumatic head pressure, continuous water mist suppression",
+      "description": "Experienced stone craftsman refining undermount sink basin cutouts, curved edges, and custom mitered profiles using a heavy-duty radial arm polisher with continuous water lubrication."
+    },
+    {
+      "id": "wr-vn-photo-03",
+      "title": "Hongda Automatic Continuous Edge Polishing Line (弘达全自动直线多头磨边机)",
+      "titleEn": "Hongda Automatic Continuous Edge Polishing Line",
+      "titleZh": "弘达全自动直线多头磨边机",
+      "category": "Edge Processing",
+      "facility": "Vietnam Factory (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-edge-line.jpg",
+      "alt": "WHITEROCK Vietnam: Hongda automatic continuous edge polishing machine and finished cut slabs",
+      "equipment": "Hongda Multi-Spindle Continuous Edge Polisher (弘达机械全自动多头磨边机)",
+      "specs": "Continuous conveyor feed, automated bevel chamfering, 85+ gloss unit mirror finish",
+      "description": "Automated high-capacity edge profiling and polishing line for multi-family vanity programs. Delivers uniform Eased, Bevel, and Bullnose edge profiles with high mirror gloss."
+    },
+    {
+      "id": "wr-vn-photo-04",
+      "title": "Slab Processing & Profiling Hall (板材粗加工与异形打磨跨间)",
+      "titleEn": "Slab Processing & Profiling Hall",
+      "titleZh": "板材粗加工与异形打磨跨间",
+      "category": "Production Floor",
+      "facility": "Vietnam Factory (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-profiling-hall.jpg",
+      "alt": "WHITEROCK Vietnam: Wide-angle view of the edge profiling bay with radial polishers and transit carts",
+      "equipment": "Dual Radial Polishers, A-Frame Transit Carts & Staging Bay",
+      "specs": "Spacious dust-controlled workshop with natural daylight skylights and marked safety aisles",
+      "description": "Spacious production hall showing edge processing lines, dual arm polishers, steel A-frame transit carts, and export packaging crates ready for consolidation."
+    },
+    {
+      "id": "wr-vn-photo-05",
+      "title": "Jib Crane Lifting & Calacatta Slab Staging Bay (旋臂起重机与大板暂存吊运区)",
+      "titleEn": "Jib Crane Lifting & Calacatta Slab Staging Bay",
+      "titleZh": "旋臂起重机与大板暂存吊运区",
+      "category": "Material Handling",
+      "facility": "Vietnam Factory (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-crane-slabs.jpg",
+      "alt": "WHITEROCK Vietnam: Twin yellow pillar jib cranes and Calacatta quartz slabs on A-frames",
+      "equipment": "Twin 360° Pillar Jib Cranes with Vacuum Suction Lifters (双旋臂起重机)",
+      "specs": "Heavy-duty lifting capacity for 3200x1600mm jumbo quartz and natural marble slabs",
+      "description": "Calacatta Gold, Calacatta White, and Carrara quartz slabs stored on heavy-duty steel A-frames under dual 360-degree pillar jib cranes for safe slab turnover and machine loading."
+    },
+    {
+      "id": "wr-vn-photo-06",
+      "title": "WHITEROCK Vietnam Factory Exterior & Loading Yard (越南工厂外观与集装箱装柜园区)",
+      "titleEn": "WHITEROCK Vietnam Factory Exterior & Loading Yard",
+      "titleZh": "越南工厂外观与集装箱装柜园区",
+      "category": "Facility & Logistics",
+      "facility": "Vietnam Factory (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-factory-exterior.jpg",
+      "alt": "WHITEROCK Vietnam: Factory exterior building with green hedges and concrete container loading apron",
+      "equipment": "20,000 m² Site Footprint & Dedicated 40HQ Container Docking Apron",
+      "specs": "Reinforced concrete loading yard accommodating multiple 40HQ container chassis simultaneously",
+      "description": "Authentic exterior view of the WHITEROCK Dong Nai manufacturing facility in Vietnam, featuring green landscaping, modern industrial steel structure, and container access apron."
+    },
+    {
+      "id": "wr-vn-photo-07",
+      "title": "High-Volume Edge Line & Buffer Rack Staging (多头磨边机生产线与工件缓存周转区)",
+      "titleEn": "High-Volume Edge Line & Buffer Rack Staging",
+      "titleZh": "多头磨边机生产线与工件缓存周转区",
+      "category": "Edge Processing",
+      "facility": "Vietnam Factory (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-buffer-racks.jpg",
+      "alt": "WHITEROCK Vietnam: Continuous edge machine with custom red transport racks and project signage",
+      "equipment": "Continuous Edge Polisher with Project Buffer Racks (周转架与标识系统)",
+      "specs": "Batch order staging racks with visual project identification labels (KINH VUONG KHU NGAN 40x14CM)",
+      "description": "Continuous edge line with batch-separated red transit racks holding 40x14cm backsplash and vanity apron components labeled for fast tracking."
+    },
+    {
+      "id": "wr-vn-photo-08",
+      "title": "Quality Control & Dry-Lay Inspection Hall (成品全面质检与预拼光检车间)",
+      "titleEn": "Quality Control & Dry-Lay Inspection Hall",
+      "titleZh": "成品全面质检与预拼光检车间",
+      "category": "Quality Assurance",
+      "facility": "Vietnam Factory (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-vanity-qc.jpg",
+      "alt": "WHITEROCK Vietnam: QC inspection team examining finished vanity tops under high-CRI light arrays",
+      "equipment": "Multi-Point Inspection Light Stations, Digital Calipers, Surface Gloss Meters",
+      "specs": "100% full inspection of surface gloss, thickness tolerance (±1mm), sink cutout dimensions, and edge finish",
+      "description": "Dedicated QC team in uniforms inspecting finished vanity tops and kitchen countertops under bright inspection lighting before export packaging."
+    },
+    {
+      "id": "wr-vn-photo-09",
+      "title": "Central Logistics Highway & 'POLISHED FINISHED' Staging (中央主通道与“POLISHED FINISHED / 抛光面”成品区)",
+      "titleEn": "Central Logistics Highway & Finished Goods Staging",
+      "titleZh": "中央主通道与“POLISHED FINISHED / 抛光面”成品区",
+      "category": "Production Floor",
+      "facility": "Vietnam Factory (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-production-hall.jpg",
+      "alt": "WHITEROCK Vietnam: Central factory floor corridor with yellow safety lines and finished polished slabs",
+      "equipment": "Central Yellow Safety Highway & Bilingual Quality Signboards (POLISHED FINISHED / 抛光面)",
+      "specs": "Spacious central traffic artery ensuring smooth forklift flow and zero product collision",
+      "description": "Central logistics corridor of the Vietnam plant displaying finished polished vanity tops on steel racks with clear bilingual signage ('POLISHED FINISHED / 抛光面')."
+    },
+    {
+      "id": "wr-vn-photo-10",
+      "title": "Digital Chamfering & Longitudinal Polishing Bay (数字化倒角磨边一体化车间)",
+      "titleEn": "Digital Chamfering & Longitudinal Polishing Bay",
+      "titleZh": "数字化倒角磨边一体化车间",
+      "category": "Edge Processing",
+      "facility": "Vietnam Factory (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-chamfering-line.jpg",
+      "alt": "WHITEROCK Vietnam: Automated continuous edge profiling line with operator and digital control terminal",
+      "equipment": "Automated Continuous Chamfering and Polishing Unit (数字化连续倒角磨边机)",
+      "specs": "Dust-free water recycling channel, high-efficiency continuous straight edge profiling",
+      "description": "Clean perspective of the automated profiling line, showcasing modern workshop ventilation, safety boards, and organized slab buffer carts."
+    },
+    {
+      "id": "optima-cn-photo-01",
+      "title": "OPTIMA STONE China Factory Exterior & Export Yard (欧普石材厂区外观与集装箱装载货场)",
+      "titleEn": "OPTIMA STONE China Factory Exterior & Export Loading Yard",
+      "titleZh": "欧普石材厂区外观与集装箱装载货场",
+      "category": "Facility & Logistics",
+      "facility": "China Base (OPTIMA Yunfu)",
+      "image": "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/china-factory-exterior.jpg",
+      "alt": "OPTIMA STONE China (Yunfu): Modern industrial factory exterior with bold signage and export crate loading yard",
+      "equipment": "Heavy Crate Loading Yard & 40HQ Export Container Loading Apron",
+      "specs": "Custom fumigated solid wood export crates, dedicated forklift logistics corridor",
+      "description": "Authentic factory exterior of OPTIMA STONE (欧普石材) in Yunfu, China. Featuring modern steel warehouse construction, green landscaping, and staged export-ready wooden crated stone shipments."
+    },
+    {
+      "id": "optima-cn-photo-02",
+      "title": "YEXIANG Automatic Multi-Head Continuous Edge Polisher (烨祥机电全自动多头直线磨边机)",
+      "titleEn": "YEXIANG Automatic Continuous Edge Polishing Line",
+      "titleZh": "烨祥机电全自动多头直线磨边机",
+      "category": "Edge Processing",
+      "facility": "China Base (OPTIMA Yunfu)",
+      "image": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/china-edge-polisher-yexiang.jpg",
+      "alt": "OPTIMA STONE China: YEXIANG multi-spindle edge grinding and polishing machine on epoxy floor",
+      "equipment": "YEXIANG Mechatronics Continuous Edge Polisher (烨祥机电全自动磨边线)",
+      "specs": "Multi-stage diamond & resin abrasive wheels, dial-gauge pressure regulation, mirror finish",
+      "description": "High-precision continuous linear edge polishing line from YEXIANG Mechatronics, executing automated beveling, pencil round, and flat eased edges on high-volume commercial vanity tops."
+    },
+    {
+      "id": "optima-cn-photo-03",
+      "title": "5-Ton Overhead Crane & Continuous Edge Processing Bay (5吨行车吊装与全自动磨边矩阵跨间)",
+      "titleEn": "5-Ton Crane & Continuous Edge Polishing Bay",
+      "titleZh": "5吨行车吊装与全自动磨边矩阵跨间",
+      "category": "Edge Processing",
+      "facility": "China Base (OPTIMA Yunfu)",
+      "image": "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/china-edge-polishing-bay.jpg",
+      "alt": "OPTIMA STONE China: Wide perspective of continuous edge polishing machines under 5T yellow bridge crane",
+      "equipment": "Henan Crane 5T Overhead Bridge Crane + Dual Linear Polishing Lines",
+      "specs": "5-ton heavy slab lifting capacity, full-length yellow logistics safety lane, skylight ventilation",
+      "description": "Expansive production hall at OPTIMA STONE Yunfu equipped with heavy-duty 5T overhead bridge cranes and parallel automated edge polishing machines for large-scale multi-family projects."
+    },
+    {
+      "id": "optima-cn-photo-04",
+      "title": "XTM-SGM 2600 Automated Stone Calibrating & Polishing Lines (XTM-SGM 2600 双组全自动连续定厚抛光机组)",
+      "titleEn": "XTM-SGM 2600 Heavy-Duty Continuous Polishing Lines",
+      "titleZh": "XTM-SGM 2600 双组全自动连续定厚抛光机组",
+      "category": "Cutting & CNC",
+      "facility": "China Base (OPTIMA Yunfu)",
+      "image": "https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/china-xtm-polishing-line.jpg",
+      "alt": "OPTIMA STONE China: Twin XTM-SGM 2600 industrial stone calibrating and surface polishing lines",
+      "equipment": "XTM-SGM 2600 Continuous Slab Calibrator & Multi-Head Polisher",
+      "specs": "2600mm working width, automated roller conveyor feed, stainless steel safety shield doors",
+      "description": "Twin heavy-duty continuous stone calibrating and polishing lines ensuring uniform slab thickness tolerance (±0.5mm) and high mirror gloss across natural marble and engineered stone."
+    },
+    {
+      "id": "optima-cn-photo-05",
+      "title": "3820-4 Quad-Spindle Heavy CNC Machining Center (3820-4 尊贵版四主轴数控雕刻下料加工中心)",
+      "titleEn": "3820-4 Quad-Spindle Heavy CNC Machining Center",
+      "titleZh": "3820-4 尊贵版四主轴数控雕刻下料加工中心",
+      "category": "Cutting & CNC",
+      "facility": "China Base (OPTIMA Yunfu)",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/china-quad-spindle-cnc.jpg",
+      "alt": "OPTIMA STONE China: 3820-4 4-spindle heavy CNC machine with digital touch console",
+      "equipment": "3820-4 Quad-Spindle High-Precision Stone CNC Center (铸造行业领导者)",
+      "specs": "4 synchronized high-speed water-cooled spindles, touch console CAM software, ±0.3mm tolerance",
+      "description": "State-of-the-art quad-spindle CNC center cutting undermount sink openings, faucet hole drilling, and complex 3D edge profiles simultaneously with automated water filtration."
+    },
+    {
+      "id": "optima-cn-photo-06",
+      "title": "Vanity Top Undermount Sink Assembly & Final QC Hall (浴室台面下沉盆装配、打胶与总质检车间)",
+      "titleEn": "Vanity Top Undermount Sink Assembly & QC Workshop",
+      "titleZh": "浴室台面下沉盆装配、打胶与总质检车间",
+      "category": "Assembly & QC",
+      "facility": "China Base (OPTIMA Yunfu)",
+      "image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/china-sink-assembly-qc.jpg",
+      "alt": "OPTIMA STONE China: Aerial view of workers assembling undermount sinks on wooden staging tables under QC lights",
+      "equipment": "Multi-Station Assembly Benches, Dedicated Hanging LED Arrays, Structural Silicone Stations",
+      "specs": "100% pull-tested ceramic undermount sink bond, water-resistant silicone seal, protective corner pads",
+      "description": "Elevated view of the assembly floor where skilled technicians install undermount vitreous china basins, apply industrial silicone seals, and verify joint watertightness before crating."
+    },
+    {
+      "id": "optima-cn-photo-07",
+      "title": "Carrara Marble Vanity Tops Multi-Row Dry-Lay & Inspection Array (多列天然卡拉拉白大理石台面预拼质检排)",
+      "titleEn": "Carrara Marble Vanity Top Multi-Row Dry-Lay Inspection",
+      "titleZh": "多列天然卡拉拉白大理石台面预拼质检排",
+      "category": "Quality Assurance",
+      "facility": "China Base (OPTIMA Yunfu)",
+      "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/china-carrara-dry-lay-hall.jpg",
+      "alt": "OPTIMA STONE China: Multiple rows of Carrara white marble vanity tops under hanging QC lamps",
+      "equipment": "Full-Length Solid Wood Dry-Lay Staging Tables & High-CRI Overhead Light Array",
+      "specs": "Color harmony grading, vein continuity matching, 100% surface scratch & hairline crack inspection",
+      "description": "Extensive dry-lay staging rows displaying dozens of finished natural Carrara marble vanity tops for batch vein alignment and color consistency verification under uniform illumination."
+    },
+    {
+      "id": "optima-cn-photo-08",
+      "title": "Double & Single Basin Carrara Marble Tops with Pre-Drilled Faucet Holes (双盆/单盆卡拉拉白大理石台面精密钻孔质检)",
+      "titleEn": "Double & Single Basin Carrara Tops with Faucet Holes",
+      "titleZh": "双盆/单盆卡拉拉白大理石台面精密钻孔质检",
+      "category": "Quality Assurance",
+      "facility": "China Base (OPTIMA Yunfu)",
+      "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/china-carrara-double-basin.jpg",
+      "alt": "OPTIMA STONE China: Close-up of Carrara marble vanity tops with double sink cutouts and pre-drilled faucet holes",
+      "equipment": "Diamond Core Faucet Drills & Precision CNC Waterjet Cutouts",
+      "specs": "Standard 4\" mini-spread or 8\" widespread faucet hole drillings (3 holes per sink), eased edges",
+      "description": "Precision-crafted Carrara white marble vanity tops featuring dual rectangular undermount cutouts, pre-drilled 3-hole faucet layouts, and smooth pencil rounded front profiles."
+    },
+    {
+      "id": "optima-cn-photo-09",
+      "title": "Mirror-Polished Natural Marble Vanity Tops Detail (镜面级抛光卡拉拉白大理石台面特写)",
+      "titleEn": "Mirror-Polished Natural Carrara Tops Close-Up",
+      "titleZh": "镜面级抛光卡拉拉白大理石台面特写",
+      "category": "Quality Assurance",
+      "facility": "China Base (OPTIMA Yunfu)",
+      "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/china-carrara-polished-close.jpg",
+      "alt": "OPTIMA STONE China: High-gloss finished natural Carrara marble vanity tops ready for export packaging",
+      "equipment": "Abrasive Waterjet + Hand-Polished Inner Basin Edge Profiler",
+      "specs": "90+ gloss unit mirror reflection, smooth 1/4\" inner radius corners, zero chipping",
+      "description": "Close-up perspective highlighting the natural grey feathering and mirror polish of Carrara marble vanity tops, with smooth internal rim polishing and water-tight sealer treatment."
+    },
+    {
+      "id": "optima-cn-photo-10",
+      "title": "Batch Export Vanity Top Dry-Lay & Workshop Management Board (大批量出口台面预拼、色差分选与车间管理看板)",
+      "titleEn": "Batch Export Vanity Dry-Lay & Quality Control Board",
+      "titleZh": "大批量出口台面预拼、色差分选与车间管理看板",
+      "category": "Quality Assurance",
+      "facility": "China Base (OPTIMA Yunfu)",
+      "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/china-vanity-qc-blackboard.jpg",
+      "alt": "OPTIMA STONE China: Wide workshop staging area with rows of vanity tops, QA blackboard, and craftsmen",
+      "equipment": "Daily QA Metric Board, Color Grading Sorting Tables, Safety Stations",
+      "specs": "Strict AQL 1.0/2.5 sampling, batch traceability QR coding, fire safety compliant floor",
+      "description": "Comprehensive quality assurance bay in Yunfu showing rows of inspected vanity tops, production shift instructions on blackboard, and safety equipment in an organized workspace."
+    }
+  ]
+}

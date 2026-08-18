@@ -1,0 +1,22 @@
+{
+  "brand": "WHITEROCK",
+  "legalName": "WHITEROCK COMPANY LIMITED",
+  "tagline": "Marble & Granite",
+  "productionDomain": "https://www.whiterockstone.com",
+  "email": "INFO@WHITEROCKSTONE.COM",
+  "tel": "0084 979 922 681",
+  "telHref": "+84979922681",
+  "whatsapp": "0084 979 922 681",
+  "address": "NATIONAL HIGHWAY 14, GROUP 2, DONG TIEN 3 HAMLET, DONG TAM COMMUNE, DONG NAI CITY, VIET NAM",
+  "zip": "",
+  "web3FormsAccessKey": "",
+  "ogImage": "assets/brand/og-image.jpg",
+  "favicon": "assets/brand/favicon.png",
+  "social": {
+    "linkedin": "",
+    "facebook": "",
+    "instagram": ""
+  },
+  "analyticsPlaceholder": "<!-- Analytics snippet placeholder: add GA4 or privacy-first analytics before launch if needed. -->",
+  "secondaryDomain": "https://www.optimastone.com"
+}
