@@ -571,7 +571,8 @@ h3 {
   border-radius: 6px;
   background: var(--white);
   cursor: pointer;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease;
+  will-change: transform, box-shadow;
 }
 
 .product-visual,
@@ -605,8 +606,14 @@ h3 {
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(23, 23, 23, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(23, 23, 23, 0.18), 0 0 24px -4px rgba(168, 111, 61, 0.15);
+}
+
+.product-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px -6px rgba(23, 23, 23, 0.14);
+  transition-duration: 0.12s;
 }
 
 .product-card-body {
@@ -2090,12 +2097,19 @@ dd {
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--white);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease;
+  will-change: transform, box-shadow;
 }
 
 .swatch-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 36px rgba(23, 23, 23, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(23, 23, 23, 0.18), 0 0 24px -4px rgba(168, 111, 61, 0.15);
+}
+
+.swatch-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px -6px rgba(23, 23, 23, 0.14);
+  transition-duration: 0.12s;
 }
 
 .swatch-open {

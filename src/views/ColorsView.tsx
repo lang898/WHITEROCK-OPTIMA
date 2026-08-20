@@ -128,7 +128,7 @@ export const ColorsView: React.FC<ColorsViewProps> = ({
         {filteredColors.map((col) => (
           <div
             key={col.slug}
-            className="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-amber-500/50 transition-all group flex flex-col cursor-pointer shadow-sm"
+            className="swatch-card bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-amber-500/50 group flex flex-col cursor-pointer shadow-sm"
             onClick={() => onSelectColor(col)}
           >
             {/* Visual Swatch */}

@@ -1,65 +1,65 @@
 {
-  "intro": "Common questions from wholesale, project, and distributor buyers.",
+  "intro": "Authoritative answers to common stone procurement, fabrication standards, US tariffs, and container logistics questions for global developers, general contractors, and stone distributors.",
   "items": [
     {
-      "question": "What information is needed for a quotation?",
-      "answer": "Send product type, material, dimensions or drawings, finish, edge profile, cutouts, quantity, packaging requirements, destination, and target timing."
+      "category": "Tariffs & Dual-Base Manufacturing",
+      "question": "What is the tariff advantage of manufacturing stone countertops in Vietnam?",
+      "answer": "Countertops and vanity tops fabricated and exported from WHITEROCK's 20,000 m² facility in Dong Nai, Vietnam qualify for 0% Section 301 US punitive tariffs (compared to 25% on direct China imports). We provide full documentation including verified Certificates of Origin (C/O Form B/AJ/AK) for compliant customs clearance."
     },
     {
-      "question": "Can WHITEROCK make custom sizes and shapes?",
-      "answer": "Yes. Custom work is reviewed against drawings, material limits, tooling, tolerance, quantity, packing, and handling requirements before quotation."
+      "category": "Tariffs & Dual-Base Manufacturing",
+      "question": "What are the capabilities of your Vietnam vs China Yunfu facilities?",
+      "answer": "Our Vietnam plant is our primary high-volume fabrication export base with 20,000 m² covered workshop, 100,000+ m² annual capacity, and dedicated vanity top automated lines. Our founding base OPTIMA STONE in Yunfu, China operates 20+ years of natural stone quarry sourcing, quad-spindle CNC machining, complex 3D carving, and waterjet medallion craftsmanship."
     },
     {
-      "question": "How are samples approved?",
-      "answer": "The buyer confirms material, color direction, finish, thickness, and acceptable variation. Natural stone remains subject to lot variation, so final approval should use a physical sample or lot reference."
+      "category": "Quotation & CAD Specifications",
+      "question": "What information is needed to obtain a fast commercial quotation?",
+      "answer": "Please submit your architectural drawing schedule (DWG, DXF, or dimensioned PDF), target stone material (Engineered Quartz, Natural Marble, or Granite), edge profile (e.g. Eased, Bevel, 4cm Mitered), sink cutout specifications, total unit count/square footage, destination port, and delivery schedule."
     },
     {
-      "question": "What is the minimum order quantity?",
-      "answer": "MOQ depends on material, product type, fabrication complexity, packing method, and production planning. Final MOQ is confirmed in the quotation, not assumed from the website."
+      "category": "Quotation & CAD Specifications",
+      "question": "What CAD drawing formats and sink cutout templates do you support?",
+      "answer": "We accept AutoCAD DWG, DXF, Rhino 3D, and fully dimensioned PDF shop drawings. For undermount sinks, we calibrate CNC cutouts directly against DXF sink templates with 1/4\" negative reveal, flush reveal, or positive reveal per your specification."
     },
     {
-      "question": "What production lead time should buyers expect?",
-      "answer": "Lead time is confirmed after drawings, sample approval, deposit terms, material availability, and packaging requirements are reviewed. The website guidance is indicative only."
+      "category": "Samples & Material Approval",
+      "question": "How do we order physical stone sample chips or a Master Sample Kit?",
+      "answer": "Buyers can request individual 4x4 inch (100x100mm) physical stone sample chips or our curated 6-to-12 color Master Sample Box (WR-SM) directly via our website. Samples are prepared with standard eased edge and surface polish, and dispatched via FedEx/DHL air courier within 7-15 business days."
     },
     {
-      "question": "Can third-party inspection be arranged?",
-      "answer": "Yes. Buyer-appointed or recognized third-party inspection can be coordinated before shipment by agreement. Inspection scope and timing should be confirmed before production."
+      "category": "Samples & Material Approval",
+      "question": "How do you handle color consistency and natural stone lot variation?",
+      "answer": "For engineered quartz, our automated vacuum-vibro pressing lines maintain strict batch delta-E color consistency. For natural marble and granite, we conduct dry-lay slab photo staging and provide high-resolution slab bundle photos and range samples for buyer sign-off before precision CNC cutting begins."
     },
     {
-      "question": "How are stone products packed for export?",
-      "answer": "Packing may include foam, corner protection, cartons, labeled plywood crates, pallets, or A-frames according to product weight, fragility, and shipment method."
+      "category": "Fabrication & Tolerances",
+      "question": "What are your CNC cutting and edge-profiling dimensional tolerances?",
+      "answer": "All cutting is performed on high-precision 5-axis infrared bridge saws and quad-spindle CNC machining centers, guaranteeing dimensional tolerances of ±0.3mm to ±0.5mm on length and width, ±1.0mm on diagonals, and 90° squareness across all panels."
     },
     {
-      "question": "Do you provide private-label or OEM/ODM development?",
-      "answer": "Yes. WHITEROCK can review samples, drawings, packaging, labels, and repeat production needs for qualified programs."
+      "category": "Fabrication & Tolerances",
+      "question": "Do you offer pre-assembled undermount vitreous china basins?",
+      "answer": "Yes. We offer factory pre-glued undermount porcelain and vitreous china sinks using high-modulus structural epoxy and mechanical stainless steel anchor brackets. Every pre-assembled unit undergoes pull-load testing to ensure zero detachment during transit."
     },
     {
-      "question": "Which drawing files are most helpful?",
-      "answer": "Dimensioned PDFs are the safest starting point. CAD, DXF, shop drawings, sink templates, hole-center details, and marked revision numbers help reduce clarification cycles."
+      "category": "Packaging & Ocean Logistics",
+      "question": "How are stone vanity tops and countertops packed for export?",
+      "answer": "Every piece is wrapped in protective high-density EPE foam with heavy-duty corner guards. Products are loaded vertically into ISPM-15 compliant heat-treated fumigated solid plywood crates or heavy-duty steel-reinforced A-frames with moisture barrier lining. We also offer ISTA-1A drop-tested individual cartons for e-commerce and retail."
     },
     {
-      "question": "Can one order mix multiple SKUs, sizes, or colors?",
-      "answer": "Mixed orders can be reviewed when packing, labeling, production sequence, and container planning are clear. The quotation will confirm whether the mix is practical."
+      "category": "Packaging & Ocean Logistics",
+      "question": "How many vanity tops or square meters fit in a 40HQ container?",
+      "answer": "A standard 40HQ container typically accommodates 240 to 320 prefab bathroom vanity tops (approx. 14 to 18 plywood crates) or 500 to 700 m² of cut-to-size countertops, respecting maximum ocean payload limits of 21.0 to 26.5 metric tons depending on destination port road regulations."
     },
     {
-      "question": "Can WHITEROCK support color or finish matching?",
-      "answer": "The team can review a physical sample, reference color, finish target, or approved swatch. Final matching must be confirmed by buyer approval before production."
+      "category": "Quality Control & Inspection",
+      "question": "Can we send third-party inspection agencies (SGS, Bureau Veritas, Intertek)?",
+      "answer": "Yes. We welcome customer-appointed inspectors and third-party inspection firms (such as SGS, Bureau Veritas, Intertek, or Cotecna) at our Vietnam and Yunfu factories. We provide dedicated staging areas for AQL 1.0/2.5 visual inspection, dry-fit reviews, and crate seal verification prior to container dispatch."
     },
     {
-      "question": "Are all website product visuals real photos?",
-      "answer": "Owner-supplied photos are used where available. Any generated product, application, or equipment image is labeled as illustrative and should be replaced by real photography when available."
-    },
-    {
-      "question": "How do we request a sample kit?",
-      "answer": "Use the color sample builder or inquiry form with your target material, color family, project type, and shipping region. Sample availability and shipping details are confirmed before dispatch."
-    },
-    {
-      "question": "Can packaging use buyer labels or private marks?",
-      "answer": "Private-label packaging, carton labels, crate marks, and SKU labels can be reviewed during order setup. Final artwork and marking rules should be approved before production."
-    },
-    {
-      "question": "What documents can be prepared for shipment?",
-      "answer": "Commercial documents, packing lists, inspection references, and product-specific documents can be discussed at quotation stage. Certification and test-report claims are published only after owner verification."
+      "category": "Compliance & Safety",
+      "question": "What health, safety, and silica compliance standards do you follow?",
+      "answer": "WHITEROCK enforces strict 100% water-suppression wet-fabrication and dust extraction across all cutting and polishing lines in compliance with international respirable crystalline silica standards. All technical documentation and California Proposition 65 disclosures are provided with every shipment."
     }
   ]
 }

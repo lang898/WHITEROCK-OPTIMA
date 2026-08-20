@@ -112,6 +112,7 @@ export interface EquipmentItem {
   keySpec: string;
   drawing?: string;
   media: string;
+  localFile?: string;
   location: string;
   imageType: string;
   alt?: string;
@@ -126,6 +127,7 @@ export interface FactoryGalleryItem {
   category?: string;
   facility?: string;
   image: string;
+  localFile?: string;
   imageWebp?: string;
   alt: string;
   equipment?: string;
@@ -156,6 +158,8 @@ export interface NewsItem {
 export interface FaqItem {
   q: string;
   a: string;
+  question?: string;
+  answer?: string;
   category?: string;
 }
 

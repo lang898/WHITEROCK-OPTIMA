@@ -107,7 +107,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
         {filteredProducts.map((prod) => (
           <div
             key={prod.sku}
-            className="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-amber-500/50 transition-all group flex flex-col shadow-sm cursor-pointer"
+            className="product-card bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-amber-500/50 group flex flex-col shadow-sm cursor-pointer"
             onClick={() => onSelectProduct(prod)}
           >
             {/* Visual Thumbnail */}

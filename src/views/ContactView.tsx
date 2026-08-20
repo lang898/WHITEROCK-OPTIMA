@@ -10,7 +10,8 @@ import {
   HelpCircle,
   ChevronDown
 } from 'lucide-react';
-import { siteConfig, faqList } from '../data';
+import { siteConfig } from '../data';
+import { FaqSectionWithSchema } from '../components/FaqSectionWithSchema';
 import type { LocaleConfig } from '../types';
 
 interface ContactViewProps {
@@ -28,7 +29,6 @@ export const ContactView: React.FC<ContactViewProps> = ({ currentLocale }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -265,48 +265,15 @@ export const ContactView: React.FC<ContactViewProps> = ({ currentLocale }) => {
         </div>
       </div>
 
-      {/* Frequently Asked Questions Accordion */}
-      <section className="space-y-6 pt-6 border-t border-stone-800">
-        <div className="max-w-2xl">
-          <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">
-            Buyer Knowledge Base
-          </span>
-          <h2 className="text-2xl font-serif font-bold text-white mt-1">
-            Frequently Asked Questions
-          </h2>
-        </div>
-
-        <div className="space-y-3">
-          {faqList.map((faq, idx) => {
-            const isOpen = openFaqIndex === idx;
-            return (
-              <div
-                key={idx}
-                className="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden transition-all"
-              >
-                <button
-                  onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-stone-800/40"
-                >
-                  <span className="font-semibold text-sm sm:text-base text-white">
-                    {faq.q}
-                  </span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-stone-400 shrink-0 transition-transform ${
-                      isOpen ? 'rotate-180 text-amber-400' : ''
-                    }`}
-                  />
-                </button>
-                {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-stone-300 border-t border-stone-800/60 pt-3 leading-relaxed">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      {/* Frequently Asked Questions with JSON-LD Schema Markup */}
+      <div className="pt-6 border-t border-stone-800">
+        <FaqSectionWithSchema
+          currentLocale={currentLocale}
+          title="Direct Factory FAQ & B2B Stone Procurement Guide"
+          subtitle="Clear answers on quotations, Vietnam 0% US tariffs, lead times, 4x4 sample chips, undermount sink assembly, and ocean freight logistics."
+          showSchemaInspector={true}
+        />
+      </div>
     </div>
   );
 };

@@ -39,28 +39,14 @@ export const pages = pagesData;
 export const partners = partnersData;
 export const resources: ResourceItem[] = resourcesData.items as ResourceItem[];
 export const news: NewsItem[] = newsData.items as NewsItem[];
-export const faqList: FaqItem[] = (faqData.items || [
-  {
-    q: "What is WHITEROCK's production base and capacity?",
-    a: "WHITEROCK operates a 20,000 m² primary manufacturing facility in Dong Nai Province, Vietnam, with over 100,000 m² annual capacity, backed by our founding factory OPTIMA STONE in Yunfu, China for secondary support and specialty natural stone."
-  },
-  {
-    q: "What are your minimum order quantities (MOQs)?",
-    a: "For standard bathroom vanity programs (24\", 31\", 49\", 61\"), MOQ starts at 10–20 pcs per color/size. Kitchen countertops and cut-to-size commercial orders are quoted per drawing schedule."
-  },
-  {
-    q: "How do I request material samples or a sample kit?",
-    a: "You can request individual 4x4 inch stone chips or our complete 6–12 color Master Sample Box (WR-SM) via our RFQ builder. Sample dispatch lead time is 7–15 days by express courier."
-  },
-  {
-    q: "What export packaging standards do you provide?",
-    a: "Every piece is protected with high-density EPE foam, heavy-duty corner guards, individual inner boxes, and fumigated solid plywood export crates or reinforced A-frames designed for container loading."
-  },
-  {
-    q: "Can third-party inspection companies (SGS, BV, Intertek) inspect orders?",
-    a: "Yes. We welcome customer-appointed inspectors or third-party agencies (SGS, Bureau Veritas, Intertek) at our Vietnam and China factories prior to container loading."
-  }
-]) as FaqItem[];
+export const faqList: FaqItem[] = ((faqData as any).items || []).map((item: any) => ({
+  q: item.question || item.q || '',
+  a: item.answer || item.a || '',
+  question: item.question || item.q || '',
+  answer: item.answer || item.a || '',
+  category: item.category || 'General Procurement'
+})) as FaqItem[];
+export const faqIntro: string = (faqData as any).intro || 'Common questions from wholesale, project, and distributor buyers.';
 export const lookbook = lookbookData.items;
 export const projects = projectsData.items;
 export const locales: LocaleConfig[] = localesData.locales as LocaleConfig[];

@@ -8,6 +8,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { resources } from '../data';
+import { FaqSectionWithSchema } from '../components/FaqSectionWithSchema';
 import type { LocaleConfig } from '../types';
 
 interface ResourcesViewProps {
@@ -94,6 +95,16 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ currentLocale }) =
           </div>
         </div>
       </section>
+
+      {/* Technical & Compliance FAQ Section with JSON-LD Schema */}
+      <div className="pt-6 border-t border-stone-800">
+        <FaqSectionWithSchema
+          currentLocale={currentLocale}
+          title="Technical Compliance & Material FAQ"
+          subtitle="Engineering standards, silica protection, AQL quality control, and laboratory certification guidelines for stone importers."
+          showSchemaInspector={true}
+        />
+      </div>
     </div>
   );
 };
