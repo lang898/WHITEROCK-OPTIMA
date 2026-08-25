@@ -1,0 +1,318 @@
+{
+  "heroCopy": "WHITEROCK SURFACES VIETNAM operates a 20,000 m² specialized fabrication facility in Dong Nai, Vietnam. Engineered for North American hospitality, multi-family, and distributor programs with 0% US Section 301 tariff export compliance, high-capacity bridge sawing, quad-spindle CNC machining, pre-mounted undermount sinks, and export crate crating.",
+  "stats": [
+    {
+      "label": "Master Craftsmanship",
+      "value": "20+ Years",
+      "confirmed": true
+    },
+    {
+      "label": "Vietnam Plant Area",
+      "value": "20,000 m²",
+      "confirmed": true
+    },
+    {
+      "label": "Annual Fabrication Capacity",
+      "value": "100,000+ m²",
+      "confirmed": true
+    },
+    {
+      "label": "US Section 301 Tariff",
+      "value": "0% Exempt",
+      "confirmed": true
+    },
+    {
+      "label": "Laser Tolerance",
+      "value": "±0.5 mm",
+      "confirmed": true
+    },
+    {
+      "label": "Major Ocean Port",
+      "value": "Cat Lai (45km)",
+      "confirmed": true
+    }
+  ],
+  "equipment": [
+    {
+      "name": "Infrared Multi-Blade Bridge Cutting",
+      "function": "High-speed precision slab breakdown and repeatable cut-to-size processing.",
+      "brand": "CNC Multi-Blade Infrared Bridge Saw System",
+      "quantity": "4 Continuous Lines",
+      "keySpec": "±0.5mm precision tolerance, automated digital touch console",
+      "drawing": "assets/equipment/bridge-saw.svg",
+      "localFile": "assets/equipment/infrared-bridge-saw.jpg",
+      "media": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+      "location": "Dong Nai Facility, Vietnam",
+      "imageType": "real",
+      "alt": "Infrared Multi-Blade Bridge Saw at WHITEROCK Vietnam"
+    },
+    {
+      "name": "Quad-Spindle CNC Machining Center",
+      "function": "Automated undermount sink cutouts, pre-drilled faucet spreads (4\"/8\"), drainboards, and curved arches.",
+      "brand": "Heavy-Duty Quad-Spindle Multi-Axis CNC",
+      "quantity": "6 Workstations",
+      "keySpec": "±0.3mm CNC accuracy with continuous water lubrication",
+      "drawing": "assets/equipment/cnc-router.svg",
+      "localFile": "assets/equipment/quad-spindle-cnc.jpg",
+      "media": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+      "location": "Dong Nai Facility, Vietnam",
+      "imageType": "real",
+      "alt": "Quad-Spindle CNC Machining Center at WHITEROCK Vietnam"
+    },
+    {
+      "name": "Continuous Multi-Head Edge Polishing Line",
+      "function": "High-volume linear edge profiling for Eased, Bevel, Bullnose, and laminated edges.",
+      "brand": "Automated Multi-Spindle Linear Polishers",
+      "quantity": "3 Continuous Lines",
+      "keySpec": "Continuous conveyor feed, 85+ gloss unit mirror finish",
+      "drawing": "assets/equipment/edge-polishing.svg",
+      "localFile": "assets/equipment/edge-polisher-linear.jpg",
+      "media": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80",
+      "location": "Dong Nai Facility, Vietnam",
+      "imageType": "real"
+    },
+    {
+      "name": "Radial Arm Water Profiler & Shaper",
+      "function": "Precision internal sink rim profiling, tight radius cuts, and hand-honed custom edge profiles.",
+      "brand": "Heavy Radial Arm Water Profiling Station",
+      "quantity": "8 Workstations",
+      "keySpec": "50# to 3000# diamond grits, pneumatic pressure control",
+      "drawing": "assets/equipment/profiling.svg",
+      "localFile": "assets/equipment/radial-arm-water-profiler.jpg",
+      "media": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+      "location": "Dong Nai Facility, Vietnam",
+      "imageType": "real",
+      "alt": "Radial arm water polishing at WHITEROCK Vietnam"
+    },
+    {
+      "name": "Twin 5-Ton Overhead Cranes & 360° Jib Lifters",
+      "function": "Zero-damage jumbo slab transit, vacuum turnover, and container staging.",
+      "brand": "Henan Crane 5T Overhead Cranes & Vacuum Pad Jibs",
+      "quantity": "Full Workshop Bay Coverage",
+      "keySpec": "5-ton lifting rating with pneumatic vacuum suction pads",
+      "drawing": "assets/equipment/heating-machine.svg",
+      "localFile": "assets/equipment/overhead-bridge-crane-5t.jpg",
+      "media": "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=800&q=80",
+      "location": "Dong Nai Facility, Vietnam",
+      "imageType": "real",
+      "alt": "Heavy 5T Overhead Crane at WHITEROCK Vietnam"
+    },
+    {
+      "name": "CUPC Pre-Glued Undermount Sink Assembly Bay",
+      "function": "Structural mounting of rectangular & oval vitreous china porcelain sinks with silicone seal and epoxy brackets.",
+      "brand": "Dedicated Mounting Benches with Clamp Systems",
+      "quantity": "12 Assembly Stations",
+      "keySpec": "100% pull-tested ceramic bond, water-resistant silicone barrier",
+      "drawing": "assets/equipment/surface-polishing.svg",
+      "localFile": "assets/factory/vietnam-sink-assembly.jpg",
+      "media": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80",
+      "location": "Dong Nai Facility, Vietnam",
+      "imageType": "real",
+      "alt": "Undermount Sink Assembly Bay at WHITEROCK Vietnam"
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "North American Prefab Sizes",
+      "copy": "Standard 24\", 31\", 37\", 43\", 49\", 61\" single/double bowl and 73\" vanity tops with 22\" depth and matching 4\" backsplashes."
+    },
+    {
+      "title": "CUPC Sink Pre-Mounting",
+      "copy": "Pre-installed vitreous china porcelain sinks glued with high-modulus industrial adhesive, tested for zero-leak transport."
+    },
+    {
+      "title": "Mitered Waterfall Island Edges",
+      "copy": "Seamless 45-degree mitered laminated 4cm / 6cm waterfall edge countertops for high-end kitchen and hospitality bars."
+    },
+    {
+      "title": "Commercial BOQ & Take-Offs",
+      "copy": "Full architectural shop drawing translation, unit-by-unit labeling, and floor-by-floor crate sequencing for general contractors."
+    }
+  ],
+  "flowSteps": [
+    {
+      "number": "01",
+      "title": "Material Batch Selection",
+      "copy": "Direct inspection of jumbo engineered quartz slabs and imported Italian Carrara / Calacatta blocks with color lot coding."
+    },
+    {
+      "number": "02",
+      "title": "Infrared Bridge Cutting & CNC",
+      "copy": "Digital CAM nesting, automated cutting, sink basin routing, and standard 4\"/8\" faucet hole core drilling."
+    },
+    {
+      "number": "03",
+      "title": "Edge Profiling & Sink Assembly",
+      "copy": "Linear edge grinding, 85+ gloss diamond polishing, undermount sink mounting, and structural bracket bonding."
+    },
+    {
+      "number": "04",
+      "title": "Full QC Dry-Lay & ISPM-15 Crating",
+      "copy": "100% surface and dimensional verification, unit labeling, protective foam corners, and heavy-duty fumigated wood crating."
+    }
+  ],
+  "qc": {
+    "inspectionPoints": [
+      "Slab thickness calibration & vein matching",
+      "CNC cutout dimensional tolerance (±0.5mm)",
+      "Faucet hole spread & sink alignment check",
+      "Surface gloss measurement (85+ GU)",
+      "100% dry-lay inspection before crating",
+      "Crate bracing & drop-test packaging verification"
+    ],
+    "aql": "Strict AQL 1.0 Major / AQL 2.5 Minor standard applied to all export shipments.",
+    "tools": "Digital Vernier calipers, surface gloss meters, straightness levels, dial gauges, and custom aluminum sink templates.",
+    "thirdParty": "Third-party quality inspection by SGS, Bureau Veritas, Intertek, or buyer-appointed QA representatives welcome prior to container seal."
+  },
+  "rnd": {
+    "capabilities": [
+      "CAD/DXF architectural shop drawing creation and revision",
+      "Custom hospitality countertop mock-ups and sample kits",
+      "OEM/ODM private-label carton branding and barcode labeling",
+      "Custom drop-test carton packaging for e-commerce vanity dropship programs"
+    ],
+    "sampleLeadTime": "3 to 5 business days for standard 4x4\" chips; 7 to 10 days for full custom vanity mockups."
+  },
+  "materials": {
+    "copy": "Engineered quartz slabs formulated with 93% pure natural quartz crystals and high-grade polyester resins. Natural marble and granite sourced directly from reputable European, Brazilian, and Indian quarries.",
+    "traceability": "Each export crate and vanity slab features permanent QR/barcode traceability linking to specific production shift, inspection logs, and raw material batch numbers."
+  },
+  "packing": {
+    "copy": "Solid fumigated plywood crates with reinforced steel banding, inner EVA foam padding, heavy plastic moisture barrier, and edge corner protectors.",
+    "loadability": "Up to 240-350 pieces of prefab vanity tops per 40HQ container (approx. 26.5 tons max payload).",
+    "drawing": "assets/equipment/packing.svg"
+  },
+  "tourVideo": "assets/factory/vietnam-factory-tour.mp4",
+  "gallery": [
+    {
+      "id": "wr-vn-photo-01",
+      "title": "Infrared Multi-Blade Bridge Cutting Center",
+      "titleEn": "Infrared Multi-Blade Bridge Cutting Center",
+      "category": "Cutting & CNC",
+      "facility": "WHITEROCK Vietnam Plant (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-bridge-cutting.jpg",
+      "alt": "WHITEROCK Vietnam: Infrared Multi-Blade Bridge Cutting Machine with digital CNC control",
+      "equipment": "Multi-Blade Infrared Bridge Saw",
+      "specs": "±0.5mm precision tolerance, automated touch console, water-cooled multi-spindle cutting",
+      "description": "High-volume infrared multi-blade bridge saw section slicing jumbo engineered quartz and marble slabs into standard North American vanity tops (31\", 37\", 49\", 61\") on a clean industrial floor."
+    },
+    {
+      "id": "wr-vn-photo-02",
+      "title": "Radial Arm Polishing & Custom Basin Profiling",
+      "titleEn": "Radial Arm Polishing & Custom Basin Profiling",
+      "category": "Polishing & Profiling",
+      "facility": "WHITEROCK Vietnam Plant (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-arm-polisher.jpg",
+      "alt": "WHITEROCK Vietnam: Stone fabricator operating radial arm water polisher with diamond discs",
+      "equipment": "Radial Arm Water Polishing Station",
+      "specs": "50# to 3000# diamond abrasive grits, pneumatic head pressure, continuous water mist suppression",
+      "description": "Master craftsman refining undermount sink basin cutouts, curved edges, and custom mitered profiles using heavy-duty radial arm polishers with continuous water lubrication."
+    },
+    {
+      "id": "wr-vn-photo-03",
+      "title": "Automatic Continuous Edge Polishing Line",
+      "titleEn": "Automatic Continuous Edge Polishing Line",
+      "category": "Edge Processing",
+      "facility": "WHITEROCK Vietnam Plant (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-edge-line.jpg",
+      "alt": "WHITEROCK Vietnam: Automatic continuous edge polishing machine and finished cut slabs",
+      "equipment": "Multi-Spindle Continuous Edge Polisher",
+      "specs": "Continuous conveyor feed, automated bevel chamfering, 85+ gloss unit mirror finish",
+      "description": "Automated high-capacity edge profiling and polishing line for multi-family vanity programs, delivering uniform Eased, Bevel, and Bullnose edge profiles with brilliant mirror gloss."
+    },
+    {
+      "id": "wr-vn-photo-04",
+      "title": "Slab Processing & Profiling Hall",
+      "titleEn": "Slab Processing & Profiling Hall",
+      "category": "Production Floor",
+      "facility": "WHITEROCK Vietnam Plant (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-profiling-hall.jpg",
+      "alt": "WHITEROCK Vietnam: Wide-angle view of the edge profiling bay with radial polishers and transit carts",
+      "equipment": "Dual Radial Polishers, A-Frame Transit Carts & Staging Bay",
+      "specs": "Spacious dust-controlled workshop with natural daylight skylights and marked safety aisles",
+      "description": "Spacious 20,000 m² production hall showing edge processing lines, dual arm polishers, steel A-frame transit carts, and export packaging crates ready for container loading."
+    },
+    {
+      "id": "wr-vn-photo-05",
+      "title": "Jib Crane Lifting & Calacatta Slab Staging Bay",
+      "titleEn": "Jib Crane Lifting & Calacatta Slab Staging Bay",
+      "category": "Material Handling",
+      "facility": "WHITEROCK Vietnam Plant (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-crane-slabs.jpg",
+      "alt": "WHITEROCK Vietnam: Twin yellow pillar jib cranes and Calacatta quartz slabs on A-frames",
+      "equipment": "Twin 360° Pillar Jib Cranes with Vacuum Suction Lifters",
+      "specs": "Heavy-duty lifting capacity for 3200x1600mm jumbo quartz and natural marble slabs",
+      "description": "Calacatta Gold, Calacatta White, and Carrara quartz slabs stored on heavy-duty steel A-frames under dual 360-degree pillar jib cranes for safe slab turnover and machine loading."
+    },
+    {
+      "id": "wr-vn-photo-06",
+      "title": "WHITEROCK Vietnam Factory Exterior & Loading Yard",
+      "titleEn": "WHITEROCK Vietnam Factory Exterior & Loading Yard",
+      "category": "Facility & Logistics",
+      "facility": "WHITEROCK Vietnam Plant (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-factory-exterior.jpg",
+      "alt": "WHITEROCK Vietnam: Factory exterior building with container loading apron",
+      "equipment": "20,000 m² Site Footprint & Dedicated 40HQ Container Docking Apron",
+      "specs": "Reinforced concrete loading yard accommodating multiple 40HQ container chassis simultaneously",
+      "description": "Exterior view of the WHITEROCK Dong Nai manufacturing facility in Vietnam, featuring modern industrial steel structure, fast highway access, and direct container loading dock."
+    },
+    {
+      "id": "wr-vn-photo-07",
+      "title": "High-Volume Edge Line & Buffer Rack Staging",
+      "titleEn": "High-Volume Edge Line & Buffer Rack Staging",
+      "category": "Edge Processing",
+      "facility": "WHITEROCK Vietnam Plant (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-buffer-racks.jpg",
+      "alt": "WHITEROCK Vietnam: Continuous edge machine with custom transport racks",
+      "equipment": "Continuous Edge Polisher with Project Buffer Racks",
+      "specs": "Batch order staging racks with visual project identification labels",
+      "description": "Continuous edge line with batch-separated transit racks holding 4\" backsplash and vanity apron components labeled for fast assembly and tracking."
+    },
+    {
+      "id": "wr-vn-photo-08",
+      "title": "Quality Control & Dry-Lay Inspection Hall",
+      "titleEn": "Quality Control & Dry-Lay Inspection Hall",
+      "category": "Quality Assurance",
+      "facility": "WHITEROCK Vietnam Plant (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-vanity-qc.jpg",
+      "alt": "WHITEROCK Vietnam: QC inspection team examining finished vanity tops under high-CRI light arrays",
+      "equipment": "Multi-Point Inspection Light Stations, Digital Calipers, Surface Gloss Meters",
+      "specs": "100% full inspection of surface gloss, thickness tolerance (±1mm), sink cutout dimensions, and edge finish",
+      "description": "Dedicated QC team inspecting finished vanity tops and kitchen countertops under bright inspection lighting before export packaging."
+    },
+    {
+      "id": "wr-vn-photo-09",
+      "title": "Central Logistics Highway & Finished Goods Staging",
+      "titleEn": "Central Logistics Highway & Finished Goods Staging",
+      "category": "Production Floor",
+      "facility": "WHITEROCK Vietnam Plant (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-production-hall.jpg",
+      "alt": "WHITEROCK Vietnam: Central factory floor corridor with safety lines and finished polished slabs",
+      "equipment": "Central Yellow Safety Highway & Quality Control Signboards",
+      "specs": "Spacious central traffic artery ensuring smooth forklift flow and zero product collision",
+      "description": "Central logistics corridor of the Vietnam plant displaying finished polished vanity tops on heavy-duty steel racks with clear project labels."
+    },
+    {
+      "id": "wr-vn-photo-10",
+      "title": "Digital Chamfering & Longitudinal Polishing Bay",
+      "titleEn": "Digital Chamfering & Longitudinal Polishing Bay",
+      "category": "Edge Processing",
+      "facility": "WHITEROCK Vietnam Plant (Dong Nai)",
+      "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=1200&q=80",
+      "localFile": "assets/factory/vietnam-chamfering-line.jpg",
+      "alt": "WHITEROCK Vietnam: Automated continuous edge profiling line with operator and digital control terminal",
+      "equipment": "Automated Continuous Chamfering and Polishing Unit",
+      "specs": "Dust-free water recycling channel, high-efficiency continuous straight edge profiling",
+      "description": "Automated profiling line showcasing modern workshop ventilation, safety boards, and organized slab buffer carts."
+    }
+  ]
+}

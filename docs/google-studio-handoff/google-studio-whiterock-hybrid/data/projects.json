@@ -1,0 +1,38 @@
+{
+  "intro": "Selected commercial countertop, vanity top, and cut-to-size stone programs supplied to North American hospitality groups, multi-family developers, and distributor networks.",
+  "items": [
+    {
+      "title": "Hospitality Guestroom Vanity Top Program",
+      "location": "Dallas, TX & Atlanta, GA Hotel Portfolios",
+      "summary": "Full guestroom package comprising 3cm Engineered Calacatta Quartz vanity tops with pre-mounted rectangular CUPC porcelain basins, 4\" backsplashes, and matching threshold sills.",
+      "material": "Calacatta Quartz (WR-Q801)",
+      "scope": "Prefab vanity tops, factory-mounted undermount basins, 4\" backsplashes, unit-tagged crates",
+      "quantity": "420 Guestrooms (3 x 40HQ Containers)",
+      "image": "assets/projects/hotel-vanity-program-render.jpg",
+      "alt": "Engineered Calacatta quartz hotel guestroom vanity top installation",
+      "imageType": "render"
+    },
+    {
+      "title": "Multi-Family Residential Development",
+      "location": "Austin, TX & Phoenix, AZ Developments",
+      "summary": "Standardized 22\" depth master bath and guest bath vanity tops in 37\", 49\", and 61\" double-bowl configurations with eased edges and pre-drilled 8\" widespread faucet holes.",
+      "material": "Carrara White Quartz (WR-Q702)",
+      "scope": "Standardized unit SKUs, barcoded individual cartons, palletized jobsite drop-shipment",
+      "quantity": "850 Residential Units (6 x 40HQ Containers)",
+      "image": "assets/projects/multifamily-bath-program-render.jpg",
+      "alt": "Multi-family residential bathroom stone vanity installation",
+      "imageType": "render"
+    },
+    {
+      "title": "Corporate HQ Reception & Executive Conference Suite",
+      "location": "Seattle, WA Commercial Tower",
+      "summary": "Custom 6cm mitered waterfall reception desk surround, executive conference table slabs, and solid Nero Marquina accents fabricated with book-matched veining.",
+      "material": "Nero Marquina Natural Marble & Bianco Carrara",
+      "scope": "Mitered waterfall islands, seamless book-matching, custom steel-framed A-frame crating",
+      "quantity": "Cut-to-size commercial scope (1 x 40HQ Container)",
+      "image": "assets/projects/commercial-reception-counter-render.jpg",
+      "alt": "Commercial reception stone waterfall counter installation",
+      "imageType": "render"
+    }
+  ]
+}

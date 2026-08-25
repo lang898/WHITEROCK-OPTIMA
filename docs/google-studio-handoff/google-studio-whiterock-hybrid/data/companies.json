@@ -1,0 +1,38 @@
+{
+  "companies": [
+    {
+      "id": "vietnam-main",
+      "country": "Vietnam",
+      "role": "Primary Manufacturing & Export Base",
+      "companyName": "WHITEROCK SURFACES VIETNAM CO., LTD.",
+      "localNameLabel": "Vietnamese Name",
+      "localName": "CONG TY TNHH WHITEROCK SURFACES",
+      "taxCode": "3801239934",
+      "address": "National Highway 14, Group 2, Dong Tien 3 Hamlet, Dong Tam Commune, Dong Nai, Vietnam",
+      "contactPerson": "Mr. Luong Vinh Sihn / Export Engineering Team",
+      "tel": "+84 979 922 681",
+      "telHref": "+84979922681",
+      "email": "info@whiterocksurfaces.com",
+      "domain": "https://www.whiterocksurfaces.com",
+      "image": "assets/factory/vietnam-factory-exterior.jpg",
+      "imageAlt": "Entrance to WHITEROCK Surfaces 20,000 m² factory in Vietnam"
+    },
+    {
+      "id": "vietnam-logistics",
+      "country": "Vietnam",
+      "role": "Ho Chi Minh Port Logistics Hub",
+      "companyName": "WHITEROCK EXPORT LOGISTICS HUB (CAT LAI / CAI MEP)",
+      "localNameLabel": "Logistics Desk",
+      "localName": "TRUNG TAM LOGISTICS WHITEROCK VIETNAM",
+      "taxCode": "3801239934-001",
+      "address": "Cat Lai Port Industrial Zone, Ho Chi Minh City, Vietnam",
+      "contactPerson": "Logistics Dispatch Desk",
+      "tel": "+84 979 922 681",
+      "telHref": "+84979922681",
+      "email": "export@whiterocksurfaces.com",
+      "domain": "https://www.whiterocksurfaces.com",
+      "image": "assets/factory/vietnam-factory-exterior.jpg",
+      "imageAlt": "WHITEROCK export logistics staging center"
+    }
+  ]
+}
