@@ -47,7 +47,7 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({
       leadTimeVn: '25 - 35 days',
       leadTimeCn: '25 - 30 days',
       routeVn: 'Dong Nai Plant -> Cat Lai Port (HCMC) -> US West/East Coast',
-      routeCn: 'Yunfu Plant -> Shenzhen / Nansha Port'
+      routeCn: 'Standard China Stone Origin (Subject to 25% Section 301)'
     },
     kitchen: {
       name: 'Cut-to-Size Kitchen Countertops & Islands',
@@ -57,7 +57,7 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({
       leadTimeVn: '30 - 40 days',
       leadTimeCn: '30 - 35 days',
       routeVn: 'Vietnam Base -> Cat Lai Port -> Direct Ocean Vessel',
-      routeCn: 'Yunfu Base -> Export Port'
+      routeCn: 'Standard China Stone Origin (Subject to 25% Section 301)'
     },
     slabs: {
       name: 'Jumbo Engineered Quartz / Marble Slabs',
@@ -67,7 +67,7 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({
       leadTimeVn: '20 - 30 days',
       leadTimeCn: '20 - 25 days',
       routeVn: 'Vietnam Slabs -> Container Ocean Line',
-      routeCn: 'China Direct Slabs'
+      routeCn: 'Standard China Slabs (25% Section 301)'
     },
     furniture: {
       name: 'Stone Furniture (Marble Coffee & Dining Tables)',
@@ -76,203 +76,217 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({
       weightPerCrate: 'approx. 80 - 180 kg/pc',
       leadTimeVn: '35 - 45 days',
       leadTimeCn: '30 - 40 days',
-      routeVn: 'Vietnam Assembly -> Export',
-      routeCn: 'Yunfu Craft Base -> Export'
+      routeVn: 'Vietnam Assembly -> Export Direct',
+      routeCn: 'Standard China Origin (25% Section 301)'
     }
   };
 
   const currentProd = productData[productType];
 
   return (
-    <div className="bg-stone-900 border border-stone-800 rounded-3xl p-6 sm:p-8 space-y-8 shadow-xl">
+    <div className="apple-card p-6 sm:p-10 space-y-8 text-[#1d1d1f]">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone-800 pb-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-black/[0.06] pb-6">
         <div className="space-y-1.5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
-            <Percent className="w-3.5 h-3.5" />
-            <span>Dual-Base Supply Chain & US Section 301 Tariff Optimizer</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200">
+            <Percent className="w-3.5 h-3.5 text-emerald-600" />
+            <span className="tech-badge">VIETNAM DIRECT SUPPLY CHAIN & US SECTION 301 TARIFF CALCULATOR</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
-            Vietnam 0% US Tariff Advantage & Container Savings Calculator
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1d1d1f]">
+            Vietnam 0% US Tariff Advantage & Landed Cost Savings
           </h2>
-          <p className="text-xs sm:text-sm text-stone-300 max-w-2xl">
-            Compare cost structures between our <strong>Vietnam Main Export Base (0% US Tariff)</strong> and <strong>China Strategic Craft Base</strong>.
+          <p className="text-xs sm:text-sm text-[#86868b] max-w-2xl">
+            Compare landed cost importing directly from <strong>WHITEROCK Surfaces Vietnam (0% Section 301 Duty)</strong> vs. traditional China stone tariffs (25% Section 301).
           </p>
         </div>
 
-        <div className="flex items-center gap-2 bg-stone-950 p-2 rounded-2xl border border-stone-800 text-xs">
-          <span className="text-stone-400 pl-2">Destination:</span>
-          <select
-            value={destination}
-            onChange={(e) => setDestination(e.target.value as any)}
-            className="bg-stone-900 text-amber-300 font-semibold px-3 py-1.5 rounded-xl border border-stone-700 outline-none cursor-pointer"
-          >
-            <option value="usa">United States (0% vs 25% Sec 301)</option>
-            <option value="canada">Canada (Standard MFN)</option>
-            <option value="europe">European Union (Form A / REX)</option>
-            <option value="australia">Australia (AANZFTA)</option>
-          </select>
+        <div className="flex items-center gap-2 text-xs font-mono text-emerald-800 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 shrink-0">
+          <ShieldCheck className="w-4 h-4 text-emerald-600" />
+          <span>Form B C/O Verified</span>
         </div>
       </div>
 
-      {/* Calculator Body Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Input Parameters (5 cols) */}
-        <div className="lg:col-span-5 space-y-5 bg-stone-950 p-6 rounded-2xl border border-stone-800">
-          <h3 className="font-bold text-sm text-stone-100 uppercase tracking-wider flex items-center gap-2">
-            <Calculator className="w-4 h-4 text-amber-400" />
-            <span>Project Estimation Inputs</span>
-          </h3>
-
-          {/* Product Category */}
-          <div className="space-y-1.5">
-            <label className="text-xs text-stone-400 font-medium">Product Category:</label>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                onClick={() => setProductType('vanity')}
-                className={`p-2.5 rounded-xl border text-xs text-left transition-all cursor-pointer ${
-                  productType === 'vanity'
-                    ? 'border-amber-400 bg-amber-500/10 text-white font-bold'
-                    : 'border-stone-800 bg-stone-900 text-stone-300'
-                }`}
-              >
-                Bathroom Vanity Tops
-              </button>
-              <button
-                onClick={() => setProductType('kitchen')}
-                className={`p-2.5 rounded-xl border text-xs text-left transition-all cursor-pointer ${
-                  productType === 'kitchen'
-                    ? 'border-amber-400 bg-amber-500/10 text-white font-bold'
-                    : 'border-stone-800 bg-stone-900 text-stone-300'
-                }`}
-              >
-                Kitchen Countertops
-              </button>
-              <button
-                onClick={() => setProductType('slabs')}
-                className={`p-2.5 rounded-xl border text-xs text-left transition-all cursor-pointer ${
-                  productType === 'slabs'
-                    ? 'border-amber-400 bg-amber-500/10 text-white font-bold'
-                    : 'border-stone-800 bg-stone-900 text-stone-300'
-                }`}
-              >
-                Jumbo Slabs
-              </button>
-              <button
-                onClick={() => setProductType('furniture')}
-                className={`p-2.5 rounded-xl border text-xs text-left transition-all cursor-pointer ${
-                  productType === 'furniture'
-                    ? 'border-amber-400 bg-amber-500/10 text-white font-bold'
-                    : 'border-stone-800 bg-stone-900 text-stone-300'
-                }`}
-              >
-                Stone Furniture
-              </button>
-            </div>
-          </div>
-
-          {/* Quantity of 40HQ Containers */}
+      {/* Calculator Body */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* Left Inputs */}
+        <div className="lg:col-span-7 space-y-6">
+          {/* Destination */}
           <div className="space-y-2">
-            <div className="flex justify-between text-xs text-stone-300">
-              <span>Order Volume (40HQ Containers):</span>
-              <span className="font-mono text-amber-400 font-bold">{estimatedContainers} Containers</span>
-            </div>
-            <input
-              type="range"
-              min="1"
-              max="20"
-              step="1"
-              value={estimatedContainers}
-              onChange={(e) => setEstimatedContainers(Number(e.target.value))}
-              className="w-full accent-amber-500 cursor-pointer"
-            />
-            <div className="flex justify-between text-[10px] text-stone-400 font-mono">
-              <span>1 FCL (Trial)</span>
-              <span>5 FCL (Hotel)</span>
-              <span>10 FCL</span>
-              <span>20+ FCL (Annual Program)</span>
-            </div>
-          </div>
-
-          {/* Average FOB Value per Container */}
-          <div className="space-y-1.5">
-            <label className="text-xs text-stone-400 font-medium flex justify-between">
-              <span>Estimated FOB Value / 40HQ ($ USD):</span>
-              <span className="text-amber-400 font-mono font-bold">${orderValuePerContainer.toLocaleString()}</span>
+            <label className="text-xs font-semibold text-[#1d1d1f] block">
+              Destination Market
             </label>
-            <div className="grid grid-cols-3 gap-2">
-              {[28000, 38000, 48000].map((val) => (
+            <div className="flex flex-wrap gap-2">
+              {[
+                { id: 'usa', label: 'United States (25% Section 301 vs 0% Vietnam)' },
+                { id: 'canada', label: 'Canada (Standard MFN)' },
+                { id: 'europe', label: 'Europe (EUR1 / EVFTA Direct)' },
+                { id: 'australia', label: 'Australia (AANZFTA 0%)' }
+              ].map((dest) => (
                 <button
-                  key={val}
-                  onClick={() => setOrderValuePerContainer(val)}
-                  className={`py-1.5 rounded-lg border text-xs font-mono transition-all cursor-pointer ${
-                    orderValuePerContainer === val
-                      ? 'border-amber-400 bg-amber-500/20 text-white font-bold'
-                      : 'border-stone-800 bg-stone-900 text-stone-400'
+                  key={dest.id}
+                  onClick={() => setDestination(dest.id as any)}
+                  className={`px-3.5 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer ${
+                    destination === dest.id
+                      ? 'bg-[#111113] text-white shadow-xs font-semibold'
+                      : 'bg-black/[0.03] text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-black/[0.06]'
                   }`}
                 >
-                  ${(val / 1000).toFixed(0)}k
+                  {dest.label}
                 </button>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Dynamic Calculation Results & Logistics Breakdown (7 cols) */}
-        <div className="lg:col-span-7 space-y-5 flex flex-col justify-between">
-          {/* Main Savings Highlight Card */}
-          <div className="bg-gradient-to-br from-emerald-950/40 via-stone-950 to-stone-950 border-2 border-emerald-500/40 rounded-2xl p-6 space-y-4 shadow-lg">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
-                <TrendingDown className="w-4 h-4" />
-                <span>Estimated Direct Tariff Savings via Vietnam Base</span>
-              </span>
-              <span className="px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-xs font-bold font-mono">
-                0% US DUTY
-              </span>
+          {/* Product Category Selector */}
+          <div className="space-y-2">
+            <label className="text-xs font-semibold text-[#1d1d1f] block">
+              Stone Product Category
+            </label>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {[
+                { id: 'vanity', label: 'Prefab Vanity Tops' },
+                { id: 'kitchen', label: 'Kitchen Countertops' },
+                { id: 'slabs', label: 'Jumbo Slabs' },
+                { id: 'furniture', label: 'Stone Furniture' }
+              ].map((p) => (
+                <button
+                  key={p.id}
+                  onClick={() => setProductType(p.id as any)}
+                  className={`p-3 rounded-2xl text-xs font-medium text-center border transition-all cursor-pointer ${
+                    productType === p.id
+                      ? 'bg-[#111113] text-white border-transparent shadow-xs font-semibold'
+                      : 'bg-white text-[#6e6e73] border-black/[0.08] hover:border-black/20 hover:text-[#1d1d1f]'
+                  }`}
+                >
+                  {p.label}
+                </button>
+              ))}
             </div>
-
-            <div className="flex items-baseline gap-3">
-              <span className="text-4xl sm:text-5xl font-serif font-black text-emerald-400">
-                ${estimatedSavings.toLocaleString()}
-              </span>
-              <span className="text-xs text-stone-400">
-                Saved on {estimatedContainers} × 40HQ (${totalOrderValue.toLocaleString()} FOB total)
-              </span>
-            </div>
-
-            <p className="text-xs text-stone-300 leading-relaxed border-t border-emerald-500/20 pt-3">
-              By manufacturing at <strong>WHITEROCK's Vietnam 20,000 m² facility</strong> in Dong Nai, US importers avoid the <strong>25% Section 301 punitive tariff</strong>, generating direct bottom-line margin expansion with certified Certificate of Origin (C/O).
-            </p>
           </div>
 
-          {/* Container Loadability & Logistics Card */}
-          <div className="bg-stone-950 rounded-2xl p-5 border border-stone-800 space-y-3 text-xs">
-            <div className="font-bold text-stone-100 flex items-center justify-between border-b border-stone-800 pb-2">
-              <span className="flex items-center gap-2">
-                <Ship className="w-4 h-4 text-sky-400" />
-                <span>40HQ Logistics & Packaging Specs for {currentProd.name}</span>
-              </span>
-              <span className="text-sky-400 font-mono">{currentProd.pcsPerContainer}</span>
+          {/* Sliders */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-[#fbfbfd] p-5 rounded-2xl border border-black/[0.06]">
+            <div className="space-y-2">
+              <div className="flex justify-between text-xs">
+                <span className="text-[#86868b] font-medium">Containers (40HQ):</span>
+                <strong className="text-[#1d1d1f] font-mono text-sm">{estimatedContainers} FCL</strong>
+              </div>
+              <input
+                type="range"
+                min="1"
+                max="20"
+                step="1"
+                value={estimatedContainers}
+                onChange={(e) => setEstimatedContainers(Number(e.target.value))}
+                className="w-full accent-[#111113] cursor-pointer"
+              />
+              <div className="flex justify-between text-[10px] text-[#86868b]">
+                <span>1 Container</span>
+                <span>20 Containers</span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px] text-stone-300">
+            <div className="space-y-2">
+              <div className="flex justify-between text-xs">
+                <span className="text-[#86868b] font-medium">FOB Value / Container:</span>
+                <strong className="text-[#1d1d1f] font-mono text-sm">${orderValuePerContainer.toLocaleString()} USD</strong>
+              </div>
+              <input
+                type="range"
+                min="20000"
+                max="80000"
+                step="1000"
+                value={orderValuePerContainer}
+                onChange={(e) => setOrderValuePerContainer(Number(e.target.value))}
+                className="w-full accent-[#111113] cursor-pointer"
+              />
+              <div className="flex justify-between text-[10px] text-[#86868b]">
+                <span>$20k</span>
+                <span>$80k</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Container Logistics Data Box */}
+          <div className="p-5 rounded-2xl bg-white border border-black/[0.06] space-y-2 text-xs">
+            <div className="tech-badge text-[#86868b]">
+              CONTAINER PAYLOAD MATRIX • 40HQ SPECIFICATION
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
               <div>
-                <span className="text-stone-500 block">Export Packaging:</span>
-                <strong>{currentProd.typicalCrates}</strong>
+                <span className="text-[#86868b] text-[11px] block">Capacity / 40HQ:</span>
+                <strong className="text-[#1d1d1f]">{currentProd.pcsPerContainer}</strong>
               </div>
               <div>
-                <span className="text-stone-500 block">Total Gross Weight:</span>
-                <strong>{currentProd.weightPerCrate} (Max 26.5 Tons)</strong>
+                <span className="text-[#86868b] text-[11px] block">Crating:</span>
+                <strong className="text-[#1d1d1f]">{currentProd.typicalCrates}</strong>
               </div>
               <div>
-                <span className="text-stone-500 block">Vietnam Production Lead Time:</span>
-                <span className="text-emerald-400 font-semibold">{currentProd.leadTimeVn}</span>
+                <span className="text-[#86868b] text-[11px] block">Lead Time:</span>
+                <strong className="text-emerald-700">{currentProd.leadTimeVn}</strong>
               </div>
-              <div>
-                <span className="text-stone-500 block">Loading Port:</span>
-                <span>Cat Lai Port, Ho Chi Minh City</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Financial Comparison Card (Apple Keynote Dark Card) */}
+        <div className="lg:col-span-5 flex flex-col justify-between apple-card-dark rounded-3xl p-6 sm:p-8 text-white space-y-6">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <span className="tech-badge text-amber-300">
+                LANDED DUTY ANALYSIS
+              </span>
+              <span className="text-xs font-mono text-[#a1a1a6]">
+                TOTAL FOB: ${totalOrderValue.toLocaleString()}
+              </span>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div>
+                  <span className="text-xs text-[#a1a1a6] block">China Origin Import Duty:</span>
+                  <span className="text-sm font-bold text-rose-400">25% US Section 301</span>
+                </div>
+                <div className="text-right font-mono font-bold text-base text-rose-300">
+                  +${chinaTariffCost.toLocaleString()}
+                </div>
               </div>
+
+              <div className="flex items-center justify-between p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
+                <div>
+                  <span className="text-xs text-emerald-300 block">Vietnam Origin Import Duty:</span>
+                  <span className="text-sm font-bold text-emerald-400">0% Form B C/O Verified</span>
+                </div>
+                <div className="text-right font-mono font-bold text-base text-emerald-300">
+                  $0.00
+                </div>
+              </div>
+            </div>
+
+            {/* Total Tariff Savings Headline */}
+            <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/80 to-stone-900 border border-emerald-500/40 text-center space-y-1">
+              <span className="tech-badge text-emerald-400 block">
+                DIRECT TARIFF SAVINGS (0% VS 25%)
+              </span>
+              <div className="text-3xl sm:text-4xl font-bold tracking-tight text-emerald-300 font-mono">
+                ${estimatedSavings.toLocaleString()} USD
+              </div>
+              <p className="text-[11px] text-[#a1a1a6]">
+                Pure cash savings retained by sourcing direct from WHITEROCK Vietnam.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-3 pt-2">
+            <button
+              onClick={onStartRfq}
+              className="w-full py-4 rounded-full bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] font-semibold text-xs transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+            >
+              <span>Get 0% Tariff Container Quotation</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+            <div className="text-[10px] text-center text-[#86868b]">
+              Includes full container load optimization & Form B documentation.
             </div>
           </div>
         </div>

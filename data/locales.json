@@ -2,34 +2,19 @@
   "locales": [
     {
       "id": "en",
-      "htmlLang": "en",
+      "htmlLang": "en-US",
       "hreflang": "en",
       "outputDir": "",
       "urlPath": "",
       "domain": "https://www.whiterockstone.com",
-      "label": "English",
+      "label": "English (US)",
       "switchLabel": "EN",
-      "brand": "WHITEROCK",
+      "brand": "WHITEROCK SURFACES",
       "brandMark": "WR",
-      "tagline": "Marble & Granite",
-      "legalName": "WHITEROCK COMPANY LIMITED",
+      "tagline": "Direct Vietnam Manufacturer • 0% US Tariff",
+      "legalName": "WHITEROCK COMPANY LIMITED (VIETNAM)",
       "contactId": "vietnam",
       "default": true
-    },
-    {
-      "id": "zh-Hans",
-      "htmlLang": "zh-Hans",
-      "hreflang": "zh-Hans",
-      "outputDir": "zh",
-      "urlPath": "",
-      "domain": "https://www.optimastone.com",
-      "label": "简体中文",
-      "switchLabel": "中文",
-      "brand": "OPTIMA STONE",
-      "brandMark": "OS",
-      "tagline": "天然石材与人造石",
-      "legalName": "云浮欧普石材有限公司",
-      "contactId": "china"
     },
     {
       "id": "vi",
@@ -40,9 +25,9 @@
       "domain": "https://www.whiterockstone.com",
       "label": "Tiếng Việt",
       "switchLabel": "VI",
-      "brand": "WHITEROCK",
+      "brand": "WHITEROCK SURFACES",
       "brandMark": "WR",
-      "tagline": "Đá cẩm thạch & đá granite",
+      "tagline": "Nhà máy sản xuất đá cẩm thạch & thạch anh xuất khẩu",
       "legalName": "CONG TY TNHH WHITEROCK",
       "contactId": "vietnam"
     }

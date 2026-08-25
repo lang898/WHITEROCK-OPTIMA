@@ -1,38 +1,38 @@
 {
   "companies": [
     {
-      "id": "vietnam",
+      "id": "vietnam-main",
       "country": "Vietnam",
-      "role": "Primary manufacturing base",
-      "companyName": "WHITEROCK COMPANY LIMITED",
+      "role": "Primary Manufacturing & Export Base",
+      "companyName": "WHITEROCK SURFACES VIETNAM CO., LTD.",
       "localNameLabel": "Vietnamese Name",
-      "localName": "CONG TY TNHH WHITEROCK",
+      "localName": "CONG TY TNHH WHITEROCK SURFACES",
       "taxCode": "3801239934",
-      "address": "NATIONAL HIGHWAY 14, GROUP 2, DONG TIEN 3 HAMLET, DONG TAM COMMUNE, DONG NAI CITY, VIET NAM",
-      "contactPerson": "MR. LUONG VINH SIHN",
-      "tel": "0084 979 922 681",
+      "address": "National Highway 14, Group 2, Dong Tien 3 Hamlet, Dong Tam Commune, Dong Nai, Vietnam",
+      "contactPerson": "Mr. Luong Vinh Sihn / Export Engineering Team",
+      "tel": "+84 979 922 681",
       "telHref": "+84979922681",
-      "email": "INFO@WHITEROCKSTONE.COM",
-      "domain": "https://www.whiterockstone.com",
+      "email": "info@whiterocksurfaces.com",
+      "domain": "https://www.whiterocksurfaces.com",
       "image": "assets/factory/vietnam-factory-exterior.jpg",
-      "imageAlt": "Entrance to the WHITEROCK factory in Vietnam"
+      "imageAlt": "Entrance to WHITEROCK Surfaces 20,000 m² factory in Vietnam"
     },
     {
-      "id": "china",
-      "country": "China",
-      "role": "Supporting manufacturing base",
-      "companyName": "OPTIMA STONE LIMITED / YUNFU OPTIMA STONE COMPANY LIMITED",
-      "localNameLabel": "Chinese Name",
-      "localName": "云浮欧普石材有限公司",
-      "taxCode": "",
-      "address": "",
-      "contactPerson": "Mr. Guo / 郭先生",
-      "tel": "0086 138 2560 3806",
-      "telHref": "+8613825603806",
-      "email": "info@optimastone.com",
-      "domain": "https://www.optimastone.com",
-      "image": "assets/factory/china-factory-exterior.jpg",
-      "imageAlt": "Exterior of the OPTIMA STONE factory in Yunfu, China"
+      "id": "vietnam-logistics",
+      "country": "Vietnam",
+      "role": "Ho Chi Minh Port Logistics Hub",
+      "companyName": "WHITEROCK EXPORT LOGISTICS HUB (CAT LAI / CAI MEP)",
+      "localNameLabel": "Logistics Desk",
+      "localName": "TRUNG TAM LOGISTICS WHITEROCK VIETNAM",
+      "taxCode": "3801239934-001",
+      "address": "Cat Lai Port Industrial Zone, Ho Chi Minh City, Vietnam",
+      "contactPerson": "Logistics Dispatch Desk",
+      "tel": "+84 979 922 681",
+      "telHref": "+84979922681",
+      "email": "export@whiterocksurfaces.com",
+      "domain": "https://www.whiterocksurfaces.com",
+      "image": "assets/factory/vietnam-factory-exterior.jpg",
+      "imageAlt": "WHITEROCK export logistics staging center"
     }
   ]
 }

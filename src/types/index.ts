@@ -106,15 +106,18 @@ export interface ApplicationItem {
 
 export interface EquipmentItem {
   name: string;
-  function: string;
-  brand: string;
-  quantity: string;
-  keySpec: string;
+  function?: string;
+  purpose?: string;
+  brand?: string;
+  quantity?: string;
+  keySpec?: string;
+  accuracy?: string;
+  category?: string;
   drawing?: string;
-  media: string;
+  media?: string;
   localFile?: string;
-  location: string;
-  imageType: string;
+  location?: string;
+  imageType?: string;
   alt?: string;
   caption?: string;
 }
@@ -168,11 +171,139 @@ export interface RfqCartItem {
   title: string;
   type: 'product' | 'color' | 'sample';
   sku?: string;
+  productSku?: string;
   material?: string;
+  category?: string;
   selectedColor?: string;
   selectedFinish?: string;
   selectedEdge?: string;
   selectedThickness?: string;
   quantity: number;
   notes?: string;
+  specSummary?: string;
 }
+
+export interface WebsiteInquiry {
+  id: string;
+  inquiryNumber: string;
+  type: 'RFQ Quote' | 'Sample Kit' | 'Trade Program' | 'Contact Form' | 'Custom Takeoff';
+  clientName: string;
+  companyName: string;
+  email: string;
+  phone: string;
+  countryState: string;
+  projectType: string;
+  itemsRequested?: string[];
+  message: string;
+  submittedAt: string;
+  status: 'New' | 'Contacted' | 'Quoted' | 'Sample Shipped' | 'Archived';
+  priority: 'High' | 'Medium' | 'Standard';
+  internalNotes?: string;
+  estimatedUnits?: number;
+}
+
+export interface SiteCmsSettings {
+  brandName: string;
+  tagline: string;
+  companyEmail: string;
+  directPhone: string;
+  whatsApp: string;
+  wechatId: string;
+  vietnamAddress: string;
+  tariffNotice: string;
+  exportCapacity: string;
+  enableSampleKitCta: boolean;
+  enableTariffCalculator: boolean;
+}
+
+export interface AdminRfqOrder {
+  id: string;
+  rfqNumber: string;
+  projectName: string;
+  clientCompany: string;
+  clientName: string;
+  clientEmail: string;
+  clientPhone: string;
+  destinationState: string;
+  projectType: 'Multi-Family' | 'Hospitality Hotel' | 'Student Housing' | 'Commercial' | 'Retail / Wholesaler';
+  material: string;
+  color: string;
+  items: {
+    name: string;
+    size: string;
+    quantity: number;
+    unitPrice: number;
+    sinkIncluded: boolean;
+    backsplashIncluded: boolean;
+  }[];
+  totalUnits: number;
+  estimatedTotalUsd: number;
+  estimatedContainers: number;
+  section301SavingsUsd: number;
+  status: 'New Inquiry' | 'CAD Review' | 'Quotation Sent' | 'Deposit Paid' | 'In Production' | 'Crated & Staged' | 'Shipped / At Sea';
+  cOStatus: 'Verified (Form B 0% Tariff)' | 'Pending Verification' | 'Direct Import';
+  leadDate: string;
+  targetShipDate: string;
+  assignedPlant: string;
+}
+
+export interface ContainerShipment {
+  containerNumber: string;
+  bookingRef: string;
+  vesselName: string;
+  carrier: string;
+  originPort: string;
+  destinationPort: string;
+  departureDate: string;
+  etaDate: string;
+  status: 'Loading at Factory' | 'Customs Cleared Cat Lai' | 'At Sea' | 'Approaching US Port' | 'Discharged / Delivered';
+  totalCrates: number;
+  payloadKg: number;
+  payloadLbs: number;
+  projectName: string;
+  client: string;
+  ispm15Certified: boolean;
+}
+
+export interface SampleDispatchOrder {
+  id: string;
+  trackingNumber: string;
+  carrier: 'FedEx International Priority' | 'DHL Express' | 'UPS Worldwide';
+  firmName: string;
+  contactPerson: string;
+  address: string;
+  cityStateZip: string;
+  materialsRequested: string[];
+  requestDate: string;
+  status: 'Preparing Swatches' | 'Dispatched' | 'Delivered' | 'Project Follow-Up';
+}
+
+export interface MachinerySchedule {
+  id: string;
+  name: string;
+  code: string;
+  plant: string;
+  category: 'Bridge Saw' | 'Edge Polisher' | 'CNC Basin Profiler' | 'Epoxy Bonding Rig' | 'Overhead Crane';
+  status: 'Operational (Running)' | 'Scheduled Maintenance' | 'Idle / Setup';
+  currentJob: string;
+  dailyYieldM2: number;
+  operator: string;
+  nextServiceDate: string;
+}
+
+export interface VanityConfig {
+  sizeKey: string;
+  label: string;
+  lengthInch: number;
+  widthInch: number;
+  bowlCount: 'Single' | 'Double';
+  sinkType: 'Undermount Rectangular UPC' | 'Undermount Oval UPC' | 'Top Mount Vessel' | 'No Sink (Cutout Only)';
+  color: string;
+  material: 'Engineered Quartz' | 'Carrara White Marble' | 'Calacatta Quartz' | 'Sintered Stone' | 'Pure Black Granite';
+  thickness: '2cm (3/4")' | '3cm (1-1/4")' | '4cm Mitered Laminated';
+  edge: 'Eased Flat' | 'Bevel 1/4"' | 'Full Bullnose' | 'Ogee Edge' | 'Mitered 1.5"';
+  backsplash: boolean;
+  sidesplash: boolean;
+  quantity: number;
+}
+

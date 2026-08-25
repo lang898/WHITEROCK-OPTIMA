@@ -8,17 +8,38 @@ import {
   CheckCircle2,
   Clock,
   HelpCircle,
-  ChevronDown
+  ChevronDown,
+  ShieldCheck,
+  Globe2,
+  FileSpreadsheet,
+  Box,
+  ArrowRight,
+  MessageSquare,
+  Sparkles,
+  Share2
 } from 'lucide-react';
+import {
+  WhatsAppIcon,
+  WeChatIcon,
+  LinkedInIcon,
+  InstagramIcon
+} from '../components/SocialIcons';
 import { siteConfig } from '../data';
 import { FaqSectionWithSchema } from '../components/FaqSectionWithSchema';
 import type { LocaleConfig } from '../types';
+import type { ShareContent } from '../components/SocialShareModal';
 
 interface ContactViewProps {
   currentLocale: LocaleConfig;
+  onOpenWeChat?: () => void;
+  onOpenShareModal?: (content: ShareContent) => void;
 }
 
-export const ContactView: React.FC<ContactViewProps> = ({ currentLocale }) => {
+export const ContactView: React.FC<ContactViewProps> = ({
+  currentLocale,
+  onOpenWeChat,
+  onOpenShareModal
+}) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,237 +61,304 @@ export const ContactView: React.FC<ContactViewProps> = ({ currentLocale }) => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
-      {/* Header */}
-      <div className="space-y-4 max-w-3xl">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold">
-          <Mail className="w-3.5 h-3.5" />
-          <span>Direct Factory Engineering Desk</span>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20">
+      {/* Header Banner (Unified Apple Display + Keynote Style) */}
+      <div className="space-y-4 max-w-4xl">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+          <Mail className="w-3.5 h-3.5 text-amber-600" />
+          <span className="tech-badge">DIRECT FACTORY ENGINEERING & EXPORT DESK</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight">
-          Request Quotation, Sample Box & Technical Consultation
+        <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.035em] text-[#1d1d1f]">
+          Request Quotation & Engineering Takeoff.
         </h1>
-        <p className="text-sm sm:text-base text-stone-300 leading-relaxed">
-          Contact our Vietnam manufacturing team for custom BOQ itemizations, sample dispatch, drawing CAD reviews, and container shipment planning.
+        <p className="text-base sm:text-xl text-[#6e6e73] leading-relaxed max-w-3xl font-normal">
+          Connect directly with our Vietnam manufacturing and engineering facility in Dong Nai for custom architectural takeoffs, CAD reviews, 40HQ container optimization, and sample dispatches.
         </p>
+
+        {/* Industrial Specification Badges */}
+        <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+            <Clock className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="tech-badge">24-Hour CAD Takeoff Response</span>
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+            <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+            <span className="tech-badge">Direct FOB Vietnam Port Pricing</span>
+          </span>
+        </div>
       </div>
 
       {/* Main Grid: Contact Info + Form */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         {/* Left Side: Contact Cards */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Vietnam Base Card */}
-          <div className="bg-stone-900 border border-stone-800 rounded-2xl p-6 space-y-4 shadow-sm">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-              <h3 className="font-bold text-base text-white">
-                Vietnam Primary Manufacturing Base
-              </h3>
+          {/* Vietnam Fabrication Facility Card */}
+          <div className="apple-card p-6 sm:p-8 space-y-6">
+            <div className="flex items-center justify-between pb-4 border-b border-black/[0.06]">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <h3 className="font-bold text-base text-[#1d1d1f]">
+                  Vietnam Primary Manufacturing Plant
+                </h3>
+              </div>
+              <span className="tech-badge text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                0% US Tariff
+              </span>
             </div>
 
-            <div className="space-y-3 text-xs text-stone-300">
+            <div className="space-y-4 text-xs text-[#6e6e73]">
               <div className="flex items-start gap-3">
-                <Building className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <Building className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block">WHITEROCK COMPANY LIMITED</strong>
-                  <span className="text-stone-400">Cong Ty TNHH WHITEROCK</span>
+                  <strong className="text-[#1d1d1f] text-sm block font-semibold">WHITEROCK SURFACES VIETNAM CO., LTD.</strong>
+                  <span className="text-[#86868b]">Cong Ty TNHH WHITEROCK Surfaces</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <span className="text-stone-300 leading-relaxed">
+                <MapPin className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                <span className="text-[#1d1d1f] leading-relaxed">
                   {siteConfig.address}
                 </span>
               </div>
 
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href={`mailto:${siteConfig.email}`} className="text-stone-200 hover:text-amber-400">
+                <Mail className="w-4 h-4 text-amber-700 shrink-0" />
+                <a href={`mailto:${siteConfig.email}`} className="text-[#1d1d1f] font-medium hover:text-amber-800 transition-colors">
                   {siteConfig.email}
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href={`tel:${siteConfig.telHref}`} className="text-stone-200 hover:text-amber-400">
+                <Phone className="w-4 h-4 text-amber-700 shrink-0" />
+                <a href={`tel:${siteConfig.telHref}`} className="text-[#1d1d1f] font-medium hover:text-amber-800 transition-colors">
                   {siteConfig.tel} (Phone & WhatsApp)
                 </a>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Clock className="w-4 h-4 text-amber-400 shrink-0" />
-                <span className="text-stone-400">Mon - Sat: 8:00 AM - 6:00 PM (GMT+7)</span>
+              <div className="flex items-center gap-3 pt-3 border-t border-black/[0.06]">
+                <Clock className="w-4 h-4 text-[#86868b] shrink-0" />
+                <span className="text-[#86868b]">Mon - Sat: 8:00 AM - 6:00 PM (GMT+7)</span>
               </div>
             </div>
           </div>
 
-          {/* China Base Card */}
-          <div className="bg-stone-900 border border-stone-800 rounded-2xl p-6 space-y-4 shadow-sm">
+          {/* North American Project Desk Card */}
+          <div className="apple-card p-6 sm:p-8 space-y-4 bg-gradient-to-br from-white to-[#fbfbfd]">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-stone-500"></span>
-              <h3 className="font-bold text-base text-white">
-                China Manufacturing & Sourcing Support
-              </h3>
+              <Globe2 className="w-4 h-4 text-blue-600" />
+              <h4 className="font-bold text-sm text-[#1d1d1f]">North American Account Support</h4>
             </div>
+            <p className="text-xs text-[#86868b] leading-relaxed">
+              Assisting US and Canadian general contractors, multi-family developers, and distributor buyers with CAD takeoffs, container load planning, and Form B Certificate of Origin compliance.
+            </p>
+            <div className="pt-2 text-xs font-mono text-[#86868b] flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+              EST & PST Timezone Account Coordinators
+            </div>
+          </div>
 
-            <div className="space-y-3 text-xs text-stone-300">
-              <div className="flex items-start gap-3">
-                <Building className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white block">OPTIMA STONE (Yunfu, China)</strong>
-                  <span className="text-stone-400">云浮欧普石材有限公司</span>
+          {/* Instant Social Channels & Live Chat Desk */}
+          <div className="apple-card p-6 sm:p-8 space-y-4 bg-gradient-to-br from-white to-amber-50/20 border-amber-200/50">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-amber-600" />
+                <h4 className="font-bold text-sm text-[#1d1d1f]">Instant Social & Chat Desks</h4>
+              </div>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold">
+                Online
+              </span>
+            </div>
+            <p className="text-xs text-[#86868b] leading-relaxed">
+              For urgent drawing verification, live factory video audits, or quick sample requests, connect directly via our prioritized channels:
+            </p>
+
+            <div className="space-y-2 pt-1">
+              <a
+                href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Hello WHITEROCK Vietnam, I have an urgent inquiry regarding commercial countertops.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3 rounded-2xl bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] text-xs font-semibold transition-colors group cursor-pointer"
+              >
+                <div className="flex items-center gap-2.5">
+                  <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                  <span>WhatsApp Direct ({siteConfig.whatsapp})</span>
                 </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
-                <span className="text-stone-400">
-                  Yunfu Stone Capital Industrial Park, Guangdong Province, China
+                <span className="text-[10px] bg-white px-2 py-0.5 rounded-full text-[#128C7E] shadow-2xs">
+                  &lt;15m reply
                 </span>
-              </div>
+              </a>
+
+              {onOpenWeChat && (
+                <button
+                  type="button"
+                  onClick={onOpenWeChat}
+                  className="w-full flex items-center justify-between p-3 rounded-2xl bg-[#07c160]/10 hover:bg-[#07c160]/20 text-[#07c160] text-xs font-semibold transition-colors group cursor-pointer"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <WeChatIcon className="w-4 h-4 text-[#07c160]" />
+                    <span>WeChat 微信官方直连 ({(siteConfig as any).wechat || 'WHITEROCK_VIETNAM'})</span>
+                  </div>
+                  <span className="text-[10px] bg-white px-2 py-0.5 rounded-full text-[#07c160] shadow-2xs">
+                    扫码直连
+                  </span>
+                </button>
+              )}
+
+              <a
+                href={siteConfig.social.linkedin || 'https://linkedin.com'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3 rounded-2xl bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 text-[#0A66C2] text-xs font-semibold transition-colors group cursor-pointer"
+              >
+                <div className="flex items-center gap-2.5">
+                  <LinkedInIcon className="w-4 h-4 text-[#0A66C2]" />
+                  <span>LinkedIn B2B Company Desk</span>
+                </div>
+                <span className="text-[10px] bg-white px-2 py-0.5 rounded-full text-[#0A66C2] shadow-2xs">
+                  Corporate
+                </span>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Right Side: Interactive Inquiry Form */}
-        <div className="lg:col-span-3 bg-stone-900 border border-stone-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-          {isSubmitted ? (
-            <div className="py-12 text-center space-y-4">
-              <div className="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto border border-emerald-500/20">
-                <CheckCircle2 className="w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-serif font-bold text-white">
-                Inquiry Received by Factory Team
-              </h3>
-              <p className="text-sm text-stone-300 max-w-md mx-auto leading-relaxed">
-                Thank you for contacting WHITEROCK. Our engineering department is reviewing your specifications and will respond with factory pricing and lead time within 24 hours.
-              </p>
-              <button
-                onClick={() => {
-                  setIsSubmitted(false);
-                  setFormData({ name: '', email: '', phone: '', company: '', country: '', message: '' });
-                }}
-                className="mt-4 px-6 py-2.5 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold rounded-xl text-xs transition-all"
-              >
-                Send Another Message
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="border-b border-stone-800 pb-3">
-                <h3 className="font-bold text-lg text-white font-serif">
-                  Direct Factory Contact Form
-                </h3>
-                <p className="text-xs text-stone-400 mt-0.5">
-                  Fields marked with * are required for export quote preparation.
+        {/* Right Side: Interactive RFQ / Message Form */}
+        <div className="lg:col-span-3">
+          <div className="apple-card p-6 sm:p-10 space-y-6">
+            {isSubmitted ? (
+              <div className="py-16 text-center space-y-4">
+                <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#1d1d1f]">Inquiry Received</h3>
+                <p className="text-xs sm:text-sm text-[#86868b] max-w-md mx-auto leading-relaxed">
+                  Thank you. Our Vietnam engineering team and international export desk will review your architectural project requirements and respond with a preliminary FOB quotation within 24 hours.
                 </p>
+                <button
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setFormData({ name: '', email: '', phone: '', company: '', country: '', message: '' });
+                  }}
+                  className="mt-4 px-6 py-2.5 rounded-full bg-[#111113] text-white text-xs font-medium hover:bg-black cursor-pointer"
+                >
+                  Send Another Message
+                </button>
               </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="space-y-1 pb-2 border-b border-black/[0.06]">
+                  <div className="tech-badge text-[#86868b]">DIRECT QUOTATION FORM</div>
+                  <h3 className="font-bold text-xl text-[#1d1d1f]">
+                    Send Project Specifications or Drawings
+                  </h3>
+                </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-stone-300 mb-1">
-                    Contact Name *
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-[#1d1d1f]">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g., Marcus Vance"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-[#1d1d1f]">
+                      Work Email *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="m.vance@company.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-[#1d1d1f]">
+                      Company / Organization
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g., Apex Development Group"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-[#1d1d1f]">
+                      Phone / WhatsApp
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="+1 (555) 000-0000"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-[#1d1d1f]">
+                    Destination Country / Port
                   </label>
                   <input
+                    type="text"
+                    placeholder="e.g., Long Beach, CA (USA) / Vancouver (Canada)"
+                    value={formData.country}
+                    onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                    className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white transition-all"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-[#1d1d1f]">
+                    Project Details, Quantities & Scope *
+                  </label>
+                  <textarea
                     required
-                    type="text"
-                    placeholder="e.g. David Harrison"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-stone-950 border border-stone-700 rounded-xl px-3 py-2.5 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
+                    rows={4}
+                    placeholder="Describe your requested vanity sizes (e.g., 22x37 single bowl, 22x61 double bowl), quartz color, edge profile, and estimated number of units or containers..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-2xl p-4 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white transition-all leading-relaxed"
                   />
                 </div>
 
-                <div>
-                  <label className="block text-xs font-semibold text-stone-300 mb-1">
-                    Business Email *
-                  </label>
-                  <input
-                    required
-                    type="email"
-                    placeholder="e.g. david@contracting.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-stone-950 border border-stone-700 rounded-xl px-3 py-2.5 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-stone-300 mb-1">
-                    Phone / WhatsApp
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="e.g. +1 555 123 4567"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-stone-950 border border-stone-700 rounded-xl px-3 py-2.5 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-stone-300 mb-1">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="e.g. Harrison Stone Imports"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full bg-stone-950 border border-stone-700 rounded-xl px-3 py-2.5 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-stone-300 mb-1">
-                  Destination Country / Port of Discharge
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. United States (Long Beach Port) / Canada / Australia"
-                  value={formData.country}
-                  onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                  className="w-full bg-stone-950 border border-stone-700 rounded-xl px-3 py-2.5 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-stone-300 mb-1">
-                  Project Details, Stone Colors & Quantity *
-                </label>
-                <textarea
-                  required
-                  rows={4}
-                  placeholder="Describe your requirements (e.g. 200 vanity tops in Calacatta Gold 31x22in, eased edge, undermount sink, sample box request)..."
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-stone-950 border border-stone-700 rounded-xl px-3 py-2.5 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
-                />
-              </div>
-
-              <div className="pt-2">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 bg-amber-600 hover:bg-amber-500 disabled:opacity-50 text-stone-950 font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition-all shadow-md active:scale-95 cursor-pointer"
+                  className="w-full py-4 rounded-full bg-[#111113] hover:bg-black text-white font-medium text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs disabled:opacity-50"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>{isSubmitting ? 'Sending to Vietnam Engineering Desk...' : 'Send Message to Factory'}</span>
+                  <Send className="w-3.5 h-3.5" />
+                  <span>{isSubmitting ? 'Transmitting Request...' : 'Submit RFQ to Vietnam Factory'}</span>
                 </button>
-              </div>
-            </form>
-          )}
+              </form>
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Frequently Asked Questions with JSON-LD Schema Markup */}
-      <div className="pt-6 border-t border-stone-800">
+      {/* Technical FAQ Section with Schema */}
+      <div className="pt-8 border-t border-black/[0.06]">
         <FaqSectionWithSchema
           currentLocale={currentLocale}
-          title="Direct Factory FAQ & B2B Stone Procurement Guide"
-          subtitle="Clear answers on quotations, Vietnam 0% US tariffs, lead times, 4x4 sample chips, undermount sink assembly, and ocean freight logistics."
+          title="Direct Export & Manufacturing FAQ"
+          subtitle="Direct answers regarding lead times, payment terms, container loading at Cat Lai Port, and Form B tariff certification."
           showSchemaInspector={true}
         />
       </div>

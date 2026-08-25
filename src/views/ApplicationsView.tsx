@@ -4,7 +4,12 @@ import {
   ArrowRight,
   Filter,
   Layers,
-  ChevronRight
+  ChevronRight,
+  Building,
+  CheckCircle2,
+  Eye,
+  SlidersHorizontal,
+  Compass
 } from 'lucide-react';
 import { applications, colors } from '../data';
 import type { ApplicationItem, ColorItem, LocaleConfig } from '../types';
@@ -28,90 +33,110 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
-      {/* Header */}
-      <div className="space-y-4 max-w-3xl">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Application Inspiration & Project Studies</span>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-16">
+      {/* Header Banner (Unified Apple Display + Keynote Style) */}
+      <div className="space-y-4 max-w-4xl">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+          <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+          <span className="tech-badge">PROJECT ARCHITECTURE & COMMERCIAL CASE STUDIES</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight">
-          Stone In Space: Commercial & Residential Applications
+        <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.035em] text-[#1d1d1f]">
+          Stone in Space: Architectural Case Studies.
         </h1>
-        <p className="text-sm sm:text-base text-stone-300 leading-relaxed">
-          Explore illustrative and installed scenes demonstrating stone surface color pairings, waterfall island details, backsplashes, and hospitality bathroom vanity programs.
+        <p className="text-base sm:text-xl text-[#6e6e73] leading-relaxed max-w-3xl font-normal">
+          Explore built environments showcasing high-volume multi-family vanity programs, bookmatched waterfall kitchen islands, and custom hospitality public spaces fabricated in our Vietnam plant.
         </p>
+
+        {/* Industrial Highlights */}
+        <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="tech-badge">Unit-Packaged Multi-Family Crating</span>
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+            <Building className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+            <span className="tech-badge">Hospitality Brand Approvals</span>
+          </span>
+        </div>
       </div>
 
-      {/* Filter Tabs */}
-      <div className="flex flex-wrap gap-1.5 border-b border-stone-800 pb-4">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setSelectedCat(cat)}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
-              selectedCat === cat
-                ? 'bg-amber-600 text-stone-950 shadow-sm'
-                : 'bg-stone-900 hover:bg-stone-800 text-stone-300 border border-stone-800'
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
+      {/* Filter Segment Controls */}
+      <div className="apple-card p-4 sm:p-6 flex flex-col md:flex-row gap-4 justify-between items-center">
+        <div className="flex flex-wrap gap-1.5 w-full md:w-auto">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCat(cat)}
+              className={`px-4 py-2 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                selectedCat === cat
+                  ? 'bg-[#111113] text-white shadow-xs font-semibold'
+                  : 'bg-black/[0.03] text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-black/[0.06]'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+        <div className="text-xs text-[#86868b] font-mono">
+          Showing {filteredApps.length} Case Studies
+        </div>
       </div>
 
-      {/* Applications Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Applications Grid (Unified Apple Cards) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredApps.map((item, idx) => {
           const matchedColor = colors.find((c) => c.slug === item.featuredColorSlug);
 
           return (
             <div
               key={idx}
-              className="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden group flex flex-col hover:border-amber-500/40 transition-all shadow-sm"
+              className="apple-card overflow-hidden flex flex-col justify-between group"
             >
-              <div className="relative aspect-4/3 overflow-hidden bg-stone-950">
+              <div className="relative aspect-4/3 overflow-hidden bg-stone-100">
                 <img
                   src={item.image}
                   alt={item.imageAlt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   onError={(e) => {
                     const target = e.currentTarget;
-                    target.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="375" viewBox="0 0 500 375"><rect width="500" height="375" fill="%23292524"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%23f59e0b" font-family="sans-serif" font-size="18">${item.title}</text></svg>`;
+                    target.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="375" viewBox="0 0 500 375"><rect width="500" height="375" fill="%23f5f5f7"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%23d97706" font-family="sans-serif" font-weight="bold" font-size="18">${item.title}</text></svg>`;
                   }}
                 />
-                <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded bg-stone-950/80 backdrop-blur-sm text-[10px] font-bold text-amber-400 border border-stone-700 uppercase">
-                  {item.category}
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-bold text-[#1d1d1f] shadow-xs">
+                  {item.category.toUpperCase()}
                 </div>
                 {item.caption && (
-                  <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-stone-950/80 text-[10px] text-stone-400">
+                  <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/70 text-[10px] text-white backdrop-blur-md">
                     {item.caption}
                   </div>
                 )}
               </div>
 
-              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3 className="font-bold text-base text-white group-hover:text-amber-400 transition-colors">
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+                <div className="space-y-2">
+                  <span className="tech-badge text-[#86868b] block">
+                    PROJECT EXECUTION
+                  </span>
+                  <h3 className="font-bold text-lg text-[#1d1d1f] group-hover:text-amber-900 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-stone-300 mt-1.5 leading-relaxed">
+                  <p className="text-xs text-[#86868b] leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-stone-800 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-1.5 text-stone-400">
-                    <span>Featured Stone:</span>
-                    <strong className="text-stone-200">{item.featuredColor}</strong>
+                <div className="pt-4 border-t border-black/[0.06] flex items-center justify-between text-xs">
+                  <div className="space-y-0.5">
+                    <span className="text-[10px] text-[#86868b] uppercase tracking-wider block">Featured Stone:</span>
+                    <strong className="text-[#1d1d1f]">{item.featuredColor}</strong>
                   </div>
 
                   {matchedColor && (
                     <button
                       onClick={() => onSelectColor(matchedColor)}
-                      className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 font-semibold text-xs"
+                      className="px-4 py-2 rounded-full bg-black/[0.04] hover:bg-black/[0.08] text-[#1d1d1f] font-semibold text-xs transition-colors cursor-pointer inline-flex items-center gap-1"
                     >
-                      <span>View Swatch</span>
+                      <span>Swatch Specs</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   )}

@@ -6,46 +6,45 @@ import {
   Sparkles,
   ArrowRight,
   Package,
-  Play,
   CheckCircle2,
-  Phone,
-  Mail,
-  FileText,
-  MapPin,
   ChevronRight,
-  Maximize2,
-  Sliders,
-  Percent,
-  Box,
   Truck,
   FileCheck,
-  Globe2,
   Cpu,
   Eye,
-  Camera,
-  Check
+  Check,
+  Zap,
+  Globe2,
+  Sliders,
+  Maximize2,
+  Compass,
+  Ruler,
+  Factory
 } from 'lucide-react';
 import {
-  pages,
   products,
   colors,
   factory,
   applications,
-  siteConfig,
-  finishes,
-  edges
+  siteConfig
 } from '../data';
 import { StoneVisualizer } from '../components/StoneVisualizer';
 import { TariffCalculator } from '../components/TariffCalculator';
-import type { ProductItem, ColorItem, LocaleConfig } from '../types';
+import { VanityConfigurator } from '../components/VanityConfigurator';
+import { SocialMediaHub } from '../components/SocialMediaHub';
+import { WhiterockHeritageSection } from '../components/WhiterockHeritageSection';
+import type { ShareContent } from '../components/SocialShareModal';
+import type { ProductItem, ColorItem, RfqCartItem, LocaleConfig } from '../types';
 
 interface HomeViewProps {
   setCurrentTab: (tab: string) => void;
   onSelectProduct: (product: ProductItem) => void;
   onSelectColor: (color: ColorItem) => void;
-  onAddToCart: (product: ProductItem) => void;
+  onAddToCart: (product: ProductItem | RfqCartItem) => void;
   onAddColorSample: (color: ColorItem) => void;
   currentLocale: LocaleConfig;
+  onOpenShareModal?: (content: ShareContent) => void;
+  onOpenWeChat?: () => void;
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({
@@ -55,6 +54,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
   onAddToCart,
   onAddColorSample,
   currentLocale,
+  onOpenShareModal,
+  onOpenWeChat,
 }) => {
   const [activeColorFilter, setActiveColorFilter] = useState<'All' | 'Marble' | 'Granite' | 'Quartz' | 'Engineered Marble'>('All');
   const [activeProductCategory, setActiveProductCategory] = useState<'All' | 'Vanity' | 'Kitchen' | 'Furniture' | 'Commercial'>('All');
@@ -73,324 +74,407 @@ export const HomeView: React.FC<HomeViewProps> = ({
   }).slice(0, 6);
 
   return (
-    <div className="space-y-16 lg:space-y-24">
-      {/* 1. Hero Section - Inspired by whiterockstone.com & Premier Global Stone Fabricators */}
-      <section className="relative min-h-[600px] lg:min-h-[680px] flex items-center justify-center text-stone-100 overflow-hidden bg-stone-950">
-        {/* Background Visual Layer */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
-            alt="WHITEROCK Stone Countertops & Vanity Fabrication"
-            className="w-full h-full object-cover opacity-25 scale-105 transition-transform duration-10000 hover:scale-100"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/75 to-stone-950/90"></div>
-        </div>
-
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center space-y-8">
-          {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold tracking-wide shadow-md">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>{currentLocale.id === 'zh-Hans' ? '越南 20,000 m² 制造基地 (0% 美关税) + 中国欧普石材 20年工艺' : '20,000 m² Vietnam Facility (0% US Tariff) + 20-Year Stone Craftsmanship'}</span>
+    <div className="space-y-24 sm:space-y-36 bg-[#f5f5f7] text-[#1d1d1f] pb-24 overflow-hidden">
+      
+      {/* ========================================================================= */}
+      {/* 1. HERO KEYNOTE SECTION (Apple Display + Industrial Precision Aesthetics) */}
+      {/* ========================================================================= */}
+      <section className="relative pt-12 sm:pt-20 pb-20 sm:pb-28 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+          
+          {/* Industrial Machined Eyebrow Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-black/[0.08] text-[#1d1d1f] shadow-xs hover:border-black/20 transition-all">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span className="tech-badge text-[#86868b]">VIETNAM DIRECT PLANT</span>
+            <span className="text-black/20 font-light">|</span>
+            <span className="tech-badge text-[#1d1d1f]">WHITEROCK MARBLE & GRANITE</span>
+            <span className="text-black/20 font-light">|</span>
+            <span className="tech-badge text-emerald-800">0% US SECTION 301</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-serif text-white leading-tight max-w-5xl mx-auto">
-            {currentLocale.id === 'zh-Hans'
-              ? '北美标准定制石材台面与高端工程出口制造'
-              : 'Precision Stone Countertops, Vanity Tops & Architectural Fabrication'}
-          </h1>
+          {/* Grand Keynote Headline */}
+          <div className="space-y-5 max-w-5xl mx-auto">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] text-[#1d1d1f] leading-[1.04]">
+              Natural Stone & Quartz.
+              <br />
+              <span className="apple-text-gradient">
+                Mastered with Craftsmanship.
+              </span>
+            </h1>
+            <p className="text-lg sm:text-2xl text-[#6e6e73] max-w-3xl mx-auto font-normal leading-relaxed tracking-tight pt-1">
+              Direct-from-plant quartz countertops, vanity tops with pre-mounted CUPC sinks, indoor & outdoor stone furniture, 5-axis waterjet medallions, and hand-carved fireplaces. Engineered in Binh Phuoc, Vietnam with 20+ years stone mastery.
+            </p>
+          </div>
 
-          <p className="text-base sm:text-lg text-stone-300 max-w-3xl mx-auto font-sans leading-relaxed">
-            {currentLocale.id === 'zh-Hans'
-              ? '专为北美酒店工程、多户住宅公寓（Multi-Family）、建材商超及品牌家居提供工程级石英石、天然大理石浴室台面、厨房岛台及奢华石材家具。支持图纸深化、下沉盆组装与免熏蒸出口木箱打包。'
-              : 'Direct-from-factory engineered quartz, natural marble, and granite countertops, prefab vanity tops, and custom furniture. Engineered for North American hospitality, multi-family developments, and retail programs with 0% Section 301 US tariffs.'}
-          </p>
-
-          {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+          {/* Apple Precision CTAs */}
+          <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
             <button
               onClick={() => setCurrentTab('products')}
-              className="px-7 py-3.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold text-sm flex items-center gap-2 shadow-xl shadow-amber-950/40 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
+              className="px-8 py-4 rounded-full bg-[#111113] hover:bg-black text-white font-medium text-sm sm:text-base shadow-xl shadow-black/10 hover:scale-[1.02] active:scale-98 transition-all cursor-pointer flex items-center gap-2"
             >
-              <Package className="w-4 h-4" />
-              <span>Explore Products & Vanity Matrix</span>
+              <Package className="w-4 h-4 text-amber-300" />
+              <span>Explore 6 Product Lines</span>
             </button>
 
             <button
               onClick={() => setCurrentTab('colors')}
-              className="px-6 py-3.5 rounded-xl bg-stone-900/90 hover:bg-stone-800 border border-stone-700 text-stone-200 font-semibold text-sm flex items-center gap-2 shadow-sm transition-all hover:text-white cursor-pointer"
+              className="px-8 py-4 rounded-full bg-white hover:bg-[#fbfbfd] border border-black/[0.1] text-[#1d1d1f] font-medium text-sm sm:text-base shadow-xs hover:border-black/25 transition-all cursor-pointer flex items-center gap-2"
             >
-              <Layers className="w-4 h-4 text-amber-400" />
-              <span>Browse 24 Stone Colors</span>
+              <Layers className="w-4 h-4 text-[#86868b]" />
+              <span>24 Stone Swatches</span>
             </button>
 
             <button
-              onClick={() => setCurrentTab('factory')}
-              className="px-6 py-3.5 rounded-xl bg-stone-900/90 hover:bg-stone-800 border border-stone-700 text-stone-200 font-semibold text-xs sm:text-sm flex items-center gap-2 transition-all hover:text-amber-300 cursor-pointer"
+              onClick={() => setCurrentTab('contact')}
+              className="px-6 py-4 rounded-full bg-transparent hover:bg-black/[0.04] text-[#0071e3] font-semibold text-sm sm:text-base transition-colors flex items-center gap-1 cursor-pointer"
             >
-              <Camera className="w-4 h-4 text-amber-400" />
-              <span>Dual-Base Factory (20 Real Photos)</span>
+              <span>Request Quote</span>
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Key Metrics Strip */}
-          <div className="pt-8 border-t border-stone-800/80 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
-            <div className="p-4 rounded-2xl bg-stone-900/60 border border-stone-800/80 backdrop-blur-sm">
-              <span className="block text-2xl font-black font-serif text-amber-400">
-                20,000 m²
-              </span>
-              <span className="text-xs text-stone-400 font-medium">
-                Vietnam Main Production Plant
-              </span>
-            </div>
+          {/* Hero Visual Showcase with Industrial Technical Framing */}
+          <div className="pt-10 sm:pt-14 max-w-6xl mx-auto">
+            <div className="relative rounded-[2.5rem] sm:rounded-[3rem] overflow-hidden border border-black/[0.09] shadow-[0_24px_70px_-15px_rgba(0,0,0,0.12)] bg-white group">
+              <div className="aspect-16/9 sm:aspect-21/9 overflow-hidden bg-stone-100 relative">
+                <img
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=90"
+                  alt="WHITEROCK Stone Precision Fabrication"
+                  className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-1000 ease-out filter brightness-102"
+                />
+                
+                {/* Floating Technical Overlay Chips */}
+                <div className="absolute top-6 left-6 hidden sm:flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/90 backdrop-blur-xl border border-black/[0.08] shadow-lg text-xs font-semibold text-[#1d1d1f]">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                  <span className="tech-badge">FACILITY : BINH PHUOC PLANT [20,000 M²]</span>
+                </div>
 
-            <div className="p-4 rounded-2xl bg-stone-900/60 border border-stone-800/80 backdrop-blur-sm">
-              <span className="block text-2xl font-black font-serif text-emerald-400">
-                0% Tariff
-              </span>
-              <span className="text-xs text-stone-400 font-medium">
-                US Section 301 Exempt Route
-              </span>
-            </div>
+                <div className="absolute bottom-6 left-6 hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-black/75 backdrop-blur-xl border border-white/15 text-white text-xs font-medium shadow-2xl">
+                  <Ruler className="w-3.5 h-3.5 text-amber-300" />
+                  <span className="tech-badge">CNC CALIBRATION : ±0.3MM</span>
+                </div>
 
-            <div className="p-4 rounded-2xl bg-stone-900/60 border border-stone-800/80 backdrop-blur-sm">
-              <span className="block text-2xl font-black font-serif text-amber-400">
-                100,000+ m²
-              </span>
-              <span className="text-xs text-stone-400 font-medium">
-                Annual Fabrication Capacity
-              </span>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-stone-900/60 border border-stone-800/80 backdrop-blur-sm">
-              <span className="block text-2xl font-black font-serif text-amber-400">
-                20+ Years
-              </span>
-              <span className="text-xs text-stone-400 font-medium">
-                Natural Stone Mastery & Sourcing
-              </span>
+                <div className="absolute bottom-6 right-6 hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-[#1d1d1f]/90 backdrop-blur-xl border border-white/15 text-white text-xs font-medium shadow-2xl">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                  <span className="tech-badge">SPECULAR GLOSS : 85+ GU</span>
+                </div>
+              </div>
             </div>
           </div>
+
+          {/* Giant Apple-Style Keynote Metrics Strip with Industrial Monospace Sub-Tags */}
+          <div className="pt-12 sm:pt-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto text-left">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/[0.06] shadow-xs relative overflow-hidden group hover:border-black/20 transition-all">
+              <div className="tech-badge text-[#86868b] mb-1">PLANT FOOTPRINT</div>
+              <div className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
+                20,000<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> m²</span>
+              </div>
+              <p className="text-xs text-[#86868b] font-medium mt-3 leading-snug">
+                Binh Phuoc manufacturing facility with dedicated wet processing bays.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/[0.06] shadow-xs relative overflow-hidden group hover:border-black/20 transition-all">
+              <div className="tech-badge text-emerald-700 mb-1">CUSTOMS TARIFF</div>
+              <div className="text-4xl sm:text-5xl font-bold tracking-tight text-emerald-600">
+                0%<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> Tariff</span>
+              </div>
+              <p className="text-xs text-[#86868b] font-medium mt-3 leading-snug">
+                Full US Section 301 exemption with certified Form B C/O.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/[0.06] shadow-xs relative overflow-hidden group hover:border-black/20 transition-all">
+              <div className="tech-badge text-[#86868b] mb-1">STONE EXPERIENCE</div>
+              <div className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
+                20+<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> Years</span>
+              </div>
+              <p className="text-xs text-[#86868b] font-medium mt-3 leading-snug">
+                Natural marble, granite & quartz cut-to-size craftsmanship.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/[0.06] shadow-xs relative overflow-hidden group hover:border-black/20 transition-all">
+              <div className="tech-badge text-[#86868b] mb-1">ANNUAL CAPACITY</div>
+              <div className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
+                100k<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> m²/yr</span>
+              </div>
+              <p className="text-xs text-[#86868b] font-medium mt-3 leading-snug">
+                Cut-to-size multi-family & hospitality container export scale.
+              </p>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* 2. Trust Badges & Quality Assurance Strip */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-stone-900 border border-stone-800 rounded-3xl p-6 sm:p-7 shadow-sm">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center text-xs font-semibold text-stone-300">
-            <div className="flex flex-col items-center gap-2">
-              <span className="w-9 h-9 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-mono text-sm border border-amber-500/20">
-                01
-              </span>
-              <span>Fumigated Heavy Plywood Crating</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <span className="w-9 h-9 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-mono text-sm border border-amber-500/20">
-                02
-              </span>
-              <span>Pre-Production 4x4" Physical Samples</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <span className="w-9 h-9 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-mono text-sm border border-amber-500/20">
-                03
-              </span>
-              <span>Quad-Spindle CNC & Sink Assembly</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <span className="w-9 h-9 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-mono text-sm border border-amber-500/20">
-                04
-              </span>
-              <span>±0.3mm Laser Dimension Tolerance</span>
-            </div>
-            <div className="flex flex-col items-center gap-2 col-span-2 sm:col-span-1">
-              <span className="w-9 h-9 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-mono text-sm border border-amber-500/20">
-                05
-              </span>
-              <span>Direct 40HQ Container Shipping</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* 3. INTERACTIVE 3D STONE & VANITY VISUALIZER (Top-Tier Benchmark Feature) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <StoneVisualizer
-          currentLocale={currentLocale}
-          onAddToCart={onAddToCart}
-          onRequestSample={onAddColorSample}
-        />
-      </section>
-
-      {/* 4. DUAL-BASE MANUFACTURING STRATEGY (Vietnam 20,000m² + China Optima Yunfu) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      {/* ========================================================================= */}
+      {/* 2. APPLE-STYLE BENTO GRID: INDUSTRIAL FABRICATION ADVANTAGES */}
+      {/* ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">
-            Strategic Dual-Base Architecture
-          </span>
-          <h2 className="text-2xl sm:text-4xl font-serif font-bold text-white">
-            Vietnam Main Export Plant + China Natural Stone Hub
+          <div className="tech-badge text-[#86868b] tracking-widest uppercase">
+            ARCHITECTURAL SPECIFICATION STANDARD
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
+            Engineered in Vietnam.
+            <br />
+            Optimized for North America.
           </h2>
-          <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
-            A seamless dual-hub strategy giving global developers the 0% US tariff advantages of Southeast Asia alongside the 20-year artisanal natural marble and waterjet capabilities of Yunfu, China.
+          <p className="text-base sm:text-lg text-[#86868b]">
+            Every slab cut, sink mounted, and crate packed to withstand international logistics and streamline on-site job installation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Vietnam Facility Card */}
-          <div className="bg-stone-900 border-2 border-stone-800 rounded-3xl overflow-hidden hover:border-amber-500/50 transition-all group flex flex-col shadow-xl">
-            <div className="relative aspect-16/9 overflow-hidden bg-stone-950">
-              <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
-                alt="WHITEROCK Vietnam Factory Facility"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-lg bg-emerald-500 text-stone-950 text-xs font-extrabold uppercase tracking-wide shadow-md">
-                Primary Export Base (0% US Tariff)
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          
+          {/* Bento Card 1 (Large - Spans 2 Columns) */}
+          <div className="md:col-span-2 apple-card p-8 sm:p-12 flex flex-col justify-between space-y-8 relative overflow-hidden group">
+            <div className="space-y-4 max-w-xl relative z-10">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200/80">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span className="tech-badge">0% TARIFF • FORM B C/O VERIFIED</span>
               </div>
-              <div className="absolute bottom-3.5 right-3.5 px-2.5 py-1 rounded-lg bg-stone-950/80 backdrop-blur-sm text-xs font-bold text-amber-400 border border-stone-700">
-                20,000 m² Facility
-              </div>
+              <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
+                20,000 m² Advanced Fabrication Facility
+              </h3>
+              <p className="text-sm sm:text-base text-[#86868b] leading-relaxed">
+                Located in Binh Phuoc Province, with direct highway transit to Ho Chi Minh Cat Lai container port. Fully compliant with Substantial Transformation rules, providing valid Form B Certificate of Origin for 0% US Section 301 duties.
+              </p>
             </div>
 
-            <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
-              <div className="space-y-3">
-                <h3 className="text-xl sm:text-2xl font-bold font-serif text-white">
-                  WHITEROCK COMPANY LIMITED (Vietnam)
-                </h3>
-                <p className="text-xs text-amber-400 font-mono">
-                  National Highway 14, Dong Tam, Dong Nai / Binh Phuoc, Vietnam
-                </p>
-                <p className="text-xs text-stone-300 leading-relaxed">
-                  Dedicated high-volume fabrication hub for North American vanity tops, kitchen counters, and commercial cut-to-size packages. Fast ocean access via Ho Chi Minh (Cat Lai) Port.
-                </p>
+            <div className="relative rounded-2xl overflow-hidden aspect-16/8 bg-stone-100 border border-black/[0.06]">
+              <img
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85"
+                alt="WHITEROCK Vietnam Plant"
+                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+              />
+            </div>
 
-                <div className="grid grid-cols-2 gap-2 pt-2 text-[11px] text-stone-300">
-                  <div className="flex items-center gap-2 bg-stone-950 p-2 rounded-lg border border-stone-800">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    <span>0% Section 301 Tariff</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-stone-950 p-2 rounded-lg border border-stone-800">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    <span>Automated Edge Lines</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-stone-950 p-2 rounded-lg border border-stone-800">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    <span>Undermount Sink Assembly</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-stone-950 p-2 rounded-lg border border-stone-800">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    <span>Direct 40HQ Loading</span>
-                  </div>
-                </div>
-              </div>
-
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-black/[0.06] relative z-10">
+              <span className="tech-badge text-[#86868b]">
+                CAT LAI PORT DIRECT 40HQ OCEAN STAGING
+              </span>
               <button
                 onClick={() => setCurrentTab('factory')}
-                className="w-full py-3 rounded-xl bg-stone-800 hover:bg-amber-500 hover:text-stone-950 text-stone-200 font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer"
+                className="text-xs font-semibold text-[#0071e3] hover:underline flex items-center gap-1 cursor-pointer"
               >
-                <span>Inspect Vietnam 10 Real Photo Scenes</span>
-                <ChevronRight className="w-4 h-4" />
+                <span>Tour Vietnam Plant Real Photo Scenes</span>
+                <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
 
-          {/* China Yunfu Facility Card */}
-          <div className="bg-stone-900 border-2 border-stone-800 rounded-3xl overflow-hidden hover:border-amber-500/50 transition-all group flex flex-col shadow-xl">
-            <div className="relative aspect-16/9 overflow-hidden bg-stone-950">
+          {/* Bento Card 2 (Standard Column) */}
+          <div className="apple-card p-8 sm:p-10 flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-900 flex items-center justify-center border border-amber-200/80">
+                <Cpu className="w-6 h-6 text-amber-700" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#1d1d1f]">
+                CUPC Pre-Glued Sinks & Quad CNC Cutouts
+              </h3>
+              <p className="text-xs sm:text-sm text-[#86868b] leading-relaxed">
+                Vitreous china rectangular undermount porcelain basins pre-attached with high-strength structural silicone and stainless brackets at the Vietnam factory.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-[#f5f5f7] border border-black/[0.04] space-y-2 text-xs text-[#1d1d1f]">
+              <div className="flex items-center gap-2 font-medium">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>cUPC-Certified Porcelain Basins</span>
+              </div>
+              <div className="flex items-center gap-2 font-medium">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>Single / 4" / 8" Faucet Hole Drill</span>
+              </div>
+              <div className="flex items-center gap-2 font-medium">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>Universal 4" Backsplash & Ends</span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => setCurrentTab('finishes')}
+              className="text-xs font-semibold text-[#0071e3] hover:underline flex items-center gap-1 cursor-pointer"
+            >
+              <span>Explore Sink & Edge Profiles</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* Bento Card 3 (Standard Column) */}
+          <div className="apple-card p-8 sm:p-10 flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-900 flex items-center justify-center border border-sky-200/80">
+                <Layers className="w-6 h-6 text-sky-700" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#1d1d1f]">
+                4x4" Physical Swatch Boxes via FedEx
+              </h3>
+              <p className="text-xs sm:text-sm text-[#86868b] leading-relaxed">
+                Order custom sample boxes delivered to your North American design studio or job site within 5 business days for owner and architect approvals.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-[#f5f5f7] border border-black/[0.04] text-xs space-y-1.5 text-[#6e6e73]">
+              <div><strong>Quartz Swatches:</strong> Calacatta Gold, Pure White, Carrara</div>
+              <div><strong>Marble & Granite:</strong> Nero Marquina, Steel Grey, Absolute Black</div>
+            </div>
+
+            <button
+              onClick={() => setCurrentTab('colors')}
+              className="text-xs font-semibold text-[#0071e3] hover:underline flex items-center gap-1 cursor-pointer"
+            >
+              <span>Build Sample Swatch Kit</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* Bento Card 4 (Spans 2 Columns) */}
+          <div className="md:col-span-2 apple-card p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="space-y-4 max-w-md">
+              <div className="w-12 h-12 rounded-2xl bg-stone-100 text-stone-900 flex items-center justify-center border border-stone-300">
+                <Truck className="w-6 h-6 text-stone-800" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1d1d1f]">
+                Drop-Tested ISPM-15 Heat-Treated Crating
+              </h3>
+              <p className="text-xs sm:text-sm text-[#86868b] leading-relaxed">
+                Reinforced heavy plywood boxes with plastic film moisture barrier, corner protectors, foam padding, and steel strapping. Zero breakage guarantee on ocean freight.
+              </p>
+              <div className="flex gap-4 pt-2 text-xs font-medium text-[#1d1d1f]">
+                <span className="tech-badge">✓ 25–35 TOPS/CRATE</span>
+                <span className="tech-badge">✓ UNIT BARCODES</span>
+                <span className="tech-badge">✓ A-FRAME STIFFENERS</span>
+              </div>
+            </div>
+
+            <div className="w-full md:w-80 aspect-4/3 rounded-2xl overflow-hidden bg-stone-100 border border-black/[0.06] shrink-0">
               <img
-                src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80"
-                alt="OPTIMA STONE China Factory"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80"
+                alt="Heavy Plywood Export Crating"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-lg bg-amber-500 text-stone-950 text-xs font-extrabold uppercase tracking-wide shadow-md">
-                China Strategic Sourcing & Craft Hub
-              </div>
-              <div className="absolute bottom-3.5 right-3.5 px-2.5 py-1 rounded-lg bg-stone-950/80 backdrop-blur-sm text-xs font-bold text-amber-400 border border-stone-700">
-                20+ Years Heritage
-              </div>
             </div>
+          </div>
 
-            <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
-              <div className="space-y-3">
-                <h3 className="text-xl sm:text-2xl font-bold font-serif text-white">
-                  OPTIMA STONE (欧普石材 Yunfu, China)
-                </h3>
-                <p className="text-xs text-amber-400 font-mono">
-                  Yunfu Stone Capital Industrial Park, Guangdong, China
-                </p>
-                <p className="text-xs text-stone-300 leading-relaxed">
-                  Located in the renowned Stone Capital of China. Specializing in natural marble slab procurement, complex waterjet inlays, quad-spindle CNC machining, fireplaces, and sculptured stone furniture.
-                </p>
+        </div>
+      </section>
 
-                <div className="grid grid-cols-2 gap-2 pt-2 text-[11px] text-stone-300">
-                  <div className="flex items-center gap-2 bg-stone-950 p-2 rounded-lg border border-stone-800">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>Quad-Spindle CNCs</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-stone-950 p-2 rounded-lg border border-stone-800">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>Natural Carrara / Calacatta</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-stone-950 p-2 rounded-lg border border-stone-800">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>Waterjet Medallions</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-stone-950 p-2 rounded-lg border border-stone-800">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>Custom Stone Furniture</span>
-                  </div>
-                </div>
-              </div>
+      {/* ========================================================================= */}
+      {/* 2.5 WHITEROCK MARBLE & GRANITE: 6 SIGNATURE PROGRAMS & DUAL HUB HERITAGE */}
+      {/* ========================================================================= */}
+      <WhiterockHeritageSection
+        onSelectCategory={(cat) => {
+          setCurrentTab('products');
+        }}
+        onExploreProducts={() => setCurrentTab('products')}
+        onOpenRfq={() => setCurrentTab('contact')}
+      />
 
-              <button
-                onClick={() => setCurrentTab('factory')}
-                className="w-full py-3 rounded-xl bg-stone-800 hover:bg-amber-500 hover:text-stone-950 text-stone-200 font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer"
-              >
-                <span>Inspect Yunfu 10 Real Photo Scenes</span>
-                <ChevronRight className="w-4 h-4" />
-              </button>
+
+      {/* ========================================================================= */}
+      {/* 3. INTERACTIVE STUDIO SPOTLIGHT: 3D STONE VISUALIZER */}
+      {/* ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-6">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <div className="tech-badge text-[#86868b] tracking-widest uppercase">
+              INTERACTIVE 3D RENDERING STUDIO
             </div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
+              Visualize Stone Surfaces in Real Rooms
+            </h2>
+            <p className="text-xs sm:text-sm text-[#86868b]">
+              Switch lighting temperatures, room styles, and stone colors in real time.
+            </p>
+          </div>
+
+          <div className="rounded-[2.5rem] overflow-hidden border border-black/[0.06] shadow-sm bg-white p-4 sm:p-8">
+            <StoneVisualizer
+              currentLocale={currentLocale}
+              onAddToCart={onAddToCart}
+              onRequestSample={onAddColorSample}
+            />
           </div>
         </div>
       </section>
 
-      {/* 5. TARIFF & CONTAINER SAVINGS CALCULATOR */}
+
+      {/* ========================================================================= */}
+      {/* 4. INTERACTIVE VANITY & COUNTERTOP CONFIGURATOR */}
+      {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <TariffCalculator
-          currentLocale={currentLocale}
-          onStartRfq={() => setCurrentTab('contact')}
-        />
+        <div className="space-y-6">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <div className="tech-badge text-[#86868b] tracking-widest uppercase">
+              B2B SPECIFICATION MATRIX
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
+              Configure Prefab Vanity Tops & Sink Cutouts
+            </h2>
+            <p className="text-xs sm:text-sm text-[#86868b]">
+              Standard 22" depths (25", 31", 37", 49", 61", 73"), sink positions, and edge details.
+            </p>
+          </div>
+
+          <div className="rounded-[2.5rem] overflow-hidden border border-black/[0.06] shadow-sm bg-white p-4 sm:p-8">
+            <VanityConfigurator
+              currentLocale={currentLocale}
+              onAddToCart={(item) => onAddToCart(item)}
+              onOpenContact={() => setCurrentTab('contact')}
+            />
+          </div>
+        </div>
       </section>
 
-      {/* 6. FEATURED PRODUCTS & FABRICATION SCOPE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-stone-800 pb-4">
-          <div>
-            <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">
-              Core Export Product Scope
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-serif font-bold text-white mt-1">
-              Precision Countertop & Vanity Programs
+
+      {/* ========================================================================= */}
+      {/* 5. TARIFF & CONTAINER SAVINGS OPTIMIZER */}
+      {/* ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-[2.5rem] overflow-hidden border border-black/[0.06] shadow-sm bg-white p-6 sm:p-10">
+          <TariffCalculator
+            currentLocale={currentLocale}
+            onStartRfq={() => setCurrentTab('contact')}
+          />
+        </div>
+      </section>
+
+
+      {/* ========================================================================= */}
+      {/* 6. FEATURED PRODUCTS (Apple Store Clean Showcase) */}
+      {/* ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-black/[0.06] pb-6">
+          <div className="space-y-2 max-w-2xl">
+            <div className="tech-badge text-[#86868b] tracking-widest uppercase">
+              CATALOG SELECTION
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
+              Core Fabrication Programs
             </h2>
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-2">
+          {/* Apple-style smooth segment filter */}
+          <div className="flex flex-wrap gap-1.5 p-1.5 rounded-full bg-white border border-black/[0.06] shadow-2xs">
             {[
               { id: 'All', label: 'All Products' },
-              { id: 'Vanity', label: 'Bathroom Vanity Tops' },
-              { id: 'Kitchen', label: 'Kitchen Countertops' },
-              { id: 'Furniture', label: 'Stone Furniture' },
+              { id: 'Vanity', label: 'Vanity Tops' },
+              { id: 'Kitchen', label: 'Kitchen Counters' },
+              { id: 'Furniture', label: 'Furniture' },
               { id: 'Commercial', label: 'Commercial Cut-to-Size' }
             ].map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveProductCategory(cat.id as any)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-xs font-medium transition-all cursor-pointer ${
                   activeProductCategory === cat.id
-                    ? 'bg-amber-500 text-stone-950 font-bold shadow'
-                    : 'bg-stone-900 text-stone-400 hover:text-white border border-stone-800'
+                    ? 'bg-[#1d1d1f] text-white shadow-xs font-semibold'
+                    : 'text-[#6e6e73] hover:text-[#1d1d1f]'
                 }`}
               >
                 {cat.label}
@@ -400,72 +484,72 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
 
         {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((prod) => (
             <div
               key={prod.sku}
-              className="product-card bg-stone-900 border border-stone-800 rounded-3xl overflow-hidden hover:border-amber-500/50 group flex flex-col shadow-lg"
+              className="apple-card overflow-hidden flex flex-col justify-between group"
             >
               <div
-                className="relative aspect-16/10 overflow-hidden bg-stone-950 cursor-pointer"
+                className="relative aspect-16/11 overflow-hidden bg-stone-100 cursor-pointer"
                 onClick={() => onSelectProduct(prod)}
               >
                 <img
                   src={prod.image}
                   alt={prod.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700"
                   onError={(e) => {
                     const target = e.currentTarget;
                     target.src = 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80';
                   }}
                 />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-stone-950/85 backdrop-blur-sm text-[10px] font-bold text-amber-400 border border-stone-700">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-semibold text-[#1d1d1f] shadow-xs">
                   {prod.material}
                 </div>
-                <div className="absolute top-3 right-3 px-2 py-0.5 rounded bg-stone-900/90 text-[10px] font-mono text-stone-300 border border-stone-800">
+                <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-[#111113]/85 text-[10px] font-mono text-white">
                   {prod.sku}
                 </div>
               </div>
 
-              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                 <div className="space-y-2">
                   <h3
                     onClick={() => onSelectProduct(prod)}
-                    className="font-bold text-base text-white group-hover:text-amber-400 transition-colors cursor-pointer"
+                    className="font-bold text-lg text-[#1d1d1f] group-hover:text-amber-900 transition-colors cursor-pointer"
                   >
                     {prod.title}
                   </h3>
-                  <p className="text-xs text-stone-300 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-[#86868b] line-clamp-2 leading-relaxed">
                     {prod.description}
                   </p>
                 </div>
 
-                <div className="space-y-1.5 pt-3 border-t border-stone-800 text-xs">
+                <div className="space-y-2 pt-4 border-t border-black/[0.06] text-xs">
                   {prod.specs.Size && (
-                    <div className="flex justify-between text-stone-400">
-                      <span>Standard Size:</span>
-                      <strong className="text-stone-200">{prod.specs.Size}</strong>
+                    <div className="flex justify-between text-[#86868b]">
+                      <span>Dimensions:</span>
+                      <strong className="text-[#1d1d1f] font-mono">{prod.specs.Size}</strong>
                     </div>
                   )}
                   {prod.specs.Packaging && (
-                    <div className="flex justify-between text-stone-400">
+                    <div className="flex justify-between text-[#86868b]">
                       <span>Packaging:</span>
-                      <span className="text-stone-300 truncate max-w-[60%]">{prod.specs.Packaging}</span>
+                      <span className="text-[#1d1d1f] truncate max-w-[65%]">{prod.specs.Packaging}</span>
                     </div>
                   )}
                 </div>
 
-                <div className="flex items-center gap-2 pt-1">
+                <div className="flex items-center gap-2 pt-2">
                   <button
                     onClick={() => onAddToCart(prod)}
-                    className="flex-1 py-2.5 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md"
+                    className="flex-1 py-3 bg-[#111113] hover:bg-black text-white font-medium rounded-full text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                   >
-                    <Package className="w-3.5 h-3.5" />
-                    <span>Add to RFQ Kit</span>
+                    <Package className="w-3.5 h-3.5 text-amber-300" />
+                    <span>Add to RFQ Cart</span>
                   </button>
                   <button
                     onClick={() => onSelectProduct(prod)}
-                    className="p-2.5 bg-stone-800 hover:bg-stone-700 text-stone-300 rounded-xl text-xs transition-colors cursor-pointer"
+                    className="p-3 bg-black/[0.04] hover:bg-black/[0.08] text-[#1d1d1f] rounded-full text-xs transition-colors cursor-pointer"
                     title="View Technical Data Sheet"
                   >
                     <Eye className="w-4 h-4" />
@@ -476,28 +560,31 @@ export const HomeView: React.FC<HomeViewProps> = ({
           ))}
         </div>
 
-        <div className="text-center pt-4">
+        <div className="text-center pt-6">
           <button
             onClick={() => setCurrentTab('products')}
-            className="px-8 py-3.5 rounded-2xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-amber-400 font-bold text-xs tracking-wider uppercase transition-all inline-flex items-center gap-2 cursor-pointer"
+            className="px-8 py-4 rounded-full bg-white hover:bg-[#fbfbfd] border border-black/[0.08] text-[#1d1d1f] font-semibold text-xs tracking-wider uppercase transition-all inline-flex items-center gap-2 cursor-pointer shadow-xs hover:border-black/20"
           >
-            <span>View Full Product Catalog & Technical PDF Tech Sheets</span>
+            <span>View Full Product Catalog & Technical PDF Specs</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </section>
 
-      {/* 7. STEP-BY-STEP B2B FABRICATION & EXPORT PROCESS */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-stone-900 border border-stone-800 rounded-3xl p-8 sm:p-10 space-y-8">
+
+      {/* ========================================================================= */}
+      {/* 7. STEP-BY-STEP B2B EXPORT SEQUENCE (Industrial Progression) */}
+      {/* ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">
-            International Project Execution
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
-            From CAD Drawings to Port-Side Container Staging
+          <div className="tech-badge text-[#86868b] tracking-widest uppercase">
+            INTERNATIONAL WORKFLOW ARCHITECTURE
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
+            From CAD Drawings to Container Staging
           </h2>
-          <p className="text-xs text-stone-300">
-            A standardized manufacturing sequence built for North American commercial builders, hotel general contractors, and stone distributors.
+          <p className="text-xs sm:text-sm text-[#86868b]">
+            Standardized execution tailored for North American multi-family builders & stone distributors.
           </p>
         </div>
 
@@ -505,72 +592,91 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {[
             {
               step: '01',
-              title: 'CAD & Shop Drawing Approval',
-              desc: 'Our engineering team reviews your architectural DWG/PDF drawings, verifies sink cutout templates, edge details, and backsplashes.',
+              title: 'CAD & Shop Takeoff',
+              desc: 'Our Vietnam engineering team reviews architectural DWG/PDF drawings, verifies sink cutout templates and edge profiles.',
               icon: FileCheck
             },
             {
               step: '02',
-              title: 'Slab Sourcing & Sample Approval',
-              desc: 'Physical 4x4" or 12x12" stone color chips dispatched via express courier to confirm veining, resin tone, and surface finish.',
+              title: 'Sample Approval',
+              desc: 'Physical 4x4" or 12x12" stone chips dispatched via express courier to confirm veining, resin tone, and finish.',
               icon: Layers
             },
             {
               step: '03',
-              title: 'Quad-Spindle CNC & QC Array',
-              desc: 'Precision infrared cutting, automated edge profiling, undermount basin installation, and dry-lay color matching under full lighting.',
+              title: 'Quad CNC & Assembly',
+              desc: 'Infrared bridge saw slicing, automated edge profiling, cUPC basin mounting, and dry-lay color matching.',
               icon: Cpu
             },
             {
               step: '04',
-              title: 'Fumigated Crating & 40HQ Load',
-              desc: 'Drop-tested reinforced plywood crates or A-frames with moisture-barrier EPE foam, custom labels, and direct Cat Lai container loading.',
+              title: 'Fumigated Crating',
+              desc: 'Reinforced drop-tested plywood crates with EPE foam barrier, custom labels, and direct Cat Lai container loading.',
               icon: Truck
             }
           ].map((item, idx) => (
-            <div key={idx} className="bg-stone-950 border border-stone-800 rounded-2xl p-6 space-y-3 relative">
-              <div className="text-3xl font-serif font-black text-amber-400/80">
+            <div key={idx} className="apple-card p-8 space-y-4">
+              <div className="text-4xl font-bold text-amber-700/80 font-mono">
                 {item.step}
               </div>
-              <h4 className="font-bold text-sm text-stone-100">{item.title}</h4>
-              <p className="text-xs text-stone-400 leading-relaxed">{item.desc}</p>
+              <h4 className="font-bold text-base text-[#1d1d1f]">{item.title}</h4>
+              <p className="text-xs text-[#86868b] leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 8. BOTTOM CALL TO ACTION */}
+
+      {/* ========================================================================= */}
+      {/* 8. GLOBAL SOCIAL MEDIA & LIVE FACTORY BROADCAST HUB */}
+      {/* ========================================================================= */}
+      {onOpenShareModal && onOpenWeChat && (
+        <SocialMediaHub
+          onOpenShareModal={onOpenShareModal}
+          onOpenWeChat={onOpenWeChat}
+        />
+      )}
+
+      {/* ========================================================================= */}
+      {/* 9. GRAND APPLE-STYLE BOTTOM CALL-TO-ACTION */}
+      {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-stone-950 via-stone-900 to-amber-950/60 border-2 border-amber-500/40 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8 shadow-2xl">
-          <div className="space-y-3 max-w-2xl">
-            <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">
-              Direct Factory Inquiries
+        <div className="apple-card-dark rounded-[3rem] p-10 sm:p-16 lg:p-20 text-center space-y-8 relative overflow-hidden">
+          {/* Subtle Ambient Background Light */}
+          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div className="space-y-4 max-w-3xl mx-auto relative z-10">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-semibold border border-white/10">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span className="tech-badge">DIRECT VIETNAM PLANT INQUIRIES</span>
             </span>
-            <h2 className="text-2xl sm:text-4xl font-serif font-bold text-white">
-              Ready to Quote Your Commercial Stone or Vanity Top Program?
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+              Ready to quote your commercial stone program?
             </h2>
-            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
-              Send your project BOQ, CAD plans, or stone color inquiries to our engineering estimation team. Detailed FOB / CIF quotes delivered within 24 hours.
+            <p className="text-sm sm:text-lg text-[#a1a1a6] max-w-2xl mx-auto leading-relaxed">
+              Send your project BOQ, CAD plans, or vanity top specifications to our engineering estimation team. Comprehensive FOB / CIF quotation within 24 hours.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2 relative z-10">
             <button
               onClick={() => setCurrentTab('contact')}
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-xl cursor-pointer"
+              className="px-8 py-4 rounded-full bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] font-semibold text-sm sm:text-base shadow-xl transition-all hover:scale-[1.02] cursor-pointer flex items-center gap-2"
             >
-              <span>Submit Project RFQ & Drawings</span>
+              <span>Submit Project RFQ & Plans</span>
               <ArrowRight className="w-4 h-4" />
             </button>
+
             <button
               onClick={() => setCurrentTab('colors')}
-              className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-stone-200 font-semibold text-xs transition-colors cursor-pointer"
+              className="px-8 py-4 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/20 font-medium text-sm sm:text-base transition-colors cursor-pointer"
             >
-              <span>Request 4x4" Sample Box</span>
+              <span>Request 4x4" Physical Samples</span>
             </button>
           </div>
         </div>
       </section>
+
     </div>
   );
 };

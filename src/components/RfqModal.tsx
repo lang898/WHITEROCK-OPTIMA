@@ -8,10 +8,12 @@ import {
   CheckCircle2,
   Package,
   FileSpreadsheet,
-  AlertCircle
+  AlertCircle,
+  Building,
+  ShieldCheck
 } from 'lucide-react';
 import type { RfqCartItem } from '../types';
-import { siteConfig, colors, edges } from '../data';
+import { siteConfig } from '../data';
 
 interface RfqModalProps {
   isOpen: boolean;
@@ -48,7 +50,6 @@ export const RfqModal: React.FC<RfqModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate submission to inquiry system
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -64,273 +65,196 @@ export const RfqModal: React.FC<RfqModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-in fade-in">
-      <div className="relative bg-stone-900 border border-stone-800 rounded-2xl w-full max-w-3xl shadow-2xl text-stone-100 overflow-hidden max-h-[92vh] flex flex-col">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fade-in">
+      <div
+        className="relative bg-white rounded-[2rem] w-full max-w-3xl shadow-2xl text-[#1d1d1f] overflow-hidden max-h-[92vh] flex flex-col border border-black/[0.08]"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
-        <div className="px-6 py-4 border-b border-stone-800 flex items-center justify-between bg-stone-950/60">
-          <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400">
+        <div className="px-6 sm:px-8 py-5 border-b border-black/[0.06] flex items-center justify-between bg-[#fbfbfd]">
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-xl bg-amber-50 text-amber-800 border border-amber-200">
               <Package className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-bold text-lg text-white">
-                RFQ & Sample Kit Request
+              <h3 className="font-bold text-lg text-[#1d1d1f]">
+                RFQ & Sample Kit Basket
               </h3>
-              <p className="text-xs text-stone-400">
-                Direct quotation from WHITEROCK Vietnam factory
+              <p className="text-xs text-[#86868b]">
+                Direct FOB Vietnam factory quotation & CAD takeoff
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-stone-400 hover:text-white hover:bg-stone-800 transition-colors"
+            className="p-2 rounded-full text-[#86868b] hover:text-[#1d1d1f] hover:bg-black/[0.05] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content Body */}
-        <div className="p-6 overflow-y-auto flex-1 space-y-6">
+        <div className="p-6 sm:p-8 overflow-y-auto flex-1 space-y-6">
           {isSuccess ? (
-            <div className="py-12 text-center space-y-4">
-              <div className="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto border border-emerald-500/20">
+            <div className="py-16 text-center space-y-4">
+              <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-bold text-white">
+              <h4 className="text-2xl font-bold text-[#1d1d1f]">
                 Inquiry Successfully Submitted!
               </h4>
-              <p className="text-sm text-stone-300 max-w-md mx-auto leading-relaxed">
-                Thank you, <strong>{formData.name || 'Valued Partner'}</strong>. Our Vietnam engineering and export team has received your project parameters and will prepare an itemized factory quotation within 1 business day.
+              <p className="text-xs sm:text-sm text-[#86868b] max-w-md mx-auto leading-relaxed">
+                Your RFQ list and technical parameters have been routed to our Vietnam plant engineering department. We will reply within 24 business hours with an official FOB quote and CAD schedule.
               </p>
-              <div className="p-4 bg-stone-950 rounded-xl border border-stone-800 text-xs text-stone-400 max-w-md mx-auto text-left space-y-1.5">
-                <div><strong>Direct Factory Hotline:</strong> {siteConfig.tel}</div>
-                <div><strong>Export Department Email:</strong> {siteConfig.email}</div>
-                <div><strong>Factory Base:</strong> Dong Nai Province, Vietnam</div>
-              </div>
               <button
                 onClick={handleResetAndClose}
-                className="mt-4 px-6 py-2.5 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold rounded-lg text-sm transition-all"
+                className="mt-4 px-8 py-3 rounded-full bg-[#111113] text-white text-xs font-medium hover:bg-black cursor-pointer shadow-xs"
               >
-                Close & Return
+                Close & Return to Catalog
               </button>
             </div>
           ) : (
             <>
-              {/* Items List */}
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <h4 className="text-sm font-semibold text-stone-200 uppercase tracking-wider text-xs">
-                    Selected Items & Samples ({cartItems.length})
-                  </h4>
+              {/* Cart Items List */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="tech-badge text-[#86868b]">
+                    SELECTED ITEMS ({cartItems.length})
+                  </span>
                   {cartItems.length > 0 && (
                     <button
                       onClick={onClearCart}
-                      className="text-xs text-rose-400 hover:text-rose-300 flex items-center gap-1"
+                      className="text-xs text-rose-600 hover:text-rose-700 font-medium cursor-pointer"
                     >
-                      <Trash2 className="w-3.5 h-3.5" /> Clear All
+                      Clear List
                     </button>
                   )}
                 </div>
 
                 {cartItems.length === 0 ? (
-                  <div className="p-6 bg-stone-950/60 rounded-xl border border-stone-800/80 text-center space-y-2">
-                    <p className="text-sm text-stone-400">
-                      Your RFQ kit is currently empty.
-                    </p>
-                    <p className="text-xs text-stone-500">
-                      Browse our Products or Color Swatches to add items, vanity tops, or 4x4 inch physical sample chips.
+                  <div className="p-8 rounded-2xl bg-[#f5f5f7] border border-black/[0.05] text-center space-y-2">
+                    <Package className="w-8 h-8 text-[#86868b] mx-auto opacity-50" />
+                    <p className="text-xs text-[#86868b]">Your RFQ basket is currently empty.</p>
+                    <p className="text-[11px] text-[#a1a1a6]">
+                      Browse the catalog or colors page and click "+ Add to RFQ" or configure a vanity.
                     </p>
                   </div>
                 ) : (
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     {cartItems.map((item) => (
                       <div
                         key={item.id}
-                        className="p-3 bg-stone-950/80 rounded-xl border border-stone-800 flex items-center justify-between gap-3 text-xs"
+                        className="p-4 rounded-2xl bg-[#fbfbfd] border border-black/[0.06] flex items-center justify-between gap-4"
                       >
-                        <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-stone-100 flex items-center gap-2">
-                            <span>{item.title}</span>
-                            {item.sku && (
-                              <span className="px-1.5 py-0.5 rounded bg-stone-800 text-amber-400 font-mono text-[10px]">
-                                {item.sku}
-                              </span>
-                            )}
+                        <div className="space-y-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="font-mono text-xs font-bold text-[#1d1d1f] truncate">
+                              {item.productSku}
+                            </span>
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#f0f0f3] text-[#6e6e73]">
+                              {item.material}
+                            </span>
                           </div>
-                          <div className="text-stone-400 text-[11px] mt-0.5 flex flex-wrap gap-x-3">
-                            {item.material && <span>Material: {item.material}</span>}
-                            {item.selectedColor && <span>Color: {item.selectedColor}</span>}
-                            {item.selectedEdge && <span>Edge: {item.selectedEdge}</span>}
-                            {item.selectedThickness && <span>Thickness: {item.selectedThickness}</span>}
-                          </div>
+                          <p className="text-xs font-semibold text-[#1d1d1f] truncate">
+                            {item.title}
+                          </p>
+                          {item.specSummary && (
+                            <p className="text-[11px] text-[#86868b] truncate">
+                              {item.specSummary}
+                            </p>
+                          )}
                         </div>
 
-                        {/* Quantity stepper */}
-                        <div className="flex items-center gap-2 bg-stone-900 border border-stone-700 px-2 py-1 rounded-lg">
+                        <div className="flex items-center gap-4 shrink-0">
+                          <div className="flex items-center gap-2 bg-[#f0f0f3] rounded-full p-1 border border-black/[0.05]">
+                            <button
+                              onClick={() => onUpdateQuantity(item.id, -1)}
+                              className="p-1 rounded-full hover:bg-white text-[#1d1d1f] cursor-pointer"
+                            >
+                              <Minus className="w-3.5 h-3.5" />
+                            </button>
+                            <span className="font-mono text-xs font-bold px-2 text-[#1d1d1f]">
+                              {item.quantity}
+                            </span>
+                            <button
+                              onClick={() => onUpdateQuantity(item.id, 1)}
+                              className="p-1 rounded-full hover:bg-white text-[#1d1d1f] cursor-pointer"
+                            >
+                              <Plus className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+
                           <button
-                            onClick={() => onUpdateQuantity(item.id, -1)}
-                            className="text-stone-400 hover:text-white"
+                            onClick={() => onRemoveItem(item.id)}
+                            className="p-1.5 text-[#86868b] hover:text-rose-600 transition-colors cursor-pointer"
                           >
-                            <Minus className="w-3 h-3" />
-                          </button>
-                          <span className="font-mono font-bold text-amber-400 text-xs min-w-[20px] text-center">
-                            {item.quantity}
-                          </span>
-                          <button
-                            onClick={() => onUpdateQuantity(item.id, 1)}
-                            className="text-stone-400 hover:text-white"
-                          >
-                            <Plus className="w-3 h-3" />
+                            <Trash2 className="w-4 h-4" />
                           </button>
                         </div>
-
-                        {/* Remove button */}
-                        <button
-                          onClick={() => onRemoveItem(item.id)}
-                          className="p-1 text-stone-500 hover:text-rose-400 transition-colors"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
                       </div>
                     ))}
                   </div>
                 )}
               </div>
 
-              {/* Form Details */}
-              <form onSubmit={handleSubmit} className="space-y-4 pt-2 border-t border-stone-800">
-                <h4 className="text-xs font-semibold text-stone-200 uppercase tracking-wider">
-                  Contact & Project Parameters
-                </h4>
+              {/* Form details */}
+              <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-black/[0.06]">
+                <span className="tech-badge text-[#86868b] block">
+                  CONTACT & CONTAINER DESTINATION
+                </span>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label className="block text-xs font-medium text-stone-300 mb-1">
-                      Your Name *
-                    </label>
-                    <input
-                      required
-                      type="text"
-                      placeholder="e.g. John Miller"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-stone-950 border border-stone-700 rounded-lg px-3 py-2 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-medium text-stone-300 mb-1">
-                      Business Email *
-                    </label>
-                    <input
-                      required
-                      type="email"
-                      placeholder="e.g. jmiller@distributor.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-stone-950 border border-stone-700 rounded-lg px-3 py-2 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-medium text-stone-300 mb-1">
-                      Company / Organization
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="e.g. Stone Surfaces LLC"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full bg-stone-950 border border-stone-700 rounded-lg px-3 py-2 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-medium text-stone-300 mb-1">
-                      Country / Destination Port
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="e.g. Los Angeles / Houston / Sydney"
-                      value={formData.destinationPort}
-                      onChange={(e) => setFormData({ ...formData, destinationPort: e.target.value })}
-                      className="w-full bg-stone-950 border border-stone-700 rounded-lg px-3 py-2 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-medium text-stone-300 mb-1">
-                      Project Type
-                    </label>
-                    <select
-                      value={formData.projectType}
-                      onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="w-full bg-stone-950 border border-stone-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500"
-                    >
-                      <option>Distributor Wholesale Program</option>
-                      <option>Commercial / Hospitality Hotel</option>
-                      <option>Multi-family Residential Builder</option>
-                      <option>Kitchen & Bath Showroom</option>
-                      <option>Physical Sample Box Only</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-medium text-stone-300 mb-1">
-                      Target Timeline
-                    </label>
-                    <select
-                      value={formData.targetTimeline}
-                      onChange={(e) => setFormData({ ...formData, targetTimeline: e.target.value })}
-                      className="w-full bg-stone-950 border border-stone-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500"
-                    >
-                      <option>Immediate (Within 30 days)</option>
-                      <option>Within 30–60 days</option>
-                      <option>Within 60–90 days</option>
-                      <option>Future Planning / Sample Review</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-stone-300 mb-1">
-                    Specific Dimensions, Sink Cutouts or Drawing Links
-                  </label>
-                  <textarea
-                    rows={3}
-                    placeholder="Specify dimensions (e.g. 31x22 in), cutout requirements, edge profiles, or paste links to architectural drawings..."
-                    value={formData.customNotes}
-                    onChange={(e) => setFormData({ ...formData, customNotes: e.target.value })}
-                    className="w-full bg-stone-950 border border-stone-700 rounded-lg px-3 py-2 text-xs text-white placeholder-stone-600 focus:outline-none focus:border-amber-500"
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    required
+                    placeholder="Full Name *"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white"
+                  />
+                  <input
+                    type="email"
+                    required
+                    placeholder="Work Email *"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white"
                   />
                 </div>
 
-                {/* Trust callout */}
-                <div className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-lg text-xs text-amber-200 flex items-start gap-2">
-                  <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                  <span>
-                    Direct factory inquiry from Vietnam. No middlemen. All quotations include material specs, CNC edge drawings, export crate packing, and container load plans.
-                  </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Company / Developer"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Destination Port (e.g., LA/Long Beach)"
+                    value={formData.destinationPort}
+                    onChange={(e) => setFormData({ ...formData, destinationPort: e.target.value })}
+                    className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white"
+                  />
                 </div>
 
-                {/* Actions */}
-                <div className="pt-2 flex items-center justify-end gap-3">
-                  <button
-                    type="button"
-                    onClick={onClose}
-                    className="px-4 py-2 bg-stone-800 hover:bg-stone-700 text-stone-300 rounded-lg text-xs font-medium transition-colors"
-                  >
-                    Continue Browsing
-                  </button>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="px-6 py-2 bg-amber-600 hover:bg-amber-500 disabled:opacity-50 text-stone-950 font-bold rounded-lg text-xs flex items-center gap-1.5 transition-all shadow-md"
-                  >
-                    <Send className="w-3.5 h-3.5" />
-                    {isSubmitting ? 'Submitting to Factory...' : 'Request Quotation & Samples'}
-                  </button>
-                </div>
+                <textarea
+                  rows={3}
+                  placeholder="Additional project notes, required CAD approval timeline, or custom edge details..."
+                  value={formData.customNotes}
+                  onChange={(e) => setFormData({ ...formData, customNotes: e.target.value })}
+                  className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-2xl p-4 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white leading-relaxed"
+                />
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting || cartItems.length === 0}
+                  className="w-full py-4 rounded-full bg-[#111113] hover:bg-black text-white font-medium text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs disabled:opacity-50"
+                >
+                  <Send className="w-3.5 h-3.5" />
+                  <span>{isSubmitting ? 'Submitting RFQ...' : 'Submit RFQ to Vietnam Factory'}</span>
+                </button>
               </form>
             </>
           )}

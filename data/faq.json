@@ -1,65 +1,65 @@
 {
-  "intro": "Authoritative answers to common stone procurement, fabrication standards, US tariffs, and container logistics questions for global developers, general contractors, and stone distributors.",
+  "intro": "Authoritative answers to stone procurement, North American fabrication specifications, 0% US tariffs, and container logistics for general contractors, hospitality developers, and stone distributors.",
   "items": [
     {
-      "category": "Tariffs & Dual-Base Manufacturing",
-      "question": "What is the tariff advantage of manufacturing stone countertops in Vietnam?",
-      "answer": "Countertops and vanity tops fabricated and exported from WHITEROCK's 20,000 m² facility in Dong Nai, Vietnam qualify for 0% Section 301 US punitive tariffs (compared to 25% on direct China imports). We provide full documentation including verified Certificates of Origin (C/O Form B/AJ/AK) for compliant customs clearance."
+      "category": "Tariffs & Direct Vietnam Manufacturing",
+      "question": "What is the tariff advantage of manufacturing stone countertops directly in Vietnam?",
+      "answer": "Countertops and vanity tops fabricated and exported directly from WHITEROCK's 20,000 m² facility in Dong Nai, Vietnam qualify for 0% Section 301 US punitive tariffs (saving 25% compared to direct China imports). We provide full legal documentation including verified Certificates of Origin (Form B) confirming genuine substantial transformation in Vietnam for seamless US customs clearance."
     },
     {
-      "category": "Tariffs & Dual-Base Manufacturing",
-      "question": "What are the capabilities of your Vietnam vs China Yunfu facilities?",
-      "answer": "Our Vietnam plant is our primary high-volume fabrication export base with 20,000 m² covered workshop, 100,000+ m² annual capacity, and dedicated vanity top automated lines. Our founding base OPTIMA STONE in Yunfu, China operates 20+ years of natural stone quarry sourcing, quad-spindle CNC machining, complex 3D carving, and waterjet medallion craftsmanship."
+      "category": "Tariffs & Direct Vietnam Manufacturing",
+      "question": "What is the physical size and annual capacity of the WHITEROCK Vietnam facility?",
+      "answer": "Our standalone Vietnam manufacturing plant spans 20,000 m² of covered industrial production space in Dong Nai Province (45km from Cat Lai Port, Ho Chi Minh City). It is equipped with 4 automated bridge saws, 6 quad-spindle CNCs, 3 continuous linear edge polishing lines, and dedicated undermount sink assembly bays with an annual fabrication capacity of 100,000+ m²."
     },
     {
       "category": "Quotation & CAD Specifications",
       "question": "What information is needed to obtain a fast commercial quotation?",
-      "answer": "Please submit your architectural drawing schedule (DWG, DXF, or dimensioned PDF), target stone material (Engineered Quartz, Natural Marble, or Granite), edge profile (e.g. Eased, Bevel, 4cm Mitered), sink cutout specifications, total unit count/square footage, destination port, and delivery schedule."
+      "answer": "Please submit your architectural drawing schedule (DWG, DXF, or dimensioned PDF), target stone material (Engineered Quartz, Natural Marble, or Granite), edge profile (e.g. Eased, Bevel, 4cm Mitered Waterfall), sink cutout specifications, total unit count, destination port, and delivery schedule."
     },
     {
       "category": "Quotation & CAD Specifications",
       "question": "What CAD drawing formats and sink cutout templates do you support?",
-      "answer": "We accept AutoCAD DWG, DXF, Rhino 3D, and fully dimensioned PDF shop drawings. For undermount sinks, we calibrate CNC cutouts directly against DXF sink templates with 1/4\" negative reveal, flush reveal, or positive reveal per your specification."
+      "answer": "We accept AutoCAD DWG, DXF, and fully dimensioned PDF shop drawings. For undermount sinks, we calibrate CNC cutouts directly against DXF sink templates with 1/4\" negative reveal, flush reveal, or positive reveal per your specification."
+    },
+    {
+      "category": "North American Sizes & Sinks",
+      "question": "What standard North American vanity top sizes and configurations do you manufacture?",
+      "answer": "We produce standard 22\" depth vanity tops in 24\", 31\", 37\", 43\", 49\", 61\" (single or double bowl), and 73\" (double bowl), complete with matching 4\" backsplashes and pre-drilled faucet configurations (Single-hole, 4\" Centerset, or 8\" Widespread)."
+    },
+    {
+      "category": "North American Sizes & Sinks",
+      "question": "Do you offer factory pre-mounted CUPC-certified porcelain sinks?",
+      "answer": "Yes. We offer factory pre-glued undermount vitreous china porcelain sinks (rectangular and oval) using industrial high-modulus structural adhesive and stainless steel mounting anchor clips. Every sink installation undergoes load and water-tightness testing before packaging."
     },
     {
       "category": "Samples & Material Approval",
-      "question": "How do we order physical stone sample chips or a Master Sample Kit?",
-      "answer": "Buyers can request individual 4x4 inch (100x100mm) physical stone sample chips or our curated 6-to-12 color Master Sample Box (WR-SM) directly via our website. Samples are prepared with standard eased edge and surface polish, and dispatched via FedEx/DHL air courier within 7-15 business days."
-    },
-    {
-      "category": "Samples & Material Approval",
-      "question": "How do you handle color consistency and natural stone lot variation?",
-      "answer": "For engineered quartz, our automated vacuum-vibro pressing lines maintain strict batch delta-E color consistency. For natural marble and granite, we conduct dry-lay slab photo staging and provide high-resolution slab bundle photos and range samples for buyer sign-off before precision CNC cutting begins."
+      "question": "How do we order physical stone sample chips or a Project Sample Kit?",
+      "answer": "Buyers can request standard 4x4 inch (100x100mm) physical stone sample chips or custom project mockup vanity tops directly via our website. Samples are prepared with standard eased edge and surface polish, and dispatched via FedEx/DHL air courier within 3-5 business days."
     },
     {
       "category": "Fabrication & Tolerances",
       "question": "What are your CNC cutting and edge-profiling dimensional tolerances?",
-      "answer": "All cutting is performed on high-precision 5-axis infrared bridge saws and quad-spindle CNC machining centers, guaranteeing dimensional tolerances of ±0.3mm to ±0.5mm on length and width, ±1.0mm on diagonals, and 90° squareness across all panels."
-    },
-    {
-      "category": "Fabrication & Tolerances",
-      "question": "Do you offer pre-assembled undermount vitreous china basins?",
-      "answer": "Yes. We offer factory pre-glued undermount porcelain and vitreous china sinks using high-modulus structural epoxy and mechanical stainless steel anchor brackets. Every pre-assembled unit undergoes pull-load testing to ensure zero detachment during transit."
+      "answer": "All cutting is performed on high-precision infrared bridge saws and quad-spindle CNC machining centers, guaranteeing dimensional tolerances of ±0.3mm to ±0.5mm on length and width, ±1.0mm on diagonals, and 90° true squareness across all panels."
     },
     {
       "category": "Packaging & Ocean Logistics",
       "question": "How are stone vanity tops and countertops packed for export?",
-      "answer": "Every piece is wrapped in protective high-density EPE foam with heavy-duty corner guards. Products are loaded vertically into ISPM-15 compliant heat-treated fumigated solid plywood crates or heavy-duty steel-reinforced A-frames with moisture barrier lining. We also offer ISTA-1A drop-tested individual cartons for e-commerce and retail."
+      "answer": "Every piece is protected with high-density EPE foam and heavy-duty plastic corner guards. Products are packed vertically into ISPM-15 compliant heat-treated fumigated solid plywood crates or heavy-duty steel-reinforced A-frames with moisture barrier lining. We also offer ISTA drop-tested individual cartons for e-commerce and retail."
     },
     {
       "category": "Packaging & Ocean Logistics",
       "question": "How many vanity tops or square meters fit in a 40HQ container?",
-      "answer": "A standard 40HQ container typically accommodates 240 to 320 prefab bathroom vanity tops (approx. 14 to 18 plywood crates) or 500 to 700 m² of cut-to-size countertops, respecting maximum ocean payload limits of 21.0 to 26.5 metric tons depending on destination port road regulations."
+      "answer": "A standard 40HQ container typically accommodates 240 to 350 prefab bathroom vanity tops (approx. 14 to 18 plywood crates) or 500 to 700 m² of cut-to-size countertops, respecting maximum ocean payload limits of 21.0 to 26.5 metric tons."
     },
     {
       "category": "Quality Control & Inspection",
       "question": "Can we send third-party inspection agencies (SGS, Bureau Veritas, Intertek)?",
-      "answer": "Yes. We welcome customer-appointed inspectors and third-party inspection firms (such as SGS, Bureau Veritas, Intertek, or Cotecna) at our Vietnam and Yunfu factories. We provide dedicated staging areas for AQL 1.0/2.5 visual inspection, dry-fit reviews, and crate seal verification prior to container dispatch."
+      "answer": "Yes. We welcome customer-appointed inspectors and third-party inspection firms (such as SGS, Bureau Veritas, Intertek, or Cotecna) at our Vietnam factory. We provide dedicated staging areas for AQL 1.0/2.5 visual inspection, dry-fit reviews, and crate seal verification prior to container dispatch."
     },
     {
       "category": "Compliance & Safety",
       "question": "What health, safety, and silica compliance standards do you follow?",
-      "answer": "WHITEROCK enforces strict 100% water-suppression wet-fabrication and dust extraction across all cutting and polishing lines in compliance with international respirable crystalline silica standards. All technical documentation and California Proposition 65 disclosures are provided with every shipment."
+      "answer": "WHITEROCK enforces strict 100% water-suppression wet-fabrication and dust extraction across all cutting and polishing lines in compliance with international respirable crystalline silica standards. All technical documentation, NSF-51 food zone compliance, and California Proposition 65 disclosures are provided with every shipment."
     }
   ]
 }
