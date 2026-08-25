@@ -1,0 +1,29 @@
+{
+  "notice": "Digital color directions only. Confirm current availability, finish, lot, and physical sample before specifying or ordering.",
+  "colors": [
+    {"slug":"alpine-carrara","name":"Alpine Carrara","material":"Marble","family":"White","finishes":["Polished","Honed"],"thicknesses":["Confirm by lot"],"base":"#ecece8","accent":"#9ca0a1","related":["WR-VT31","WR-KT-NS"]},
+    {"slug":"calacatta-crest","name":"Calacatta Crest","material":"Quartz","family":"White","finishes":["Polished"],"thicknesses":["20 mm","30 mm direction"],"base":"#f3f1eb","accent":"#a8a193","related":["WR-VT49","WR-KT-Q"]},
+    {"slug":"cloud-veil","name":"Cloud Veil","material":"Quartz","family":"White","finishes":["Polished","Honed direction"],"thicknesses":["20 mm","30 mm direction"],"base":"#f5f4f0","accent":"#c9c7c0","related":["WR-VT24","WR-KT-Q"]},
+    {"slug":"snowfield","name":"Snowfield","material":"Engineered Marble","family":"White","finishes":["Polished"],"thicknesses":["Confirm for program"],"base":"#faf9f4","accent":"#d7d8d2","related":["WR-VT24","WR-VT31"]},
+    {"slug":"pearl-current","name":"Pearl Current","material":"Quartz","family":"White","finishes":["Polished"],"thicknesses":["20 mm","30 mm direction"],"base":"#e9e8e2","accent":"#b7b6ae","related":["WR-VT61D","WR-ISL"]},
+    {"slug":"silver-mist","name":"Silver Mist","material":"Granite","family":"Grey","finishes":["Polished","Honed","Leathered direction"],"thicknesses":["Confirm by lot"],"base":"#9c9c98","accent":"#535653","related":["WR-KT-NS","WR-THR"]},
+    {"slug":"dove-concrete","name":"Dove Concrete","material":"Quartz","family":"Grey","finishes":["Honed direction"],"thicknesses":["20 mm","30 mm direction"],"base":"#aaa9a3","accent":"#7d7e7a","related":["WR-KT-Q","WR-TBL"]},
+    {"slug":"storm-line","name":"Storm Line","material":"Quartz","family":"Grey","finishes":["Polished"],"thicknesses":["20 mm","30 mm direction"],"base":"#8c9090","accent":"#c6c8c6","related":["WR-ISL","WR-VT61D"]},
+    {"slug":"graphite-wave","name":"Graphite Wave","material":"Granite","family":"Grey","finishes":["Polished","Leathered direction"],"thicknesses":["Confirm by lot"],"base":"#5f6260","accent":"#9b9c98","related":["WR-KT-NS","WR-TBL"]},
+    {"slug":"urban-ash","name":"Urban Ash","material":"Engineered Marble","family":"Grey","finishes":["Polished"],"thicknesses":["Confirm for program"],"base":"#c0bfba","accent":"#8e8c86","related":["WR-VT31","WR-THR"]},
+    {"slug":"absolute-night","name":"Absolute Night","material":"Granite","family":"Black","finishes":["Polished","Honed","Leathered direction"],"thicknesses":["Confirm by lot"],"base":"#202221","accent":"#555855","related":["WR-KT-NS","WR-TBL"]},
+    {"slug":"nero-linea","name":"Nero Linea","material":"Marble","family":"Black","finishes":["Polished","Honed"],"thicknesses":["Confirm by lot"],"base":"#292929","accent":"#d2d1ca","related":["WR-FP","WR-TBL"]},
+    {"slug":"midnight-grain","name":"Midnight Grain","material":"Quartz","family":"Black","finishes":["Polished"],"thicknesses":["20 mm","30 mm direction"],"base":"#252627","accent":"#777973","related":["WR-KT-Q","WR-ISL"]},
+    {"slug":"charcoal-silk","name":"Charcoal Silk","material":"Quartz","family":"Black","finishes":["Honed direction"],"thicknesses":["20 mm","30 mm direction"],"base":"#3f4241","accent":"#727671","related":["WR-VT61D","WR-KT-Q"]},
+    {"slug":"sandstone-cream","name":"Sandstone Cream","material":"Engineered Marble","family":"Beige","finishes":["Polished"],"thicknesses":["Confirm for program"],"base":"#d9cdb7","accent":"#ae9475","related":["WR-VT24","WR-THR"]},
+    {"slug":"ivory-dune","name":"Ivory Dune","material":"Quartz","family":"Beige","finishes":["Polished","Honed direction"],"thicknesses":["20 mm","30 mm direction"],"base":"#e5dccb","accent":"#b9a78d","related":["WR-KT-Q","WR-TBL"]},
+    {"slug":"warm-travertine","name":"Warm Travertine Direction","material":"Marble","family":"Beige","finishes":["Honed","Brushed direction"],"thicknesses":["Confirm by lot"],"base":"#cdbb9d","accent":"#968064","related":["WR-FP","WR-THR"]},
+    {"slug":"champagne-drift","name":"Champagne Drift","material":"Quartz","family":"Beige","finishes":["Polished"],"thicknesses":["20 mm","30 mm direction"],"base":"#d8c5a7","accent":"#f1e9dc","related":["WR-VT49","WR-ISL"]},
+    {"slug":"sage-vein","name":"Sage Vein","material":"Quartz","family":"Green","finishes":["Polished"],"thicknesses":["20 mm","30 mm direction"],"base":"#9da99b","accent":"#e0e3d9","related":["WR-KT-Q","WR-TBL"]},
+    {"slug":"forest-current","name":"Forest Current","material":"Marble","family":"Green","finishes":["Polished","Honed"],"thicknesses":["Confirm by lot"],"base":"#345249","accent":"#b7c5b7","related":["WR-FP","WR-TBL"]},
+    {"slug":"mineral-moss","name":"Mineral Moss","material":"Granite","family":"Green","finishes":["Polished","Leathered direction"],"thicknesses":["Confirm by lot"],"base":"#59685b","accent":"#879180","related":["WR-KT-NS","WR-THR"]},
+    {"slug":"ocean-jade","name":"Ocean Jade Direction","material":"Marble","family":"Green","finishes":["Polished","Honed"],"thicknesses":["Confirm by lot"],"base":"#527773","accent":"#c5d3cb","related":["WR-TBL","WR-WJ"]},
+    {"slug":"terracotta-vein","name":"Terracotta Vein","material":"Quartz","family":"Warm","finishes":["Honed direction"],"thicknesses":["20 mm","30 mm direction"],"base":"#aa6955","accent":"#e0b5a2","related":["WR-TBL","WR-ISL"]},
+    {"slug":"blue-quarry","name":"Blue Quarry Direction","material":"Granite","family":"Blue","finishes":["Polished","Leathered direction"],"thicknesses":["Confirm by lot"],"base":"#536872","accent":"#9fb1b5","related":["WR-KT-NS","WR-TBL"]}
+  ]
+}

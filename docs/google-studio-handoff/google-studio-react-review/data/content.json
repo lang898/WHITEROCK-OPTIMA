@@ -1,0 +1,63 @@
+{
+  "materials": [
+    {"name":"Marble","copy":"Natural veining and tonal variation make each lot distinct. Approve the actual slab or production sample before release.","uses":["Vanity tops","Furniture surfaces","Fireplace components","Decorative work"]},
+    {"name":"Granite","copy":"Dense natural stone suited to demanding interior and selected exterior applications, subject to stone-specific testing and finish review.","uses":["Countertops","Thresholds","Tabletops","Exterior components by review"]},
+    {"name":"Quartz","copy":"Engineered surface programs can support repeatable color directions and project schedules. Current slab specification and compliance documents must be confirmed.","uses":["Vanity tops","Kitchen worktops","Multi-family programs","Hospitality surfaces"]},
+    {"name":"Engineered Marble","copy":"A cast or composite surface direction often used for repeat bathroom programs. Bowl, finish, size, and test requirements are confirmed per quotation.","uses":["Vanity tops","Integrated-bowl programs","Retail bathroom sets","Builder packages"]}
+  ],
+  "finishes": [
+    {"name":"Polished","copy":"Reflective finish that emphasizes color and veining. Gloss range is confirmed on the approved sample."},
+    {"name":"Honed","copy":"Low-sheen finish with a softer visual character. Maintenance and stain expectations vary by material."},
+    {"name":"Leathered / Brushed","copy":"Textured direction commonly considered for selected granite and natural stone. Availability depends on material and equipment review."}
+  ],
+  "edges": [
+    {"name":"Eased","code":"E1","copy":"Clean, lightly softened exposed edge."},
+    {"name":"Bevel","code":"B1","copy":"Angled top detail with dimensions set by drawing."},
+    {"name":"Bullnose","code":"R1","copy":"Rounded profile for selected products and thicknesses."},
+    {"name":"Ogee","code":"O1","copy":"Decorative profile requiring material and tooling review."},
+    {"name":"Mitered / Laminated","code":"M1","copy":"Built-up visual thickness with joint detail approved before production."},
+    {"name":"Waterfall Return","code":"W1","copy":"Coordinated vertical return with vein and joint review where applicable."}
+  ],
+  "applications": [
+    {"name":"Modern Kitchen","copy":"Countertops, islands, backsplashes, and waterfall returns for drawing-led residential programs."},
+    {"name":"Primary Bathroom","copy":"Single- and double-bowl vanity tops with coordinated splashes and thresholds."},
+    {"name":"Hotel Bathroom","copy":"Repeat-room vanity schedules, piece labeling, and project packing options."},
+    {"name":"Hotel Lobby","copy":"Reception counters, feature surfaces, table components, and decorative stone work."},
+    {"name":"Multi-Family Bath","copy":"Repeatable vanity formats organized by unit type and approved finish schedule."},
+    {"name":"Retail Showroom","copy":"Display worktops, sample counters, shelving components, and branded surface programs."},
+    {"name":"Outdoor Terrace Table","copy":"Selected stone tabletops reviewed for climate, support, finish, and maintenance requirements."},
+    {"name":"Restaurant Counter","copy":"Service counters and dining surfaces developed around use, hygiene, and local code requirements."}
+  ],
+  "process": [
+    {"step":"01","name":"Brief & drawings","copy":"Share product type, dimensions, quantities, materials, destination, and required documents."},
+    {"step":"02","name":"Material & sample review","copy":"Confirm availability, finish, color lot, and physical sample expectations."},
+    {"step":"03","name":"Quotation & approval","copy":"Review commercial terms, drawings, tolerances, packing, and order-specific compliance scope."},
+    {"step":"04","name":"Production & inspection","copy":"Production follows approved documents with inspection points defined for the order."},
+    {"step":"05","name":"Packing & shipment","copy":"Packing method, marks, loading plan, documents, and logistics are confirmed before dispatch."}
+  ],
+  "resources": [
+    {"name":"Product Catalog","status":"Awaiting owner-approved PDF","description":"Overview of product families, materials, and customization paths."},
+    {"name":"Care & Maintenance Guide","status":"Draft required","description":"Material-specific cleaning and maintenance guidance."},
+    {"name":"Warranty Statement","status":"Owner review required","description":"Commercial warranty scope and exclusions by product."},
+    {"name":"Certifications & Test Reports","status":"Publish confirmed documents only","description":"Product- and material-specific reports with valid scope and dates."},
+    {"name":"Crystalline Silica Safety","status":"Draft required","description":"Fabrication safety information for professional processors and installers."},
+    {"name":"California Proposition 65","status":"Product review required","description":"Product-specific notice and buyer guidance where applicable."}
+  ],
+  "faqs": [
+    {"q":"What information should we send for a quotation?","a":"Send drawings or dimensions, quantities, material direction, finish, edge, sink or cutout details, packing needs, destination, and required documents."},
+    {"q":"Can WHITEROCK work from CAD or PDF drawings?","a":"Drawing-led review is available. File format, revision control, and shop-drawing scope are confirmed for each project."},
+    {"q":"Are standard vanity sizes available?","a":"Common North American cabinet formats can be discussed, while final dimensions and bowl positions follow the approved order drawing."},
+    {"q":"Can we request custom dimensions?","a":"Yes. Feasibility, material yield, tolerances, reinforcement, and packing are reviewed before quotation."},
+    {"q":"How are colors approved?","a":"Digital references are preliminary only. Use an approved physical sample and, for natural stone, review the relevant lot or slab selection."},
+    {"q":"What finishes are offered?","a":"Polished, honed, and selected textured directions may be available depending on the material and production review."},
+    {"q":"What edge profiles can be produced?","a":"Eased, bevel, bullnose, decorative, mitered, and waterfall details can be evaluated from the drawing and approved sample."},
+    {"q":"Can sinks be supplied or mounted?","a":"Sink sourcing, certification, cutout, mounting method, and included hardware must be confirmed for the specific program."},
+    {"q":"What is the minimum order quantity?","a":"MOQ depends on material, color, size, setup, packing, and whether the order is a sample, mixed program, or production run."},
+    {"q":"What is the production lead time?","a":"Lead time is quoted after sample, drawing, commercial terms, material availability, and production scope are confirmed."},
+    {"q":"How are products packed?","a":"Foam, corner protection, cartons, pallets, crates, or A-frames are selected according to the product and shipment method."},
+    {"q":"Can buyers arrange third-party inspection?","a":"Inspection arrangements can be discussed before order confirmation, including timing, checklist, access, and reporting format."},
+    {"q":"Which export documents are supplied?","a":"The document list is confirmed per order and destination. Buyers should verify current origin, customs, certification, and import requirements with qualified advisers."},
+    {"q":"Can we order samples before production?","a":"Sample format, cost, courier charge, lead time, and what the sample represents are confirmed when the request is reviewed."},
+    {"q":"How do we start a distributor or project program?","a":"Send your market, business type, expected product mix, annual volume direction, and current sourcing requirements through the trade inquiry form."}
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "products": [
+    {
+      "sku": "WR-VT24",
+      "title": "Compact Single-Bowl Vanity Top",
+      "category": "Vanity Tops",
+      "material": "Engineered marble, quartz, or natural stone",
+      "summary": "A compact vanity-top program for apartment, builder, and retail bathroom specifications.",
+      "sizes": ["Common 24 in cabinet formats", "Custom dimensions by approved drawing"],
+      "options": ["Undermount or integrated bowl", "Loose backsplash", "Eased, bevel, or bullnose edge"],
+      "image": "assets/products/WR-VT24-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-VT31",
+      "title": "Single-Bowl Vanity Top",
+      "category": "Vanity Tops",
+      "material": "Quartz, engineered marble, marble, or granite",
+      "summary": "A flexible single-bowl format for residential, hospitality, and multi-family bathroom programs.",
+      "sizes": ["Common 30 in cabinet formats", "Custom dimensions by approved drawing"],
+      "options": ["Multiple faucet configurations", "Optional sidesplash", "Project-specific sink cutout"],
+      "image": "assets/products/WR-VT31-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-VT49",
+      "title": "Wide Single-Bowl Vanity Top",
+      "category": "Vanity Tops",
+      "material": "Quartz, engineered marble, marble, or granite",
+      "summary": "A wider vanity-top format suited to repeat-order housing and hospitality schedules.",
+      "sizes": ["Common 48 in cabinet formats", "Custom dimensions by approved drawing"],
+      "options": ["Centered or offset bowl", "Loose backsplash", "Edge profile by specification"],
+      "image": "assets/products/WR-VT49-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-VT61D",
+      "title": "Double-Bowl Vanity Top",
+      "category": "Vanity Tops",
+      "material": "Quartz, marble, or granite",
+      "summary": "A double-bowl program for primary bathrooms, hotels, and larger residential units.",
+      "sizes": ["Common 60 in and 72 in cabinet formats", "Custom dimensions by approved drawing"],
+      "options": ["Symmetric or drawing-led bowl layout", "Optional backsplash", "Crated project packing"],
+      "image": "assets/products/WR-VT61D-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-KT-Q",
+      "title": "Quartz Countertop Program",
+      "category": "Countertops & Islands",
+      "material": "Engineered quartz",
+      "summary": "Cut-to-size countertop, island, and backsplash components prepared from approved shop drawings.",
+      "sizes": ["20 mm and 30 mm directions", "Custom cut-to-size schedules"],
+      "options": ["Sink and cooktop cutouts", "Mitered apron", "Matching backsplash"],
+      "image": "assets/products/WR-KT-Q-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-KT-NS",
+      "title": "Natural Stone Countertop Program",
+      "category": "Countertops & Islands",
+      "material": "Marble, granite, or quartzite",
+      "summary": "Natural-stone worktops developed around lot selection, vein review, and project drawings.",
+      "sizes": ["Cut-to-size", "Slab availability confirmed by lot"],
+      "options": ["Polished or honed finish", "Edge profile by drawing", "Dry-lay review where applicable"],
+      "image": "assets/products/WR-KT-NS-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-ISL",
+      "title": "Kitchen Island & Waterfall Set",
+      "category": "Countertops & Islands",
+      "material": "Quartz or selected natural stone",
+      "summary": "Coordinated island panels for mitered, laminated, or waterfall-edge specifications.",
+      "sizes": ["Drawing-led dimensions", "Panelization confirmed before quotation"],
+      "options": ["Bookmatch review", "Mitered returns", "Cutout and reinforcement details"],
+      "image": "assets/products/WR-ISL-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-THR",
+      "title": "Thresholds, Curbs & Sills",
+      "category": "Architectural Stone",
+      "material": "Marble, granite, quartz, or engineered marble",
+      "summary": "Repeatable dimensional stone components for bathrooms, windows, doorways, and project packages.",
+      "sizes": ["Standard schedules or custom cut lists", "Thickness confirmed by application"],
+      "options": ["Polished exposed edges", "Drip grooves", "Piece labeling"],
+      "image": "assets/products/WR-THR-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-TBL",
+      "title": "Stone Tabletop Program",
+      "category": "Furniture Surfaces",
+      "material": "Marble, granite, quartz, or quartzite",
+      "summary": "Dining, coffee, console, and hospitality tabletops developed for approved bases and support conditions.",
+      "sizes": ["Round, oval, square, and rectangular", "Custom templates by review"],
+      "options": ["Edge shaping", "Underside reinforcement", "Base fixing preparation"],
+      "image": "assets/products/WR-TBL-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-FP",
+      "title": "Fireplace Surround Components",
+      "category": "Architectural Stone",
+      "material": "Marble, limestone, or granite",
+      "summary": "Mantel, surround, hearth, and trim components produced from approved elevations and templates.",
+      "sizes": ["Project-specific", "Template review required"],
+      "options": ["Simple profiles", "Carved details by sample", "Numbered packing"],
+      "image": "assets/products/WR-FP-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-WJ",
+      "title": "Decorative Inlay & Mosaic",
+      "category": "Architectural Stone",
+      "material": "Mixed natural and engineered stone",
+      "summary": "Decorative floor, wall, and feature-panel work developed from approved artwork and material samples.",
+      "sizes": ["Custom modules", "Field dimensions verified before production"],
+      "options": ["Mesh-backed modules", "Numbered layouts", "Material substitution review"],
+      "image": "assets/products/WR-WJ-owner-photo.jpg",
+      "imageType": "pending"
+    },
+    {
+      "sku": "WR-SM",
+      "title": "Buyer Sample Kit",
+      "category": "Samples",
+      "material": "Selected available materials",
+      "summary": "A buyer-requested sample set for preliminary color, finish, and material review before order confirmation.",
+      "sizes": ["Sample format confirmed when requested"],
+      "options": ["Select up to four color directions", "Finish comparison", "Courier quote before dispatch"],
+      "image": "assets/products/WR-SM-owner-photo.jpg",
+      "imageType": "pending"
+    }
+  ]
+}
