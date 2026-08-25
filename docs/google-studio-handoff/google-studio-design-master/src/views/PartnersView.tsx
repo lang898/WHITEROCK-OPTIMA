@@ -1,0 +1,211 @@
+import React from 'react';
+import {
+  Handshake,
+  CheckCircle2,
+  Package,
+  Clock,
+  Layers,
+  Sparkles,
+  ShieldCheck,
+  Send,
+  Building,
+  FileSpreadsheet,
+  ArrowRight,
+  Boxes,
+  Compass,
+  FileCheck
+} from 'lucide-react';
+import { partners, siteConfig } from '../data';
+import type { LocaleConfig } from '../types';
+
+interface PartnersViewProps {
+  setCurrentTab: (tab: string) => void;
+  currentLocale: LocaleConfig;
+}
+
+export const PartnersView: React.FC<PartnersViewProps> = ({
+  setCurrentTab,
+  currentLocale,
+}) => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20">
+      {/* Header Banner (Unified Apple Display + Keynote Style) */}
+      <div className="space-y-4 max-w-4xl">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+          <Handshake className="w-3.5 h-3.5 text-amber-600" />
+          <span className="tech-badge">B2B DISTRIBUTOR & BUILDER PARTNERSHIPS • DIRECT FACTORY</span>
+        </div>
+        <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.035em] text-[#1d1d1f]">
+          Trade Partner Program & Direct Supply.
+        </h1>
+        <p className="text-base sm:text-xl text-[#6e6e73] leading-relaxed max-w-3xl font-normal">
+          {partners.intro}
+        </p>
+
+        {/* Industrial Highlights */}
+        <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="tech-badge">Direct Container Loading (Cat Lai Port)</span>
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+            <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+            <span className="tech-badge">Form B C/O 0% US Tariff Qualified</span>
+          </span>
+        </div>
+      </div>
+
+      {/* Program Core Parameters Matrix (Apple Cards) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="apple-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
+          <div className="space-y-3">
+            <span className="tech-badge text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+              PROGRAM 01
+            </span>
+            <h3 className="font-bold text-lg text-[#1d1d1f]">Flexible MOQs</h3>
+            <p className="text-xs text-[#86868b] leading-relaxed">
+              Standard vanity tops start at <strong className="text-[#1d1d1f]">10–20 pcs</strong> per SKU. Mixed-SKU container loading supported for distributor warehouse consolidation.
+            </p>
+          </div>
+          <div className="pt-3 border-t border-black/[0.06] text-xs font-mono text-[#86868b]">
+            40HQ CONTAINER OPTIMIZED
+          </div>
+        </div>
+
+        <div className="apple-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
+          <div className="space-y-3">
+            <span className="tech-badge text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+              PROGRAM 02
+            </span>
+            <h3 className="font-bold text-lg text-[#1d1d1f]">Lead Times</h3>
+            <p className="text-xs text-[#86868b] leading-relaxed">
+              Sample chips dispatch within <strong className="text-[#1d1d1f]">7–15 days</strong>. Production orders complete in <strong className="text-[#1d1d1f]">25–55 days</strong> based on CAD drawing sign-off.
+            </p>
+          </div>
+          <div className="pt-3 border-t border-black/[0.06] text-xs font-mono text-[#86868b]">
+            RAPID AIR COURIER SAMPLES
+          </div>
+        </div>
+
+        <div className="apple-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
+          <div className="space-y-3">
+            <span className="tech-badge text-sky-800 bg-sky-50 px-2.5 py-1 rounded-full border border-sky-200">
+              PROGRAM 03
+            </span>
+            <h3 className="font-bold text-lg text-[#1d1d1f]">OEM / Private Label</h3>
+            <p className="text-xs text-[#86868b] leading-relaxed">
+              Custom inner carton branding, UPC/EAN barcode labeling, branded instruction sheets, and custom corner guard configurations.
+            </p>
+          </div>
+          <div className="pt-3 border-t border-black/[0.06] text-xs font-mono text-[#86868b]">
+            CUSTOM BRANDED PACKAGING
+          </div>
+        </div>
+
+        <div className="apple-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
+          <div className="space-y-3">
+            <span className="tech-badge text-purple-800 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">
+              PROGRAM 04
+            </span>
+            <h3 className="font-bold text-lg text-[#1d1d1f]">Export Crate Standards</h3>
+            <p className="text-xs text-[#86868b] leading-relaxed">
+              Heavy-duty solid fumigated plywood crates with EPE foam buffers, plastic banding, and moisture barrier wrap for ocean freight.
+            </p>
+          </div>
+          <div className="pt-3 border-t border-black/[0.06] text-xs font-mono text-[#86868b]">
+            ISPM-15 COMPLIANT
+          </div>
+        </div>
+      </div>
+
+      {/* Target Partner Profiles */}
+      <section className="apple-card p-6 sm:p-10 space-y-8">
+        <div className="max-w-2xl space-y-2">
+          <div className="tech-badge text-[#86868b]">WHO WE SERVE</div>
+          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
+            Customized Solutions by Industry Sector
+          </h2>
+          <p className="text-xs sm:text-sm text-[#86868b]">
+            Tailored commercial terms and fabrication schedules for distributors, builders, and hospitality procurement teams.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="bg-[#fbfbfd] border border-black/[0.06] rounded-3xl p-6 sm:p-8 space-y-4">
+            <h4 className="font-bold text-base text-[#1d1d1f]">Regional Stone Distributors</h4>
+            <ul className="text-xs text-[#6e6e73] space-y-3">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Repeat container program tiered pricing</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Showroom sample tower & box sets</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Exclusive regional color protections</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-[#fbfbfd] border border-black/[0.06] rounded-3xl p-6 sm:p-8 space-y-4">
+            <h4 className="font-bold text-base text-[#1d1d1f]">Multi-Family Builders</h4>
+            <ul className="text-xs text-[#6e6e73] space-y-3">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Unit-by-unit BOQ cut-to-size kits</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Pre-mounted cUPC rectangular sinks</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Direct job site container deliveries</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-[#fbfbfd] border border-black/[0.06] rounded-3xl p-6 sm:p-8 space-y-4">
+            <h4 className="font-bold text-base text-[#1d1d1f]">Hospitality FF&E Groups</h4>
+            <ul className="text-xs text-[#6e6e73] space-y-3">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Mockup suite sample room packages</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Complex laminated mitered waterfalls</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>NSF-51 certified food-safe surfaces</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Action Banner (Apple Dark Card) */}
+      <div className="apple-card-dark rounded-[2.5rem] p-10 sm:p-14 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="space-y-3 max-w-xl">
+          <div className="tech-badge text-amber-300">DIRECT FACTORY ONBOARDING</div>
+          <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
+            Ready to Onboard as an Official Trade Partner?
+          </h3>
+          <p className="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+            Receive wholesale FOB price lists, 40HQ container load maps, physical sample towers, and dedicated engineering support.
+          </p>
+        </div>
+
+        <button
+          onClick={() => setCurrentTab('contact')}
+          className="px-8 py-4 rounded-full bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
+        >
+          Apply for Trade Partnership
+        </button>
+      </div>
+    </div>
+  );
+};
