@@ -96,7 +96,7 @@ function AppContent() {
     } else {
       setShareModalContent({
         title: 'WHITEROCK SURFACES VIETNAM - Direct B2B Stone & Vanity Top Manufacturer',
-        text: '20,000 m² Vietnam Stone Plant with 0% US Section 301 Tariff. Precision Quartz, Marble Countertops & Vanity Tops with Pre-Mounted Sinks.',
+        text: 'Stone manufacturing in Vietnam for quartz, marble, granite, countertops, vanity tops, and custom fabrication. Specifications and trade terms are confirmed by quotation.',
         type: 'site'
       });
     }

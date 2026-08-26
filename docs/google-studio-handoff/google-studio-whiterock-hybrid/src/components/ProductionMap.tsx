@@ -138,7 +138,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
             Direct Vietnam Fabrication & Ocean Shipping Grid
           </h2>
           <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-            Operating our standalone <strong>20,000 m² Dong Nai Production Plant</strong> with direct highway access to Ho Chi Minh City's Cat Lai Port (45 km). 100% certified Form B Certificate of Origin delivering <strong>0% Section 301 US tariffs</strong> for North American builders, hospitality developers, and stone wholesalers.
+            Owner-provided information describes a <strong>20,000 m² production site in Binh Phuoc Province</strong>. Product origin, customs treatment, shipping route, transit time, and required documents are confirmed for each shipment.
           </p>
         </div>
 
@@ -148,7 +148,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
             { id: 'facility', label: 'Plant Specs', icon: Factory },
             { id: 'shipping', label: 'Ocean Routes', icon: Ship },
             { id: 'machinery', label: 'CNC Lines', icon: Cpu },
-            { id: 'compliance', label: '0% Tariff & C/O', icon: ShieldCheck }
+            { id: 'compliance', label: 'Trade Documents', icon: ShieldCheck }
           ].map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -179,7 +179,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
               <span className="text-stone-700 font-medium">
-                Production Hub: <strong className="text-stone-950 font-bold">Dong Nai Province, Vietnam (11.53°N, 106.88°E)</strong>
+                Production Hub: <strong className="text-stone-950 font-bold">Binh Phuoc Province, Vietnam</strong>
               </span>
             </div>
 
@@ -413,13 +413,13 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
                     className="shadow-lg"
                   />
                   <text x="220" y="410" fill="#065f46" fontSize="11" fontWeight="bold" fontFamily="serif">
-                    WHITEROCK SURFACES
+                    WHITEROCK VIETNAM
                   </text>
                   <text x="220" y="425" fill="#334155" fontSize="9" fontFamily="sans-serif" fontWeight="600">
-                    20,000 m² Facility · 0% US Tariff
+                    20,000 m² Facility · Owner Reported
                   </text>
                   <text x="220" y="439" fill="#d97706" fontSize="8.5" fontFamily="monospace">
-                    Dong Nai Plant · 100,000+ m²/yr
+                    Binh Phuoc · Capacity by Current Quote
                   </text>
                 </g>
 
@@ -431,7 +431,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
                   </text>
                   <circle cx="20" cy="32" r="4.5" fill="#059669" />
                   <text x="32" y="35" fill="#334155" fontSize="8.5" fontFamily="sans-serif">
-                    20,000 m² Dong Nai Plant (0% Tariff)
+                    20,000 m² Binh Phuoc Site
                   </text>
                   <circle cx="20" cy="48" r="4.5" fill="#2563eb" />
                   <text x="32" y="51" fill="#334155" fontSize="8.5" fontFamily="sans-serif">
@@ -460,16 +460,16 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
               <strong className="text-stone-900 font-serif text-sm">20,000 m²</strong>
             </div>
             <div className="bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
-              <span className="text-[10px] font-mono text-emerald-700 block uppercase">US Tariff Status</span>
-              <strong className="text-emerald-900 font-serif text-sm">0% Section 301</strong>
+              <span className="text-[10px] font-mono text-emerald-700 block uppercase">Customs Treatment</span>
+              <strong className="text-emerald-900 font-serif text-sm">Broker Review</strong>
             </div>
             <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
               <span className="text-[10px] font-mono text-stone-500 block uppercase">Port Distance</span>
               <strong className="text-stone-900 font-serif text-sm">45 km (Cat Lai)</strong>
             </div>
             <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
-              <span className="text-[10px] font-mono text-stone-500 block uppercase">West Coast Lead</span>
-              <strong className="text-amber-800 font-serif text-sm">18 - 22 Days</strong>
+              <span className="text-[10px] font-mono text-stone-500 block uppercase">Transit Time</span>
+              <strong className="text-amber-800 font-serif text-sm">Carrier Quote</strong>
             </div>
           </div>
         </div>
@@ -484,16 +484,16 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
                 <span>Manufacturing Plant Profile</span>
               </div>
               <h3 className="text-xl font-serif font-bold text-stone-900">
-                WHITEROCK SURFACES VIETNAM
+                WHITEROCK COMPANY LIMITED
               </h3>
               <p className="text-xs text-stone-600 leading-relaxed">
-                Our modern covered stone fabrication plant in Dong Nai Province is purpose-built for North American commercial, hospitality, and residential countertop programs.
+                Owner-provided information describes a stone manufacturing site in Binh Phuoc Province serving order-specific commercial and residential surface programs.
               </p>
 
               <div className="space-y-2.5 pt-2">
                 {[
-                  { label: 'Address', val: 'National Highway 14, Dong Tam, Dong Nai / Binh Phuoc Corridor, Vietnam' },
-                  { label: 'Annual Output', val: '100,000+ m² finished countertops and vanity tops' },
+                  { label: 'Address', val: 'Binh Phuoc Province, Vietnam; confirm full delivery address before visiting' },
+                  { label: 'Annual Output', val: 'Current capacity and allocation confirmed during quotation' },
                   { label: 'Primary Materials', val: 'Engineered Quartz, Natural Carrara/Calacatta Marble, Granite' },
                   { label: 'Target Market', val: 'North America (Hotels, Multi-Family, Kitchen & Bath Distributors)' }
                 ].map((item, idx) => (
@@ -552,15 +552,15 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
                 High-Precision CNC & Continuous Edge Lines
               </h3>
               <p className="text-xs text-stone-600 leading-relaxed">
-                All production steps utilize 100% water-mist dust suppression and automated CNC CAM programming for ±0.5mm precision.
+                Owner-supplied photos show bridge cutting, multi-spindle processing, edge processing, and production staging. Models and acceptance limits require owner and order confirmation.
               </p>
 
               <div className="space-y-2 pt-2 text-xs">
                 {[
-                  { name: 'Multi-Blade Infrared Bridge Saws', desc: '±0.5mm tolerance straight cutting lines for rapid slab breakdown.' },
+                  { name: 'Bridge Cutting Equipment', desc: 'Cutting method and limits follow the approved production drawings.' },
                   { name: 'Quad-Spindle CNC Machining Centers', desc: 'Automated undermount basin cutouts, faucet drillings, and curved arches.' },
-                  { name: 'Continuous Multi-Head Edge Polishers', desc: '85+ gloss mirror finish on Eased, Bevel, and Bullnose linear profiles.' },
-                  { name: 'CUPC Sink Pre-Mounting Bays', desc: 'Structural epoxy + bracket installation tested for 100kg pullout stress.' }
+                  { name: 'Continuous Edge Processing Lines', desc: 'Available edge and finish programs are confirmed by sample.' },
+                  { name: 'Vanity Preparation Workstations', desc: 'Optional sink assembly follows the buyer-approved model and mounting detail.' }
                 ].map((mach, i) => (
                   <div key={i} className="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
                     <strong className="text-stone-900 block text-xs">{mach.name}</strong>
@@ -576,31 +576,31 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
             <div className="space-y-4 animate-in fade-in duration-200">
               <div className="flex items-center gap-2 text-emerald-900 font-bold text-xs uppercase tracking-wider bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300 w-fit">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
-                <span>Tariff & Regulatory Provenance</span>
+                <span>Order Documentation Review</span>
               </div>
               <h3 className="text-xl font-serif font-bold text-stone-900">
-                100% Substantial Transformation in Vietnam
+                Confirm Requirements Before Production
               </h3>
               <p className="text-xs text-stone-600 leading-relaxed">
-                Every shipment is accompanied by official Vietnamese Chamber of Commerce & Industry (VCCI) Certificate of Origin documentation confirming genuine transformation.
+                Classification, origin, destination rules, tests, labels, packing, and export documents vary by product and shipment. Confirm requirements with qualified advisers and record them in the purchase order.
               </p>
 
               <div className="grid grid-cols-2 gap-2 pt-2 text-xs">
                 <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>0% US Section 301</span>
+                  <span>Broker Rate Review</span>
                 </div>
                 <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Form B C/O Document</span>
+                  <span>Origin Documents Reviewed</span>
                 </div>
                 <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>ISPM-15 Wood Crates</span>
+                  <span>Packing Requirements Agreed</span>
                 </div>
                 <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>NSF-51 & Prop 65</span>
+                  <span>Product Documents Confirmed</span>
                 </div>
               </div>
             </div>

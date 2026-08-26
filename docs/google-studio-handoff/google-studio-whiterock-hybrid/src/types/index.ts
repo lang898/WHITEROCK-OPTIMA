@@ -252,7 +252,7 @@ export interface AdminRfqOrder {
   estimatedContainers: number;
   section301SavingsUsd: number;
   status: 'New Inquiry' | 'CAD Review' | 'Quotation Sent' | 'Deposit Paid' | 'In Production' | 'Crated & Staged' | 'Shipped / At Sea';
-  cOStatus: 'Verified (Form B 0% Tariff)' | 'Pending Verification' | 'Direct Import';
+  cOStatus: 'Owner Verified' | 'Pending Verification' | 'Buyer Broker Review';
   leadDate: string;
   targetShipDate: string;
   assignedPlant: string;

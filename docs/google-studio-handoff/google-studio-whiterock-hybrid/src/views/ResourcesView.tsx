@@ -56,11 +56,11 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ currentLocale }) =
         <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
           <span className="wr-info-pill">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span className="tech-badge">NSF-51 Certified Food Contact</span>
+            <span className="tech-badge">Product Documents Require Verification</span>
           </span>
           <span className="wr-info-pill">
             <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-            <span className="tech-badge">ASTM C97 / C170 Physical Testing</span>
+            <span className="tech-badge">Current Test Reports by Exact Product</span>
           </span>
         </div>
       </div>
@@ -133,7 +133,7 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ currentLocale }) =
         <FaqSectionWithSchema
           currentLocale={currentLocale}
           title="Technical Data, Testing & Export Compliance FAQ"
-          subtitle="Direct answers regarding ASTM testing, scratch hardness, water absorption, VOC emissions, and container loading certificates."
+          subtitle="Direct answers regarding product documentation, material properties, safety information, and container planning."
           showSchemaInspector={true}
         />
       </div>

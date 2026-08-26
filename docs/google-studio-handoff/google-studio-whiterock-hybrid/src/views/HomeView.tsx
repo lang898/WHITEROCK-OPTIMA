@@ -138,8 +138,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="relative rounded-[2.5rem] sm:rounded-[3rem] overflow-hidden border border-black/[0.09] shadow-[0_24px_70px_-15px_rgba(0,0,0,0.12)] bg-white group">
               <div className="aspect-16/9 sm:aspect-21/9 overflow-hidden bg-stone-100 relative">
                 <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=90"
-                  alt="Application inspiration reference image, not a WHITEROCK completed project"
+                  src="/assets/owner/vietnam/factory-02.jpg"
+                  alt="Owner-supplied photo of the WHITEROCK Vietnam stone cutting area"
                   loading="eager"
                   fetchPriority="high"
                   className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-1000 ease-out filter brightness-102"
@@ -237,20 +237,20 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="space-y-4 max-w-xl relative z-10">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200/80">
                 <ShieldCheck className="w-3.5 h-3.5" />
-                <span className="tech-badge">0% TARIFF • FORM B C/O VERIFIED</span>
+                <span className="tech-badge">OWNER-REPORTED VIETNAM MANUFACTURING SITE</span>
               </div>
               <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
                 20,000 m² Advanced Fabrication Facility
               </h3>
               <p className="text-sm sm:text-base text-[#86868b] leading-relaxed">
-                Located in Binh Phuoc Province, with direct highway transit to Ho Chi Minh Cat Lai container port. Fully compliant with Substantial Transformation rules, providing valid Form B Certificate of Origin for 0% US Section 301 duties.
+                Located in Binh Phuoc Province. Production scope, shipping route, origin documents, and import treatment are reviewed for each order with the buyer's appointed logistics and customs professionals.
               </p>
             </div>
 
             <div className="relative rounded-2xl overflow-hidden aspect-16/8 bg-stone-100 border border-black/[0.06]">
               <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85"
-                alt="WHITEROCK Vietnam Plant"
+                src="/assets/owner/vietnam/factory-01.jpg"
+                alt="Owner-supplied photo of the WHITEROCK Vietnam site entrance"
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
               />
@@ -277,7 +277,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <Cpu className="w-6 h-6 text-amber-700" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#1d1d1f]">
-                CUPC Pre-Glued Sinks & Quad CNC Cutouts
+                Sink Cutouts, Optional Assembly & CNC Processing
               </h3>
               <p className="text-xs sm:text-sm text-[#86868b] leading-relaxed">
                 Vitreous china rectangular undermount porcelain basins pre-attached with high-strength structural silicone and stainless brackets at the Vietnam factory.
@@ -287,7 +287,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="p-4 rounded-2xl bg-[#f5f5f7] border border-black/[0.04] space-y-2 text-xs text-[#1d1d1f]">
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>cUPC-Certified Porcelain Basins</span>
+                <span>Buyer-Approved Sink Models</span>
               </div>
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
@@ -357,7 +357,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
             <div className="w-full md:w-80 aspect-4/3 rounded-2xl overflow-hidden bg-stone-100 border border-black/[0.06] shrink-0">
               <img
-                src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80"
+                src="/assets/owner/vietnam/factory-05.jpg"
                 alt="Heavy Plywood Export Crating"
                 loading="lazy"
                 className="w-full h-full object-cover"
@@ -503,7 +503,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700"
                   onError={(e) => {
                     const target = e.currentTarget;
-                    target.src = 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80';
+                    target.src = '/assets/owner/vietnam/factory-06.jpg';
                   }}
                 />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-semibold text-[#1d1d1f] shadow-xs">
@@ -608,13 +608,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
             {
               step: '03',
               title: 'Quad CNC & Assembly',
-              desc: 'Infrared bridge saw slicing, automated edge profiling, cUPC basin mounting, and dry-lay color matching.',
+              desc: 'Drawing-based cutting, edge preparation, optional sink assembly, and visual review to the approved order specification.',
               icon: Cpu
             },
             {
               step: '04',
-              title: 'Fumigated Crating',
-              desc: 'Reinforced drop-tested plywood crates with EPE foam barrier, custom labels, and direct Cat Lai container loading.',
+              title: 'Packing & Shipment Planning',
+              desc: 'Order-specific crate, protection, labeling, payload, and routing plans are confirmed before shipment.',
               icon: Truck
             }
           ].map((item, idx) => (

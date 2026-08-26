@@ -33,7 +33,7 @@ export const ColorModal: React.FC<ColorModalProps> = ({
 
   const shareContent: ShareContent = {
     title: `${color.name} (${color.material})`,
-    text: `Check out ${color.name} ${color.material} from WHITEROCK Surfaces Vietnam. Standard thicknesses: ${color.thicknesses.join(', ')}. 0% US Section 301 Tariff.`,
+    text: `Review ${color.name} ${color.material} from WHITEROCK Vietnam. Listed thicknesses: ${color.thicknesses.join(', ')}. Confirm availability with a physical sample and written quotation.`,
     image: color.image,
     material: color.material,
     specs: `${color.pattern} pattern, ${color.primaryTone} tone. Uses: ${color.applications.join(', ')}.`,

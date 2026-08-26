@@ -34,7 +34,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
   const shareContent: ShareContent = {
     title: `${product.title} (${product.sku})`,
-    text: `WHITEROCK Vietnam: ${product.title} (${product.sku}) - ${product.material}. Standard dimensions: ${product.dimensions}. 0% US Section 301 Tariff.`,
+    text: `WHITEROCK Vietnam: ${product.title} (${product.sku}) - ${product.material}. Dimensions shown: ${product.dimensions}. Final specifications and availability are confirmed in the written quotation.`,
     image: product.image,
     material: product.material,
     specs: `Dimensions: ${product.dimensions} | Thickness: ${product.thicknesses.join(', ')} | MOQ: ${product.moq}`,
@@ -140,8 +140,8 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                     <span className="text-[#1d1d1f]">{product.packaging}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#86868b]">US Tariff Status:</span>
-                    <span className="text-emerald-700 font-bold">0% Section 301 Exemption</span>
+                    <span className="text-[#86868b]">Import Treatment:</span>
+                    <span className="text-[#1d1d1f] font-semibold">Confirm with the buyer's customs broker</span>
                   </div>
                 </div>
               </div>

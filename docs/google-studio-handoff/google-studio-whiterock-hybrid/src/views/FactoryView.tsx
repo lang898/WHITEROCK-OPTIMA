@@ -123,7 +123,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
             High-Throughput Stone Processing & Edge Lines
           </h2>
           <p className="text-xs sm:text-sm text-[#86868b]">
-            Adhering to North American architectural tolerances (±0.3mm) with modern dust-free wet processing lines.
+            Production dimensions and inspection limits are agreed in approved drawings and the order quality plan.
           </p>
         </div>
 
@@ -139,7 +139,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
                     {item.quantity} In Operation
                   </span>
                   <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 font-mono">
-                    {item.keySpec || item.accuracy || '±0.3mm Precision'}
+                    {item.keySpec || item.accuracy || 'Specification confirmed per order'}
                   </span>
                 </div>
 
@@ -152,7 +152,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
               </div>
 
               <div className="pt-3 border-t border-black/[0.06] flex items-center justify-between text-xs">
-                <span className="tech-badge text-[#86868b]">{item.location || 'DONG NAI PLANT'}</span>
+                <span className="tech-badge text-[#86868b]">{item.location || 'VIETNAM FACTORY REFERENCE'}</span>
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
               </div>
             </div>

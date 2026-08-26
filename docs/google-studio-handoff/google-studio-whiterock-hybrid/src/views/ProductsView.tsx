@@ -82,22 +82,22 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
         
         {/* User-requested exact statement */}
         <p className="text-base sm:text-xl text-[#6e6e73] leading-relaxed max-w-3xl font-normal">
-          Direct-from-plant quartz countertops, vanity tops with pre-mounted CUPC sinks, and cut-to-size hospitality surfaces. Crafted in Vietnam with full Form B C/O tariff exemption.
+          Quartz countertops, vanity tops, optional buyer-approved sink assembly, and cut-to-size stone products manufactured in Vietnam. Trade documents and destination requirements are confirmed per order.
         </p>
 
         {/* Industrial Specification Pill Indicators */}
         <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
           <span className="wr-info-pill">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span className="tech-badge">cUPC Factory Pre-Glued Sinks</span>
+            <span className="tech-badge">Buyer-Approved Sink Options</span>
           </span>
           <span className="wr-info-pill">
             <Ruler className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-            <span className="tech-badge">±0.3mm CNC Cutout Accuracy</span>
+            <span className="tech-badge">Drawing-Based Cutout Review</span>
           </span>
           <span className="wr-info-pill">
             <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-            <span className="tech-badge">0% US Section 301 Duty</span>
+            <span className="tech-badge">Broker Review Required</span>
           </span>
         </div>
       </div>

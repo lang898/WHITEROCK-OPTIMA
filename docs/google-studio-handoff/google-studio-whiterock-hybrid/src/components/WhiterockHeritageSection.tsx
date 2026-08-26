@@ -38,17 +38,17 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
     {
       id: 'vanity-tops',
       title: 'Prefabricated Vanity Tops',
-      subtitle: 'cUPC Undermount Sinks Pre-Glued',
+      subtitle: 'Buyer-Approved Sink Options',
       tag: 'Bestseller for Multi-Family & Hospitality',
-      description: 'Engineered for rapid, labor-free jobsite installation. Complete with factory pre-installed cUPC porcelain bowls, pre-drilled faucet spreads (4" / 8" / single hole), and 4" matching loose or fixed backsplashes.',
+      description: 'Vanity tops can be quoted with sink cutouts, faucet layouts, backsplashes, and optional assembly based on the buyer-approved sink model and drawings.',
       specs: [
         { label: 'Standard Dimensions', value: '25", 31", 37", 43", 49", 61" Single/Double, 73"' },
         { label: 'Material Choices', value: 'Engineered Marble, Calacatta Quartz, Carrara White' },
-        { label: 'Sink Certifications', value: 'cUPC / IAPMO Certified Undermount Bowls' },
+        { label: 'Sink Documentation', value: 'Confirmed for the exact buyer-selected model' },
         { label: 'Edge Profiles', value: 'Eased, 1/4" Bevel, Bullnose, Demi-Bullnose' }
       ],
-      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85',
-      badge: '0% US Section 301 Tariff'
+      image: '/assets/owner/vietnam/factory-06.jpg',
+      badge: 'Buyer-Approved Program'
     },
     {
       id: 'kitchen-countertops',
@@ -62,8 +62,8 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Vein Alignment', value: 'Computerized Slab Vein Matching (DXF)' },
         { label: 'Finishes', value: 'High-Gloss Polished (85+ GU) / Velvet Honed / Leathered' }
       ],
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
-      badge: 'CNC ±0.3mm Tolerance'
+      image: '/assets/owner/vietnam/factory-02.jpg',
+      badge: 'Drawing-Based CNC'
     },
     {
       id: 'stone-furniture',
@@ -77,7 +77,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Edge Details', value: 'Dupont, Triple Pencil, Full Bullnose, Reverse Bevel' },
         { label: 'Application', value: 'Luxury Residential Living & High-End Hotel Lounges' }
       ],
-      image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=85',
+      image: '/assets/owner/vietnam/factory-04.jpg',
       badge: 'Bespoke Stone Craft'
     },
     {
@@ -92,7 +92,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Backing System', value: 'High-strength fiberglass mesh + resin backing' },
         { label: 'Applications', value: 'Grand Hotel Lobbies, Estate Foyers, Casino Entryways' }
       ],
-      image: 'https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&w=1200&q=85',
+      image: '/assets/owner/china/factory-08.jpg',
       badge: 'Master Inlay Art'
     },
     {
@@ -107,7 +107,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Components', value: 'Mantel shelf, side jambs/corbels, hearth, inner surround' },
         { label: 'Packaging', value: 'Reinforced foam-lined export timber crates' }
       ],
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85',
+      image: '/assets/owner/vietnam/factory-06.jpg',
       badge: '20+ Yrs Heritage'
     },
     {
@@ -122,7 +122,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Mosaic Formats', value: 'Herringbone, Hexagon, Subway, Basketweave on Mesh' },
         { label: 'Packaging', value: 'Container-optimized bundle crates with ID tags' }
       ],
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85',
+      image: '/assets/owner/vietnam/factory-05.jpg',
       badge: 'Turnkey Spec'
     }
   ];
@@ -169,7 +169,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
             </h3>
             
             <p className="text-sm text-[#6e6e73] leading-relaxed">
-              WHITEROCK operates a <strong>20,000 m² standalone manufacturing facility in Binh Phuoc, Vietnam</strong> (Công Ty TNHH Whiterock), providing North American buyers with <strong>0% Section 301 tariff exemptions</strong> and fast FOB container dispatch via Cat Lai Port. Coupled with our 20+ years stone craftsmanship lineage in Yunfu, China (Optima Marble & Granite), we offer unmatched global stone block procurement and intricate custom fabrication.
+              Owner-provided information identifies a <strong>20,000 m² manufacturing facility in Binh Phuoc, Vietnam</strong> operated by Công Ty TNHH Whiterock. China-based owner photos also document stone processing experience in Yunfu. Product origin, trade treatment, and shipping terms are confirmed for each order.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -179,7 +179,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
                   <span>Vietnam Plant (Bình Phước)</span>
                 </div>
                 <p className="text-xs text-[#86868b]">
-                  20,000 m² plant, 100k m²/yr capacity, 0% US 301 Tariff, cUPC vanity sink gluing assembly.
+                  Owner-reported plant area and capacity, with vanity-top preparation and optional sink assembly quoted by model.
                 </p>
               </div>
 
@@ -198,8 +198,8 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
           <div className="lg:col-span-5 flex flex-col gap-3">
             <div className="rounded-2xl overflow-hidden border border-black/[0.08] shadow-md aspect-16/10 relative">
               <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
-                alt="WHITEROCK Vietnam Factory Floor"
+                src="/assets/owner/vietnam/factory-01.jpg"
+                alt="Owner-supplied photo of the WHITEROCK Vietnam site entrance"
                 loading="lazy"
                 className="w-full h-full object-cover"
               />

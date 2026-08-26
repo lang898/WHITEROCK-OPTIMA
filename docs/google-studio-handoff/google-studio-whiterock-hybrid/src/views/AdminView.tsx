@@ -69,11 +69,11 @@ const initialInquiries: WebsiteInquiry[] = [
     countryState: 'Dallas, Texas (USA)',
     projectType: '320-Unit Apartment Renovation',
     itemsRequested: [
-      '240 pcs - 22" x 37" Calacatta Quartz Vanity Tops with pre-glued CUPC sinks',
+      '240 pcs - 22" x 37" Calacatta Quartz Vanity Tops with buyer-approved sinks',
       '80 pcs - 22" x 61" Double Bowl Vanity Tops with 4" Backsplash',
       '320 pcs - 4" End-splashes (Left & Right Universal)'
     ],
-    message: 'We require FOB Vietnam port quotation and 40HQ container load optimization. Form B C/O needed for US 0% Section 301 tariff clearance.',
+    message: 'We require a Vietnam port quotation and container load review. Please list available origin and export documents for our customs broker.',
     submittedAt: '2026-08-22 14:32',
     status: 'New',
     priority: 'High',
@@ -99,7 +99,7 @@ const initialInquiries: WebsiteInquiry[] = [
     submittedAt: '2026-08-21 09:15',
     status: 'Sample Shipped',
     priority: 'High',
-    internalNotes: 'FedEx Tracking #79461182901 dispatched from Dong Nai sample workshop.',
+    internalNotes: 'Draft inquiry record only. Add a real tracking number and dispatch location after shipment.',
     estimatedUnits: 3
   },
   {
@@ -188,28 +188,28 @@ export const AdminView: React.FC<AdminViewProps> = ({
       return saved
         ? JSON.parse(saved)
         : {
-            brandName: 'WHITEROCK SURFACES VIETNAM',
+            brandName: 'WHITEROCK COMPANY LIMITED',
             tagline: 'Direct Countertop & Vanity Top Factory',
-            companyEmail: defaultSiteConfig.email || 'export@whiterocksurfaces.com',
-            directPhone: defaultSiteConfig.tel || '+84 (0) 251 888 6920',
-            whatsApp: defaultSiteConfig.whatsapp || '+84 908 552 119',
+            companyEmail: defaultSiteConfig.email || 'llang@whiterockstone.com',
+            directPhone: defaultSiteConfig.tel || '+84 0798 858 220',
+            whatsApp: defaultSiteConfig.whatsapp || '+84 798 858 220',
             wechatId: 'WHITEROCK_STONE_VN',
-            vietnamAddress: 'Lot C4-2, Nhon Trach III Industrial Zone, Dong Nai Province, Vietnam',
-            tariffNotice: '0% US Section 301 Tariff with Form B Certificate of Origin',
+            vietnamAddress: defaultSiteConfig.address,
+            tariffNotice: 'Customs treatment requires buyer broker confirmation',
             exportCapacity: '100,000+ m² Annual Cut-to-Size Capacity',
             enableSampleKitCta: true,
             enableTariffCalculator: true
           };
     } catch {
       return {
-        brandName: 'WHITEROCK SURFACES VIETNAM',
+        brandName: 'WHITEROCK COMPANY LIMITED',
         tagline: 'Direct Countertop & Vanity Top Factory',
-        companyEmail: 'export@whiterocksurfaces.com',
-        directPhone: '+84 (0) 251 888 6920',
-        whatsApp: '+84 908 552 119',
+        companyEmail: 'llang@whiterockstone.com',
+        directPhone: '+84 0798 858 220',
+        whatsApp: '+84 798 858 220',
         wechatId: 'WHITEROCK_STONE_VN',
-        vietnamAddress: 'Lot C4-2, Nhon Trach III Industrial Zone, Dong Nai Province, Vietnam',
-        tariffNotice: '0% US Section 301 Tariff with Form B Certificate of Origin',
+        vietnamAddress: defaultSiteConfig.address,
+        tariffNotice: 'Customs treatment requires buyer broker confirmation',
         exportCapacity: '100,000+ m² Annual Cut-to-Size Capacity',
         enableSampleKitCta: true,
         enableTariffCalculator: true
@@ -235,7 +235,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
     description: '',
     specs: {
       Size: '22" x 37" / 49" / 61"',
-      Sink: 'cUPC Undermount Rectangular',
+      Sink: 'Buyer-approved undermount model',
       Edge: 'Eased Flat Edge with 1/8" Bevel',
       MOQ: '20 pcs / SKU',
       LeadTime: '25–35 Days'
@@ -531,7 +531,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span>Online</span>
           </div>
-          <span className="text-[10px] text-stone-500 font-medium">Dong Nai, Vietnam</span>
+          <span className="text-[10px] text-stone-500 font-medium">Binh Phuoc, Vietnam</span>
         </div>
       </div>
 
@@ -781,10 +781,10 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   category: 'Bathroom Vanity',
                   material: 'Engineered Quartz',
                   image: 'assets/products/vanity-top-calacatta-warm.jpg',
-                  description: 'Prefabricated bathroom vanity top with cUPC porcelain undermount sink.',
+                  description: 'Prefabricated bathroom vanity top with optional buyer-approved undermount sink assembly.',
                   specs: {
                     Size: '22" x 37" / 49" / 61"',
-                    Sink: 'cUPC Undermount Rectangular',
+                    Sink: 'Buyer-approved undermount model',
                     Edge: 'Eased Edge with Micro-Bevel',
                     MOQ: '20 pcs / SKU',
                     LeadTime: '25–35 Days'
@@ -966,10 +966,10 @@ export const AdminView: React.FC<AdminViewProps> = ({
         <div className="space-y-6">
           <div className="bg-white border border-stone-200 rounded-3xl p-6 shadow-xs">
             <h2 className="text-xl font-bold font-serif text-stone-900">
-              Commercial Projects & Case Studies Showcase
+              Factory Capability References
             </h2>
             <p className="text-xs text-stone-600 mt-1">
-              Active commercial and multi-family case studies showcased on the public Projects view.
+              Owner-supplied factory references. Do not present these records as named customer projects.
             </p>
           </div>
 
@@ -1004,7 +1004,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
                 <div className="text-right">
                   <span className="text-[11px] text-emerald-700 font-bold bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 inline-block">
-                    Live On Website
+                    Capability Reference
                   </span>
                 </div>
               </div>
@@ -1070,7 +1070,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               Global Website Settings & Contact Information
             </h2>
             <p className="text-xs sm:text-sm text-stone-600 mt-1">
-              Changes made here update the live header micro-bar, inquiry emails, factory address, and tariff notices immediately across the website.
+              Changes made here update the live header micro-bar, inquiry emails, factory address, and customs-review notices across the website.
             </p>
           </div>
 
@@ -1164,7 +1164,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
               <div className="space-y-1.5">
                 <label className="text-xs font-bold text-stone-700">
-                  US Tariff Compliance Claim Badge
+                  Customs & Import Review Notice
                 </label>
                 <input
                   type="text"
@@ -1196,14 +1196,14 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   if (confirm('Reset all site settings to default factory values?')) {
                     localStorage.removeItem('whiterock_cms_site_config');
                     setSiteSettings({
-                      brandName: 'WHITEROCK SURFACES VIETNAM',
+                      brandName: 'WHITEROCK COMPANY LIMITED',
                       tagline: 'Direct Countertop & Vanity Top Factory',
                       companyEmail: defaultSiteConfig.email,
                       directPhone: defaultSiteConfig.tel,
                       whatsApp: defaultSiteConfig.whatsapp,
                       wechatId: 'WHITEROCK_STONE_VN',
-                      vietnamAddress: 'Lot C4-2, Nhon Trach III Industrial Zone, Dong Nai Province, Vietnam',
-                      tariffNotice: '0% US Section 301 Tariff with Form B Certificate of Origin',
+                      vietnamAddress: defaultSiteConfig.address,
+                      tariffNotice: 'Customs treatment requires buyer broker confirmation',
                       exportCapacity: '100,000+ m² Annual Cut-to-Size Capacity',
                       enableSampleKitCta: true,
                       enableTariffCalculator: true

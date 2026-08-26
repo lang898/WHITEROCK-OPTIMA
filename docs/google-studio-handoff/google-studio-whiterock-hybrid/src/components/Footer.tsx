@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="space-y-1">
               <h4 className="font-semibold text-sm text-[#1d1d1f]">Vietnam Primary Base</h4>
               <p className="text-xs text-[#86868b] leading-relaxed">
-                20,000 m² modern fabrication plant in Binh Phuoc (0% US Section 301 Tariff).
+                Owner-provided information lists a 20,000 m² manufacturing site in Binh Phuoc.
               </p>
             </div>
           </div>
@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="space-y-1">
               <h4 className="font-semibold text-sm text-[#1d1d1f]">North American Specs</h4>
               <p className="text-xs text-[#86868b] leading-relaxed">
-                Standard 22" vanity depths, cUPC pre-glued sinks, ±0.3mm CNC edge tolerance.
+                Common vanity dimensions, sink cutouts, and custom specifications available by quotation.
               </p>
             </div>
           </div>
@@ -73,7 +73,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="space-y-1">
               <h4 className="font-semibold text-sm text-[#1d1d1f]">Direct Export Compliance</h4>
               <p className="text-xs text-[#86868b] leading-relaxed">
-                Form B C/O verified, NSF-51 food-safe certification, and ISPM-15 crating.
+                Required test reports, export documents, and packing specifications are confirmed per order.
               </p>
             </div>
           </div>
@@ -213,7 +213,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <p className="text-xs text-[#86868b] leading-relaxed pr-6">
-              Official export website for WHITEROCK MARBLE & GRANITE CO., LTD. Direct stone manufacturer with a 20,000 m² modern fabrication facility in Binh Phuoc Province, Vietnam and 20+ years stone craft heritage. Supplying prefabricated quartz & granite vanity tops with cUPC sinks, waterfall kitchen islands, 5-axis waterjet medallions, hand-carved fireplaces, and cut-to-size project stone for global developers.
+              Official export website for WHITEROCK COMPANY LIMITED. The company manufactures natural and engineered stone products in Binh Phuoc Province, Vietnam, including vanity tops, countertops, stone furniture, mosaics, fireplaces, and cut-to-size work. Final specifications and documentation are confirmed in writing for each order.
             </p>
 
             <div className="space-y-2 text-xs text-[#6e6e73] pt-2">
@@ -350,8 +350,8 @@ export const Footer: React.FC<FooterProps> = ({
           </p>
           <div className="flex items-center gap-6">
             <span>Vietnam Factory Direct</span>
-            <span>0% Section 301 Tariff</span>
-            <span>Form B C/O Certified</span>
+            <span>Order-Specific Specifications</span>
+            <span>Documents Confirmed in Writing</span>
           </div>
         </div>
       </div>

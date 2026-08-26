@@ -27,7 +27,7 @@ interface FaqSectionWithSchemaProps {
 export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
   currentLocale,
   title = 'Frequently Asked Questions & B2B Stone Guide',
-  subtitle = 'Authoritative technical answers, tariff guidelines, dimensional tolerances, and container shipping details for North American builders, hospitality developers, and stone importers.',
+  subtitle = 'Practical procurement guidance for specifications, samples, documentation, and container planning. Final terms require written confirmation.',
   categoryFilter,
   showSchemaInspector = true,
   className = ''
@@ -124,7 +124,7 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
         <div className="space-y-3 max-w-3xl">
           <div className="wr-panel-eyebrow wr-panel-eyebrow--compact">
             <HelpCircle className="w-3.5 h-3.5 text-amber-600" />
-            <span className="tech-badge">TECHNICAL KNOWLEDGE BASE & TARIFF FAQ</span>
+            <span className="tech-badge">TECHNICAL & PROCUREMENT KNOWLEDGE BASE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-[-0.03em] text-[#1d1d1f]">
             {title}
@@ -180,7 +180,7 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
           <Search className="w-4 h-4 text-[#86868b] absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
-            placeholder="Search keywords (e.g. tariff, lead time, sinks)..."
+            placeholder="Search keywords (e.g. samples, lead time, sinks)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 pr-4 py-2.5 bg-[#f5f5f7] border border-black/[0.06] rounded-full text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white"

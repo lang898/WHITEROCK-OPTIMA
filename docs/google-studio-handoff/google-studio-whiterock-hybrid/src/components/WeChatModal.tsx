@@ -149,7 +149,7 @@ export const WeChatModal: React.FC<WeChatModalProps> = ({ isOpen, onClose }) => 
               <span>直接工厂对接服务（免去中间商沟通延迟）</span>
             </div>
             <p className="text-[11px] text-[#86868b] pl-5 leading-relaxed">
-              即时发送 CAD 图纸、台面开孔尺寸、石英石/大理石高清实拍大板视频与 0% 美国关税清关咨询。
+              可发送 CAD 图纸、台面开孔尺寸与石材实拍资料；进口税费和清关要求请由买方报关行确认。
             </p>
           </div>
         </div>

@@ -56,16 +56,16 @@ export const edgeProfiles = [
 export const sinkOptions = [
   {
     id: 'undermount-rect',
-    name: 'Pre-Mounted Rectangular Ceramic Basin (UPC / cUPC Certified)',
-    desc: '18" x 13" white vitreous china basin, pre-glued with 2-part marine epoxy + stainless retention brackets',
-    badge: '90% North American Standard',
+    name: 'Optional Rectangular Ceramic Basin Assembly',
+    desc: 'Final sink model, dimensions, mounting method, and documents require buyer approval',
+    badge: 'Model Approval Required',
     cost: 32
   },
   {
     id: 'undermount-oval',
-    name: 'Pre-Mounted Oval Ceramic Basin (UPC Certified)',
-    desc: '17" x 14" traditional oval undermount porcelain sink with overflow hole',
-    badge: 'Traditional Hospitality',
+    name: 'Optional Oval Ceramic Basin Assembly',
+    desc: 'Quoted against the exact buyer-selected sink template and mounting specification',
+    badge: 'Model Approval Required',
     cost: 28
   },
   {
@@ -144,7 +144,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
 
         <div className="flex items-center gap-2 text-xs font-mono text-emerald-800 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 shrink-0">
           <ShieldCheck className="w-4 h-4 text-emerald-600" />
-          <span>cUPC Factory Pre-Glued</span>
+          <span>Buyer-Approved Sink Options</span>
         </div>
       </div>
 
@@ -272,7 +272,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
           {/* Step 5: Sink Program */}
           <div className="space-y-2.5">
             <span className="tech-badge text-[#86868b] block">
-              STEP 5: CUPC SINK & BASIN MOUNTING PROGRAM
+              STEP 5: SINK CUTOUT & OPTIONAL ASSEMBLY
             </span>
             <div className="space-y-2">
               {sinkOptions.map((sk) => (
@@ -312,7 +312,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
                 PROGRAM SPECIFICATION TAKEOFF
               </span>
               <span className="text-xs font-mono text-emerald-400">
-                0% US SECTION 301 DUTY
+                PLANNING ESTIMATE ONLY
               </span>
             </div>
 

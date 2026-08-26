@@ -52,35 +52,35 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
   const rooms: RoomScene[] = [
     {
       id: 'vanity',
-      name: 'Bathroom Vanity Top',
-      category: 'Bathroom',
-      defaultSize: '49" x 22" x 2cm',
-      description: 'Standard 49" single/double sink bathroom vanity with undermount vitreous china basin & 4" backsplash.',
-      baseImage: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'
+      name: 'Finished Top Review',
+      category: 'Factory Reference',
+      defaultSize: 'Dimensions by approved drawing',
+      description: 'Owner-supplied photo of finished stone tops staged for review in the Vietnam factory.',
+      baseImage: '/assets/owner/vietnam/factory-06.jpg'
     },
     {
       id: 'kitchen',
-      name: 'Gourmet Kitchen Island',
-      category: 'Kitchen',
-      defaultSize: '108" x 42" x 3cm (Mitered 4cm Waterfall)',
-      description: 'Large-format kitchen island countertop featuring bookmatched waterfall returns and seamless sink integration.',
-      baseImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80'
+      name: 'Vietnam Cutting Area',
+      category: 'Factory Reference',
+      defaultSize: 'Order-specific',
+      description: 'Owner-supplied photo of the stone cutting area. Equipment model and process limits require confirmation.',
+      baseImage: '/assets/owner/vietnam/factory-02.jpg'
     },
     {
       id: 'table',
-      name: 'Round Marble Table Top',
-      category: 'Furniture',
-      defaultSize: 'Dia. 42" x 2cm Beveled',
-      description: 'Sculptural stone tabletop suitable for luxury hospitality dining, cafes, and residential living spaces.',
-      baseImage: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1200&q=80'
+      name: 'Production Hall & Racks',
+      category: 'Factory Reference',
+      defaultSize: 'Order-specific',
+      description: 'Owner-supplied photo showing the production hall, stone racks, and staged components.',
+      baseImage: '/assets/owner/vietnam/vanity-01.jpg'
     },
     {
       id: 'bar',
-      name: 'Commercial Reception / Bar',
-      category: 'Commercial',
-      defaultSize: 'Custom Project Length',
-      description: 'Backlit or polished stone surface engineered for heavy commercial and hospitality traffic.',
-      baseImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80'
+      name: 'Finished Goods Staging',
+      category: 'Factory Reference',
+      defaultSize: 'Order-specific',
+      description: 'Owner-supplied photo of finished components staged on racks before order-specific packing.',
+      baseImage: '/assets/owner/vietnam/vanity-04.jpg'
     }
   ];
 
@@ -92,8 +92,8 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Engineered Quartz',
       tone: 'White / Gold Vein',
       cssTexture: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 40%, #cbd5e1 60%, #94a3b8 100%)',
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
-      desc: 'Bright white matrix with warm honey and grey dramatic veining.'
+      image: '/assets/owner/vietnam/factory-06.jpg',
+      desc: 'Digital planning palette only. Confirm color and veining with an approved physical sample.'
     },
     {
       slug: 'alpine-carrara',
@@ -101,8 +101,8 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Natural Marble',
       tone: 'Cool White / Grey',
       cssTexture: 'linear-gradient(120deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%)',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
-      desc: 'Timeless Italian Carrara character with fine linear feathering.'
+      image: '/assets/owner/vietnam/factory-05.jpg',
+      desc: 'Digital planning palette only. Natural stone appearance varies and requires sample approval.'
     },
     {
       slug: 'nero-marquina',
@@ -110,8 +110,8 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Natural Marble',
       tone: 'Deep Black / White Vein',
       cssTexture: 'linear-gradient(145deg, #09090b 0%, #18181b 50%, #27272a 100%)',
-      image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80',
-      desc: 'High-contrast Spanish black marble with bold lightning veins.'
+      image: '/assets/owner/vietnam/factory-04.jpg',
+      desc: 'Digital planning palette only. Confirm the actual slab selection before production.'
     },
     {
       slug: 'dove-concrete',
@@ -119,8 +119,8 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Engineered Quartz',
       tone: 'Mid-Tone Warm Grey',
       cssTexture: 'linear-gradient(135deg, #78716c 0%, #57534e 50%, #44403c 100%)',
-      image: 'https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&w=800&q=80',
-      desc: 'Industrial matte texture with non-porous resistance.'
+      image: '/assets/owner/china/factory-08.jpg',
+      desc: 'Digital planning palette only. Performance and finish require product-specific documentation.'
     },
     {
       slug: 'statuario-glory',
@@ -128,8 +128,8 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Engineered Quartz',
       tone: 'Pure White / Bold Grey',
       cssTexture: 'linear-gradient(135deg, #ffffff 0%, #f1f5f9 45%, #cbd5e1 75%, #64748b 100%)',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-      desc: 'Iconic Italian Statuario aesthetic with bold branch veining.'
+      image: '/assets/owner/vietnam/factory-02.jpg',
+      desc: 'Digital planning palette only. Confirm color and veining with an approved physical sample.'
     },
     {
       slug: 'black-galaxy',
@@ -137,8 +137,8 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Natural Granite',
       tone: 'Jet Black / Golden Flakes',
       cssTexture: 'linear-gradient(135deg, #020617 0%, #0f172a 60%, #1e293b 100%)',
-      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
-      desc: 'Extremely durable granite with crystalline copper sparkles.'
+      image: '/assets/owner/china/factory-07.jpg',
+      desc: 'Digital planning palette only. Natural stone appearance and properties vary by selected slab.'
     }
   ];
 
@@ -157,16 +157,17 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
   const handleExportSpec = () => {
     const specSummary = `
 ========================================
-WHITEROCK SURFACES VIETNAM FABRICATION SPEC
+WHITEROCK COMPANY LIMITED PROJECT PLANNING NOTE
 ========================================
-Project / Room: ${activeRoom.name} (${activeRoom.defaultSize})
-Stone Surface: ${activeColor.name} (${activeColor.material})
+Factory Photo Reference: ${activeRoom.name} (${activeRoom.defaultSize})
+Proposed Stone Palette: ${activeColor.name} (${activeColor.material})
 Finish: ${surfaceFinish.toUpperCase()}
 Edge Profile: ${activeEdge.name} (${activeEdge.spec})
 Sink Cutout: ${selectedSink.replace('-', ' ').toUpperCase()}
 Backsplash: ${selectedBacksplash.toUpperCase()}
-Manufacturing Plant: WHITEROCK Vietnam Dong Nai Plant (0% US Section 301 Tariff)
-Quality Standard: AQL 1.5 Inspection, ±0.5mm CNC Tolerance
+Manufacturing Site: WHITEROCK Vietnam, Binh Phuoc Province
+Acceptance Criteria: Confirm in approved drawings, physical samples, quality plan, and written quotation
+Image Note: Owner-supplied factory media; not a room rendering or physical color sample
 ========================================
 `;
     navigator.clipboard.writeText(specSummary);
@@ -181,13 +182,13 @@ Quality Standard: AQL 1.5 Inspection, ±0.5mm CNC Tolerance
         <div className="space-y-1.5">
           <div className="wr-panel-eyebrow wr-panel-eyebrow--compact">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            <span className="tech-badge">INTERACTIVE STONE STUDIO • REAL-TIME MATERIAL SIMULATOR</span>
+            <span className="tech-badge">OWNER-SUPPLIED FACTORY MEDIA • PROJECT PLANNING TOOL</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1d1d1f]">
-            Live Stone & Fabrication Visualizer
+            Stone Specification Planner
           </h2>
           <p className="text-xs sm:text-sm text-[#86868b] max-w-2xl">
-            Simulate your project in real-time. Test luxury quartz & marble materials, custom edge details, undermount sink cutouts, and export-ready specifications.
+            Review factory photo references and assemble a preliminary specification. Digital palettes are not physical samples; all details require written approval.
           </p>
         </div>
 
@@ -218,7 +219,7 @@ Quality Standard: AQL 1.5 Inspection, ±0.5mm CNC Tolerance
             {/* Background Room Photography */}
             <img
               src={activeColor.image || activeRoom.baseImage}
-              alt={`${activeColor.name} in ${activeRoom.name}`}
+              alt={`Owner-supplied factory photo reference for ${activeRoom.name}; ${activeColor.name} is a digital planning palette only`}
               loading="lazy"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
             />
@@ -235,10 +236,10 @@ Quality Standard: AQL 1.5 Inspection, ±0.5mm CNC Tolerance
               <div className="text-[11px] text-[#6e6e73] flex items-center gap-2">
                 <span className="bg-amber-50 text-amber-900 border border-amber-200 px-2 py-0.5 rounded font-mono font-bold">{activeEdge.name.split(' ')[0]}</span>
                 <span>•</span>
-                <span>{surfaceFinish === 'polished' ? 'High Polish (85+ GU)' : 'Honed Matte Silk'}</span>
+                <span>{surfaceFinish === 'polished' ? 'Proposed polished finish' : 'Proposed honed finish'}</span>
               </div>
               <div className="text-[10px] text-[#86868b] pt-1 border-t border-black/[0.04]">
-                {activeRoom.defaultSize} • 0% US Tariff Route
+                {activeRoom.defaultSize} • Broker review required
               </div>
             </div>
 
@@ -302,7 +303,7 @@ Quality Standard: AQL 1.5 Inspection, ±0.5mm CNC Tolerance
                 <span>FABRICATION SPECIFICATIONS</span>
               </span>
               <span className="text-[11px] text-[#86868b] font-mono bg-[#f5f5f7] px-2.5 py-0.5 rounded-full border border-black/[0.05]">
-                CNC Machined ±0.5mm
+                Drawing Approval Required
               </span>
             </div>
 

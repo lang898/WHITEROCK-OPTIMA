@@ -60,113 +60,105 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<'all' | 'instagram' | 'linkedin' | 'youtube' | 'pinterest'>('all');
   const [likedPosts, setLikedPosts] = useState<Record<string, boolean>>({});
-  const [postLikes, setPostLikes] = useState<Record<string, number>>({
-    'post-1': 342,
-    'post-2': 189,
-    'post-3': 512,
-    'post-4': 276,
-    'post-5': 420,
-    'post-6': 195,
-  });
+  const [postLikes, setPostLikes] = useState<Record<string, number>>({});
   const [activeMediaModal, setActiveMediaModal] = useState<SocialPost | null>(null);
 
   const posts: SocialPost[] = [
     {
       id: 'post-1',
       platform: 'instagram',
-      title: 'Bookmatched Calacatta Crest Hotel Suite Vanity',
-      caption: 'Precision 4cm mitered waterfall edge assembly with dual cUPC undermount sinks for a 240-key luxury resort in Orlando, FL. Hand-inspected with AQL 1.5 tolerance at Dong Nai facility.',
-      author: 'WHITEROCK Surfaces Studio',
-      handle: '@whiterock.surfaces',
-      date: '2 hours ago',
-      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
-      likes: 342,
-      commentsCount: 28,
-      stoneTag: 'Calacatta Crest Quartz',
-      stoneMaterial: 'Engineered Quartz',
+      title: 'Finished Stone Tops Staged for Review',
+      caption: 'Owner-supplied Vietnam factory photo. Product dimensions, stone selection, sink model, and acceptance criteria are confirmed for each order.',
+      author: 'WHITEROCK Website Draft',
+      handle: 'Owner-supplied factory media',
+      date: 'Draft',
+      image: '/assets/owner/vietnam/factory-06.jpg',
+      likes: 0,
+      commentsCount: 0,
+      stoneTag: 'Finished Top Reference',
+      stoneMaterial: 'Material varies by order',
       externalUrl: 'https://instagram.com',
-      badge: 'Hospitality Project'
+      badge: 'Factory Reference'
     },
     {
       id: 'post-2',
       platform: 'linkedin',
-      title: '40HQ Container Dispatch to Port of Houston (0% Section 301)',
-      caption: '14 fumigated solid plywood crates containing custom 22"x49" and 22"x61" quartz vanity tops with pre-attached vitreous china sinks. Form B Certificate of Origin officially issued and verified.',
-      author: 'WHITEROCK Export Operations',
-      handle: 'WHITEROCK Surfaces Vietnam',
-      date: 'Yesterday',
-      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
-      likes: 189,
-      commentsCount: 15,
-      stoneTag: 'Alpine Carrara Quartz',
-      stoneMaterial: 'Commercial Batch',
+      title: 'Bridge Cutting Equipment Reference',
+      caption: 'Owner-supplied China factory photo showing bridge cutting equipment. Machine model, working range, and order allocation require owner confirmation.',
+      author: 'WHITEROCK Website Draft',
+      handle: 'Owner-supplied factory media',
+      date: 'Draft',
+      image: '/assets/owner/china/factory-07.jpg',
+      likes: 0,
+      commentsCount: 0,
+      stoneTag: 'Bridge Cutting',
+      stoneMaterial: 'Equipment reference',
       externalUrl: siteConfig.social.linkedin || 'https://linkedin.com',
-      badge: '0% Tariff Staging'
+      badge: 'Factory Reference'
     },
     {
       id: 'post-3',
       platform: 'youtube',
-      title: '5-Axis CNC Infrared Bridge Saw: Precision Curved Sink Cutouts',
-      caption: 'Watch our automated Italian 5-axis saw execute continuous edge polishing and ±0.3mm undermount faucet drilling without micro-fractures. 4K factory walkthrough episode.',
-      author: 'WHITEROCK Plant Engineering',
-      handle: 'WHITEROCK Vietnam 4K',
-      date: '3 days ago',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-      likes: 512,
-      commentsCount: 42,
-      stoneTag: 'Statuario Luxe Jumbo Slabs',
-      stoneMaterial: 'CNC Fabrication',
-      videoUrl: 'https://youtube.com',
+      title: 'Vietnam Stone Cutting Area',
+      caption: 'Owner-supplied Vietnam factory photo showing a stone cutting area. Equipment origin, model, and process capability are confirmed only in current factory records.',
+      author: 'WHITEROCK Website Draft',
+      handle: 'Owner-supplied factory media',
+      date: 'Draft',
+      image: '/assets/owner/vietnam/factory-02.jpg',
+      likes: 0,
+      commentsCount: 0,
+      stoneTag: 'Stone Cutting Area',
+      stoneMaterial: 'Equipment reference',
       externalUrl: 'https://youtube.com',
-      badge: 'Factory Reel 4K'
+      badge: 'Factory Reference'
     },
     {
       id: 'post-4',
       platform: 'pinterest',
-      title: 'Warm Minimalist Bathroom Lookbook: Honed Dove Concrete',
-      caption: 'Matte silk touch quartz vanity surface paired with brushed champagne brass fixtures and solid walnut cabinetry. Ideal for modern multi-family master suites.',
-      author: 'WHITEROCK Design Archives',
-      handle: '@whiterock_stone',
-      date: '4 days ago',
-      image: 'https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&w=800&q=80',
-      likes: 276,
-      commentsCount: 19,
-      stoneTag: 'Dove Concrete Honed',
-      stoneMaterial: 'Matte Quartz',
+      title: 'Continuous Edge Processing Line',
+      caption: 'Owner-supplied China factory photo showing a continuous stone edge processing line. Available edge programs are confirmed against the approved sample and drawing.',
+      author: 'WHITEROCK Website Draft',
+      handle: 'Owner-supplied factory media',
+      date: 'Draft',
+      image: '/assets/owner/china/factory-08.jpg',
+      likes: 0,
+      commentsCount: 0,
+      stoneTag: 'Edge Processing',
+      stoneMaterial: 'Equipment reference',
       externalUrl: 'https://pinterest.com',
-      badge: 'Design Moodboard'
+      badge: 'Factory Reference'
     },
     {
       id: 'post-5',
       platform: 'instagram',
-      title: 'Dramatic Nero Marquina Slabs Ready for Dry-Lay Inspection',
-      caption: 'Deep Spanish black natural marble slabs lined up for veining harmony verification before final CNC cutting for a penthouse dining table & bar counter contract.',
-      author: 'WHITEROCK Quality Lab',
-      handle: '@whiterock.surfaces',
-      date: '5 days ago',
-      image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80',
-      likes: 420,
-      commentsCount: 36,
-      stoneTag: 'Nero Marquina Black',
-      stoneMaterial: 'Natural Marble',
+      title: 'Vanity Tops on Factory Worktables',
+      caption: 'Owner-supplied Vietnam factory photo showing stone tops arranged on worktables. It is a production reference, not a named customer installation.',
+      author: 'WHITEROCK Website Draft',
+      handle: 'Owner-supplied factory media',
+      date: 'Draft',
+      image: '/assets/owner/vietnam/factory-04.jpg',
+      likes: 0,
+      commentsCount: 0,
+      stoneTag: 'Vanity Top Reference',
+      stoneMaterial: 'Material varies by order',
       externalUrl: 'https://instagram.com',
-      badge: 'Dry-Lay QC'
+      badge: 'Factory Reference'
     },
     {
       id: 'post-6',
       platform: 'linkedin',
-      title: 'ASTM C97 / NSF-51 Food Safety Test Report Summary',
-      caption: 'Comprehensive third-party laboratory test metrics: Water absorption < 0.03%, Mohs hardness 7, stain resistance grade 5/5. Full PDF reports available for architects.',
-      author: 'WHITEROCK Technical Directorate',
-      handle: 'WHITEROCK Surfaces Vietnam',
-      date: '1 week ago',
-      image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80',
-      likes: 195,
-      commentsCount: 12,
-      stoneTag: 'Technical Specs',
-      stoneMaterial: 'ASTM Compliance',
+      title: 'Production Hall and Stone Racks',
+      caption: 'Owner-supplied Vietnam factory photo showing stone racks and staged components. Material properties and test reports must be confirmed for the exact ordered product.',
+      author: 'WHITEROCK Website Draft',
+      handle: 'Owner-supplied factory media',
+      date: 'Draft',
+      image: '/assets/owner/vietnam/vanity-01.jpg',
+      likes: 0,
+      commentsCount: 0,
+      stoneTag: 'Production Hall',
+      stoneMaterial: 'Factory reference',
       externalUrl: siteConfig.social.linkedin || 'https://linkedin.com',
-      badge: 'Lab Compliance'
+      badge: 'Factory Reference'
     }
   ];
 
@@ -209,17 +201,17 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
         <div className="space-y-3 max-w-3xl">
           <div className="wr-panel-eyebrow">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            <span className="tech-badge">SOCIAL HUB • LIVE FROM VIETNAM PLANT & GLOBAL PROJECTS</span>
+            <span className="tech-badge">OWNER MEDIA • WEBSITE CONTENT DRAFTS</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
-            Connect, Share & Follow Us Worldwide.
+            Factory Media Ready for Your Content Plan.
           </h2>
           <p className="text-sm sm:text-base text-[#6e6e73] leading-relaxed">
-            Follow our daily factory fabrications in Dong Nai, Vietnam, container staging for North American ports, ASTM laboratory test demonstrations, and luxury hotel bathroom installations.
+            These unpublished website drafts use owner-supplied factory photos. They do not represent verified customer projects, published social engagement, or product-specific test claims.
           </p>
         </div>
 
-        {/* Live Channel Follower Stats Row */}
+        {/* Contact channels */}
         <div className="flex flex-wrap items-center gap-2 shrink-0">
           <a
             href={siteConfig.social.linkedin || 'https://linkedin.com'}
@@ -231,7 +223,6 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
               <LinkedInIcon className="w-3 h-3" />
             </div>
             <span>LinkedIn</span>
-            <span className="text-[10px] text-[#86868b] font-mono">14.2k</span>
           </a>
 
           <a
@@ -244,7 +235,6 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
               <InstagramIcon className="w-3 h-3" />
             </div>
             <span>Instagram</span>
-            <span className="text-[10px] text-[#86868b] font-mono">28.5k</span>
           </a>
 
           <button
@@ -256,7 +246,6 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
               <WeChatIcon className="w-3 h-3" />
             </div>
             <span>WeChat 微信</span>
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           </button>
 
           <a
@@ -275,11 +264,11 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
       <div className="apple-card p-3 flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-1.5">
           {[
-            { id: 'all', label: 'All Live Feeds', count: posts.length },
-            { id: 'instagram', label: '📸 Instagram Stone Gallery', count: 2 },
-            { id: 'linkedin', label: '💼 LinkedIn B2B Logistics', count: 2 },
-            { id: 'youtube', label: '🎥 YouTube CNC Videos', count: 1 },
-            { id: 'pinterest', label: '📌 Pinterest Lookbooks', count: 1 },
+            { id: 'all', label: 'All Drafts', count: posts.length },
+            { id: 'instagram', label: 'Instagram Drafts', count: 2 },
+            { id: 'linkedin', label: 'LinkedIn Drafts', count: 2 },
+            { id: 'youtube', label: 'Video Draft', count: 1 },
+            { id: 'pinterest', label: 'Pinterest Draft', count: 1 },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -297,7 +286,7 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
 
         <div className="text-xs text-[#86868b] px-3 font-mono flex items-center gap-1.5">
           <Clock className="w-3.5 h-3.5 text-emerald-600" />
-          <span>Real-Time Feed Sync</span>
+          <span>Not yet published</span>
         </div>
       </div>
 

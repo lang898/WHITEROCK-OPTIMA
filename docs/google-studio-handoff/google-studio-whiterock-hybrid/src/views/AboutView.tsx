@@ -43,12 +43,12 @@ export const AboutView: React.FC<AboutViewProps> = ({
     {
       year: '2015',
       title: 'North American Expansion',
-      desc: 'Formed strategic partnerships with major US/Canadian multi-family developers, supplying prefabricated quartz and granite vanity tops with cUPC certified pre-mounted sinks.'
+      desc: 'Expanded product development for common North American vanity-top dimensions, sink cutouts, backsplashes, and project schedules.'
     },
     {
       year: '2020',
       title: 'Vietnam Modern Plant Commissioning',
-      desc: 'Established WHITEROCK COMPANY LIMITED (Công Ty TNHH Whiterock) in Binh Phuoc Province, Vietnam with a 20,000 m² modern fabrication facility to provide 0% US Section 301 tariff benefits.'
+      desc: 'Established WHITEROCK COMPANY LIMITED (Công Ty TNHH Whiterock) in Binh Phuoc Province, Vietnam with an owner-reported 20,000 m² manufacturing site.'
     },
     {
       year: 'Present',
@@ -65,8 +65,8 @@ export const AboutView: React.FC<AboutViewProps> = ({
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-amber-600" />,
-      title: '0% US Section 301 Tariff',
-      desc: '100% compliant with Substantial Transformation rules. Verified Form B Certificate of Origin (C/O) documentation issued by Vietnam trade authorities for seamless US customs clearance.'
+      title: 'Order-Specific Trade Review',
+      desc: 'Product origin, classification, customs treatment, and required export documents must be confirmed for each shipment with qualified advisers.'
     },
     {
       icon: <Award className="w-6 h-6 text-indigo-600" />,
@@ -81,7 +81,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
   ];
 
   const capabilities = [
-    'Prefabricated bathroom vanity tops with factory-installed cUPC porcelain sinks',
+    'Prefabricated bathroom vanity tops with buyer-approved sink cutouts and optional assembly',
     'Custom kitchen countertops & waterfall islands with 45° mitered vein flow',
     'Luxury indoor & outdoor stone furniture (dining, coffee & hospitality tables)',
     'Intricate 5-axis CNC waterjet medallions and decorative floor borders',
@@ -137,7 +137,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
             </p>
 
             <p className="text-sm sm:text-base text-[#6e6e73] leading-relaxed">
-              In 2020, to better serve North American clients facing Section 301 tariffs, we expanded with our modern <strong>20,000 m² standalone manufacturing plant in Binh Phuoc Province, Vietnam</strong>. Today, our dual-hub synergy combines Vietnam’s tariff-free export efficiency with 20+ years of artisanal stone carving and waterjet technology.
+              In 2020, WHITEROCK expanded its manufacturing presence in <strong>Binh Phuoc Province, Vietnam</strong>. Owner-provided information lists a 20,000 m² site. Today, the team combines Vietnam production with stone-industry experience and China-based sourcing and processing relationships.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-2 border-t border-black/[0.06]">
@@ -155,8 +155,8 @@ export const AboutView: React.FC<AboutViewProps> = ({
           <div className="lg:col-span-6 space-y-4">
             <div className="rounded-2xl overflow-hidden border border-black/[0.08] shadow-md aspect-16/10 relative group">
               <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80"
-                alt="WHITEROCK Vietnam Factory Floor"
+                src="/assets/owner/vietnam/factory-01.jpg"
+                alt="Owner-supplied photo of the WHITEROCK Vietnam site entrance"
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out"
               />
@@ -175,7 +175,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
 
             <div className="flex items-center justify-between text-xs text-[#6e6e73] px-2">
               <span>Legal Name: <strong>{siteConfig.legalName}</strong></span>
-              <span className="text-emerald-700 font-bold">0% US Section 301 Tariff</span>
+              <span className="text-emerald-700 font-bold">Trade terms confirmed per shipment</span>
             </div>
           </div>
 
@@ -227,7 +227,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
           </h2>
 
           <p className="text-sm sm:text-base text-white/70 leading-relaxed">
-            From initial architectural CAD take-offs and custom finish matching to factory cUPC sink mounting and overseas container delivery to your jobsite or distribution warehouse.
+            From architectural drawing review and custom finish matching to optional sink assembly, packing, and overseas shipment planning.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-4">

@@ -53,11 +53,11 @@ export const SocialShareModal: React.FC<SocialShareModalProps> = ({
 
   const currentUrl = content.url || (typeof window !== 'undefined' ? window.location.href : siteConfig.productionDomain);
   const shareTitle = content.title || siteConfig.brand;
-  const shareText = content.text || `${shareTitle} - Direct Vietnam Factory Stone Surfaces (0% US Section 301 Tariff).`;
+  const shareText = content.text || `${shareTitle} - Direct Vietnam factory stone surfaces. Specifications and availability require written confirmation.`;
 
   // WhatsApp share payload
   const whatsappText = encodeURIComponent(
-    `*${shareTitle}*\n${content.material ? `Material: ${content.material}\n` : ''}${content.specs ? `Specs: ${content.specs}\n` : ''}\nDirect Vietnam Factory Specification:\n${currentUrl}\n\nWHITEROCK SURFACES VIETNAM`
+    `*${shareTitle}*\n${content.material ? `Material: ${content.material}\n` : ''}${content.specs ? `Specs: ${content.specs}\n` : ''}\nDirect Vietnam Factory Specification:\n${currentUrl}\n\nWHITEROCK COMPANY LIMITED`
   );
   const whatsappUrl = `https://api.whatsapp.com/send?text=${whatsappText}`;
 
@@ -82,11 +82,12 @@ export const SocialShareModal: React.FC<SocialShareModalProps> = ({
 
   const handleCopyFullSpec = () => {
     const fullSpec = `========================================
-WHITEROCK SURFACES VIETNAM SPECIFICATION
+WHITEROCK COMPANY LIMITED PROJECT NOTE
 ========================================
 Item: ${shareTitle}
 ${content.material ? `Material: ${content.material}\n` : ''}${content.specs ? `Specification: ${content.specs}\n` : ''}
-Factory: Dong Nai Province, Vietnam (0% US Section 301 Tariff)
+Factory: Binh Phuoc Province, Vietnam
+Acceptance Criteria: Confirm in approved drawings, samples, and the written quotation
 Website Link: ${currentUrl}
 Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
 ========================================`;
@@ -164,7 +165,7 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
                 {shareTitle}
               </h4>
               <p className="text-[11px] text-[#86868b] truncate">
-                {content.specs || '0% US Section 301 Tariff Qualified • Vietnam Plant'}
+                {content.specs || 'Specifications and availability require written confirmation'}
               </p>
             </div>
           </div>
@@ -327,7 +328,7 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
         {/* Footer */}
         <div className="px-6 py-4 border-t border-black/[0.06] bg-[#fbfbfd] flex items-center justify-between text-xs">
           <span className="text-[11px] text-[#86868b]">
-            WHITEROCK Vietnam Export Desk • 0% US Tariff
+            WHITEROCK COMPANY LIMITED • Project details require confirmation
           </span>
           <button
             onClick={onClose}

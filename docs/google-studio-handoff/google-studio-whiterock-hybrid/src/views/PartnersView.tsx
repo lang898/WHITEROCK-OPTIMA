@@ -50,7 +50,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
           </span>
           <span className="wr-info-pill">
             <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-            <span className="tech-badge">Form B C/O 0% US Tariff Qualified</span>
+            <span className="tech-badge">Order-Specific Trade Document Review</span>
           </span>
         </div>
       </div>
@@ -109,7 +109,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
             </span>
             <h3 className="font-bold text-lg text-[#1d1d1f]">Export Crate Standards</h3>
             <p className="text-xs text-[#86868b] leading-relaxed">
-              Heavy-duty solid fumigated plywood crates with EPE foam buffers, plastic banding, and moisture barrier wrap for ocean freight.
+              Order-specific plywood crate plans can include foam buffers, banding, and moisture protection according to product and destination requirements.
             </p>
           </div>
           <div className="pt-3 border-t border-black/[0.06] text-xs font-mono text-[#86868b]">
@@ -158,7 +158,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Pre-mounted cUPC rectangular sinks</span>
+                <span>Buyer-approved sink and cutout options</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -180,7 +180,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>NSF-51 certified food-safe surfaces</span>
+                <span>Product-specific test documents when currently available</span>
               </li>
             </ul>
           </div>

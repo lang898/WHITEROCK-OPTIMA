@@ -72,7 +72,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
           Request Quotation & Engineering Takeoff.
         </h1>
         <p className="text-base sm:text-xl text-[#6e6e73] leading-relaxed max-w-3xl font-normal">
-          Connect directly with our Vietnam manufacturing and engineering facility in Dong Nai for custom architectural takeoffs, CAD reviews, 40HQ container optimization, and sample dispatches.
+          Connect directly with our Vietnam manufacturing team in Binh Phuoc for architectural takeoffs, CAD reviews, container planning, and sample requests.
         </p>
 
         {/* Industrial Specification Badges */}
@@ -102,7 +102,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
                 </h3>
               </div>
               <span className="tech-badge text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                0% US Tariff
+                Broker Review Required
               </span>
             </div>
 
@@ -150,7 +150,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
               <h4 className="font-bold text-sm text-[#1d1d1f]">North American Account Support</h4>
             </div>
             <p className="text-xs text-[#86868b] leading-relaxed">
-              Assisting US and Canadian general contractors, multi-family developers, and distributor buyers with CAD takeoffs, container load planning, and Form B Certificate of Origin compliance.
+              Assisting US and Canadian general contractors, multi-family developers, and distributor buyers with CAD takeoffs, container load planning, and order-specific shipping documents.
             </p>
             <div className="pt-2 text-xs font-mono text-[#86868b] flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-blue-500"></span>
@@ -358,7 +358,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
         <FaqSectionWithSchema
           currentLocale={currentLocale}
           title="Direct Export & Manufacturing FAQ"
-          subtitle="Direct answers regarding lead times, payment terms, container loading at Cat Lai Port, and Form B tariff certification."
+          subtitle="Direct answers regarding indicative lead times, payment terms, container planning, and order-specific shipping documents."
           showSchemaInspector={true}
         />
       </div>
