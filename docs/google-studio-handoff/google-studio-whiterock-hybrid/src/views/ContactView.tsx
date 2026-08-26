@@ -64,7 +64,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20">
       {/* Header Banner (Unified Apple Display + Keynote Style) */}
       <div className="space-y-4 max-w-4xl">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+        <div className="wr-panel-eyebrow">
           <Mail className="w-3.5 h-3.5 text-amber-600" />
           <span className="tech-badge">DIRECT FACTORY ENGINEERING & EXPORT DESK</span>
         </div>
@@ -77,11 +77,11 @@ export const ContactView: React.FC<ContactViewProps> = ({
 
         {/* Industrial Specification Badges */}
         <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+          <span className="wr-info-pill">
             <Clock className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span className="tech-badge">24-Hour CAD Takeoff Response</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+          <span className="wr-info-pill">
             <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
             <span className="tech-badge">Direct FOB Vietnam Port Pricing</span>
           </span>

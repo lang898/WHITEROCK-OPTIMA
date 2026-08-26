@@ -3,35 +3,58 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { ContactRail } from './components/ContactRail';
 import { BackToTop } from './components/BackToTop';
-import { RfqModal } from './components/RfqModal';
-import { ProductModal } from './components/ProductModal';
-import { ColorModal } from './components/ColorModal';
-import { WeChatModal } from './components/WeChatModal';
-import { SocialShareModal, ShareContent } from './components/SocialShareModal';
+import { AppErrorBoundary } from './components/AppErrorBoundary';
+import { PageSeo } from './components/PageSeo';
+import { RouteLoading } from './components/RouteLoading';
 
-import { HomeView } from './views/HomeView';
-import { AboutView } from './views/AboutView';
-import { ProductsView } from './views/ProductsView';
-import { ColorsView } from './views/ColorsView';
-import { FinishesEdgesView } from './views/FinishesEdgesView';
-import { FactoryView } from './views/FactoryView';
-import { ApplicationsView } from './views/ApplicationsView';
-import { PartnersView } from './views/PartnersView';
-import { ResourcesView } from './views/ResourcesView';
-import { ContactView } from './views/ContactView';
-import { AdminView } from './views/AdminView';
-
-import { locales } from './data';
+import { locales } from './data/site';
 import type { ProductItem, ColorItem, RfqCartItem, LocaleConfig } from './types';
+import type { ShareContent } from './components/SocialShareModal';
+import { routeIdFromLocation, routePath, routesById, type RouteId } from './routes';
 
-export default function App() {
-  const [currentTab, setCurrentTab] = useState<string>('home');
+const HomeView = lazy(() => import('./views/HomeView').then((module) => ({ default: module.HomeView })));
+const AboutView = lazy(() => import('./views/AboutView').then((module) => ({ default: module.AboutView })));
+const ProductsView = lazy(() => import('./views/ProductsView').then((module) => ({ default: module.ProductsView })));
+const ColorsView = lazy(() => import('./views/ColorsView').then((module) => ({ default: module.ColorsView })));
+const FinishesEdgesView = lazy(() => import('./views/FinishesEdgesView').then((module) => ({ default: module.FinishesEdgesView })));
+const FactoryView = lazy(() => import('./views/FactoryView').then((module) => ({ default: module.FactoryView })));
+const ApplicationsView = lazy(() => import('./views/ApplicationsView').then((module) => ({ default: module.ApplicationsView })));
+const PartnersView = lazy(() => import('./views/PartnersView').then((module) => ({ default: module.PartnersView })));
+const ResourcesView = lazy(() => import('./views/ResourcesView').then((module) => ({ default: module.ResourcesView })));
+const ContactView = lazy(() => import('./views/ContactView').then((module) => ({ default: module.ContactView })));
+const AdminView = lazy(() => import('./views/AdminView').then((module) => ({ default: module.AdminView })));
+
+const RfqModal = lazy(() => import('./components/RfqModal').then((module) => ({ default: module.RfqModal })));
+const ProductModal = lazy(() => import('./components/ProductModal').then((module) => ({ default: module.ProductModal })));
+const ColorModal = lazy(() => import('./components/ColorModal').then((module) => ({ default: module.ColorModal })));
+const WeChatModal = lazy(() => import('./components/WeChatModal').then((module) => ({ default: module.WeChatModal })));
+const SocialShareModal = lazy(() => import('./components/SocialShareModal').then((module) => ({ default: module.SocialShareModal })));
+
+function AppContent() {
+  const [currentTab, setCurrentTab] = useState<RouteId>(() => routeIdFromLocation());
   const [currentLocale, setCurrentLocale] = useState<LocaleConfig>(locales[0]);
+
+  useEffect(() => {
+    const syncRouteFromUrl = () => setCurrentTab(routeIdFromLocation());
+
+    window.addEventListener('popstate', syncRouteFromUrl);
+    window.addEventListener('hashchange', syncRouteFromUrl);
+
+    const initialRoute = routeIdFromLocation();
+    if (window.location.hash) {
+      window.history.replaceState({ routeId: initialRoute }, '', routePath(initialRoute));
+    }
+
+    return () => {
+      window.removeEventListener('popstate', syncRouteFromUrl);
+      window.removeEventListener('hashchange', syncRouteFromUrl);
+    };
+  }, []);
 
   // Modals state
   const [isRfqModalOpen, setIsRfqModalOpen] = useState(false);
@@ -154,12 +177,19 @@ export default function App() {
 
   // Scroll to top on tab switch
   const handleTabChange = (tab: string) => {
-    setCurrentTab(tab);
+    const nextRoute = routesById[tab as RouteId] ? (tab as RouteId) : 'home';
+    const nextPath = routePath(nextRoute);
+
+    setCurrentTab(nextRoute);
+    if (window.location.pathname !== nextPath || window.location.hash) {
+      window.history.pushState({ routeId: nextRoute }, '', nextPath);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div className="hybrid-site min-h-screen bg-stone-50 text-stone-900 flex flex-col font-sans antialiased selection:bg-amber-200 selection:text-stone-900">
+      <PageSeo routeId={currentTab} language={currentLocale.id} />
       {/* Header with Navigation and RFQ Count */}
       <Header
         currentTab={currentTab}
@@ -173,7 +203,8 @@ export default function App() {
       />
 
       {/* Main View Router */}
-      <main className="flex-1">
+      <Suspense fallback={<RouteLoading />}>
+        <main className="flex-1">
         {currentTab === 'home' && (
           <HomeView
             setCurrentTab={handleTabChange}
@@ -260,7 +291,8 @@ export default function App() {
             setCurrentTab={handleTabChange}
           />
         )}
-      </main>
+        </main>
+      </Suspense>
 
       {/* Footer */}
       <Footer
@@ -281,42 +313,49 @@ export default function App() {
       {/* Floating Back to Top Navigation */}
       <BackToTop threshold={350} />
 
-      {/* Interactive Modals */}
-      <RfqModal
-        isOpen={isRfqModalOpen}
-        onClose={() => setIsRfqModalOpen(false)}
-        cartItems={cartItems}
-        onUpdateQuantity={handleUpdateQuantity}
-        onRemoveItem={handleRemoveItem}
-        onClearCart={handleClearCart}
-      />
+      {/* Modal code is requested only after the related interaction begins. */}
+      <Suspense fallback={null}>
+        {isRfqModalOpen && (
+          <RfqModal
+            isOpen
+            onClose={() => setIsRfqModalOpen(false)}
+            cartItems={cartItems}
+            onUpdateQuantity={handleUpdateQuantity}
+            onRemoveItem={handleRemoveItem}
+            onClearCart={handleClearCart}
+          />
+        )}
 
-      <ProductModal
-        product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-        onAddToCart={handleAddToCart}
-        onShare={handleOpenShare}
-      />
+        {selectedProduct && (
+          <ProductModal
+            product={selectedProduct}
+            onClose={() => setSelectedProduct(null)}
+            onAddToCart={handleAddToCart}
+            onShare={handleOpenShare}
+          />
+        )}
 
-      <ColorModal
-        color={selectedColor}
-        onClose={() => setSelectedColor(null)}
-        onRequestSample={handleAddColorSample}
-        onShare={handleOpenShare}
-      />
+        {selectedColor && (
+          <ColorModal
+            color={selectedColor}
+            onClose={() => setSelectedColor(null)}
+            onRequestSample={handleAddColorSample}
+            onShare={handleOpenShare}
+          />
+        )}
 
-      {/* WeChat QR Direct Modal */}
-      <WeChatModal
-        isOpen={isWeChatModalOpen}
-        onClose={() => setIsWeChatModalOpen(false)}
-      />
+        {isWeChatModalOpen && (
+          <WeChatModal isOpen onClose={() => setIsWeChatModalOpen(false)} />
+        )}
 
-      {/* Multi-platform Social Share Modal */}
-      <SocialShareModal
-        isOpen={!!shareModalContent}
-        onClose={() => setShareModalContent(null)}
-        content={shareModalContent}
-      />
+        {shareModalContent && (
+          <SocialShareModal
+            isOpen
+            onClose={() => setShareModalContent(null)}
+            content={shareModalContent}
+          />
+        )}
+      </Suspense>
 
       {/* Toast Notification */}
       {toastMessage && (
@@ -326,5 +365,13 @@ export default function App() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <AppErrorBoundary>
+      <AppContent />
+    </AppErrorBoundary>
   );
 }

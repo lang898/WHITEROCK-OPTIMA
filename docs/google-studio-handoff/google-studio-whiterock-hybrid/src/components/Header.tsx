@@ -13,7 +13,8 @@ import {
   Share2
 } from 'lucide-react';
 import { WhatsAppIcon, WeChatIcon, LinkedInIcon } from './SocialIcons';
-import { locales, siteConfig } from '../data';
+import { locales, siteConfig } from '../data/site';
+import { routePath } from '../routes';
 import type { LocaleConfig } from '../types';
 
 interface HeaderProps {
@@ -165,8 +166,12 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18 gap-4">
           {/* Brand logo (Apple clean typography) */}
-          <button
-            onClick={() => setCurrentTab('home')}
+          <a
+            href={routePath('home')}
+            onClick={(event) => {
+              event.preventDefault();
+              setCurrentTab('home');
+            }}
             className="flex items-center gap-2.5 text-left group cursor-pointer focus:outline-none shrink-0"
             id="brand-logo-btn"
           >
@@ -184,7 +189,7 @@ export const Header: React.FC<HeaderProps> = ({
                 Vietnam Factory (Bình Phước) • Natural Stone & Quartz
               </p>
             </div>
-          </button>
+          </a>
 
           {/* Desktop Nav Items */}
           <nav className="hybrid-nav hidden lg:flex items-center gap-1" aria-label="Primary navigation">
@@ -194,14 +199,18 @@ export const Header: React.FC<HeaderProps> = ({
               if (group.items.length === 1) {
                 const item = group.items[0];
                 return (
-                  <button
+                  <a
                     key={group.label}
                     id={`nav-${item.id}`}
-                    onClick={() => setCurrentTab(item.id)}
+                    href={routePath(item.id)}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setCurrentTab(item.id);
+                    }}
                     className={`hybrid-nav-link px-3 py-2 text-xs font-medium transition-colors cursor-pointer whitespace-nowrap ${isActive ? 'is-active' : ''}`}
                   >
                     {group.label}
-                  </button>
+                  </a>
                 );
               }
 
@@ -213,16 +222,18 @@ export const Header: React.FC<HeaderProps> = ({
                   </summary>
                   <div className="absolute left-0 top-full mt-2 min-w-52 bg-white border border-black/10 p-2 shadow-xl z-50">
                     {group.items.map((item) => (
-                      <button
+                      <a
                         key={item.id}
+                        href={routePath(item.id)}
                         onClick={(event) => {
+                          event.preventDefault();
                           setCurrentTab(item.id);
                           event.currentTarget.closest('details')?.removeAttribute('open');
                         }}
                         className={`block w-full text-left px-3 py-2.5 text-xs transition-colors ${currentTab === item.id ? 'bg-[#edf1ed] text-[#234637]' : 'hover:bg-black/[0.04]'}`}
                       >
                         {item.label}
-                      </button>
+                      </a>
                     ))}
                   </div>
                 </details>
@@ -300,9 +311,11 @@ export const Header: React.FC<HeaderProps> = ({
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#ffffff]/98 backdrop-blur-2xl border-b border-black/[0.06] px-5 pt-3 pb-6 space-y-1 shadow-2xl">
           {navLinks.map((item) => (
-            <button
+            <a
               key={item.id}
-              onClick={() => {
+              href={routePath(item.id)}
+              onClick={(event) => {
+                event.preventDefault();
                 setCurrentTab(item.id);
                 setMobileMenuOpen(false);
               }}
@@ -313,7 +326,7 @@ export const Header: React.FC<HeaderProps> = ({
               }`}
             >
               {item.label}
-            </button>
+            </a>
           ))}
           <button
             onClick={() => {

@@ -130,7 +130,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
       {/* Configurator Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-black/[0.06] pb-6">
         <div className="space-y-1.5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+          <div className="wr-panel-eyebrow wr-panel-eyebrow--compact">
             <Layers className="w-3.5 h-3.5 text-amber-600" />
             <span className="tech-badge">INTERACTIVE ARCHITECTURAL PROGRAM GENERATOR</span>
           </div>

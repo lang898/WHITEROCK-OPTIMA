@@ -49,7 +49,7 @@ export const ColorsView: React.FC<ColorsViewProps> = ({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-16">
       {/* Header Banner (Apple Display + Keynote Style) */}
       <div className="space-y-4 max-w-4xl">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+        <div className="wr-panel-eyebrow">
           <Layers className="w-3.5 h-3.5 text-amber-600" />
           <span className="tech-badge">24-COLOR CURATED ARCHITECTURAL PALETTE • VIETNAM FABRICATION</span>
         </div>
@@ -62,11 +62,11 @@ export const ColorsView: React.FC<ColorsViewProps> = ({
 
         {/* Industrial Highlights */}
         <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+          <span className="wr-info-pill">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span className="tech-badge">Batch Tone Delta E &lt; 0.8 Color Calibrated</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+          <span className="wr-info-pill">
             <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
             <span className="tech-badge">Jumbo Slab Size 3200 x 1600mm Available</span>
           </span>
@@ -149,6 +149,7 @@ export const ColorsView: React.FC<ColorsViewProps> = ({
               <img
                 src={color.swatchImage}
                 alt={color.name}
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
                 onError={(e) => {
                   const target = e.currentTarget;

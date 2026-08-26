@@ -12,8 +12,6 @@ import newsData from '../../data/news.json';
 import faqData from '../../data/faq.json';
 import lookbookData from '../../data/lookbook.json';
 import projectsData from '../../data/projects.json';
-import localesData from '../../data/locales.json';
-import siteConfigData from '../../data/site.config.json';
 import type {
   ProductItem,
   ColorItem,
@@ -24,9 +22,10 @@ import type {
   FactoryGalleryItem,
   ResourceItem,
   NewsItem,
-  FaqItem,
-  LocaleConfig
+  FaqItem
 } from '../types';
+
+export { locales, siteConfig } from './site';
 
 export const products: ProductItem[] = productsData.products as ProductItem[];
 export const colors: ColorItem[] = colorsData.colors as ColorItem[];
@@ -49,5 +48,3 @@ export const faqList: FaqItem[] = ((faqData as any).items || []).map((item: any)
 export const faqIntro: string = (faqData as any).intro || 'Common questions from wholesale, project, and distributor buyers.';
 export const lookbook = lookbookData.items;
 export const projects = projectsData.items;
-export const locales: LocaleConfig[] = localesData.locales as LocaleConfig[];
-export const siteConfig = siteConfigData;

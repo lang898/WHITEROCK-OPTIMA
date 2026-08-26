@@ -157,6 +157,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
               <img
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80"
                 alt="WHITEROCK Vietnam Factory Floor"
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">

@@ -200,6 +200,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
               <img
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
                 alt="WHITEROCK Vietnam Factory Floor"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
@@ -316,6 +317,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
                 <img
                   src={pillars[activePillar].image}
                   alt={pillars[activePillar].title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md text-white text-xs font-mono font-medium shadow-md">

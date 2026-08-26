@@ -21,7 +21,7 @@ import {
   PinterestIcon,
   FacebookIcon
 } from './SocialIcons';
-import { siteConfig } from '../data';
+import { siteConfig } from '../data/site';
 import type { LocaleConfig } from '../types';
 
 interface FooterProps {

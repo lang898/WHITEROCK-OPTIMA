@@ -80,7 +80,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* 1. HERO KEYNOTE SECTION (Apple Display + Industrial Precision Aesthetics) */}
       {/* ========================================================================= */}
       <section className="relative pt-12 sm:pt-20 pb-20 sm:pb-28 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+        <div className="wr-section text-center space-y-8">
           
           {/* Industrial Machined Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-black/[0.08] text-[#1d1d1f] shadow-xs hover:border-black/20 transition-all">
@@ -110,7 +110,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
             <button
               onClick={() => setCurrentTab('products')}
-              className="px-8 py-4 rounded-full bg-[#111113] hover:bg-black text-white font-medium text-sm sm:text-base shadow-xl shadow-black/10 hover:scale-[1.02] active:scale-98 transition-all cursor-pointer flex items-center gap-2"
+              className="wr-action wr-action--primary text-sm sm:text-base"
             >
               <Package className="w-4 h-4 text-amber-300" />
               <span>Explore Product Collections</span>
@@ -118,7 +118,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
             <button
               onClick={() => setCurrentTab('colors')}
-              className="px-8 py-4 rounded-full bg-white hover:bg-[#fbfbfd] border border-black/[0.1] text-[#1d1d1f] font-medium text-sm sm:text-base shadow-xs hover:border-black/25 transition-all cursor-pointer flex items-center gap-2"
+              className="wr-action wr-action--secondary text-sm sm:text-base"
             >
               <Layers className="w-4 h-4 text-[#86868b]" />
               <span>Explore Stone Colors</span>
@@ -140,6 +140,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <img
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=90"
                   alt="Application inspiration reference image, not a WHITEROCK completed project"
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-1000 ease-out filter brightness-102"
                 />
                 
@@ -164,7 +166,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
           {/* Giant Apple-Style Keynote Metrics Strip with Industrial Monospace Sub-Tags */}
           <div className="pt-12 sm:pt-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto text-left">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/[0.06] shadow-xs relative overflow-hidden group hover:border-black/20 transition-all">
+            <div className="wr-home-feature-card group">
               <div className="tech-badge text-[#86868b] mb-1">PLANT FOOTPRINT</div>
               <div className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
                 20,000<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> m²</span>
@@ -174,7 +176,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/[0.06] shadow-xs relative overflow-hidden group hover:border-black/20 transition-all">
+            <div className="wr-home-feature-card group">
               <div className="tech-badge text-emerald-700 mb-1">PRODUCTION NETWORK</div>
               <div className="text-4xl sm:text-5xl font-bold tracking-tight text-emerald-600">
                 2<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> Bases</span>
@@ -184,7 +186,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/[0.06] shadow-xs relative overflow-hidden group hover:border-black/20 transition-all">
+            <div className="wr-home-feature-card group">
               <div className="tech-badge text-[#86868b] mb-1">STONE EXPERIENCE</div>
               <div className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
                 20+<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> Years</span>
@@ -194,7 +196,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/[0.06] shadow-xs relative overflow-hidden group hover:border-black/20 transition-all">
+            <div className="wr-home-feature-card group">
               <div className="tech-badge text-[#86868b] mb-1">ANNUAL CAPACITY</div>
               <div className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
                 100k<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> m²/yr</span>
@@ -212,9 +214,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* ========================================================================= */}
       {/* 2. APPLE-STYLE BENTO GRID: INDUSTRIAL FABRICATION ADVANTAGES */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="tech-badge text-[#86868b] tracking-widest uppercase">
+      <section className="wr-section space-y-12">
+        <div className="wr-section-intro space-y-3">
+          <div className="wr-eyebrow">
             ARCHITECTURAL SPECIFICATION STANDARD
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
@@ -249,6 +251,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <img
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85"
                 alt="WHITEROCK Vietnam Plant"
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
               />
             </div>
@@ -356,6 +359,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <img
                 src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80"
                 alt="Heavy Plywood Export Crating"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -379,10 +383,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* ========================================================================= */}
       {/* 3. INTERACTIVE STUDIO SPOTLIGHT: 3D STONE VISUALIZER */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="wr-section">
         <div className="space-y-6">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
-            <div className="tech-badge text-[#86868b] tracking-widest uppercase">
+          <div className="wr-section-intro space-y-2">
+            <div className="wr-eyebrow">
               INTERACTIVE 3D RENDERING STUDIO
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
@@ -407,10 +411,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* ========================================================================= */}
       {/* 4. INTERACTIVE VANITY & COUNTERTOP CONFIGURATOR */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="wr-section">
         <div className="space-y-6">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
-            <div className="tech-badge text-[#86868b] tracking-widest uppercase">
+          <div className="wr-section-intro space-y-2">
+            <div className="wr-eyebrow">
               B2B SPECIFICATION MATRIX
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
@@ -423,9 +427,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
           <div className="rounded-[2.5rem] overflow-hidden border border-black/[0.06] shadow-sm bg-white p-4 sm:p-8">
             <VanityConfigurator
-              currentLocale={currentLocale}
-              onAddToCart={(item) => onAddToCart(item)}
-              onOpenContact={() => setCurrentTab('contact')}
+            onAddToCart={(item) => onAddToCart(item)}
             />
           </div>
         </div>
@@ -435,7 +437,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* ========================================================================= */}
       {/* 5. TARIFF & CONTAINER SAVINGS OPTIMIZER */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="wr-section">
         <div className="rounded-[2.5rem] overflow-hidden border border-black/[0.06] shadow-sm bg-white p-6 sm:p-10">
           <TariffCalculator
             currentLocale={currentLocale}
@@ -448,10 +450,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* ========================================================================= */}
       {/* 6. FEATURED PRODUCTS (Apple Store Clean Showcase) */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <section className="wr-section space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-black/[0.06] pb-6">
           <div className="space-y-2 max-w-2xl">
-            <div className="tech-badge text-[#86868b] tracking-widest uppercase">
+            <div className="wr-eyebrow">
               CATALOG SELECTION
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
@@ -497,6 +499,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <img
                   src={prod.image}
                   alt={prod.title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700"
                   onError={(e) => {
                     const target = e.currentTarget;
@@ -563,7 +566,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="text-center pt-6">
           <button
             onClick={() => setCurrentTab('products')}
-            className="px-8 py-4 rounded-full bg-white hover:bg-[#fbfbfd] border border-black/[0.08] text-[#1d1d1f] font-semibold text-xs tracking-wider uppercase transition-all inline-flex items-center gap-2 cursor-pointer shadow-xs hover:border-black/20"
+            className="wr-action wr-action--secondary text-xs uppercase"
           >
             <span>View Full Product Catalog & Technical PDF Specs</span>
             <ArrowRight className="w-4 h-4" />
@@ -575,9 +578,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* ========================================================================= */}
       {/* 7. STEP-BY-STEP B2B EXPORT SEQUENCE (Industrial Progression) */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <div className="tech-badge text-[#86868b] tracking-widest uppercase">
+      <section className="wr-section space-y-12">
+        <div className="wr-section-intro space-y-2">
+          <div className="wr-eyebrow">
             INTERNATIONAL WORKFLOW ARCHITECTURE
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
@@ -640,7 +643,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* ========================================================================= */}
       {/* 9. GRAND APPLE-STYLE BOTTOM CALL-TO-ACTION */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="wr-section">
         <div className="apple-card-dark rounded-[3rem] p-10 sm:p-16 lg:p-20 text-center space-y-8 relative overflow-hidden">
           {/* Subtle Ambient Background Light */}
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
@@ -661,7 +664,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2 relative z-10">
             <button
               onClick={() => setCurrentTab('contact')}
-              className="px-8 py-4 rounded-full bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] font-semibold text-sm sm:text-base shadow-xl transition-all hover:scale-[1.02] cursor-pointer flex items-center gap-2"
+              className="wr-action wr-action--secondary text-sm sm:text-base"
             >
               <span>Submit Project RFQ & Plans</span>
               <ArrowRight className="w-4 h-4" />
@@ -669,7 +672,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
             <button
               onClick={() => setCurrentTab('colors')}
-              className="px-8 py-4 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/20 font-medium text-sm sm:text-base transition-colors cursor-pointer"
+              className="wr-action border-white/20 bg-white/10 text-white hover:bg-white/15 text-sm sm:text-base"
             >
               <span>Request 4x4" Physical Samples</span>
             </button>

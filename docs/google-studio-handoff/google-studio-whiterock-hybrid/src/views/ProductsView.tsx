@@ -71,7 +71,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
       {/* Header Banner (Apple Keynote Style + Industrial Precision Callouts) */}
       {/* ========================================================================= */}
       <div className="space-y-6 max-w-4xl">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+        <div className="wr-panel-eyebrow">
           <Package className="w-3.5 h-3.5 text-amber-600" />
           <span className="tech-badge">VIETNAM DIRECT EXPORT CATALOG • 2026 ARCHITECTURAL SPEC</span>
         </div>
@@ -87,15 +87,15 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
 
         {/* Industrial Specification Pill Indicators */}
         <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+          <span className="wr-info-pill">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span className="tech-badge">cUPC Factory Pre-Glued Sinks</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+          <span className="wr-info-pill">
             <Ruler className="w-3.5 h-3.5 text-amber-600 shrink-0" />
             <span className="tech-badge">±0.3mm CNC Cutout Accuracy</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+          <span className="wr-info-pill">
             <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
             <span className="tech-badge">0% US Section 301 Duty</span>
           </span>
@@ -195,7 +195,8 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
               <img
                 src={prod.image}
                 alt={prod.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                className="wr-media-zoom"
                 onError={(e) => {
                   const target = e.currentTarget;
                   target.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="375" viewBox="0 0 500 375"><rect width="500" height="375" fill="%23f5f5f7"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%2386868b" font-family="sans-serif" font-weight="bold" font-size="20">${prod.sku}</text></svg>`;

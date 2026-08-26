@@ -42,13 +42,13 @@ export const ProductModal: React.FC<ProductModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fade-in">
+    <div className="wr-modal-backdrop">
       <div
         className="relative bg-white rounded-[2rem] w-full max-w-4xl shadow-2xl text-[#1d1d1f] overflow-hidden max-h-[92vh] flex flex-col border border-black/[0.08]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="px-6 sm:px-8 py-5 border-b border-black/[0.06] flex items-center justify-between bg-[#fbfbfd]">
+        <div className="wr-modal-header">
           <div className="flex items-center gap-3">
             <span className="tech-badge text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
               {product.sku}
@@ -59,7 +59,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full text-[#86868b] hover:text-[#1d1d1f] hover:bg-black/[0.05] transition-colors cursor-pointer"
+            className="wr-modal-close"
           >
             <X className="w-5 h-5" />
           </button>
@@ -74,7 +74,8 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  className="wr-media-zoom"
                   onError={(e) => {
                     const target = e.currentTarget;
                     target.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450"><rect width="600" height="450" fill="%23f5f5f7"/><rect x="40" y="40" width="520" height="370" rx="12" fill="%23ffffff" stroke="%23d1d1d6" stroke-width="2"/><text x="50%25" y="45%25" dominant-baseline="middle" text-anchor="middle" fill="%23b45309" font-family="sans-serif" font-size="20" font-weight="bold">${product.sku}</text><text x="50%25" y="55%25" dominant-baseline="middle" text-anchor="middle" fill="%236e6e73" font-family="sans-serif" font-size="14">${product.category}</text><text x="50%25" y="85%25" dominant-baseline="middle" text-anchor="middle" fill="%2386868b" font-family="sans-serif" font-size="11">WHITEROCK VIETNAM FACTORY</text></svg>`;

@@ -914,6 +914,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                     <img
                       src={col.swatchImage}
                       alt={col.name}
+                      loading="lazy"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                       onError={(e) => {

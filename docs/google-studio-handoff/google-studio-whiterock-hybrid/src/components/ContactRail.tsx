@@ -6,7 +6,7 @@ import {
   Share2
 } from 'lucide-react';
 import { WhatsAppIcon, WeChatIcon } from './SocialIcons';
-import { siteConfig } from '../data';
+import { siteConfig } from '../data/site';
 
 interface ContactRailProps {
   onOpenRfq: () => void;
@@ -46,7 +46,7 @@ export const ContactRail: React.FC<ContactRailProps> = ({
         </div>
         
         {/* Expanding Label */}
-        <span className="max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:px-3 text-xs font-bold whitespace-nowrap transition-all duration-300 ease-out">
+        <span className="wr-contact-rail-label">
           Request Quote ({cartCount})
         </span>
 
@@ -70,7 +70,7 @@ export const ContactRail: React.FC<ContactRailProps> = ({
         <div className="flex items-center justify-center w-6 h-6 shrink-0">
           <WhatsAppIcon className="w-5 h-5" />
         </div>
-        <span className="max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:px-3 text-xs font-bold whitespace-nowrap transition-all duration-300 ease-out">
+        <span className="wr-contact-rail-label">
           WhatsApp Direct
         </span>
       </a>
@@ -87,7 +87,7 @@ export const ContactRail: React.FC<ContactRailProps> = ({
           <div className="flex items-center justify-center w-6 h-6 shrink-0">
             <WeChatIcon className="w-5 h-5" />
           </div>
-          <span className="max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:px-3 text-xs font-bold whitespace-nowrap transition-all duration-300 ease-out">
+          <span className="wr-contact-rail-label">
             微信扫码咨询
           </span>
         </button>
@@ -105,7 +105,7 @@ export const ContactRail: React.FC<ContactRailProps> = ({
           <div className="flex items-center justify-center w-6 h-6 shrink-0">
             <Share2 className="w-5 h-5" />
           </div>
-          <span className="max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:px-3 text-xs font-bold whitespace-nowrap transition-all duration-300 ease-out">
+          <span className="wr-contact-rail-label">
             分享 Share
           </span>
         </button>
@@ -121,7 +121,7 @@ export const ContactRail: React.FC<ContactRailProps> = ({
         <div className="flex items-center justify-center w-6 h-6 shrink-0">
           <Mail className="w-5 h-5" />
         </div>
-        <span className="max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:px-3 text-xs font-bold whitespace-nowrap transition-all duration-300 ease-out">
+        <span className="wr-contact-rail-label">
           Email Factory
         </span>
       </a>
@@ -136,7 +136,7 @@ export const ContactRail: React.FC<ContactRailProps> = ({
         <div className="flex items-center justify-center w-6 h-6 shrink-0">
           <Phone className="w-5 h-5" />
         </div>
-        <span className="max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:px-3 text-xs font-bold whitespace-nowrap transition-all duration-300 ease-out">
+        <span className="wr-contact-rail-label">
           Call {siteConfig.tel}
         </span>
       </a>

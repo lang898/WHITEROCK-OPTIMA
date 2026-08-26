@@ -207,7 +207,7 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
       {/* Header Banner */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="space-y-3 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+          <div className="wr-panel-eyebrow">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
             <span className="tech-badge">SOCIAL HUB • LIVE FROM VIETNAM PLANT & GLOBAL PROJECTS</span>
           </div>
@@ -320,6 +320,7 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
                 <img
                   src={post.image}
                   alt={post.title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-700"
                 />
 
@@ -455,6 +456,7 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
                 <img
                   src={activeMediaModal.image}
                   alt={activeMediaModal.title}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>

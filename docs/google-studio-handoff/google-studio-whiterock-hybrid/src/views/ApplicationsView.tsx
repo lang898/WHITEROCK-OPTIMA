@@ -36,7 +36,7 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-16">
       {/* Header Banner (Unified Apple Display + Keynote Style) */}
       <div className="space-y-4 max-w-4xl">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+        <div className="wr-panel-eyebrow">
           <Sparkles className="w-3.5 h-3.5 text-amber-600" />
           <span className="tech-badge">PROJECT ARCHITECTURE & COMMERCIAL CASE STUDIES</span>
         </div>
@@ -49,11 +49,11 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
 
         {/* Industrial Highlights */}
         <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+          <span className="wr-info-pill">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span className="tech-badge">Unit-Packaged Multi-Family Crating</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f0f0f3] border border-black/[0.06] text-[#1d1d1f]">
+          <span className="wr-info-pill">
             <Building className="w-3.5 h-3.5 text-amber-600 shrink-0" />
             <span className="tech-badge">Hospitality Brand Approvals</span>
           </span>
@@ -96,7 +96,8 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
                 <img
                   src={item.image}
                   alt={item.imageAlt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  className="wr-media-zoom"
                   onError={(e) => {
                     const target = e.currentTarget;
                     target.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="375" viewBox="0 0 500 375"><rect width="500" height="375" fill="%23f5f5f7"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%23d97706" font-family="sans-serif" font-weight="bold" font-size="18">${item.title}</text></svg>`;

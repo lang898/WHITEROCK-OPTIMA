@@ -57,6 +57,13 @@ export interface ProductItem {
   caption?: string;
   imageType?: string;
   techSheetPdf?: string;
+  dimensions?: string;
+  thicknesses?: string[];
+  edges?: string[];
+  sinkCompatibility?: string;
+  moq?: string;
+  leadTime?: string;
+  packaging?: string;
 }
 
 export interface ColorItem {
@@ -73,6 +80,10 @@ export interface ColorItem {
   techSheetPdf?: string;
   relatedProducts?: string[];
   caption?: string;
+  image?: string;
+  pattern?: string;
+  primaryTone?: string;
+  applications?: string[];
 }
 
 export interface FinishItem {
@@ -306,4 +317,3 @@ export interface VanityConfig {
   sidesplash: boolean;
   quantity: number;
 }
-

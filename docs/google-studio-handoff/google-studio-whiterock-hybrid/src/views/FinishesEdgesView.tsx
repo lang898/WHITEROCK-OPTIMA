@@ -111,7 +111,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20">
       {/* Header Banner (Apple Style Display + Industrial Engineering) */}
       <div className="space-y-4 max-w-4xl">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+        <div className="wr-panel-eyebrow">
           <Sparkles className="w-3.5 h-3.5 text-amber-600" />
           <span className="tech-badge">SURFACE ENGINEERING & MULTI-SPINDLE CNC TOLERANCE</span>
         </div>
@@ -144,7 +144,8 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
                 <img
                   src={f.image}
                   alt={f.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  className="wr-media-zoom"
                   onError={(e) => {
                     const target = e.currentTarget;
                     target.src = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80';
@@ -233,6 +234,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
                   <img
                     src={edge.image}
                     alt={edge.name}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono font-bold text-[#1d1d1f]">

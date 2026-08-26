@@ -32,7 +32,7 @@ export const WeChatModal: React.FC<WeChatModalProps> = ({ isOpen, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fade-in">
+    <div className="wr-modal-backdrop">
       <div
         className="relative bg-white rounded-[2rem] w-full max-w-md shadow-2xl text-[#1d1d1f] overflow-hidden border border-black/[0.08] flex flex-col"
         onClick={(e) => e.stopPropagation()}
@@ -57,7 +57,7 @@ export const WeChatModal: React.FC<WeChatModalProps> = ({ isOpen, onClose }) => 
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full text-[#86868b] hover:text-[#1d1d1f] hover:bg-black/[0.05] transition-colors cursor-pointer"
+            className="wr-modal-close"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />

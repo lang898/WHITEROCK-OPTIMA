@@ -30,7 +30,7 @@ export interface ShareContent {
   image?: string;
   material?: string;
   specs?: string;
-  type?: 'color' | 'product' | 'config' | 'project' | 'page';
+  type?: 'color' | 'product' | 'config' | 'project' | 'page' | 'site';
 }
 
 interface SocialShareModalProps {
@@ -112,7 +112,7 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fade-in">
+    <div className="wr-modal-backdrop">
       <div
         className="relative bg-white rounded-[2rem] w-full max-w-lg shadow-2xl text-[#1d1d1f] overflow-hidden border border-black/[0.08] flex flex-col"
         onClick={(e) => e.stopPropagation()}
@@ -134,7 +134,7 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full text-[#86868b] hover:text-[#1d1d1f] hover:bg-black/[0.05] transition-colors cursor-pointer"
+            className="wr-modal-close"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -148,6 +148,7 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
               <img
                 src={content.image}
                 alt={shareTitle}
+                loading="lazy"
                 className="w-14 h-14 rounded-xl object-cover border border-black/[0.08] shrink-0"
               />
             ) : (

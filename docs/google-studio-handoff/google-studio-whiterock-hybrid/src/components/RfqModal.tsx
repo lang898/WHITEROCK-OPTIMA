@@ -65,13 +65,13 @@ export const RfqModal: React.FC<RfqModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fade-in">
+    <div className="wr-modal-backdrop">
       <div
         className="relative bg-white rounded-[2rem] w-full max-w-3xl shadow-2xl text-[#1d1d1f] overflow-hidden max-h-[92vh] flex flex-col border border-black/[0.08]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="px-6 sm:px-8 py-5 border-b border-black/[0.06] flex items-center justify-between bg-[#fbfbfd]">
+        <div className="wr-modal-header">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-xl bg-amber-50 text-amber-800 border border-amber-200">
               <Package className="w-5 h-5" />
@@ -87,7 +87,7 @@ export const RfqModal: React.FC<RfqModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full text-[#86868b] hover:text-[#1d1d1f] hover:bg-black/[0.05] transition-colors cursor-pointer"
+            className="wr-modal-close"
           >
             <X className="w-5 h-5" />
           </button>

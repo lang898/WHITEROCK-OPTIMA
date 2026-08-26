@@ -74,7 +74,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20">
       {/* Top Header & Context Banner (Apple Display + Industrial Precision) */}
       <div className="space-y-4 max-w-4xl">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+        <div className="wr-panel-eyebrow">
           <Factory className="w-3.5 h-3.5 text-emerald-700" />
           <span className="tech-badge">20,000 M² DIRECT VIETNAM FABRICATION PLANT • BÌNH PHƯỚC</span>
         </div>
@@ -209,8 +209,9 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
                   <img
                     src={item.image}
                     alt={item.alt || item.title}
+                    loading="lazy"
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="wr-media-zoom"
                   />
                   <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-semibold text-[#1d1d1f] shadow-xs">
                     {item.category || 'Fabrication'}
@@ -253,6 +254,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
               <img
                 src={galleryItems[selectedPhotoIndex].image}
                 alt={galleryItems[selectedPhotoIndex].title}
+                loading="lazy"
                 className="w-full h-full object-contain"
               />
               <button

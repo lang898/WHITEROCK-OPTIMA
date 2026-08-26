@@ -179,7 +179,7 @@ Quality Standard: AQL 1.5 Inspection, ±0.5mm CNC Tolerance
       {/* Top Banner Header */}
       <div className="p-6 sm:p-8 border-b border-black/[0.06] flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#fbfbfd]">
         <div className="space-y-1.5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-black/[0.08] text-[#1d1d1f] shadow-2xs">
+          <div className="wr-panel-eyebrow wr-panel-eyebrow--compact">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
             <span className="tech-badge">INTERACTIVE STONE STUDIO • REAL-TIME MATERIAL SIMULATOR</span>
           </div>
@@ -219,6 +219,7 @@ Quality Standard: AQL 1.5 Inspection, ±0.5mm CNC Tolerance
             <img
               src={activeColor.image || activeRoom.baseImage}
               alt={`${activeColor.name} in ${activeRoom.name}`}
+              loading="lazy"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
             />
 
