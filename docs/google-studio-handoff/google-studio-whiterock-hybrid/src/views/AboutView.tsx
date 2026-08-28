@@ -38,7 +38,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
     {
       year: '2000s',
       title: 'Foundation & Craftsmanship Roots',
-      desc: 'Established natural stone fabrication operations under Optima Marble & Granite in Yunfu, specializing in high-end natural marble carving, waterjet inlays, and architectural projects.'
+      desc: 'Owner-provided company information describes more than two decades of experience working with natural and engineered stone.'
     },
     {
       year: '2015',
@@ -53,7 +53,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
     {
       year: 'Present',
       title: 'Global Direct Stone Group',
-      desc: 'Operating at 100,000+ m² annual capacity, serving luxury hotels, multi-family high-rises, commercial towers, and distributor networks across North America, Europe, and Asia-Pacific.'
+      desc: 'Owner-provided information lists published annual capacity above 100,000 m². Current allocation is confirmed during quotation.'
     }
   ];
 
@@ -75,8 +75,8 @@ export const AboutView: React.FC<AboutViewProps> = ({
     },
     {
       icon: <Globe2 className="w-6 h-6 text-sky-600" />,
-      title: 'Direct Global Quarry Sourcing',
-      desc: 'Direct block procurement from world-renowned quarries in Italy (Carrara, Statuario), Greece, Turkey, Brazil, and Vietnam, ensuring consistent veining, competitive pricing, and uninterrupted supply.'
+      title: 'Material Selection Support',
+      desc: 'Available stone, slab selection, batch range, samples, and commercial terms are confirmed for each order.'
     }
   ];
 
@@ -88,7 +88,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
     'Hand-carved architectural marble fireplace mantels and hearths',
     'Commercial cut-to-size dimensional stone, thresholds, shower curbs & window sills',
     'Free CAD/DXF shop drawing drafting and automated take-off estimation',
-    'ISPM-15 heat-treated heavy-duty export wood crates with barcode labeling'
+    'Order-specific export packing plans and identification labels'
   ];
 
   return (
@@ -112,14 +112,14 @@ export const AboutView: React.FC<AboutViewProps> = ({
         </h1>
         
         <p className="text-base sm:text-xl text-[#6e6e73] leading-relaxed max-w-3xl mx-auto">
-          Whiterock Marble & Granite (Công Ty TNHH Whiterock) is a leading natural stone and engineered quartz manufacturer based in Binh Phuoc Province, Vietnam. We deliver precision countertops, vanity tops, stone furniture, and architectural stonework for North American and global commercial developments.
+          Whiterock Marble & Granite (Công Ty TNHH Whiterock) manufactures natural and engineered stone products in Binh Phuoc Province, Vietnam. Product scope and commercial terms are confirmed for each project.
         </p>
       </div>
 
       {/* ========================================================================= */}
       {/* Dual Facility & Global Network Hero Card */}
       {/* ========================================================================= */}
-      <div className="apple-card p-6 sm:p-12 bg-white border border-black/[0.08] shadow-sm rounded-3xl overflow-hidden relative">
+      <div className="wr-card p-6 sm:p-12 overflow-hidden relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div className="lg:col-span-6 space-y-6">
@@ -133,11 +133,11 @@ export const AboutView: React.FC<AboutViewProps> = ({
             </div>
 
             <p className="text-sm sm:text-base text-[#6e6e73] leading-relaxed">
-              With roots dating back to the early 2000s in stone carving and processing centers, our founders established Whiterock with a singular vision: to bring authentic natural stone beauty and high-precision engineered surfaces to global architectural projects with uncompromising quality and direct factory pricing.
+              Owner-provided company information describes more than two decades of stone-industry experience. WHITEROCK applies that experience to natural and engineered stone programs for international project buyers.
             </p>
 
             <p className="text-sm sm:text-base text-[#6e6e73] leading-relaxed">
-              In 2020, WHITEROCK expanded its manufacturing presence in <strong>Binh Phuoc Province, Vietnam</strong>. Owner-provided information lists a 20,000 m² site. Today, the team combines Vietnam production with stone-industry experience and China-based sourcing and processing relationships.
+              In 2020, WHITEROCK established its manufacturing presence in <strong>Binh Phuoc Province, Vietnam</strong>. Owner-provided information lists a 20,000 m² site with published annual capacity above 100,000 m².
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-2 border-t border-black/[0.06]">
@@ -157,6 +157,8 @@ export const AboutView: React.FC<AboutViewProps> = ({
               <img
                 src="/assets/owner/vietnam/factory-01.jpg"
                 alt="Owner-supplied photo of the WHITEROCK Vietnam site entrance"
+                width={1200}
+                height={900}
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out"
               />
@@ -197,7 +199,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {corePillars.map((p, i) => (
-            <div key={i} className="apple-card p-6 bg-white border border-black/[0.06] rounded-2xl shadow-2xs space-y-4 hover:border-black/20 transition-all">
+            <div key={i} className="wr-card p-6 space-y-4">
               <div className="w-12 h-12 rounded-xl bg-[#f5f5f7] flex items-center justify-center">
                 {p.icon}
               </div>
@@ -215,7 +217,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
       {/* ========================================================================= */}
       {/* Comprehensive Capabilities Checklist */}
       {/* ========================================================================= */}
-      <div className="apple-card p-8 sm:p-12 bg-gradient-to-br from-[#111113] to-[#1f1f23] text-white rounded-3xl shadow-xl">
+      <div className="wr-card wr-card--dark p-8 sm:p-12 text-white">
         <div className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-bold">
             <CheckCircle2 className="w-3.5 h-3.5" />
@@ -298,7 +300,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
       {/* ========================================================================= */}
       {/* Official Factory Contact & Location Card */}
       {/* ========================================================================= */}
-      <div className="apple-card p-6 sm:p-10 bg-white border border-black/[0.08] shadow-sm rounded-3xl">
+      <div className="wr-card p-6 sm:p-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           
           <div className="space-y-2">
@@ -330,7 +332,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
               INSTANT FACTORY INQUIRY
             </div>
             <p className="text-xs text-[#6e6e73] mb-2">
-              Direct communication in English, Vietnamese, and Chinese.
+              Direct communication in English and Vietnamese.
             </p>
             <button
               onClick={() => setCurrentTab('contact')}

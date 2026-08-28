@@ -96,7 +96,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       bestFor: 'Luxury Hotel Suites, Premium Residential Vanities, Fireplaces',
       features: 'Intricate classical shadow line, fabricated on automated multi-spindle profiling lines.',
       cadDrawing: 'M 10 10 L 60 10 Q 75 10 75 25 Q 75 40 90 50 L 90 90 L 10 90 Z',
-      image: '/assets/owner/china/factory-08.jpg'
+      image: '/assets/owner/vietnam/factory-06.jpg'
     }
   ];
 
@@ -138,12 +138,14 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
           {finishes.map((f) => (
             <div
               key={f.slug}
-              className="apple-card overflow-hidden flex flex-col justify-between group"
+              className="wr-card overflow-hidden flex flex-col justify-between group"
             >
               <div className="relative aspect-4/3 overflow-hidden bg-stone-100">
                 <img
                   src={f.image}
                   alt={f.name}
+                  width={720}
+                  height={540}
                   loading="lazy"
                   className="wr-media-zoom"
                   onError={(e) => {
@@ -186,7 +188,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       </section>
 
       {/* Part 2: Comprehensive Architectural Edge Profiles */}
-      <section className="space-y-8 apple-card p-6 sm:p-10">
+      <section className="space-y-8 wr-card p-6 sm:p-10">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-black/[0.06] pb-6">
           <div className="space-y-1">
             <div className="tech-badge text-[#86868b]">
@@ -234,6 +236,8 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
                   <img
                     src={edge.image}
                     alt={edge.name}
+                    width={720}
+                    height={540}
                     loading="lazy"
                     className="w-full h-full object-cover"
                   />
@@ -268,7 +272,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       </section>
 
       {/* Part 3: Buyer-approved sink integration options */}
-      <section className="apple-card-dark rounded-[3rem] p-10 sm:p-14 text-white space-y-8">
+      <section className="wr-card wr-card--dark p-10 sm:p-14 text-white space-y-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
             <div className="tech-badge text-amber-300">

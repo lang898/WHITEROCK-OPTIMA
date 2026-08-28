@@ -126,7 +126,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
   };
 
   return (
-    <div className={`apple-card p-6 sm:p-10 space-y-8 text-[#1d1d1f] ${className}`}>
+    <div className={`wr-card p-6 sm:p-10 space-y-8 text-[#1d1d1f] ${className}`}>
       {/* Configurator Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-black/[0.06] pb-6">
         <div className="space-y-1.5">
@@ -305,7 +305,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
         </div>
 
         {/* Right Output & Takeoff Summary Card (Apple Keynote Dark Card) */}
-        <div className="lg:col-span-5 flex flex-col justify-between apple-card-dark rounded-3xl p-6 sm:p-8 text-white space-y-6">
+        <div className="lg:col-span-5 flex flex-col justify-between wr-card wr-card--dark p-6 sm:p-8 text-white space-y-6">
           <div className="space-y-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <span className="tech-badge text-amber-300">

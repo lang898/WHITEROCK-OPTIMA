@@ -38,7 +38,7 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({ onStartRfq }
   const planningTotal = totalOrderValue + estimatedDuty + estimatedLogistics;
 
   return (
-    <div className="apple-card p-6 sm:p-10 space-y-8 text-[#1d1d1f]">
+    <div className="wr-card p-6 sm:p-10 space-y-8 text-[#1d1d1f]">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-black/[0.06] pb-6">
         <div className="space-y-1.5">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200">
@@ -143,7 +143,7 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({ onStartRfq }
           </div>
         </div>
 
-        <div className="lg:col-span-5 flex flex-col justify-between apple-card-dark rounded-3xl p-6 sm:p-8 text-white space-y-6">
+        <div className="lg:col-span-5 flex flex-col justify-between wr-card wr-card--dark p-6 sm:p-8 text-white space-y-6">
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <span className="tech-badge text-amber-300">PLANNING SUMMARY</span>

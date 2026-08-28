@@ -676,7 +676,7 @@ forms.forEach((form) => form.addEventListener("submit", async (event) => {
   document.body.appendChild(rail);
 })();
 
-/* ===================== static locale dictionary (EN root + /zh/) ===================== */
+/* ===================== static locale dictionary for configured locales ===================== */
 (function () {
   const dictionary = window.WR_I18N || {};
   if (!Object.keys(dictionary).length) return;
@@ -687,14 +687,6 @@ forms.forEach((form) => form.addEventListener("submit", async (event) => {
     const trailing = text.match(/\s*$/)?.[0] || "";
     const core = text.trim();
     let next = dictionary[core];
-    if (!next && window.WR_LOCALE?.id === "zh-Hans") {
-      const surfaces = core.match(/^(\d+) surfaces?$/);
-      const selected = core.match(/^(\d+) of 4 colors selected\.$/);
-      const view = core.match(/^View (.+) details$/);
-      if (surfaces) next = `${surfaces[1]} 款表面`;
-      if (selected) next = `已选择 ${selected[1]} / 4 款颜色。`;
-      if (view) next = `查看 ${view[1]} 详情`;
-    }
     return next ? `${leading}${next}${trailing}` : text;
   }
 

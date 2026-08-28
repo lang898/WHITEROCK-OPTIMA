@@ -91,7 +91,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
         {factory.stats.map((stat, idx) => (
           <div
             key={idx}
-            className="apple-card p-6 sm:p-8 space-y-2 flex flex-col justify-between"
+            className="wr-card p-6 sm:p-8 space-y-2 flex flex-col justify-between"
           >
             <div className="tech-badge text-[#86868b]">
               {stat.label}
@@ -109,7 +109,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
       </div>
 
       {/* Interactive Vietnam Production Base Map & Logistics Matrix */}
-      <div className="apple-card p-4 sm:p-8">
+      <div className="wr-card p-4 sm:p-8">
         <ProductionMap currentLocale={currentLocale} />
       </div>
 
@@ -131,7 +131,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
           {equipmentItems.map((item, idx) => (
             <div
               key={idx}
-              className="apple-card p-6 sm:p-8 space-y-4 flex flex-col justify-between group"
+              className="wr-card p-6 sm:p-8 space-y-4 flex flex-col justify-between group"
             >
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-2">
@@ -161,7 +161,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
       </section>
 
       {/* Real Workshop Photo Gallery */}
-      <section className="space-y-8 apple-card p-6 sm:p-10">
+      <section className="space-y-8 wr-card p-6 sm:p-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-black/[0.06] pb-6">
           <div className="space-y-2">
             <div className="tech-badge text-[#86868b]">
@@ -209,6 +209,8 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
                   <img
                     src={item.image}
                     alt={item.alt || item.title}
+                    width={960}
+                    height={720}
                     loading="lazy"
                     referrerPolicy="no-referrer"
                     className="wr-media-zoom"
@@ -254,6 +256,8 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
               <img
                 src={galleryItems[selectedPhotoIndex].image}
                 alt={galleryItems[selectedPhotoIndex].title}
+                width={1440}
+                height={960}
                 loading="lazy"
                 className="w-full h-full object-contain"
               />

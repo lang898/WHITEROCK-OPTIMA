@@ -1,40 +1,9 @@
-import React, { useState } from 'react';
-import {
-  ShieldCheck,
-  Building,
-  Layers,
-  Sparkles,
-  ArrowRight,
-  Package,
-  CheckCircle2,
-  ChevronRight,
-  Truck,
-  FileCheck,
-  Cpu,
-  Eye,
-  Check,
-  Zap,
-  Globe2,
-  Sliders,
-  Maximize2,
-  Compass,
-  Ruler,
-  Factory
-} from 'lucide-react';
-import {
-  products,
-  colors,
-  factory,
-  applications,
-  siteConfig
-} from '../data';
-import { StoneVisualizer } from '../components/StoneVisualizer';
-import { TariffCalculator } from '../components/TariffCalculator';
-import { VanityConfigurator } from '../components/VanityConfigurator';
-import { SocialMediaHub } from '../components/SocialMediaHub';
-import { WhiterockHeritageSection } from '../components/WhiterockHeritageSection';
+import React from 'react';
+import { ArrowDown, ArrowRight, Check, FileText, Layers, Package, Plus } from 'lucide-react';
+import { colors, factory, products } from '../data';
+import { t } from '../i18n';
+import type { ColorItem, LocaleConfig, ProductItem, RfqCartItem } from '../types';
 import type { ShareContent } from '../components/SocialShareModal';
-import type { ProductItem, ColorItem, RfqCartItem, LocaleConfig } from '../types';
 
 interface HomeViewProps {
   setCurrentTab: (tab: string) => void;
@@ -43,643 +12,140 @@ interface HomeViewProps {
   onAddToCart: (product: ProductItem | RfqCartItem) => void;
   onAddColorSample: (color: ColorItem) => void;
   currentLocale: LocaleConfig;
-  onOpenShareModal?: (content: ShareContent) => void;
-  onOpenWeChat?: () => void;
+  onOpenShareModal: (content?: ShareContent) => void;
+  onOpenWeChat: () => void;
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({
-  setCurrentTab,
-  onSelectProduct,
-  onSelectColor,
-  onAddToCart,
-  onAddColorSample,
-  currentLocale,
-  onOpenShareModal,
-  onOpenWeChat,
+  setCurrentTab, onSelectProduct, onSelectColor, onAddToCart, onAddColorSample, currentLocale
 }) => {
-  const [activeColorFilter, setActiveColorFilter] = useState<'All' | 'Marble' | 'Granite' | 'Quartz' | 'Engineered Marble'>('All');
-  const [activeProductCategory, setActiveProductCategory] = useState<'All' | 'Vanity' | 'Kitchen' | 'Furniture' | 'Commercial'>('All');
+  const [videoEnabled, setVideoEnabled] = React.useState(false);
+  const featuredProducts = products.slice(0, 4);
+  const featuredColors = colors.slice(0, 8);
+  const stats = factory.stats.slice(0, 3);
 
-  const filteredColors = activeColorFilter === 'All'
-    ? colors.slice(0, 8)
-    : colors.filter((c) => c.material === activeColorFilter).slice(0, 8);
+  React.useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+    const savesData = 'connection' in navigator && Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData);
+    if (prefersReducedMotion || !isDesktop || savesData) return;
 
-  const filteredProducts = products.filter((p) => {
-    if (activeProductCategory === 'All') return true;
-    if (activeProductCategory === 'Vanity') return p.category.includes('Vanity');
-    if (activeProductCategory === 'Kitchen') return p.category.includes('Kitchen');
-    if (activeProductCategory === 'Furniture') return p.category.includes('Furniture');
-    if (activeProductCategory === 'Commercial') return p.category.includes('Commercial');
-    return true;
-  }).slice(0, 6);
+    const timer = window.setTimeout(() => setVideoEnabled(true), 1800);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   return (
-    <div className="hybrid-home space-y-24 sm:space-y-36 bg-[#f5f5f7] text-[#1d1d1f] pb-24 overflow-hidden">
-      
-      {/* ========================================================================= */}
-      {/* 1. HERO KEYNOTE SECTION (Apple Display + Industrial Precision Aesthetics) */}
-      {/* ========================================================================= */}
-      <section className="relative pt-12 sm:pt-20 pb-20 sm:pb-28 overflow-hidden">
-        <div className="wr-section text-center space-y-8">
-          
-          {/* Industrial Machined Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-black/[0.08] text-[#1d1d1f] shadow-xs hover:border-black/20 transition-all">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span className="tech-badge text-[#86868b]">VIETNAM DIRECT PLANT</span>
-            <span className="text-black/20 font-light">|</span>
-            <span className="tech-badge text-[#1d1d1f]">WHITEROCK MARBLE & GRANITE</span>
-            <span className="text-black/20 font-light">|</span>
-            <span className="tech-badge text-emerald-800">GLOBAL B2B PROJECT SUPPLY</span>
+    <div className="wr-home">
+      <section className="wr-hero" aria-labelledby="home-hero-title">
+        <picture className="wr-hero__poster" aria-hidden="true">
+          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-02-720.webp" type="image/webp" />
+          <source srcSet="/assets/owner/vietnam/factory-02-1280.webp" type="image/webp" />
+          <img src="/assets/owner/vietnam/factory-02.jpg" alt="" width="1600" height="1067" loading="eager" fetchPriority="high" />
+        </picture>
+        {videoEnabled && (
+          <video className="wr-hero__video" autoPlay muted loop playsInline preload="metadata" poster="/assets/owner/vietnam/factory-02-1280.webp" aria-label="Owner-supplied WHITEROCK Vietnam factory tour">
+            <source src="/assets/owner/vietnam/factory-tour.mp4" type="video/mp4" />
+          </video>
+        )}
+        <div className="wr-hero__shade" aria-hidden="true" />
+        <div className="wr-hero__content">
+          <p className="wr-eyebrow wr-eyebrow--light">{t(currentLocale, 'heroEyebrow')}</p>
+          <h1 id="home-hero-title">{t(currentLocale, 'heroTitle')}</h1>
+          <p className="wr-hero__lead">{t(currentLocale, 'heroBody')}</p>
+          <div className="wr-hero__actions">
+            <button className="wr-button wr-button--light" onClick={() => setCurrentTab('products')}>{t(currentLocale, 'exploreProducts')}<ArrowRight /></button>
+            <button className="wr-button wr-button--outline-light" onClick={() => setCurrentTab('factory')}>{t(currentLocale, 'viewFactory')}</button>
           </div>
-
-          {/* Grand Keynote Headline */}
-          <div className="space-y-5 max-w-5xl mx-auto">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] text-[#1d1d1f] leading-[1.04]">
-              Stone shaped with precision.
-              <br />
-              <span className="apple-text-gradient">
-                Delivered with care.
-              </span>
-            </h1>
-            <p className="text-lg sm:text-2xl text-[#6e6e73] max-w-3xl mx-auto font-normal leading-relaxed tracking-tight pt-1">
-              Direct manufacturing for countertops, vanity tops, architectural stone, mosaics, fireplaces, and indoor or outdoor stone furniture. Made for distributors, fabricators, builders, and hospitality buyers worldwide.
-            </p>
-          </div>
-
-          {/* Apple Precision CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-            <button
-              onClick={() => setCurrentTab('products')}
-              className="wr-action wr-action--primary text-sm sm:text-base"
-            >
-              <Package className="w-4 h-4 text-amber-300" />
-              <span>Explore Product Collections</span>
-            </button>
-
-            <button
-              onClick={() => setCurrentTab('colors')}
-              className="wr-action wr-action--secondary text-sm sm:text-base"
-            >
-              <Layers className="w-4 h-4 text-[#86868b]" />
-              <span>Explore Stone Colors</span>
-            </button>
-
-            <button
-              onClick={() => setCurrentTab('contact')}
-              className="px-6 py-4 rounded-full bg-transparent hover:bg-black/[0.04] text-[#0071e3] font-semibold text-sm sm:text-base transition-colors flex items-center gap-1 cursor-pointer"
-            >
-              <span>Request Quote</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-
-          {/* Hero Visual Showcase with Industrial Technical Framing */}
-          <div className="pt-10 sm:pt-14 max-w-6xl mx-auto">
-            <div className="relative rounded-[2.5rem] sm:rounded-[3rem] overflow-hidden border border-black/[0.09] shadow-[0_24px_70px_-15px_rgba(0,0,0,0.12)] bg-white group">
-              <div className="aspect-16/9 sm:aspect-21/9 overflow-hidden bg-stone-100 relative">
-                <img
-                  src="/assets/owner/vietnam/factory-02.jpg"
-                  alt="Owner-supplied photo of the WHITEROCK Vietnam stone cutting area"
-                  loading="eager"
-                  fetchPriority="high"
-                  className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-1000 ease-out filter brightness-102"
-                />
-                
-                {/* Floating Technical Overlay Chips */}
-                <div className="absolute top-6 left-6 hidden sm:flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/90 backdrop-blur-xl border border-black/[0.08] shadow-lg text-xs font-semibold text-[#1d1d1f]">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                  <span className="tech-badge">VIETNAM MANUFACTURING BASE</span>
-                </div>
-
-                <div className="absolute bottom-6 left-6 hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-black/75 backdrop-blur-xl border border-white/15 text-white text-xs font-medium shadow-2xl">
-                  <Ruler className="w-3.5 h-3.5 text-amber-300" />
-                  <span className="tech-badge">CUSTOM FABRICATION SUPPORT</span>
-                </div>
-
-                <div className="hybrid-image-note absolute bottom-6 right-6 hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-[#1d1d1f]/90 backdrop-blur-xl border border-white/15 text-white text-xs font-medium shadow-2xl">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                  <span className="tech-badge">APPLICATION INSPIRATION — REFERENCE IMAGE</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Giant Apple-Style Keynote Metrics Strip with Industrial Monospace Sub-Tags */}
-          <div className="pt-12 sm:pt-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto text-left">
-            <div className="wr-home-feature-card group">
-              <div className="tech-badge text-[#86868b] mb-1">PLANT FOOTPRINT</div>
-              <div className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
-                20,000<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> m²</span>
-              </div>
-              <p className="text-xs text-[#86868b] font-medium mt-3 leading-snug">
-                Binh Phuoc manufacturing facility with dedicated wet processing bays.
-              </p>
-            </div>
-
-            <div className="wr-home-feature-card group">
-              <div className="tech-badge text-emerald-700 mb-1">PRODUCTION NETWORK</div>
-              <div className="text-4xl sm:text-5xl font-bold tracking-tight text-emerald-600">
-                2<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> Bases</span>
-              </div>
-              <p className="text-xs text-[#86868b] font-medium mt-3 leading-snug">
-                Vietnam manufacturing supported by Yunfu stone sourcing and craft expertise.
-              </p>
-            </div>
-
-            <div className="wr-home-feature-card group">
-              <div className="tech-badge text-[#86868b] mb-1">STONE EXPERIENCE</div>
-              <div className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
-                20+<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> Years</span>
-              </div>
-              <p className="text-xs text-[#86868b] font-medium mt-3 leading-snug">
-                Natural marble, granite & quartz cut-to-size craftsmanship.
-              </p>
-            </div>
-
-            <div className="wr-home-feature-card group">
-              <div className="tech-badge text-[#86868b] mb-1">ANNUAL CAPACITY</div>
-              <div className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
-                100k<span className="text-xl sm:text-2xl font-normal text-[#86868b]"> m²/yr</span>
-              </div>
-              <p className="text-xs text-[#86868b] font-medium mt-3 leading-snug">
-                Cut-to-size multi-family & hospitality container export scale.
-              </p>
-            </div>
-          </div>
-
         </div>
+        <div className="wr-hero__stats">
+          {stats.map((stat, index) => <div key={stat.label}><strong>{stat.value}</strong><span>{index === 0 ? t(currentLocale, 'experience') : index === 1 ? t(currentLocale, 'plantArea') : t(currentLocale, 'annualCapacity')}</span></div>)}
+        </div>
+        <a className="wr-hero__scroll" href="#story" aria-label="Continue to company story"><ArrowDown /></a>
       </section>
 
-
-      {/* ========================================================================= */}
-      {/* 2. APPLE-STYLE BENTO GRID: INDUSTRIAL FABRICATION ADVANTAGES */}
-      {/* ========================================================================= */}
-      <section className="wr-section space-y-12">
-        <div className="wr-section-intro space-y-3">
-          <div className="wr-eyebrow">
-            ARCHITECTURAL SPECIFICATION STANDARD
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
-            Engineered in Vietnam.
-            <br />
-            Optimized for North America.
-          </h2>
-          <p className="text-base sm:text-lg text-[#86868b]">
-            Every slab cut, sink mounted, and crate packed to withstand international logistics and streamline on-site job installation.
-          </p>
+      <section id="story" className="wr-story wr-section-band">
+        <div className="wr-story__copy">
+          <span className="wr-eyebrow">Established stone experience</span>
+          <h2>Marble and granite expertise, organized for international buying.</h2>
+          <p>WHITEROCK combines more than two decades of stone-industry experience with a 20,000 m² manufacturing site in Binh Phuoc. The site is presented through owner-supplied media, while specifications and commercial terms remain order-specific.</p>
+          <button className="wr-text-link" onClick={() => setCurrentTab('about')}>Read the company profile<ArrowRight /></button>
         </div>
+        <figure className="wr-story__media">
+          <picture>
+            <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-01-720.webp" type="image/webp" />
+            <source srcSet="/assets/owner/vietnam/factory-01-1280.webp" type="image/webp" />
+            <img src="/assets/owner/vietnam/factory-01.jpg" alt="Owner-supplied photo of the WHITEROCK Vietnam site entrance" width="1600" height="1067" loading="lazy" />
+          </picture>
+          <figcaption>WHITEROCK Vietnam · Binh Phuoc Province</figcaption>
+        </figure>
+      </section>
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          
-          {/* Bento Card 1 (Large - Spans 2 Columns) */}
-          <div className="md:col-span-2 apple-card p-8 sm:p-12 flex flex-col justify-between space-y-8 relative overflow-hidden group">
-            <div className="space-y-4 max-w-xl relative z-10">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200/80">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span className="tech-badge">OWNER-REPORTED VIETNAM MANUFACTURING SITE</span>
-              </div>
-              <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
-                20,000 m² Advanced Fabrication Facility
-              </h3>
-              <p className="text-sm sm:text-base text-[#86868b] leading-relaxed">
-                Located in Binh Phuoc Province. Production scope, shipping route, origin documents, and import treatment are reviewed for each order with the buyer's appointed logistics and customs professionals.
-              </p>
-            </div>
+      <section className="wr-factory-feature wr-section-band wr-section-band--dark">
+        <div className="wr-section-heading wr-section-heading--light">
+          <span className="wr-eyebrow wr-eyebrow--light">Manufacturing capability</span>
+          <h2>See the working environment behind the quotation.</h2>
+          <p>Real production imagery gives buyers a clearer starting point for factory review, drawing approval, inspection planning, and packing discussion.</p>
+        </div>
+        <div className="wr-factory-feature__grid">
+          <figure className="wr-factory-feature__primary"><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-03-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-03-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-03.jpg" alt="Owner-supplied photo of wet stone processing equipment in Vietnam" width="1600" height="1067" loading="lazy" /></picture><figcaption>Stone processing area · Vietnam</figcaption></figure>
+          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-02-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-02-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-02.jpg" alt="Owner-supplied photo showing stone cutting equipment in Vietnam" width="1600" height="1067" loading="lazy" /></picture><figcaption>Stone cutting reference · Vietnam</figcaption></figure>
+          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-06-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-06.jpg" alt="Owner-supplied photo of finished stone tops under review" width="1600" height="1067" loading="lazy" /></picture><figcaption>Finished top review</figcaption></figure>
+        </div>
+        <button className="wr-button wr-button--outline-light" onClick={() => setCurrentTab('factory')}>Explore factory capability<ArrowRight /></button>
+      </section>
 
-            <div className="relative rounded-2xl overflow-hidden aspect-16/8 bg-stone-100 border border-black/[0.06]">
-              <img
-                src="/assets/owner/vietnam/factory-01.jpg"
-                alt="Owner-supplied photo of the WHITEROCK Vietnam site entrance"
-                loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
-              />
-            </div>
-
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-black/[0.06] relative z-10">
-              <span className="tech-badge text-[#86868b]">
-                CAT LAI PORT DIRECT 40HQ OCEAN STAGING
-              </span>
-              <button
-                onClick={() => setCurrentTab('factory')}
-                className="text-xs font-semibold text-[#0071e3] hover:underline flex items-center gap-1 cursor-pointer"
-              >
-                <span>Tour Vietnam Plant Real Photo Scenes</span>
-                <ChevronRight className="w-3.5 h-3.5" />
+      <section className="wr-catalog-preview wr-section-band">
+        <div className="wr-section-heading">
+          <span className="wr-eyebrow">{t(currentLocale, 'productCatalog')}</span>
+          <h2>Start with a product program. Refine it with drawings.</h2>
+          <p>{t(currentLocale, 'productIntro')}</p>
+        </div>
+        <div className="wr-editorial-grid">
+          {featuredProducts.map((product, index) => (
+            <article className={`wr-product-story ${index === 0 ? 'wr-product-story--wide' : ''}`} key={product.sku}>
+              <button className="wr-product-story__media" onClick={() => onSelectProduct(product)} aria-label={`View ${product.title}`}>
+                <img src={product.image} alt={product.imageType === 'render' ? `${product.title} illustrative render` : product.title} width={product.imageWidth || 1536} height={product.imageHeight || 1024} loading="lazy" />
+                {product.imageType === 'render' && <span>Illustrative render · not actual product</span>}
               </button>
-            </div>
-          </div>
-
-          {/* Bento Card 2 (Standard Column) */}
-          <div className="apple-card p-8 sm:p-10 flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-900 flex items-center justify-center border border-amber-200/80">
-                <Cpu className="w-6 h-6 text-amber-700" />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#1d1d1f]">
-                Sink Cutouts, Optional Assembly & CNC Processing
-              </h3>
-              <p className="text-xs sm:text-sm text-[#86868b] leading-relaxed">
-                Vitreous china rectangular undermount porcelain basins pre-attached with high-strength structural silicone and stainless brackets at the Vietnam factory.
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-[#f5f5f7] border border-black/[0.04] space-y-2 text-xs text-[#1d1d1f]">
-              <div className="flex items-center gap-2 font-medium">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>Buyer-Approved Sink Models</span>
-              </div>
-              <div className="flex items-center gap-2 font-medium">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>Single / 4" / 8" Faucet Hole Drill</span>
-              </div>
-              <div className="flex items-center gap-2 font-medium">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>Universal 4" Backsplash & Ends</span>
-              </div>
-            </div>
-
-            <button
-              onClick={() => setCurrentTab('finishes')}
-              className="text-xs font-semibold text-[#0071e3] hover:underline flex items-center gap-1 cursor-pointer"
-            >
-              <span>Explore Sink & Edge Profiles</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-
-          {/* Bento Card 3 (Standard Column) */}
-          <div className="apple-card p-8 sm:p-10 flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-900 flex items-center justify-center border border-sky-200/80">
-                <Layers className="w-6 h-6 text-sky-700" />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#1d1d1f]">
-                4x4" Physical Swatch Boxes via FedEx
-              </h3>
-              <p className="text-xs sm:text-sm text-[#86868b] leading-relaxed">
-                Order custom sample boxes delivered to your North American design studio or job site within 5 business days for owner and architect approvals.
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-[#f5f5f7] border border-black/[0.04] text-xs space-y-1.5 text-[#6e6e73]">
-              <div><strong>Quartz Swatches:</strong> Calacatta Gold, Pure White, Carrara</div>
-              <div><strong>Marble & Granite:</strong> Nero Marquina, Steel Grey, Absolute Black</div>
-            </div>
-
-            <button
-              onClick={() => setCurrentTab('colors')}
-              className="text-xs font-semibold text-[#0071e3] hover:underline flex items-center gap-1 cursor-pointer"
-            >
-              <span>Build Sample Swatch Kit</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-
-          {/* Bento Card 4 (Spans 2 Columns) */}
-          <div className="md:col-span-2 apple-card p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="space-y-4 max-w-md">
-              <div className="w-12 h-12 rounded-2xl bg-stone-100 text-stone-900 flex items-center justify-center border border-stone-300">
-                <Truck className="w-6 h-6 text-stone-800" />
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1d1d1f]">
-                Drop-Tested ISPM-15 Heat-Treated Crating
-              </h3>
-              <p className="text-xs sm:text-sm text-[#86868b] leading-relaxed">
-                Reinforced heavy plywood boxes with plastic film moisture barrier, corner protectors, foam padding, and steel strapping. Zero breakage guarantee on ocean freight.
-              </p>
-              <div className="flex gap-4 pt-2 text-xs font-medium text-[#1d1d1f]">
-                <span className="tech-badge">✓ 25–35 TOPS/CRATE</span>
-                <span className="tech-badge">✓ UNIT BARCODES</span>
-                <span className="tech-badge">✓ A-FRAME STIFFENERS</span>
-              </div>
-            </div>
-
-            <div className="w-full md:w-80 aspect-4/3 rounded-2xl overflow-hidden bg-stone-100 border border-black/[0.06] shrink-0">
-              <img
-                src="/assets/owner/vietnam/factory-05.jpg"
-                alt="Heavy Plywood Export Crating"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* 2.5 WHITEROCK MARBLE & GRANITE: 6 SIGNATURE PROGRAMS & DUAL HUB HERITAGE */}
-      {/* ========================================================================= */}
-      <WhiterockHeritageSection
-        onSelectCategory={(cat) => {
-          setCurrentTab('products');
-        }}
-        onExploreProducts={() => setCurrentTab('products')}
-        onOpenRfq={() => setCurrentTab('contact')}
-      />
-
-
-      {/* ========================================================================= */}
-      {/* 3. INTERACTIVE STUDIO SPOTLIGHT: 3D STONE VISUALIZER */}
-      {/* ========================================================================= */}
-      <section className="wr-section">
-        <div className="space-y-6">
-          <div className="wr-section-intro space-y-2">
-            <div className="wr-eyebrow">
-              INTERACTIVE 3D RENDERING STUDIO
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
-              Visualize Stone Surfaces in Real Rooms
-            </h2>
-            <p className="text-xs sm:text-sm text-[#86868b]">
-              Switch lighting temperatures, room styles, and stone colors in real time.
-            </p>
-          </div>
-
-          <div className="rounded-[2.5rem] overflow-hidden border border-black/[0.06] shadow-sm bg-white p-4 sm:p-8">
-            <StoneVisualizer
-              currentLocale={currentLocale}
-              onAddToCart={onAddToCart}
-              onRequestSample={onAddColorSample}
-            />
-          </div>
-        </div>
-      </section>
-
-
-      {/* ========================================================================= */}
-      {/* 4. INTERACTIVE VANITY & COUNTERTOP CONFIGURATOR */}
-      {/* ========================================================================= */}
-      <section className="wr-section">
-        <div className="space-y-6">
-          <div className="wr-section-intro space-y-2">
-            <div className="wr-eyebrow">
-              B2B SPECIFICATION MATRIX
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
-              Configure Prefab Vanity Tops & Sink Cutouts
-            </h2>
-            <p className="text-xs sm:text-sm text-[#86868b]">
-              Standard 22" depths (25", 31", 37", 49", 61", 73"), sink positions, and edge details.
-            </p>
-          </div>
-
-          <div className="rounded-[2.5rem] overflow-hidden border border-black/[0.06] shadow-sm bg-white p-4 sm:p-8">
-            <VanityConfigurator
-            onAddToCart={(item) => onAddToCart(item)}
-            />
-          </div>
-        </div>
-      </section>
-
-
-      {/* ========================================================================= */}
-      {/* 5. TARIFF & CONTAINER SAVINGS OPTIMIZER */}
-      {/* ========================================================================= */}
-      <section className="wr-section">
-        <div className="rounded-[2.5rem] overflow-hidden border border-black/[0.06] shadow-sm bg-white p-6 sm:p-10">
-          <TariffCalculator
-            currentLocale={currentLocale}
-            onStartRfq={() => setCurrentTab('contact')}
-          />
-        </div>
-      </section>
-
-
-      {/* ========================================================================= */}
-      {/* 6. FEATURED PRODUCTS (Apple Store Clean Showcase) */}
-      {/* ========================================================================= */}
-      <section className="wr-section space-y-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-black/[0.06] pb-6">
-          <div className="space-y-2 max-w-2xl">
-            <div className="wr-eyebrow">
-              CATALOG SELECTION
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
-              Core Fabrication Programs
-            </h2>
-          </div>
-
-          {/* Apple-style smooth segment filter */}
-          <div className="flex flex-wrap gap-1.5 p-1.5 rounded-full bg-white border border-black/[0.06] shadow-2xs">
-            {[
-              { id: 'All', label: 'All Products' },
-              { id: 'Vanity', label: 'Vanity Tops' },
-              { id: 'Kitchen', label: 'Kitchen Counters' },
-              { id: 'Furniture', label: 'Furniture' },
-              { id: 'Commercial', label: 'Commercial Cut-to-Size' }
-            ].map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveProductCategory(cat.id as any)}
-                className={`px-4 py-2 rounded-full text-xs font-medium transition-all cursor-pointer ${
-                  activeProductCategory === cat.id
-                    ? 'bg-[#1d1d1f] text-white shadow-xs font-semibold'
-                    : 'text-[#6e6e73] hover:text-[#1d1d1f]'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((prod) => (
-            <div
-              key={prod.sku}
-              className="apple-card overflow-hidden flex flex-col justify-between group"
-            >
-              <div
-                className="relative aspect-16/11 overflow-hidden bg-stone-100 cursor-pointer"
-                onClick={() => onSelectProduct(prod)}
-              >
-                <img
-                  src={prod.image}
-                  alt={prod.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.src = '/assets/owner/vietnam/factory-06.jpg';
-                  }}
-                />
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-semibold text-[#1d1d1f] shadow-xs">
-                  {prod.material}
-                </div>
-                <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-[#111113]/85 text-[10px] font-mono text-white">
-                  {prod.sku}
-                </div>
-              </div>
-
-              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
-                <div className="space-y-2">
-                  <h3
-                    onClick={() => onSelectProduct(prod)}
-                    className="font-bold text-lg text-[#1d1d1f] group-hover:text-amber-900 transition-colors cursor-pointer"
-                  >
-                    {prod.title}
-                  </h3>
-                  <p className="text-xs text-[#86868b] line-clamp-2 leading-relaxed">
-                    {prod.description}
-                  </p>
-                </div>
-
-                <div className="space-y-2 pt-4 border-t border-black/[0.06] text-xs">
-                  {prod.specs.Size && (
-                    <div className="flex justify-between text-[#86868b]">
-                      <span>Dimensions:</span>
-                      <strong className="text-[#1d1d1f] font-mono">{prod.specs.Size}</strong>
-                    </div>
-                  )}
-                  {prod.specs.Packaging && (
-                    <div className="flex justify-between text-[#86868b]">
-                      <span>Packaging:</span>
-                      <span className="text-[#1d1d1f] truncate max-w-[65%]">{prod.specs.Packaging}</span>
-                    </div>
-                  )}
-                </div>
-
-                <div className="flex items-center gap-2 pt-2">
-                  <button
-                    onClick={() => onAddToCart(prod)}
-                    className="flex-1 py-3 bg-[#111113] hover:bg-black text-white font-medium rounded-full text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-                  >
-                    <Package className="w-3.5 h-3.5 text-amber-300" />
-                    <span>Add to RFQ Cart</span>
-                  </button>
-                  <button
-                    onClick={() => onSelectProduct(prod)}
-                    className="p-3 bg-black/[0.04] hover:bg-black/[0.08] text-[#1d1d1f] rounded-full text-xs transition-colors cursor-pointer"
-                    title="View Technical Data Sheet"
-                  >
-                    <Eye className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
+              <div><small>{product.sku} · {product.material}</small><h3>{product.title}</h3><p>{product.description}</p><div><button className="wr-text-link" onClick={() => onSelectProduct(product)}>View details<ArrowRight /></button><button className="wr-icon-button" onClick={() => onAddToCart(product)} aria-label={`Add ${product.title} to RFQ`}><Plus /></button></div></div>
+            </article>
           ))}
         </div>
-
-        <div className="text-center pt-6">
-          <button
-            onClick={() => setCurrentTab('products')}
-            className="wr-action wr-action--secondary text-xs uppercase"
-          >
-            <span>View Full Product Catalog & Technical PDF Specs</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
+        <button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('products')}>View complete catalog<ArrowRight /></button>
       </section>
 
-
-      {/* ========================================================================= */}
-      {/* 7. STEP-BY-STEP B2B EXPORT SEQUENCE (Industrial Progression) */}
-      {/* ========================================================================= */}
-      <section className="wr-section space-y-12">
-        <div className="wr-section-intro space-y-2">
-          <div className="wr-eyebrow">
-            INTERNATIONAL WORKFLOW ARCHITECTURE
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
-            From CAD Drawings to Container Staging
-          </h2>
-          <p className="text-xs sm:text-sm text-[#86868b]">
-            Standardized execution tailored for North American multi-family builders & stone distributors.
-          </p>
+      <section className="wr-color-preview wr-section-band wr-section-band--mist">
+        <div className="wr-section-heading wr-section-heading--split">
+          <div><span className="wr-eyebrow">{t(currentLocale, 'colorLibrary')}</span><h2>A shortlist begins with color, then moves to sample approval.</h2></div>
+          <p>{t(currentLocale, 'colorIntro')}</p>
         </div>
+        <div className="wr-color-strip" role="list">
+          {featuredColors.map((color) => (
+            <article key={color.slug} role="listitem">
+              <button onClick={() => onSelectColor(color)}><img src={color.swatchImage} alt={`${color.name} illustrative digital swatch`} width="800" height="800" loading="lazy" /><span>{color.name}</span></button>
+              <div><small>{color.material}</small><button className="wr-icon-button" onClick={() => onAddColorSample(color)} aria-label={`Request ${color.name} sample`}><Package /></button></div>
+            </article>
+          ))}
+        </div>
+        <button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('colors')}>Open color library<ArrowRight /></button>
+      </section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="wr-process wr-section-band">
+        <div className="wr-section-heading"><span className="wr-eyebrow">From drawing to shipment</span><h2>A buying process built around written approval.</h2></div>
+        <ol>
           {[
-            {
-              step: '01',
-              title: 'CAD & Shop Takeoff',
-              desc: 'Our Vietnam engineering team reviews architectural DWG/PDF drawings, verifies sink cutout templates and edge profiles.',
-              icon: FileCheck
-            },
-            {
-              step: '02',
-              title: 'Sample Approval',
-              desc: 'Physical 4x4" or 12x12" stone chips dispatched via express courier to confirm veining, resin tone, and finish.',
-              icon: Layers
-            },
-            {
-              step: '03',
-              title: 'Quad CNC & Assembly',
-              desc: 'Drawing-based cutting, edge preparation, optional sink assembly, and visual review to the approved order specification.',
-              icon: Cpu
-            },
-            {
-              step: '04',
-              title: 'Packing & Shipment Planning',
-              desc: 'Order-specific crate, protection, labeling, payload, and routing plans are confirmed before shipment.',
-              icon: Truck
-            }
-          ].map((item, idx) => (
-            <div key={idx} className="apple-card p-8 space-y-4">
-              <div className="text-4xl font-bold text-amber-700/80 font-mono">
-                {item.step}
-              </div>
-              <h4 className="font-bold text-base text-[#1d1d1f]">{item.title}</h4>
-              <p className="text-xs text-[#86868b] leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
+            ['01', 'Share the brief', 'Send drawings, target material, destination, quantity, and schedule.'],
+            ['02', 'Confirm the specification', 'Review samples, dimensions, edges, cutouts, quality plan, and packing method.'],
+            ['03', 'Approve production', 'Production begins against the approved drawing, sample, and written order terms.'],
+            ['04', 'Inspect and ship', 'Inspection evidence, packing list, and shipment details are agreed for the order.']
+          ].map(([number, title, body]) => <li key={number}><span>{number}</span><div><h3>{title}</h3><p>{body}</p></div><Check /></li>)}
+        </ol>
       </section>
 
-
-      {/* ========================================================================= */}
-      {/* 8. GLOBAL SOCIAL MEDIA & LIVE FACTORY BROADCAST HUB */}
-      {/* ========================================================================= */}
-      {onOpenShareModal && onOpenWeChat && (
-        <SocialMediaHub
-          onOpenShareModal={onOpenShareModal}
-          onOpenWeChat={onOpenWeChat}
-        />
-      )}
-
-      {/* ========================================================================= */}
-      {/* 9. GRAND APPLE-STYLE BOTTOM CALL-TO-ACTION */}
-      {/* ========================================================================= */}
-      <section className="wr-section">
-        <div className="apple-card-dark rounded-[3rem] p-10 sm:p-16 lg:p-20 text-center space-y-8 relative overflow-hidden">
-          {/* Subtle Ambient Background Light */}
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
-
-          <div className="space-y-4 max-w-3xl mx-auto relative z-10">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-semibold border border-white/10">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span className="tech-badge">DIRECT VIETNAM PLANT INQUIRIES</span>
-            </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
-              Ready to quote your commercial stone program?
-            </h2>
-            <p className="text-sm sm:text-lg text-[#a1a1a6] max-w-2xl mx-auto leading-relaxed">
-              Send your project BOQ, CAD plans, or vanity top specifications to our engineering estimation team. Comprehensive FOB / CIF quotation within 24 hours.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2 relative z-10">
-            <button
-              onClick={() => setCurrentTab('contact')}
-              className="wr-action wr-action--secondary text-sm sm:text-base"
-            >
-              <span>Submit Project RFQ & Plans</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-
-            <button
-              onClick={() => setCurrentTab('colors')}
-              className="wr-action border-white/20 bg-white/10 text-white hover:bg-white/15 text-sm sm:text-base"
-            >
-              <span>Request 4x4" Physical Samples</span>
-            </button>
-          </div>
-        </div>
+      <section className="wr-home-rfq wr-section-band">
+        <div><span className="wr-eyebrow wr-eyebrow--light">Project inquiry</span><h2>Turn your shortlist into a factory quotation.</h2><p>Send the selected products, dimensions, drawings, destination, and target schedule. Final capability and terms are confirmed in writing.</p></div>
+        <div><button className="wr-button wr-button--light" onClick={() => setCurrentTab('contact')}><FileText />{t(currentLocale, 'requestQuote')}</button><button className="wr-button wr-button--outline-light" onClick={() => setCurrentTab('products')}><Layers />Build a shortlist</button></div>
       </section>
-
     </div>
   );
 };

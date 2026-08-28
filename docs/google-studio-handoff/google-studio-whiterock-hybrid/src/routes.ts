@@ -32,7 +32,7 @@ export const routes: RouteDefinition[] = [
     id: 'about',
     path: '/about/',
     title: 'About WHITEROCK | Vietnam Stone Manufacturer',
-    description: 'Learn about WHITEROCK, its Vietnam manufacturing base, Yunfu stone network, capabilities, and approach to global B2B supply.',
+    description: 'Learn about WHITEROCK, its Vietnam manufacturing base, capabilities, and approach to global B2B stone supply.',
     schemaType: 'AboutPage',
   },
   {

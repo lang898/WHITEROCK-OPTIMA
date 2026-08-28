@@ -318,7 +318,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
 
                 {/* Water Body Labels */}
                 <text x="540" y="320" fill="#94a3b8" fontSize="11" fontFamily="monospace" letterSpacing="3" fontWeight="bold">
-                  SOUTH CHINA SEA
+                  REGIONAL OCEAN ROUTE
                 </text>
                 <text x="520" y="340" fill="#64748b" fontSize="9" fontFamily="sans-serif">
                   (DIRECT TRANS-PACIFIC CONTAINER ROUTE)

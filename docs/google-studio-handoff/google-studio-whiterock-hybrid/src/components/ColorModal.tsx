@@ -15,6 +15,7 @@ import {
 import type { ColorItem } from '../types';
 import { ShareButton } from './ShareButton';
 import type { ShareContent } from './SocialShareModal';
+import { useUnits } from './UnitContext';
 
 interface ColorModalProps {
   color: ColorItem | null;
@@ -29,6 +30,7 @@ export const ColorModal: React.FC<ColorModalProps> = ({
   onRequestSample,
   onShare,
 }) => {
+  const { formatMeasurement } = useUnits();
   if (!color) return null;
 
   const shareContent: ShareContent = {
@@ -41,7 +43,7 @@ export const ColorModal: React.FC<ColorModalProps> = ({
   };
 
   return (
-    <div className="wr-modal-backdrop">
+    <div className="wr-modal-backdrop" role="dialog" aria-modal="true" aria-label={`${color.name} color details`} onClick={onClose}>
       <div
         className="relative bg-white rounded-[2rem] w-full max-w-3xl shadow-2xl text-[#1d1d1f] overflow-hidden max-h-[92vh] flex flex-col border border-black/[0.08]"
         onClick={(e) => e.stopPropagation()}
@@ -59,6 +61,7 @@ export const ColorModal: React.FC<ColorModalProps> = ({
           <button
             onClick={onClose}
             className="wr-modal-close"
+            aria-label="Close color details"
           >
             <X className="w-5 h-5" />
           </button>
@@ -72,7 +75,9 @@ export const ColorModal: React.FC<ColorModalProps> = ({
               <div className="relative aspect-square rounded-2xl overflow-hidden bg-stone-100 border border-black/[0.06] group shadow-xs">
                 <img
                   src={color.swatchImage}
-                  alt={color.name}
+                  alt={`${color.name} digital swatch`}
+                  width={720}
+                  height={720}
                   loading="lazy"
                   className="wr-media-zoom"
                   onError={(e) => {
@@ -118,12 +123,12 @@ export const ColorModal: React.FC<ColorModalProps> = ({
                   STANDARD THICKNESSES
                 </span>
                 <div className="flex flex-wrap gap-1.5">
-                  {color.thicknesses.map((t) => (
+                  {color.thicknesses.map((thickness) => (
                     <span
-                      key={t}
+                      key={thickness}
                       className="px-3 py-1 rounded-full bg-[#f5f5f7] text-[#1d1d1f] text-xs font-medium border border-black/[0.05]"
                     >
-                      {t}
+                      {formatMeasurement(thickness)}
                     </span>
                   ))}
                 </div>

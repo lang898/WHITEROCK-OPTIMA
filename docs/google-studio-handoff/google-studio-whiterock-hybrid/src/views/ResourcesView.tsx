@@ -70,7 +70,7 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ currentLocale }) =
         {resources.map((res, idx) => (
           <div
             key={idx}
-            className="apple-card p-6 sm:p-8 flex flex-col justify-between space-y-6 group"
+            className="wr-card p-6 sm:p-8 flex flex-col justify-between space-y-6 group"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -101,7 +101,7 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ currentLocale }) =
       </div>
 
       {/* Regulatory & Safety Notice Box (Apple Precision Callout) */}
-      <section className="apple-card p-6 sm:p-10 space-y-6">
+      <section className="wr-card p-6 sm:p-10 space-y-6">
         <div className="flex flex-col sm:flex-row items-start gap-4">
           <div className="p-3.5 bg-amber-50 text-amber-800 rounded-2xl shrink-0 border border-amber-200">
             <AlertTriangle className="w-6 h-6" />

@@ -35,11 +35,11 @@
       "quantity": "Confirm during quotation",
       "keySpec": "Working range and acceptance limits are confirmed for each order.",
       "drawing": "/assets/equipment/bridge-saw.svg",
-      "localFile": "/assets/owner/china/factory-07.jpg",
-      "media": "/assets/owner/china/factory-07.jpg",
-      "location": "Owner-supplied China factory photo",
+      "localFile": "/assets/owner/vietnam/factory-02.jpg",
+      "media": "/assets/owner/vietnam/factory-02.jpg",
+      "location": "Owner-supplied Vietnam factory photo",
       "imageType": "real",
-      "alt": "Owner-supplied photo showing bridge cutting equipment in the China factory"
+      "alt": "Owner-supplied photo showing stone cutting equipment in the Vietnam factory"
     },
     {
       "name": "Multi-Spindle Stone Processing Center",
@@ -48,11 +48,11 @@
       "quantity": "Confirm during quotation",
       "keySpec": "Tooling, working range, and inspection method depend on the product.",
       "drawing": "/assets/equipment/cnc-router.svg",
-      "localFile": "/assets/owner/china/factory-09.jpg",
-      "media": "/assets/owner/china/factory-09.jpg",
-      "location": "Owner-supplied China factory photo",
-      "imageType": "real",
-      "alt": "Owner-supplied photo showing a multi-spindle stone processing center"
+      "localFile": "/assets/equipment/cnc-router.svg",
+      "media": "/assets/equipment/cnc-router.svg",
+      "location": "Equipment line diagram",
+      "imageType": "icon",
+      "alt": "Line diagram illustrating CNC stone processing equipment"
     },
     {
       "name": "Continuous Edge Processing Line",
@@ -61,11 +61,11 @@
       "quantity": "Confirm during quotation",
       "keySpec": "Available edge programs are confirmed against samples and drawings.",
       "drawing": "/assets/equipment/edge-polishing.svg",
-      "localFile": "/assets/owner/china/factory-08.jpg",
-      "media": "/assets/owner/china/factory-08.jpg",
-      "location": "Owner-supplied China factory photo",
-      "imageType": "real",
-      "alt": "Owner-supplied photo showing a continuous stone edge processing line"
+      "localFile": "/assets/equipment/edge-polishing.svg",
+      "media": "/assets/equipment/edge-polishing.svg",
+      "location": "Equipment line diagram",
+      "imageType": "icon",
+      "alt": "Line diagram illustrating continuous stone edge processing"
     },
     {
       "name": "Stone Profiling Line",
@@ -74,11 +74,11 @@
       "quantity": "Confirm during quotation",
       "keySpec": "Process sequence and finish standard are agreed for each product.",
       "drawing": "/assets/equipment/profiling.svg",
-      "localFile": "/assets/owner/china/factory-05.jpg",
-      "media": "/assets/owner/china/factory-05.jpg",
-      "location": "Owner-supplied China factory photo",
-      "imageType": "real",
-      "alt": "Owner-supplied photo showing a long stone profiling line"
+      "localFile": "/assets/equipment/profiling.svg",
+      "media": "/assets/equipment/profiling.svg",
+      "location": "Equipment line diagram",
+      "imageType": "icon",
+      "alt": "Line diagram illustrating stone profiling equipment"
     },
     {
       "name": "Production Staging and Material Handling",

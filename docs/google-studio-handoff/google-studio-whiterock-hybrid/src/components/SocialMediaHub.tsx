@@ -84,11 +84,11 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
       id: 'post-2',
       platform: 'linkedin',
       title: 'Bridge Cutting Equipment Reference',
-      caption: 'Owner-supplied China factory photo showing bridge cutting equipment. Machine model, working range, and order allocation require owner confirmation.',
+      caption: 'Owner-supplied Vietnam factory photo showing stone cutting equipment. Machine model, working range, and order allocation require owner confirmation.',
       author: 'WHITEROCK Website Draft',
       handle: 'Owner-supplied factory media',
       date: 'Draft',
-      image: '/assets/owner/china/factory-07.jpg',
+      image: '/assets/owner/vietnam/factory-02.jpg',
       likes: 0,
       commentsCount: 0,
       stoneTag: 'Bridge Cutting',
@@ -116,11 +116,11 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
       id: 'post-4',
       platform: 'pinterest',
       title: 'Continuous Edge Processing Line',
-      caption: 'Owner-supplied China factory photo showing a continuous stone edge processing line. Available edge programs are confirmed against the approved sample and drawing.',
+      caption: 'Owner-supplied Vietnam factory photo showing stone processing activity. Available edge programs are confirmed against the approved sample and drawing.',
       author: 'WHITEROCK Website Draft',
       handle: 'Owner-supplied factory media',
       date: 'Draft',
-      image: '/assets/owner/china/factory-08.jpg',
+      image: '/assets/owner/vietnam/factory-03.jpg',
       likes: 0,
       commentsCount: 0,
       stoneTag: 'Edge Processing',
@@ -261,7 +261,7 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
       </div>
 
       {/* Interactive Platform Tabs */}
-      <div className="apple-card p-3 flex flex-wrap items-center justify-between gap-3">
+      <div className="wr-card p-3 flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-1.5">
           {[
             { id: 'all', label: 'All Drafts', count: posts.length },
@@ -299,7 +299,7 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
           return (
             <div
               key={post.id}
-              className="apple-card overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-500 border border-black/[0.06]"
+              className="wr-card overflow-hidden flex flex-col justify-between group transition-all duration-500"
             >
               {/* Media Container with badges */}
               <div
@@ -309,6 +309,8 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
                 <img
                   src={post.image}
                   alt={post.title}
+                  width={720}
+                  height={540}
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-700"
                 />
@@ -445,6 +447,8 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
                 <img
                   src={activeMediaModal.image}
                   alt={activeMediaModal.title}
+                  width={1200}
+                  height={900}
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />

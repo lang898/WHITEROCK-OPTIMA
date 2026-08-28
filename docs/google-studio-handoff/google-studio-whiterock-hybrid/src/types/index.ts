@@ -194,6 +194,10 @@ export interface RfqCartItem {
   specSummary?: string;
 }
 
+export type CompareEntry =
+  | { id: string; kind: 'product'; item: ProductItem }
+  | { id: string; kind: 'color'; item: ColorItem };
+
 export interface WebsiteInquiry {
   id: string;
   inquiryNumber: string;

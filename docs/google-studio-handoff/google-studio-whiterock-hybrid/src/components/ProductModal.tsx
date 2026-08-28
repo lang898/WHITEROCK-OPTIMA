@@ -16,6 +16,7 @@ import {
 import type { ProductItem } from '../types';
 import { ShareButton } from './ShareButton';
 import type { ShareContent } from './SocialShareModal';
+import { useUnits } from './UnitContext';
 
 interface ProductModalProps {
   product: ProductItem | null;
@@ -30,6 +31,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
   onAddToCart,
   onShare,
 }) => {
+  const { formatMeasurement } = useUnits();
   if (!product) return null;
 
   const shareContent: ShareContent = {
@@ -42,7 +44,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
   };
 
   return (
-    <div className="wr-modal-backdrop">
+    <div className="wr-modal-backdrop" role="dialog" aria-modal="true" aria-label={`${product.title} specifications`} onClick={onClose}>
       <div
         className="relative bg-white rounded-[2rem] w-full max-w-4xl shadow-2xl text-[#1d1d1f] overflow-hidden max-h-[92vh] flex flex-col border border-black/[0.08]"
         onClick={(e) => e.stopPropagation()}
@@ -60,6 +62,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
           <button
             onClick={onClose}
             className="wr-modal-close"
+            aria-label="Close product details"
           >
             <X className="w-5 h-5" />
           </button>
@@ -73,7 +76,9 @@ export const ProductModal: React.FC<ProductModalProps> = ({
               <div className="relative aspect-4/3 rounded-2xl overflow-hidden bg-stone-100 border border-black/[0.06] group shadow-xs">
                 <img
                   src={product.image}
-                  alt={product.title}
+                  alt={product.isIllustrative ? `${product.title} illustrative render` : product.title}
+                  width={960}
+                  height={720}
                   loading="lazy"
                   className="wr-media-zoom"
                   onError={(e) => {
@@ -105,11 +110,11 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                 <div className="p-4 rounded-2xl bg-[#f5f5f7] border border-black/[0.05] space-y-2 text-xs">
                   <div className="flex justify-between">
                     <span className="text-[#86868b]">Standard Sizing:</span>
-                    <strong className="font-mono text-[#1d1d1f]">{product.dimensions}</strong>
+                    <strong className="font-mono text-[#1d1d1f]">{formatMeasurement(product.dimensions)}</strong>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#86868b]">Thickness Options:</span>
-                    <span className="text-[#1d1d1f]">{product.thicknesses.join(', ')}</span>
+                    <span className="text-[#1d1d1f]">{formatMeasurement(product.thicknesses.join(', '))}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#86868b]">Edge Profiles:</span>

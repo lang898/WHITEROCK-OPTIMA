@@ -93,7 +93,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
         {/* Left Side: Contact Cards */}
         <div className="lg:col-span-2 space-y-6">
           {/* Vietnam Fabrication Facility Card */}
-          <div className="apple-card p-6 sm:p-8 space-y-6">
+          <div className="wr-card p-6 sm:p-8 space-y-6">
             <div className="flex items-center justify-between pb-4 border-b border-black/[0.06]">
               <div className="flex items-center gap-2.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -144,7 +144,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
           </div>
 
           {/* North American Project Desk Card */}
-          <div className="apple-card p-6 sm:p-8 space-y-4 bg-gradient-to-br from-white to-[#fbfbfd]">
+          <div className="wr-card p-6 sm:p-8 space-y-4">
             <div className="flex items-center gap-2">
               <Globe2 className="w-4 h-4 text-blue-600" />
               <h4 className="font-bold text-sm text-[#1d1d1f]">North American Account Support</h4>
@@ -159,7 +159,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
           </div>
 
           {/* Instant Social Channels & Live Chat Desk */}
-          <div className="apple-card p-6 sm:p-8 space-y-4 bg-gradient-to-br from-white to-amber-50/20 border-amber-200/50">
+          <div className="wr-card p-6 sm:p-8 space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-amber-600" />
@@ -225,7 +225,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
 
         {/* Right Side: Interactive RFQ / Message Form */}
         <div className="lg:col-span-3">
-          <div className="apple-card p-6 sm:p-10 space-y-6">
+          <div className="wr-card p-6 sm:p-10 space-y-6">
             {isSubmitted ? (
               <div className="py-16 text-center space-y-4">
                 <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">

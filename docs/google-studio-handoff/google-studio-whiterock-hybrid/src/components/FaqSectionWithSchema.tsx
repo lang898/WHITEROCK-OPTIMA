@@ -150,7 +150,7 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
 
       {/* JSON-LD Schema Drawer */}
       {showRawJsonLd && (
-        <div className="apple-card p-6 sm:p-8 space-y-4 bg-[#121214] text-white border-black/20 animate-fade-in">
+        <div className="wr-card wr-card--dark p-6 sm:p-8 space-y-4 animate-fade-in">
           <div className="flex items-center justify-between border-b border-white/10 pb-4">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-amber-400" />
@@ -174,7 +174,7 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
       )}
 
       {/* Search & Category Filter Bar */}
-      <div className="apple-card p-4 sm:p-6 flex flex-col md:flex-row gap-4 justify-between items-center">
+      <div className="wr-card p-4 sm:p-6 flex flex-col md:flex-row gap-4 justify-between items-center">
         {/* Search */}
         <div className="relative w-full md:w-80">
           <Search className="w-4 h-4 text-[#86868b] absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -208,7 +208,7 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
       {/* Accordion List */}
       <div className="space-y-3">
         {filteredFaqs.length === 0 ? (
-          <div className="apple-card p-12 text-center space-y-2">
+          <div className="wr-card p-12 text-center space-y-2">
             <HelpCircle className="w-8 h-8 text-[#86868b] mx-auto opacity-40" />
             <p className="text-xs text-[#86868b]">No FAQ entries match your current search query.</p>
           </div>
@@ -221,7 +221,7 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
             return (
               <div
                 key={idx}
-                className={`apple-card overflow-hidden transition-all duration-300 ${
+                className={`wr-card overflow-hidden transition-all duration-300 ${
                   isOpen ? 'border-black/20 shadow-md' : 'hover:border-black/15'
                 }`}
               >

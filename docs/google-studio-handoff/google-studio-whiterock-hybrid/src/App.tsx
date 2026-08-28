@@ -11,13 +11,14 @@ import { BackToTop } from './components/BackToTop';
 import { AppErrorBoundary } from './components/AppErrorBoundary';
 import { PageSeo } from './components/PageSeo';
 import { RouteLoading } from './components/RouteLoading';
+import { UnitProvider } from './components/UnitContext';
+import { HomeView } from './views/HomeView';
 
 import { locales } from './data/site';
-import type { ProductItem, ColorItem, RfqCartItem, LocaleConfig } from './types';
+import type { ProductItem, ColorItem, RfqCartItem, LocaleConfig, CompareEntry } from './types';
 import type { ShareContent } from './components/SocialShareModal';
 import { routeIdFromLocation, routePath, routesById, type RouteId } from './routes';
 
-const HomeView = lazy(() => import('./views/HomeView').then((module) => ({ default: module.HomeView })));
 const AboutView = lazy(() => import('./views/AboutView').then((module) => ({ default: module.AboutView })));
 const ProductsView = lazy(() => import('./views/ProductsView').then((module) => ({ default: module.ProductsView })));
 const ColorsView = lazy(() => import('./views/ColorsView').then((module) => ({ default: module.ColorsView })));
@@ -34,6 +35,8 @@ const ProductModal = lazy(() => import('./components/ProductModal').then((module
 const ColorModal = lazy(() => import('./components/ColorModal').then((module) => ({ default: module.ColorModal })));
 const WeChatModal = lazy(() => import('./components/WeChatModal').then((module) => ({ default: module.WeChatModal })));
 const SocialShareModal = lazy(() => import('./components/SocialShareModal').then((module) => ({ default: module.SocialShareModal })));
+const GlobalSearch = lazy(() => import('./components/GlobalSearch').then((module) => ({ default: module.GlobalSearch })));
+const ComparePanel = lazy(() => import('./components/ComparePanel').then((module) => ({ default: module.ComparePanel })));
 
 function AppContent() {
   const [currentTab, setCurrentTab] = useState<RouteId>(() => routeIdFromLocation());
@@ -62,6 +65,8 @@ function AppContent() {
   const [selectedColor, setSelectedColor] = useState<ColorItem | null>(null);
   const [isWeChatModalOpen, setIsWeChatModalOpen] = useState(false);
   const [shareModalContent, setShareModalContent] = useState<ShareContent | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [compareItems, setCompareItems] = useState<CompareEntry[]>([]);
 
   // RFQ Cart State
   const [cartItems, setCartItems] = useState<RfqCartItem[]>(() => {
@@ -88,6 +93,33 @@ function AppContent() {
     setTimeout(() => {
       setToastMessage(null);
     }, 2800);
+  };
+
+  useEffect(() => {
+    const openSearch = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      const isTyping = target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA' || target?.isContentEditable;
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        setIsSearchOpen(true);
+      } else if (event.key === '/' && !isTyping) {
+        event.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    window.addEventListener('keydown', openSearch);
+    return () => window.removeEventListener('keydown', openSearch);
+  }, []);
+
+  const toggleCompare = (entry: CompareEntry) => {
+    setCompareItems((current) => {
+      if (current.some((item) => item.id === entry.id)) return current.filter((item) => item.id !== entry.id);
+      if (current.length >= 3) {
+        showToast('Compare up to 3 products or colors at a time');
+        return current;
+      }
+      return [...current, entry];
+    });
   };
 
   const handleOpenShare = (content?: ShareContent) => {
@@ -200,6 +232,7 @@ function AppContent() {
         setLocale={setCurrentLocale}
         onOpenWeChat={() => setIsWeChatModalOpen(true)}
         onOpenShare={() => handleOpenShare()}
+        onOpenSearch={() => setIsSearchOpen(true)}
       />
 
       {/* Main View Router */}
@@ -232,6 +265,8 @@ function AppContent() {
             onSelectProduct={(p) => setSelectedProduct(p)}
             onAddToCart={handleAddToCart}
             currentLocale={currentLocale}
+            onToggleCompare={(product) => toggleCompare({ id: `product:${product.sku}`, kind: 'product', item: product })}
+            compareIds={compareItems.map((item) => item.id)}
           />
         )}
 
@@ -240,6 +275,8 @@ function AppContent() {
             onSelectColor={(c) => setSelectedColor(c)}
             onAddColorSample={handleAddColorSample}
             currentLocale={currentLocale}
+            onToggleCompare={(color) => toggleCompare({ id: `color:${color.slug}`, kind: 'color', item: color })}
+            compareIds={compareItems.map((item) => item.id)}
           />
         )}
 
@@ -323,6 +360,7 @@ function AppContent() {
             onUpdateQuantity={handleUpdateQuantity}
             onRemoveItem={handleRemoveItem}
             onClearCart={handleClearCart}
+            currentLocale={currentLocale}
           />
         )}
 
@@ -355,6 +393,24 @@ function AppContent() {
             content={shareModalContent}
           />
         )}
+
+        {isSearchOpen && (
+          <GlobalSearch
+            isOpen
+            locale={currentLocale}
+            onClose={() => setIsSearchOpen(false)}
+            onNavigate={handleTabChange}
+            onSelectProduct={(product) => setSelectedProduct(product)}
+            onSelectColor={(color) => setSelectedColor(color)}
+          />
+        )}
+
+        <ComparePanel
+          items={compareItems}
+          locale={currentLocale}
+          onRemove={(id) => setCompareItems((items) => items.filter((item) => item.id !== id))}
+          onClear={() => setCompareItems([])}
+        />
       </Suspense>
 
       {/* Toast Notification */}
@@ -371,7 +427,9 @@ function AppContent() {
 export default function App() {
   return (
     <AppErrorBoundary>
-      <AppContent />
+      <UnitProvider>
+        <AppContent />
+      </UnitProvider>
     </AppErrorBoundary>
   );
 }

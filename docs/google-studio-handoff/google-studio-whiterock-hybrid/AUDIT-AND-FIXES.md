@@ -55,3 +55,47 @@ Browser checks against the production preview confirmed:
 - `/colors/` and `/admin/` open directly.
 - The admin title and `noindex, nofollow` directive are route-specific.
 - The production output includes `.htaccess` for GoDaddy/Apache history fallback.
+
+## 2026-08-28: Brand System, Buyer Workflows, and Vietnam-Only Scope
+
+This pass replaces the mixed Google Studio/legacy visual layer with one WHITEROCK system and materially restructures the homepage, catalog, comparison, and RFQ journeys. The site remains English and Vietnamese only. No Chinese locale was added.
+
+### Unified design system
+
+- Rebuilt `src/index.css` around one token set: WHITEROCK green `#234637`, paper `#fbfbf8`, deep ink `#17231f`, local Inter body type, and local Libre Baskerville display type.
+- Standardized compact 3-4 px radii, shadow levels, spacing, type scale, focus states, and 44 px mobile touch targets.
+- Removed the legacy Apple card, pill-button, gradient-text, and segmented-control styling at the source.
+- Added semantic `wr-*` component classes instead of structural overrides. Automated scan result: `!important = 0`, structural `nth-child`/`first-of-type` selectors `= 0`, Apple legacy selectors `= 0`.
+
+### Editorial homepage and catalogs
+
+- Reworked the homepage into an immersive factory-led narrative using owner-supplied Vietnam media and the confirmed 20+ years, 20,000 m2 factory, and 100,000+ m2 annual capacity figures.
+- Added a desktop factory-video hero with delayed loading, a responsive owner-photo fallback, confirmed metrics, material/product storytelling, real factory strips, buying steps, and a direct RFQ close.
+- Rebuilt Products and Colors with editorial intros, persistent desktop filters, mobile filter controls, better image framing, honest render labels, and clearer product specifications.
+- Generated responsive 720 px and 1280 px WebP variants for six owner-supplied Vietnam factory photos through `npm run images:owner`.
+
+### Buyer tools
+
+- Added global search across products, colors, and materials with keyboard dismissal and direct result navigation.
+- Added a 2-3 item comparison tray and comparison dialog for product/color specifications.
+- Added a persistent inch/mm preference with grouped dimension conversion across cards, comparison, and detail dialogs.
+- Rebuilt the RFQ cart with quantity adjustment, remove, clear-all, buyer details, and a mandatory review step before submission.
+- Kept honest fallback behavior: Web3Forms is used only when configured, otherwise the form prepares a transparent email handoff instead of presenting a false success state.
+
+### Scope and content hygiene
+
+- Removed all OPTIMA, Yunfu, Chinese factory, dual-base, related contact, and related photo references from React components, JSON data, public media, legacy HTML templates, and the asset manifest.
+- The site now presents one company and one manufacturing location: WHITEROCK LIMITED in Binh Phuoc, Vietnam.
+- Re-ran the prior truth-fix scan for Section 301, C/O Form, cUPC, whiterocksurfaces, fixed tolerance strings, and Unsplash hotlinks; no results remain in TSX or JSON sources.
+
+### Browser and build verification
+
+- Verified at 1200 px and 390 px: no horizontal overflow, responsive navigation, 44 px controls, global search, product opening, inch/mm conversion, two-item comparison, RFQ quantity/review flow, and English/Vietnamese switching.
+- Verified all source `<img>` elements include loading behavior and explicit dimensions; the hero image alone is eager/high-priority.
+- The latest completed mobile Lighthouse run scored Performance 86, Accessibility 100, Best Practices 100, and SEO 100 with CLS 0 and approximately 556 KB transferred. A later source optimization moved the homepage out of the lazy-route waterfall and built successfully, but the final Lighthouse rerun was unavailable in the local preview environment; therefore no unmeasured 90+ performance claim is made here.
+- The production build keeps `AdminView` in its own lazy chunk. Public routes remain split, while the homepage is eager to improve LCP.
+
+### Google AI dependency audit
+
+- No source file imports `@google/genai`, calls Gemini, or reads `GEMINI_API_KEY`.
+- References exist only in dependency metadata, `.env.example`, and README setup text. The dependency and key are Google AI Studio scaffolding residue; they are not required for this site's build or runtime and are not bundled into the public application.

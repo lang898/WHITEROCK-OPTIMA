@@ -57,7 +57,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
 
       {/* Program Core Parameters Matrix (Apple Cards) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="apple-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
+        <div className="wr-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
             <span className="tech-badge text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
               PROGRAM 01
@@ -72,7 +72,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
           </div>
         </div>
 
-        <div className="apple-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
+        <div className="wr-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
             <span className="tech-badge text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
               PROGRAM 02
@@ -87,7 +87,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
           </div>
         </div>
 
-        <div className="apple-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
+        <div className="wr-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
             <span className="tech-badge text-sky-800 bg-sky-50 px-2.5 py-1 rounded-full border border-sky-200">
               PROGRAM 03
@@ -102,7 +102,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
           </div>
         </div>
 
-        <div className="apple-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
+        <div className="wr-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
             <span className="tech-badge text-purple-800 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">
               PROGRAM 04
@@ -119,7 +119,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
       </div>
 
       {/* Target Partner Profiles */}
-      <section className="apple-card p-6 sm:p-10 space-y-8">
+      <section className="wr-card p-6 sm:p-10 space-y-8">
         <div className="max-w-2xl space-y-2">
           <div className="tech-badge text-[#86868b]">WHO WE SERVE</div>
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
@@ -188,7 +188,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
       </section>
 
       {/* Action Banner (Apple Dark Card) */}
-      <div className="apple-card-dark rounded-[2.5rem] p-10 sm:p-14 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="wr-card wr-card--dark p-10 sm:p-14 text-white flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="space-y-3 max-w-xl">
           <div className="tech-badge text-amber-300">DIRECT FACTORY ONBOARDING</div>
           <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">

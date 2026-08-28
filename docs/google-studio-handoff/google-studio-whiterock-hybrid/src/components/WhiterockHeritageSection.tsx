@@ -92,7 +92,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Backing System', value: 'High-strength fiberglass mesh + resin backing' },
         { label: 'Applications', value: 'Grand Hotel Lobbies, Estate Foyers, Casino Entryways' }
       ],
-      image: '/assets/owner/china/factory-08.jpg',
+      image: '/assets/owner/vietnam/factory-03.jpg',
       badge: 'Master Inlay Art'
     },
     {
@@ -153,23 +153,23 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
       </div>
 
       {/* ========================================================================= */}
-      {/* Dual Hub Global Sourcing & Manufacturing Infrastructure Card */}
+      {/* Vietnam manufacturing infrastructure card */}
       {/* ========================================================================= */}
-      <div className="apple-card p-6 sm:p-10 bg-gradient-to-br from-white via-[#fcfbf8] to-amber-50/30 border-amber-200/60 shadow-sm relative overflow-hidden">
+      <div className="wr-card p-6 sm:p-10 relative overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div className="lg:col-span-7 space-y-5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
-              <span>Dual-Hub Production Synergy</span>
+              <span>Vietnam Manufacturing Base</span>
             </div>
             
             <h3 className="text-2xl sm:text-3xl font-bold text-[#1d1d1f] tracking-tight">
-              Vietnam Export Factory + Global Stone Engineering Hub
+              Binh Phuoc Manufacturing for International Stone Programs
             </h3>
             
             <p className="text-sm text-[#6e6e73] leading-relaxed">
-              Owner-provided information identifies a <strong>20,000 m² manufacturing facility in Binh Phuoc, Vietnam</strong> operated by Công Ty TNHH Whiterock. China-based owner photos also document stone processing experience in Yunfu. Product origin, trade treatment, and shipping terms are confirmed for each order.
+              Owner-provided information identifies a <strong>20,000 m² manufacturing facility in Binh Phuoc, Vietnam</strong> operated by Công Ty TNHH Whiterock. Product origin, trade treatment, specifications, and shipping terms are confirmed for each order.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -186,10 +186,10 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
               <div className="p-4 rounded-2xl bg-white border border-black/[0.06] shadow-2xs space-y-1">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#1d1d1f]">
                   <Globe2 className="w-4 h-4 text-amber-600" />
-                  <span>Optima Stone Craft Hub (Yunfu)</span>
+                  <span>International Project Support</span>
                 </div>
                 <p className="text-xs text-[#86868b]">
-                  20+ years master stone carving, 5-axis water-jet inlays, and global direct quarry block sourcing.
+                  More than 20 years of owner-reported stone-industry experience, with project scope confirmed by quotation.
                 </p>
               </div>
             </div>
@@ -200,6 +200,8 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
               <img
                 src="/assets/owner/vietnam/factory-01.jpg"
                 alt="Owner-supplied photo of the WHITEROCK Vietnam site entrance"
+                width={1200}
+                height={900}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -244,7 +246,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         </div>
 
         {/* Selected Pillar Feature Display */}
-        <div className="apple-card p-6 sm:p-10 bg-white border border-black/[0.08] shadow-sm rounded-3xl">
+        <div className="wr-card p-6 sm:p-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Content Column */}
@@ -317,6 +319,8 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
                 <img
                   src={pillars[activePillar].image}
                   alt={pillars[activePillar].title}
+                  width={1200}
+                  height={900}
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out"
                 />

@@ -119,7 +119,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Engineered Quartz',
       tone: 'Mid-Tone Warm Grey',
       cssTexture: 'linear-gradient(135deg, #78716c 0%, #57534e 50%, #44403c 100%)',
-      image: '/assets/owner/china/factory-08.jpg',
+      image: '/assets/owner/vietnam/factory-03.jpg',
       desc: 'Digital planning palette only. Performance and finish require product-specific documentation.'
     },
     {
@@ -137,7 +137,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Natural Granite',
       tone: 'Jet Black / Golden Flakes',
       cssTexture: 'linear-gradient(135deg, #020617 0%, #0f172a 60%, #1e293b 100%)',
-      image: '/assets/owner/china/factory-07.jpg',
+      image: '/assets/owner/vietnam/factory-02.jpg',
       desc: 'Digital planning palette only. Natural stone appearance and properties vary by selected slab.'
     }
   ];
@@ -176,7 +176,7 @@ Image Note: Owner-supplied factory media; not a room rendering or physical color
   };
 
   return (
-    <div className="apple-card overflow-hidden text-[#1d1d1f]">
+    <div className="wr-card overflow-hidden text-[#1d1d1f]">
       {/* Top Banner Header */}
       <div className="p-6 sm:p-8 border-b border-black/[0.06] flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#fbfbfd]">
         <div className="space-y-1.5">
@@ -220,6 +220,8 @@ Image Note: Owner-supplied factory media; not a room rendering or physical color
             <img
               src={activeColor.image || activeRoom.baseImage}
               alt={`Owner-supplied factory photo reference for ${activeRoom.name}; ${activeColor.name} is a digital planning palette only`}
+              width={1200}
+              height={800}
               loading="lazy"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
             />

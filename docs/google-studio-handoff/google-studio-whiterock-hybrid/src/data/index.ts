@@ -27,11 +27,30 @@ import type {
 
 export { locales, siteConfig } from './site';
 
-export const products: ProductItem[] = productsData.products as ProductItem[];
-export const colors: ColorItem[] = colorsData.colors as ColorItem[];
-export const finishes: FinishItem[] = finishesData.finishes as FinishItem[];
-export const edges: EdgeItem[] = edgesData.edges as EdgeItem[];
-export const applications: ApplicationItem[] = applicationsData.items as ApplicationItem[];
+const publicAsset = (path?: string): string | undefined => path && !path.startsWith('/') && !path.startsWith('http') ? `/${path}` : path;
+
+export const products: ProductItem[] = (productsData.products as ProductItem[]).map((item) => ({
+  ...item,
+  image: publicAsset(item.image) || '',
+  imageWebp: publicAsset(item.imageWebp),
+  techSheetPdf: publicAsset(item.techSheetPdf),
+  dimensions: item.dimensions || item.specs.Size || item.specs.Sizes || item.specs.SlabSize || 'By approved drawing',
+  thicknesses: item.thicknesses?.length ? item.thicknesses : [item.specs.Thickness || 'Confirm by quotation'],
+  edges: item.edges?.length ? item.edges : (item.specs.Edge ? item.specs.Edge.split(',').map((edge) => edge.trim()) : ['Confirm by approved drawing']),
+  sinkCompatibility: item.sinkCompatibility || item.specs.Sink || 'Confirm by approved drawing',
+  moq: item.moq || item.specs.MOQ || 'Confirm by quotation',
+  leadTime: item.leadTime || item.specs.LeadTime || 'Confirm by quotation',
+  packaging: item.packaging || item.specs.Packaging || 'Confirm by quotation'
+}));
+export const colors: ColorItem[] = (colorsData.colors as ColorItem[]).map((item) => ({
+  ...item,
+  swatchImage: publicAsset(item.swatchImage) || '',
+  image: publicAsset(item.image),
+  techSheetPdf: publicAsset(item.techSheetPdf)
+}));
+export const finishes: FinishItem[] = (finishesData.finishes as FinishItem[]).map((item) => ({ ...item, image: publicAsset(item.image) || '' }));
+export const edges: EdgeItem[] = (edgesData.edges as EdgeItem[]).map((item) => ({ ...item, image: publicAsset(item.image) || '' }));
+export const applications: ApplicationItem[] = (applicationsData.items as ApplicationItem[]).map((item) => ({ ...item, image: publicAsset(item.image) || '' }));
 export const factory = factoryData;
 export const company = companyData;
 export const pages = pagesData;

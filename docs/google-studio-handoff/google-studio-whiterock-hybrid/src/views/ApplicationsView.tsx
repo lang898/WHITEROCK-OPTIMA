@@ -61,7 +61,7 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
       </div>
 
       {/* Filter Segment Controls */}
-      <div className="apple-card p-4 sm:p-6 flex flex-col md:flex-row gap-4 justify-between items-center">
+      <div className="wr-card p-4 sm:p-6 flex flex-col md:flex-row gap-4 justify-between items-center">
         <div className="flex flex-wrap gap-1.5 w-full md:w-auto">
           {categories.map((cat) => (
             <button
@@ -90,12 +90,14 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
           return (
             <div
               key={idx}
-              className="apple-card overflow-hidden flex flex-col justify-between group"
+              className="wr-card overflow-hidden flex flex-col justify-between group"
             >
               <div className="relative aspect-4/3 overflow-hidden bg-stone-100">
                 <img
                   src={item.image}
                   alt={item.imageAlt}
+                  width={1200}
+                  height={900}
                   loading="lazy"
                   className="wr-media-zoom"
                   onError={(e) => {

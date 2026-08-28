@@ -914,6 +914,8 @@ export const AdminView: React.FC<AdminViewProps> = ({
                     <img
                       src={col.swatchImage}
                       alt={col.name}
+                      width={480}
+                      height={480}
                       loading="lazy"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"

@@ -2664,18 +2664,6 @@ h3 { letter-spacing: -0.006em; }
   font-weight: 700;
 }
 
-:lang(zh-Hans) body {
-  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Inter, sans-serif;
-  letter-spacing: 0;
-}
-
-:lang(zh-Hans) h1,
-:lang(zh-Hans) h2,
-:lang(zh-Hans) h3 {
-  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Microsoft YaHei", serif;
-  letter-spacing: 0;
-}
-
 @media (max-width: 1180px) {
   .language-switch { display: inline-flex; }
 }
@@ -3200,7 +3188,7 @@ html {
 .featured-colors-band,
 .how-buying-works,
 .packing-photo-section,
-.dual-base-map-section,
+.production-workflow-section,
 .partner-tier-section {
   background: var(--paper);
 }
@@ -3374,7 +3362,7 @@ html {
 
 .packing-photo-grid figure,
 .sustainability-visual-grid figure,
-.dual-base-map {
+.production-workflow-map {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -3389,21 +3377,21 @@ html {
 }
 
 .packing-photo-grid figcaption,
-.dual-base-map figcaption {
+.production-workflow-map figcaption {
   padding: 12px 14px;
   color: var(--muted);
   font-size: 13px;
   font-weight: 700;
 }
 
-.dual-base-map-section {
+.production-workflow-section {
   display: grid;
   grid-template-columns: minmax(240px, 0.38fr) minmax(0, 1fr);
   gap: clamp(24px, 5vw, 56px);
   align-items: center;
 }
 
-.dual-base-map svg {
+.production-workflow-map svg {
   display: block;
   width: 100%;
   height: auto;
@@ -3528,7 +3516,7 @@ html {
   .packing-photo-grid,
   .sustainability-visual-grid,
   .benefit-grid,
-  .dual-base-map-section {
+  .production-workflow-section {
     grid-template-columns: 1fr;
   }
 

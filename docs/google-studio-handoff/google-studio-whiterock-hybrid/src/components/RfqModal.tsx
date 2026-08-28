@@ -1,19 +1,8 @@
-import React, { useState } from 'react';
-import {
-  X,
-  Trash2,
-  Send,
-  Plus,
-  Minus,
-  CheckCircle2,
-  Package,
-  FileSpreadsheet,
-  AlertCircle,
-  Building,
-  ShieldCheck
-} from 'lucide-react';
-import type { RfqCartItem } from '../types';
+import React, { useEffect, useState } from 'react';
+import { Check, CheckCircle2, ChevronLeft, ChevronRight, FileText, Minus, Package, Plus, Send, Trash2, X } from 'lucide-react';
 import { siteConfig } from '../data';
+import { t } from '../i18n';
+import type { LocaleConfig, RfqCartItem } from '../types';
 
 interface RfqModalProps {
   isOpen: boolean;
@@ -22,242 +11,126 @@ interface RfqModalProps {
   onUpdateQuantity: (id: string, delta: number) => void;
   onRemoveItem: (id: string) => void;
   onClearCart: () => void;
+  currentLocale: LocaleConfig;
 }
 
+type Step = 'items' | 'details' | 'review' | 'success';
+
 export const RfqModal: React.FC<RfqModalProps> = ({
-  isOpen,
-  onClose,
-  cartItems,
-  onUpdateQuantity,
-  onRemoveItem,
-  onClearCart,
+  isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onClearCart, currentLocale
 }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    country: '',
-    destinationPort: '',
-    projectType: 'Commercial / Hospitality',
-    targetTimeline: 'Within 30–60 days',
-    customNotes: '',
-  });
+  const [step, setStep] = useState<Step>('items');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [submissionNote, setSubmissionNote] = useState('');
+  const [formData, setFormData] = useState({ name: '', email: '', company: '', country: '', destinationPort: '', projectType: '', targetTimeline: '', customNotes: '' });
+
+  useEffect(() => {
+    if (!isOpen) setStep('items');
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const itemSummary = cartItems.map((item) => `${item.quantity} x ${item.title}${item.sku ? ` (${item.sku})` : ''}${item.specSummary ? ` - ${item.specSummary}` : ''}`).join('\n');
+
+  const submitInquiry = async () => {
     setIsSubmitting(true);
-    setTimeout(() => {
+    const payload = {
+      access_key: siteConfig.web3FormsAccessKey,
+      subject: `WHITEROCK RFQ from ${formData.company || formData.name}`,
+      from_name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      country: formData.country,
+      destination_port: formData.destinationPort,
+      project_type: formData.projectType,
+      target_timeline: formData.targetTimeline,
+      items: itemSummary,
+      message: formData.customNotes,
+      botcheck: ''
+    };
+
+    try {
+      if (siteConfig.web3FormsAccessKey) {
+        const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        if (!response.ok) throw new Error('Submission failed');
+        setSubmissionNote('Your inquiry was submitted. The sales team will confirm receipt and next steps.');
+      } else {
+        const body = encodeURIComponent(`Contact\n${formData.name}\n${formData.company}\n${formData.email}\n${formData.country}\n${formData.destinationPort}\n\nSelected items\n${itemSummary}\n\nNotes\n${formData.customNotes}`);
+        window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(`WHITEROCK RFQ - ${formData.company || formData.name}`)}&body=${body}`;
+        setSubmissionNote('An email draft was opened because the website form access key has not yet been configured.');
+      }
+      setStep('success');
+    } catch {
+      setSubmissionNote(`The form could not be sent. Please email ${siteConfig.email} with your selected list.`);
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 800);
+    }
   };
 
-  const handleResetAndClose = () => {
-    if (isSuccess) {
-      onClearCart();
-      setIsSuccess(false);
-    }
+  const close = () => {
+    if (step === 'success' && siteConfig.web3FormsAccessKey) onClearCart();
     onClose();
   };
 
+  const steps = [
+    ['items', t(currentLocale, 'review')],
+    ['details', t(currentLocale, 'details')],
+    ['review', t(currentLocale, 'submit')]
+  ];
+
   return (
-    <div className="wr-modal-backdrop">
-      <div
-        className="relative bg-white rounded-[2rem] w-full max-w-3xl shadow-2xl text-[#1d1d1f] overflow-hidden max-h-[92vh] flex flex-col border border-black/[0.08]"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Header */}
-        <div className="wr-modal-header">
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-amber-50 text-amber-800 border border-amber-200">
-              <Package className="w-5 h-5" />
-            </div>
-            <div>
-              <h3 className="font-bold text-lg text-[#1d1d1f]">
-                RFQ & Sample Kit Basket
-              </h3>
-              <p className="text-xs text-[#86868b]">
-                Direct FOB Vietnam factory quotation & CAD takeoff
-              </p>
-            </div>
-          </div>
-          <button
-            onClick={onClose}
-            className="wr-modal-close"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
+    <div className="wr-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="rfq-title">
+      <div className="wr-rfq-dialog">
+        <header className="wr-modal-header">
+          <div><span className="wr-eyebrow">B2B inquiry builder</span><h2 id="rfq-title">{t(currentLocale, 'rfq')} & sample list</h2></div>
+          <button className="wr-icon-button" onClick={close} aria-label="Close RFQ"><X /></button>
+        </header>
 
-        {/* Content Body */}
-        <div className="p-6 sm:p-8 overflow-y-auto flex-1 space-y-6">
-          {isSuccess ? (
-            <div className="py-16 text-center space-y-4">
-              <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">
-                <CheckCircle2 className="w-8 h-8" />
-              </div>
-              <h4 className="text-2xl font-bold text-[#1d1d1f]">
-                Inquiry Successfully Submitted!
-              </h4>
-              <p className="text-xs sm:text-sm text-[#86868b] max-w-md mx-auto leading-relaxed">
-                Your RFQ list and technical parameters have been routed to our Vietnam plant engineering department. We will reply within 24 business hours with an official FOB quote and CAD schedule.
-              </p>
-              <button
-                onClick={handleResetAndClose}
-                className="mt-4 px-8 py-3 rounded-full bg-[#111113] text-white text-xs font-medium hover:bg-black cursor-pointer shadow-xs"
-              >
-                Close & Return to Catalog
-              </button>
-            </div>
-          ) : (
-            <>
-              {/* Cart Items List */}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="tech-badge text-[#86868b]">
-                    SELECTED ITEMS ({cartItems.length})
-                  </span>
-                  {cartItems.length > 0 && (
-                    <button
-                      onClick={onClearCart}
-                      className="text-xs text-rose-600 hover:text-rose-700 font-medium cursor-pointer"
-                    >
-                      Clear List
-                    </button>
-                  )}
-                </div>
+        {step !== 'success' && <ol className="wr-rfq-steps">{steps.map(([id, label], index) => <li key={id} className={step === id ? 'is-active' : steps.findIndex(([stepId]) => stepId === step) > index ? 'is-complete' : ''}><span>{index + 1}</span>{label}</li>)}</ol>}
 
-                {cartItems.length === 0 ? (
-                  <div className="p-8 rounded-2xl bg-[#f5f5f7] border border-black/[0.05] text-center space-y-2">
-                    <Package className="w-8 h-8 text-[#86868b] mx-auto opacity-50" />
-                    <p className="text-xs text-[#86868b]">Your RFQ basket is currently empty.</p>
-                    <p className="text-[11px] text-[#a1a1a6]">
-                      Browse the catalog or colors page and click "+ Add to RFQ" or configure a vanity.
-                    </p>
-                  </div>
-                ) : (
-                  <div className="space-y-2">
-                    {cartItems.map((item) => (
-                      <div
-                        key={item.id}
-                        className="p-4 rounded-2xl bg-[#fbfbfd] border border-black/[0.06] flex items-center justify-between gap-4"
-                      >
-                        <div className="space-y-1 min-w-0">
-                          <div className="flex items-center gap-2">
-                            <span className="font-mono text-xs font-bold text-[#1d1d1f] truncate">
-                              {item.productSku}
-                            </span>
-                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#f0f0f3] text-[#6e6e73]">
-                              {item.material}
-                            </span>
-                          </div>
-                          <p className="text-xs font-semibold text-[#1d1d1f] truncate">
-                            {item.title}
-                          </p>
-                          {item.specSummary && (
-                            <p className="text-[11px] text-[#86868b] truncate">
-                              {item.specSummary}
-                            </p>
-                          )}
-                        </div>
-
-                        <div className="flex items-center gap-4 shrink-0">
-                          <div className="flex items-center gap-2 bg-[#f0f0f3] rounded-full p-1 border border-black/[0.05]">
-                            <button
-                              onClick={() => onUpdateQuantity(item.id, -1)}
-                              className="p-1 rounded-full hover:bg-white text-[#1d1d1f] cursor-pointer"
-                            >
-                              <Minus className="w-3.5 h-3.5" />
-                            </button>
-                            <span className="font-mono text-xs font-bold px-2 text-[#1d1d1f]">
-                              {item.quantity}
-                            </span>
-                            <button
-                              onClick={() => onUpdateQuantity(item.id, 1)}
-                              className="p-1 rounded-full hover:bg-white text-[#1d1d1f] cursor-pointer"
-                            >
-                              <Plus className="w-3.5 h-3.5" />
-                            </button>
-                          </div>
-
-                          <button
-                            onClick={() => onRemoveItem(item.id)}
-                            className="p-1.5 text-[#86868b] hover:text-rose-600 transition-colors cursor-pointer"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Form details */}
-              <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-black/[0.06]">
-                <span className="tech-badge text-[#86868b] block">
-                  CONTACT & CONTAINER DESTINATION
-                </span>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    required
-                    placeholder="Full Name *"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white"
-                  />
-                  <input
-                    type="email"
-                    required
-                    placeholder="Work Email *"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="Company / Developer"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Destination Port (e.g., LA/Long Beach)"
-                    value={formData.destinationPort}
-                    onChange={(e) => setFormData({ ...formData, destinationPort: e.target.value })}
-                    className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-4 py-3 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white"
-                  />
-                </div>
-
-                <textarea
-                  rows={3}
-                  placeholder="Additional project notes, required CAD approval timeline, or custom edge details..."
-                  value={formData.customNotes}
-                  onChange={(e) => setFormData({ ...formData, customNotes: e.target.value })}
-                  className="w-full bg-[#f5f5f7] border border-black/[0.06] rounded-2xl p-4 text-xs text-[#1d1d1f] focus:outline-none focus:border-black/30 focus:bg-white leading-relaxed"
-                />
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting || cartItems.length === 0}
-                  className="w-full py-4 rounded-full bg-[#111113] hover:bg-black text-white font-medium text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs disabled:opacity-50"
-                >
-                  <Send className="w-3.5 h-3.5" />
-                  <span>{isSubmitting ? 'Submitting RFQ...' : 'Submit RFQ to Vietnam Factory'}</span>
-                </button>
-              </form>
-            </>
+        <div className="wr-rfq-body">
+          {step === 'items' && (
+            <section className="wr-rfq-items">
+              <div className="wr-rfq-section-title"><div><h3>{t(currentLocale, 'review')}</h3><p>Adjust quantities before entering project details.</p></div>{cartItems.length > 0 && <button className="wr-button wr-button--ghost" onClick={onClearCart}><Trash2 />{t(currentLocale, 'clear')}</button>}</div>
+              {!cartItems.length ? <div className="wr-empty-state"><Package /><h3>Your inquiry list is empty.</h3><p>Add products or samples from the catalog first.</p></div> : cartItems.map((item) => (
+                <article key={item.id} className="wr-rfq-item">
+                  <div><small>{item.type}{item.sku ? ` · ${item.sku}` : ''}</small><h4>{item.title}</h4><p>{item.specSummary || item.material || 'Specifications to be confirmed'}</p></div>
+                  <div className="wr-quantity-control" aria-label={`${t(currentLocale, 'quantity')} ${item.title}`}><button onClick={() => onUpdateQuantity(item.id, -1)} aria-label="Decrease quantity"><Minus /></button><output>{item.quantity}</output><button onClick={() => onUpdateQuantity(item.id, 1)} aria-label="Increase quantity"><Plus /></button></div>
+                  <button className="wr-icon-button" onClick={() => onRemoveItem(item.id)} aria-label={`${t(currentLocale, 'remove')} ${item.title}`}><Trash2 /></button>
+                </article>
+              ))}
+              <footer><span>{cartItems.reduce((sum, item) => sum + item.quantity, 0)} total units / samples</span><button className="wr-button wr-button--primary" disabled={!cartItems.length} onClick={() => setStep('details')}>{t(currentLocale, 'continue')}<ChevronRight /></button></footer>
+            </section>
           )}
+
+          {step === 'details' && (
+            <form className="wr-rfq-form" onSubmit={(event) => { event.preventDefault(); setStep('review'); }}>
+              <div className="wr-rfq-section-title"><div><h3>Buyer and project details</h3><p>Fields marked with * are required for a useful response.</p></div></div>
+              <div className="wr-form-grid">
+                <label><span>Full name *</span><input required value={formData.name} onChange={(event) => setFormData({ ...formData, name: event.target.value })} /></label>
+                <label><span>Work email *</span><input type="email" required value={formData.email} onChange={(event) => setFormData({ ...formData, email: event.target.value })} /></label>
+                <label><span>Company *</span><input required value={formData.company} onChange={(event) => setFormData({ ...formData, company: event.target.value })} /></label>
+                <label><span>Country / region *</span><input required value={formData.country} onChange={(event) => setFormData({ ...formData, country: event.target.value })} /></label>
+                <label><span>Destination port</span><input value={formData.destinationPort} onChange={(event) => setFormData({ ...formData, destinationPort: event.target.value })} /></label>
+                <label><span>Project type</span><input value={formData.projectType} onChange={(event) => setFormData({ ...formData, projectType: event.target.value })} /></label>
+                <label><span>Target timeline</span><input value={formData.targetTimeline} onChange={(event) => setFormData({ ...formData, targetTimeline: event.target.value })} /></label>
+                <label className="wr-form-grid__wide"><span>Notes, drawings, edge details, or required documents</span><textarea rows={4} value={formData.customNotes} onChange={(event) => setFormData({ ...formData, customNotes: event.target.value })} /></label>
+              </div>
+              <footer><button type="button" className="wr-button wr-button--ghost" onClick={() => setStep('items')}><ChevronLeft />{t(currentLocale, 'back')}</button><button className="wr-button wr-button--primary">{t(currentLocale, 'review')}<ChevronRight /></button></footer>
+            </form>
+          )}
+
+          {step === 'review' && (
+            <section className="wr-rfq-review">
+              <div className="wr-rfq-section-title"><div><h3>Confirm before sending</h3><p>Review the selected items and contact details. Submission is an inquiry, not a purchase order.</p></div></div>
+              <div className="wr-rfq-review__grid"><div><h4>Selected list</h4><pre>{itemSummary}</pre></div><div><h4>Buyer details</h4><dl><div><dt>Name</dt><dd>{formData.name}</dd></div><div><dt>Company</dt><dd>{formData.company}</dd></div><div><dt>Email</dt><dd>{formData.email}</dd></div><div><dt>Destination</dt><dd>{[formData.country, formData.destinationPort].filter(Boolean).join(' · ') || 'Not provided'}</dd></div></dl></div></div>
+              <p className="wr-rfq-confirmation"><Check />Final dimensions, material availability, capacity, lead time, packing, trade documents, and price remain subject to the written quotation.</p>
+              {submissionNote && <p className="wr-form-error">{submissionNote}</p>}
+              <footer><button className="wr-button wr-button--ghost" onClick={() => setStep('details')}><ChevronLeft />{t(currentLocale, 'back')}</button><button className="wr-button wr-button--primary" disabled={isSubmitting} onClick={submitInquiry}><Send />{isSubmitting ? 'Sending…' : t(currentLocale, 'submit')}</button></footer>
+            </section>
+          )}
+
+          {step === 'success' && <section className="wr-rfq-success"><CheckCircle2 /><span className="wr-eyebrow">Inquiry prepared</span><h3>Thank you, {formData.name}.</h3><p>{submissionNote}</p><button className="wr-button wr-button--primary" onClick={close}>Close</button></section>}
         </div>
       </div>
     </div>

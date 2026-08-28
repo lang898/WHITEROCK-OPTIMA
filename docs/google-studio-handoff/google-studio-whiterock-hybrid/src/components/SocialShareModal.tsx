@@ -149,6 +149,8 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
               <img
                 src={content.image}
                 alt={shareTitle}
+                width={112}
+                height={112}
                 loading="lazy"
                 className="w-14 h-14 rounded-xl object-cover border border-black/[0.08] shrink-0"
               />
