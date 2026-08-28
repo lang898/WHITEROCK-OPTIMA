@@ -153,8 +153,8 @@ export const AboutView: React.FC<AboutViewProps> = ({
           <div className="lg:col-span-6 space-y-4">
             <div className="rounded-2xl overflow-hidden border border-black/[0.08] shadow-md aspect-16/10 relative group">
               <img
-                src="/assets/owner/vietnam/vanity-05-entrance-bw.jpg"
-                alt="Black-and-white entrance detail cropped from an owner-supplied WHITEROCK Vietnam photo"
+                src="/assets/owner/vietnam/vanity-05-entrance-color.jpg"
+                alt="Lightly muted color entrance detail cropped from an owner-supplied WHITEROCK Vietnam photo"
                 width={940}
                 height={300}
                 loading="lazy"

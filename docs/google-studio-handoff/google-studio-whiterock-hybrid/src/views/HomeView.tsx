@@ -58,9 +58,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
         <figure className="wr-story__media">
           <picture>
-            <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-01-entrance-bw-720.webp" type="image/webp" />
-            <source srcSet="/assets/owner/vietnam/factory-01-entrance-bw-1280.webp" type="image/webp" />
-            <img src="/assets/owner/vietnam/factory-01-entrance-bw.jpg" alt="Black-and-white detail from the owner-supplied WHITEROCK Vietnam entrance photo" width="900" height="520" loading="lazy" />
+            <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-01-entrance-color-720.webp" type="image/webp" />
+            <source srcSet="/assets/owner/vietnam/factory-01-entrance-color-1280.webp" type="image/webp" />
+            <img src="/assets/owner/vietnam/factory-01-entrance-color.jpg" alt="Lightly muted color detail from the owner-supplied WHITEROCK Vietnam entrance photo" width="900" height="520" loading="lazy" />
           </picture>
           <figcaption>WHITEROCK Vietnam · Binh Phuoc Province</figcaption>
         </figure>
@@ -73,8 +73,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <p>Real production imagery gives buyers a clearer starting point for factory review, drawing approval, inspection planning, and packing discussion.</p>
         </div>
         <div className="wr-factory-feature__grid">
-          <figure className="wr-factory-feature__primary"><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-03-equipment-bw-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-03-equipment-bw-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-03-equipment-bw.jpg" alt="Black-and-white detail from the owner-supplied stone processing equipment photo" width="980" height="735" loading="lazy" /></picture><figcaption>Precision processing detail · Vietnam</figcaption></figure>
-          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-02-equipment-bw-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-02-equipment-bw-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-02-equipment-bw.jpg" alt="Black-and-white detail from the owner-supplied stone cutting equipment photo" width="900" height="675" loading="lazy" /></picture><figcaption>Cutting equipment detail · Vietnam</figcaption></figure>
+          <figure className="wr-factory-feature__primary"><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-02-equipment-color-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-02-equipment-color-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-02-equipment-color.jpg" alt="Natural color detail from the owner-supplied stone cutting equipment photo" width="900" height="675" loading="lazy" /></picture><figcaption>Cutting equipment detail · Vietnam</figcaption></figure>
+          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-03-equipment-bw-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-03-equipment-bw-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-03-equipment-bw.jpg" alt="Black-and-white detail from the owner-supplied stone processing equipment photo" width="980" height="735" loading="lazy" /></picture><figcaption>Precision processing detail · Vietnam</figcaption></figure>
           <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-product-detail-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-06-product-detail-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-06-product-detail.jpg" alt="Color detail from the owner-supplied finished stone tops photo" width="1500" height="816" loading="lazy" /></picture><figcaption>Finished top detail</figcaption></figure>
         </div>
         <button className="wr-button wr-button--outline-light" onClick={() => setCurrentTab('factory')}>Explore factory capability<ArrowRight /></button>

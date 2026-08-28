@@ -146,3 +146,13 @@ LCP 3.2 s / CLS 0.041 / TBT 30 ms
 ```
 
 Browser checks at 1280 px and 390 px confirmed direct-route loading, no horizontal overflow, zero console errors, mobile navigation, product comparison, global-search empty state, metric-first specifications, and the mobile hero AVIF. Automated source scans report zero green brand tokens, zero `!important`, zero structural `nth-child`/`first-of-type` selectors, zero WeChat references, zero unit-context references, and zero `<img>` loading/width/height gaps.
+
+## 2026-08-28: Owner Photo Color Rebalance
+
+- Re-audited all ten owner-supplied Vietnam factory and vanity images individually against their page role.
+- Restored controlled natural color to the entrance, orange cutting line, production aisle, staged components, and finished-top derivatives.
+- Kept `factory-03` in lightly muted color for factual Factory-page use. Its black-and-white derivative is retained only as one smaller atmosphere image in the homepage dark capability band.
+- Promoted the color `factory-02` equipment crop to the large homepage capability position; the homepage photo sequence is now color equipment, one smaller monochrome process image, and color finished tops.
+- Removed six unused monochrome derivative sets while preserving every owner original.
+- Added `PHOTO-TREATMENT-REPORT.md` with the visual issue, treatment decision, and site usage for every reviewed original.
+- Browser verification confirms the Factory equipment cards and gallery contain no black-and-white assets, the homepage references only the intentional `factory-03` monochrome set, no image references are missing, no horizontal overflow is present, and the console has no errors.
