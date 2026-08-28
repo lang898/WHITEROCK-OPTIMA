@@ -4,7 +4,6 @@ import { WhatsAppIcon } from './SocialIcons';
 import { locales, siteConfig } from '../data/site';
 import { routePath } from '../routes';
 import { t } from '../i18n';
-import { useUnits } from './UnitContext';
 import type { LocaleConfig } from '../types';
 
 interface HeaderProps {
@@ -23,7 +22,6 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
-  const { unitSystem, setUnitSystem } = useUnits();
 
   const navGroups = [
     { label: t(currentLocale, 'collections'), items: [
@@ -84,12 +82,8 @@ export const Header: React.FC<HeaderProps> = ({
 
         <div className="wr-header__actions">
           <button className="wr-icon-button" onClick={onOpenSearch} aria-label={t(currentLocale, 'search')} title={t(currentLocale, 'search')}><Search /></button>
-          <div className="wr-unit-toggle" role="group" aria-label="Measurement units">
-            <button className={unitSystem === 'imperial' ? 'is-active' : ''} onClick={() => setUnitSystem('imperial')}>IN</button>
-            <button className={unitSystem === 'metric' ? 'is-active' : ''} onClick={() => setUnitSystem('metric')}>MM</button>
-          </div>
           <div className="wr-language">
-            <button className="wr-icon-button wr-language__trigger" onClick={() => setLangDropdownOpen((open) => !open)} aria-expanded={langDropdownOpen} aria-label="Select language"><Globe /><span>{currentLocale.switchLabel}</span></button>
+            <button className="wr-icon-button wr-language__trigger" onClick={() => setLangDropdownOpen((open) => !open)} aria-expanded={langDropdownOpen} aria-label={`Select language: ${currentLocale.switchLabel}`}><Globe /><span>{currentLocale.switchLabel}</span></button>
             {langDropdownOpen && <div className="wr-language__menu">{locales.map((locale) => <button key={locale.id} className={locale.id === currentLocale.id ? 'is-active' : ''} onClick={() => { setLocale(locale); setLangDropdownOpen(false); }}>{locale.label}</button>)}</div>}
           </div>
           <button className="wr-button wr-button--primary wr-header__rfq" onClick={openCart} aria-label={`${t(currentLocale, 'rfq')} (${cartCount})`}><FileText /> <span>{t(currentLocale, 'rfq')}</span>{cartCount > 0 && <b>{cartCount}</b>}</button>
@@ -101,10 +95,6 @@ export const Header: React.FC<HeaderProps> = ({
         <nav className="wr-mobile-nav" aria-label="Mobile navigation">
           <a href={routePath('home')} onClick={(event) => { event.preventDefault(); navigate('home'); }}>{t(currentLocale, 'home')}</a>
           {navGroups.flatMap((group) => group.items).map((item) => <a key={item.id} className={currentTab === item.id ? 'is-active' : ''} href={routePath(item.id)} onClick={(event) => { event.preventDefault(); navigate(item.id); }}>{item.label}</a>)}
-          <div className="wr-unit-toggle" role="group" aria-label="Measurement units">
-            <button className={unitSystem === 'imperial' ? 'is-active' : ''} onClick={() => setUnitSystem('imperial')}>IN</button>
-            <button className={unitSystem === 'metric' ? 'is-active' : ''} onClick={() => setUnitSystem('metric')}>MM</button>
-          </div>
           <button className="wr-button wr-button--primary" onClick={openCart}>{t(currentLocale, 'rfq')} ({cartCount})</button>
         </nav>
       )}

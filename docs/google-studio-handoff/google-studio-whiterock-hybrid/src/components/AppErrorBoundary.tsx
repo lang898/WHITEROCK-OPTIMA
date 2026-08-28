@@ -22,14 +22,14 @@ export class AppErrorBoundary extends React.Component<AppErrorBoundaryProps, App
   render() {
     if (this.state.error) {
       return (
-        <main className="min-h-screen bg-[#fbfbf8] px-6 py-20 text-[#17231f]">
+        <main className="min-h-screen bg-white px-6 py-20 text-[#1d1d1f]">
           <div className="mx-auto max-w-xl border border-black/15 bg-white p-8 text-center shadow-sm">
             <p className="wr-eyebrow">Page recovery</p>
             <h1 className="mt-4 font-display text-3xl">This page could not be displayed.</h1>
             <p className="mt-4 text-sm leading-6 text-black/65">
               The rest of the website is still available. Reload the page to try again.
             </p>
-            <button className="wr-action wr-action--primary mt-8" onClick={() => window.location.reload()}>
+            <button className="wr-button wr-button--primary mt-8" onClick={() => window.location.reload()}>
               Reload page
             </button>
           </div>

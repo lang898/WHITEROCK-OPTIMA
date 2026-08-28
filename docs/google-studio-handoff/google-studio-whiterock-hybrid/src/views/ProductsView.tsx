@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { ArrowRight, Check, GitCompare, Plus, Search } from 'lucide-react';
 import { products } from '../data';
 import { t } from '../i18n';
-import { useUnits } from '../components/UnitContext';
+import { formatMeasurement } from '../utils/measurements';
 import type { LocaleConfig, ProductItem } from '../types';
 
 interface ProductsViewProps {
@@ -18,7 +18,6 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
 }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const { formatMeasurement, unitSystem } = useUnits();
   const categories = useMemo(() => ['All', ...Array.from(new Set(products.map((item) => item.category)))], []);
 
   const filteredProducts = products.filter((product) => {
@@ -39,7 +38,8 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
           <div className="wr-filter-rail__heading"><span>Filter catalog</span><small>{filteredProducts.length} results</small></div>
           <label className="wr-search-input"><Search /><input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder={t(currentLocale, 'searchPlaceholder')} /></label>
           <fieldset><legend>Category</legend>{categories.map((category) => <button key={category} className={selectedCategory === category ? 'is-active' : ''} onClick={() => setSelectedCategory(category)}><span>{category === 'All' ? t(currentLocale, 'all') : category}</span>{selectedCategory === category && <Check />}</button>)}</fieldset>
-          <div className="wr-filter-note"><strong>{unitSystem === 'imperial' ? 'IN' : 'MM'}</strong><p>Dimensions follow the global unit setting. Final dimensions require approved drawings.</p></div>
+          <div className="wr-filter-note"><strong>MM + IMPERIAL REFERENCE</strong><p>Millimetres are primary. Rounded inch references support North American review; final dimensions require approved drawings.</p></div>
+          {!compareIds.length && <div className="wr-filter-note wr-compare-empty"><GitCompare /><strong>No comparison selected</strong><p>Select two or three products to compare specifications side by side.</p></div>}
         </aside>
 
         <main className="wr-product-grid" aria-live="polite">
@@ -56,7 +56,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
                 <div className="wr-catalog-card__body">
                   <small>{product.category} · {product.material}</small>
                   <h2>{product.title}</h2>
-                  <p>{product.description}</p>
+                  <p>{formatMeasurement(product.description)}</p>
                   <dl>
                     <div><dt>{t(currentLocale, 'dimensions')}</dt><dd>{formatMeasurement(dimensions)}</dd></div>
                     <div><dt>{t(currentLocale, 'finish')}</dt><dd>{product.specs.Finish || 'Confirm by sample'}</dd></div>

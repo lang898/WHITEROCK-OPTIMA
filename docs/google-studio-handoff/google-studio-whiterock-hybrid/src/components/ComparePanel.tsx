@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRightLeft, Check, Trash2, X } from 'lucide-react';
 import { t } from '../i18n';
 import type { CompareEntry, LocaleConfig } from '../types';
-import { useUnits } from './UnitContext';
+import { formatMeasurement } from '../utils/measurements';
 
 interface ComparePanelProps {
   items: CompareEntry[];
@@ -34,7 +34,6 @@ function entryTitle(entry: CompareEntry): string {
 
 export const ComparePanel: React.FC<ComparePanelProps> = ({ items, locale, onRemove, onClear }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { formatMeasurement } = useUnits();
   if (!items.length) return null;
 
   const fields = [
@@ -65,7 +64,7 @@ export const ComparePanel: React.FC<ComparePanelProps> = ({ items, locale, onRem
               {fields.map(([field, label]) => (
                 <React.Fragment key={field}>
                   <div className="wr-compare-table__label">{label}</div>
-                  {items.map((entry) => <div key={`${entry.id}-${field}`}>{field === 'dimensions' || field === 'thickness' ? formatMeasurement(value(entry, field)) : value(entry, field)}{field === 'material' && <Check aria-hidden="true" />}</div>)}
+                  {items.map((entry) => <div key={`${entry.id}-${field}`}>{field === 'material' ? value(entry, field) : formatMeasurement(value(entry, field))}{field === 'material' && <Check aria-hidden="true" />}</div>)}
                 </React.Fragment>
               ))}
             </div>

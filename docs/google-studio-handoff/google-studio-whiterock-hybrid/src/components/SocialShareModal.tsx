@@ -153,11 +153,11 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
               />
             ) : (
               <div className="w-14 h-14 rounded-xl bg-white border border-black/[0.08] flex items-center justify-center shrink-0">
-                <Layers className="w-6 h-6 text-amber-700" />
+                <Layers className="w-6 h-6 text-stone-700" />
               </div>
             )}
             <div className="overflow-hidden flex-1 space-y-0.5">
-              <span className="text-[10px] uppercase font-mono font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200 inline-block">
+              <span className="text-[10px] uppercase font-mono font-bold text-stone-800 bg-stone-50 px-2 py-0.5 rounded-full border border-stone-200 inline-block">
                 {content.material || 'STONE SPECIFICATION'}
               </span>
               <h4 className="font-bold text-sm text-[#1d1d1f] truncate">
@@ -180,9 +180,9 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#25D366]/5 hover:bg-[#25D366]/15 border border-[#25D366]/20 text-[#128C7E] transition-all hover:scale-102 group cursor-pointer"
+                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#1d1d1f]/5 hover:bg-[#1d1d1f]/15 border border-[#1d1d1f]/20 text-[#1d1d1f] transition-all group cursor-pointer"
               >
-                <div className="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center mb-1.5 shadow-2xs group-hover:scale-110 transition-transform">
+                <div className="w-9 h-9 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center mb-1.5 shadow-2xs transition-transform">
                   <WhatsAppIcon className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-bold text-[#1d1d1f]">WhatsApp</span>
@@ -194,9 +194,9 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
                 href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#0A66C2]/5 hover:bg-[#0A66C2]/15 border border-[#0A66C2]/20 text-[#0A66C2] transition-all hover:scale-102 group cursor-pointer"
+                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#1d1d1f]/5 hover:bg-[#1d1d1f]/15 border border-[#1d1d1f]/20 text-[#1d1d1f] transition-all group cursor-pointer"
               >
-                <div className="w-9 h-9 rounded-full bg-[#0A66C2] text-white flex items-center justify-center mb-1.5 shadow-2xs group-hover:scale-110 transition-transform">
+                <div className="w-9 h-9 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center mb-1.5 shadow-2xs transition-transform">
                   <LinkedInIcon className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-bold text-[#1d1d1f]">LinkedIn</span>
@@ -208,9 +208,9 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
                 href={pinterestUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#E60023]/5 hover:bg-[#E60023]/15 border border-[#E60023]/20 text-[#E60023] transition-all hover:scale-102 group cursor-pointer"
+                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#1d1d1f]/5 hover:bg-[#1d1d1f]/15 border border-[#1d1d1f]/20 text-[#1d1d1f] transition-all group cursor-pointer"
               >
-                <div className="w-9 h-9 rounded-full bg-[#E60023] text-white flex items-center justify-center mb-1.5 shadow-2xs group-hover:scale-110 transition-transform">
+                <div className="w-9 h-9 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center mb-1.5 shadow-2xs transition-transform">
                   <PinterestIcon className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-bold text-[#1d1d1f]">Pinterest</span>
@@ -222,9 +222,9 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
                 href={twitterUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-black/[0.03] hover:bg-black/[0.08] border border-black/[0.08] text-[#1d1d1f] transition-all hover:scale-102 group cursor-pointer"
+                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-black/[0.03] hover:bg-black/[0.08] border border-black/[0.08] text-[#1d1d1f] transition-all group cursor-pointer"
               >
-                <div className="w-9 h-9 rounded-full bg-[#111113] text-white flex items-center justify-center mb-1.5 shadow-2xs group-hover:scale-110 transition-transform">
+                <div className="w-9 h-9 rounded-full bg-[#111113] text-white flex items-center justify-center mb-1.5 shadow-2xs transition-transform">
                   <XIcon className="w-4 h-4" />
                 </div>
                 <span className="text-xs font-bold text-[#1d1d1f]">X / Post</span>
@@ -236,9 +236,9 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
                 href={facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#1877F2]/5 hover:bg-[#1877F2]/15 border border-[#1877F2]/20 text-[#1877F2] transition-all hover:scale-102 group cursor-pointer"
+                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#1d1d1f]/5 hover:bg-[#1d1d1f]/15 border border-[#1d1d1f]/20 text-[#1d1d1f] transition-all group cursor-pointer"
               >
-                <div className="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center mb-1.5 shadow-2xs group-hover:scale-110 transition-transform">
+                <div className="w-9 h-9 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center mb-1.5 shadow-2xs transition-transform">
                   <FacebookIcon className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-bold text-[#1d1d1f]">Facebook</span>
@@ -249,10 +249,10 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
               <button
                 type="button"
                 onClick={handleCopyLink}
-                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#f5f5f7] hover:bg-[#ebebee] border border-black/[0.08] text-[#1d1d1f] transition-all hover:scale-102 group cursor-pointer"
+                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#f5f5f7] hover:bg-[#ebebee] border border-black/[0.08] text-[#1d1d1f] transition-all group cursor-pointer"
               >
-                <div className="w-9 h-9 rounded-full bg-white text-[#1d1d1f] border border-black/[0.1] flex items-center justify-center mb-1.5 shadow-2xs group-hover:scale-110 transition-transform">
-                  {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+                <div className="w-9 h-9 rounded-full bg-white text-[#1d1d1f] border border-black/[0.1] flex items-center justify-center mb-1.5 shadow-2xs transition-transform">
+                  {copied ? <Check className="w-4 h-4 text-stone-600" /> : <Copy className="w-4 h-4" />}
                 </div>
                 <span className="text-xs font-bold text-[#1d1d1f]">
                   {copied ? 'Copied!' : 'Copy Link'}
@@ -264,10 +264,10 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
               <button
                 type="button"
                 onClick={handleCopyFullSpec}
-                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#f5f5f7] hover:bg-[#ebebee] border border-black/[0.08] text-[#1d1d1f] transition-all hover:scale-102 group cursor-pointer"
+                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#f5f5f7] hover:bg-[#ebebee] border border-black/[0.08] text-[#1d1d1f] transition-all group cursor-pointer"
               >
-                <div className="w-9 h-9 rounded-full bg-white text-amber-700 border border-black/[0.1] flex items-center justify-center mb-1.5 shadow-2xs group-hover:scale-110 transition-transform">
-                  {copiedSpec ? <Check className="w-4 h-4 text-emerald-600" /> : <FileText className="w-4 h-4" />}
+                <div className="w-9 h-9 rounded-full bg-white text-stone-700 border border-black/[0.1] flex items-center justify-center mb-1.5 shadow-2xs transition-transform">
+                  {copiedSpec ? <Check className="w-4 h-4 text-stone-600" /> : <FileText className="w-4 h-4" />}
                 </div>
                 <span className="text-xs font-bold text-[#1d1d1f]">
                   {copiedSpec ? 'Spec Copied!' : 'Copy Spec'}
@@ -294,7 +294,7 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
               >
                 {copied ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <Check className="w-3.5 h-3.5 text-stone-400" />
                     <span>Copied!</span>
                   </>
                 ) : (

@@ -62,7 +62,7 @@ export const BackToTop: React.FC<BackToTopProps> = ({
         id="floating-back-to-top-btn"
         onClick={scrollToTop}
         aria-label="Scroll back to top of page"
-        className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/90 hover:bg-white text-[#1d1d1f] hover:text-black shadow-lg hover:shadow-xl backdrop-blur-md border border-black/[0.08] hover:border-black/20 transition-all duration-300 cursor-pointer active:scale-95 focus:outline-none focus:ring-2 focus:ring-black/20"
+        className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/90 hover:bg-white text-[#1d1d1f] hover:text-black shadow-lg backdrop-blur-md border border-black/[0.08] hover:border-black/20 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-black/20"
       >
         {/* Subtle SVG Progress Ring */}
         <svg
@@ -83,7 +83,7 @@ export const BackToTop: React.FC<BackToTopProps> = ({
             cx="22"
             cy="22"
             r={radius}
-            className="stroke-amber-600 transition-all duration-150"
+            className="stroke-stone-600 transition-all duration-150"
             strokeWidth="2.5"
             strokeDasharray={circumference}
             strokeDashoffset={strokeDashoffset}
@@ -93,7 +93,7 @@ export const BackToTop: React.FC<BackToTopProps> = ({
         </svg>
 
         {/* Arrow Icon */}
-        <ArrowUp className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5 text-[#1d1d1f] group-hover:text-amber-800" />
+        <ArrowUp className="w-5 h-5 transition-transform duration-300 text-[#1d1d1f] group-hover:text-stone-800" />
 
         {/* Floating Tooltip on Hover */}
         <div className="absolute right-full mr-3 px-2.5 py-1 rounded-full bg-[#111113]/90 text-white text-[11px] font-medium tracking-wide whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 shadow-md backdrop-blur-xs flex items-center gap-1.5">

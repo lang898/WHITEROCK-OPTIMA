@@ -15,7 +15,7 @@ import {
 import type { ColorItem } from '../types';
 import { ShareButton } from './ShareButton';
 import type { ShareContent } from './SocialShareModal';
-import { useUnits } from './UnitContext';
+import { formatMeasurement } from '../utils/measurements';
 
 interface ColorModalProps {
   color: ColorItem | null;
@@ -30,12 +30,11 @@ export const ColorModal: React.FC<ColorModalProps> = ({
   onRequestSample,
   onShare,
 }) => {
-  const { formatMeasurement } = useUnits();
   if (!color) return null;
 
   const shareContent: ShareContent = {
     title: `${color.name} (${color.material})`,
-    text: `Review ${color.name} ${color.material} from WHITEROCK Vietnam. Listed thicknesses: ${color.thicknesses.join(', ')}. Confirm availability with a physical sample and written quotation.`,
+    text: `Review ${color.name} ${color.material} from WHITEROCK Vietnam. Listed thicknesses: ${formatMeasurement(color.thicknesses.join(', '))}. Confirm availability with a physical sample and written quotation.`,
     image: color.image,
     material: color.material,
     specs: `${color.pattern} pattern, ${color.primaryTone} tone. Uses: ${color.applications.join(', ')}.`,
@@ -51,7 +50,7 @@ export const ColorModal: React.FC<ColorModalProps> = ({
         {/* Header */}
         <div className="wr-modal-header">
           <div className="flex items-center gap-3">
-            <span className="tech-badge text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+            <span className="tech-badge text-stone-800 bg-stone-50 px-2.5 py-1 rounded-full border border-stone-200">
               {color.material}
             </span>
             <h3 className="font-bold text-lg text-[#1d1d1f]">
@@ -141,7 +140,7 @@ export const ColorModal: React.FC<ColorModalProps> = ({
                 <div className="space-y-1.5 text-xs text-[#1d1d1f]">
                   {color.applications.map((app) => (
                     <div key={app} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-stone-600 shrink-0" />
                       <span>{app}</span>
                     </div>
                   ))}
@@ -178,7 +177,7 @@ export const ColorModal: React.FC<ColorModalProps> = ({
             className="px-6 py-3 rounded-full bg-[#111113] hover:bg-black text-white text-xs font-medium flex items-center gap-2 cursor-pointer shadow-xs transition-all"
           >
             <Plus className="w-3.5 h-3.5" />
-            <span>Add 4x4" Physical Swatch to RFQ</span>
+            <span>Add 102 × 102 mm (4" × 4") swatch to RFQ</span>
           </button>
         </div>
       </div>

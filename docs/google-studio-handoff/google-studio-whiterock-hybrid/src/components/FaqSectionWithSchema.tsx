@@ -123,7 +123,7 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="space-y-3 max-w-3xl">
           <div className="wr-panel-eyebrow wr-panel-eyebrow--compact">
-            <HelpCircle className="w-3.5 h-3.5 text-amber-600" />
+            <HelpCircle className="w-3.5 h-3.5 text-stone-600" />
             <span className="tech-badge">TECHNICAL & PROCUREMENT KNOWLEDGE BASE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-[-0.03em] text-[#1d1d1f]">
@@ -141,7 +141,7 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
               onClick={() => setShowRawJsonLd(!showRawJsonLd)}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/[0.03] hover:bg-black/[0.06] text-[#1d1d1f] text-xs font-semibold transition-colors cursor-pointer border border-black/[0.06]"
             >
-              <Code2 className="w-3.5 h-3.5 text-amber-700" />
+              <Code2 className="w-3.5 h-3.5 text-stone-700" />
               <span>{showRawJsonLd ? 'Hide Schema.org JSON-LD' : 'View Schema.org JSON-LD'}</span>
             </button>
           </div>
@@ -153,8 +153,8 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
         <div className="wr-card wr-card--dark p-6 sm:p-8 space-y-4 animate-fade-in">
           <div className="flex items-center justify-between border-b border-white/10 pb-4">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-amber-400" />
-              <span className="text-xs font-mono font-bold text-amber-300">
+              <Sparkles className="w-4 h-4 text-stone-400" />
+              <span className="text-xs font-mono font-bold text-stone-300">
                 SEO Microdata: Schema.org / FAQPage (Auto-Injected in &lt;head&gt;)
               </span>
             </div>
@@ -162,7 +162,7 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
               onClick={handleCopyJsonLd}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-mono transition-colors text-white cursor-pointer"
             >
-              {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+              {isCopied ? <Check className="w-3.5 h-3.5 text-stone-400" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{isCopied ? 'Copied to Clipboard' : 'Copy JSON-LD'}</span>
             </button>
           </div>
@@ -231,7 +231,7 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
                 >
                   <div className="flex items-center gap-3">
                     {faq.category && (
-                      <span className="tech-badge text-amber-800 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200 shrink-0">
+                      <span className="tech-badge text-stone-800 bg-stone-50 px-2.5 py-0.5 rounded-full border border-stone-200 shrink-0">
                         {faq.category}
                       </span>
                     )}

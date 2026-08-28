@@ -16,7 +16,7 @@ import {
 import type { ProductItem } from '../types';
 import { ShareButton } from './ShareButton';
 import type { ShareContent } from './SocialShareModal';
-import { useUnits } from './UnitContext';
+import { formatMeasurement } from '../utils/measurements';
 
 interface ProductModalProps {
   product: ProductItem | null;
@@ -31,15 +31,14 @@ export const ProductModal: React.FC<ProductModalProps> = ({
   onAddToCart,
   onShare,
 }) => {
-  const { formatMeasurement } = useUnits();
   if (!product) return null;
 
   const shareContent: ShareContent = {
     title: `${product.title} (${product.sku})`,
-    text: `WHITEROCK Vietnam: ${product.title} (${product.sku}) - ${product.material}. Dimensions shown: ${product.dimensions}. Final specifications and availability are confirmed in the written quotation.`,
+    text: `WHITEROCK Vietnam: ${product.title} (${product.sku}) - ${product.material}. Dimensions shown: ${formatMeasurement(product.dimensions)}. Final specifications and availability are confirmed in the written quotation.`,
     image: product.image,
     material: product.material,
-    specs: `Dimensions: ${product.dimensions} | Thickness: ${product.thicknesses.join(', ')} | MOQ: ${product.moq}`,
+    specs: `Dimensions: ${formatMeasurement(product.dimensions)} | Thickness: ${formatMeasurement(product.thicknesses.join(', '))} | MOQ: ${product.moq}`,
     type: 'product'
   };
 
@@ -52,7 +51,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
         {/* Modal Header */}
         <div className="wr-modal-header">
           <div className="flex items-center gap-3">
-            <span className="tech-badge text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+            <span className="tech-badge text-stone-800 bg-stone-50 px-2.5 py-1 rounded-full border border-stone-200">
               {product.sku}
             </span>
             <h3 className="font-bold text-lg text-[#1d1d1f] truncate max-w-md">
@@ -97,7 +96,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
               </div>
 
               <p className="text-xs text-[#6e6e73] leading-relaxed">
-                {product.description}
+                {formatMeasurement(product.description)}
               </p>
             </div>
 
@@ -122,7 +121,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#86868b]">Sink Integration:</span>
-                    <span className="text-emerald-700 font-medium">{product.sinkCompatibility}</span>
+                    <span className="text-stone-700 font-medium">{product.sinkCompatibility}</span>
                   </div>
                 </div>
               </div>

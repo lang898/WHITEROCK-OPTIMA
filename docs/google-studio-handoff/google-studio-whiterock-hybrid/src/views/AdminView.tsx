@@ -91,9 +91,9 @@ const initialInquiries: WebsiteInquiry[] = [
     countryState: 'Miami Beach, Florida (USA)',
     projectType: 'Hyatt Regency Suite Upgrade',
     itemsRequested: [
-      '4x4" Physical Swatch: Calacatta Gold (WR-Q801)',
-      '4x4" Physical Swatch: Pure White (WR-Q101)',
-      '4x4" Physical Swatch: Nero Marquina Natural Marble'
+      '102 × 102 mm (4" × 4") physical swatch: Calacatta Gold (WR-Q801)',
+      '102 × 102 mm (4" × 4") physical swatch: Pure White (WR-Q101)',
+      '102 × 102 mm (4" × 4") physical swatch: Nero Marquina Natural Marble'
     ],
     message: 'Please air courier a physical sample box to our Miami design studio for developer board approval next Wednesday.',
     submittedAt: '2026-08-21 09:15',
@@ -446,7 +446,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
       {/* Toast Alert */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 bg-stone-900 text-white px-5 py-3 rounded-2xl shadow-2xl border border-stone-700 flex items-center gap-3 text-xs animate-in fade-in slide-in-from-bottom-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+          <CheckCircle2 className="w-4 h-4 text-stone-400 shrink-0" />
           <span>{toastMessage}</span>
         </div>
       )}
@@ -454,8 +454,8 @@ export const AdminView: React.FC<AdminViewProps> = ({
       {/* Admin Top Banner */}
       <div className="bg-white border border-stone-200 rounded-3xl p-6 sm:p-8 shadow-xs flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold border border-amber-300">
-            <LayoutDashboard className="w-3.5 h-3.5 text-amber-700" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 text-stone-900 text-xs font-bold border border-stone-300">
+            <LayoutDashboard className="w-3.5 h-3.5 text-stone-700" />
             <span>WHITEROCK Website CMS & Admin Portal (网站后台管理系统)</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900">
@@ -477,7 +477,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
           <button
             onClick={exportInquiriesCsv}
-            className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
+            className="px-4 py-2 rounded-xl bg-stone-600 hover:bg-stone-700 text-white font-bold text-xs transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Export Inquiries (CSV)</span>
@@ -490,7 +490,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
         <div className="bg-white border border-stone-200 rounded-2xl p-4 shadow-xs">
           <span className="text-[11px] text-stone-500 font-medium">Total Inquiries</span>
           <div className="text-xl font-bold text-stone-900 mt-1">{inquiries.length}</div>
-          <span className="text-[10px] text-emerald-600 font-medium">
+          <span className="text-[10px] text-stone-600 font-medium">
             {inquiries.filter((i) => i.status === 'New').length} New Leads
           </span>
         </div>
@@ -500,7 +500,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
           <div className="text-xl font-bold text-stone-900 mt-1">
             {inquiries.filter((i) => i.type === 'RFQ Quote').length}
           </div>
-          <span className="text-[10px] text-amber-700 font-medium">Multi-Family / Hotel</span>
+          <span className="text-[10px] text-stone-700 font-medium">Multi-Family / Hotel</span>
         </div>
 
         <div className="bg-white border border-stone-200 rounded-2xl p-4 shadow-xs">
@@ -508,7 +508,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
           <div className="text-xl font-bold text-stone-900 mt-1">
             {inquiries.filter((i) => i.type === 'Sample Kit').length}
           </div>
-          <span className="text-[10px] text-blue-600 font-medium">4x4" Chip Swatches</span>
+          <span className="text-[10px] text-stone-600 font-medium">102 × 102 mm (4" × 4") chip swatches</span>
         </div>
 
         <div className="bg-white border border-stone-200 rounded-2xl p-4 shadow-xs">
@@ -525,8 +525,8 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
         <div className="bg-white border border-stone-200 rounded-2xl p-4 shadow-xs">
           <span className="text-[11px] text-stone-500 font-medium">Plant Status</span>
-          <div className="text-sm font-bold text-emerald-700 mt-1.5 flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <div className="text-sm font-bold text-stone-700 mt-1.5 flex items-center gap-1">
+            <span className="w-2 h-2 rounded-full bg-stone-500 animate-pulse"></span>
             <span>Online</span>
           </div>
           <span className="text-[10px] text-stone-500 font-medium">Binh Phuoc, Vietnam</span>
@@ -543,10 +543,10 @@ export const AdminView: React.FC<AdminViewProps> = ({
               : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
           }`}
         >
-          <Inbox className="w-4 h-4 text-amber-700" />
+          <Inbox className="w-4 h-4 text-stone-700" />
           <span>Inquiries & RFQ Leads</span>
           {inquiries.filter((i) => i.status === 'New').length > 0 && (
-            <span className="px-1.5 py-0.5 rounded-full bg-amber-600 text-white font-mono text-[10px]">
+            <span className="px-1.5 py-0.5 rounded-full bg-stone-600 text-white font-mono text-[10px]">
               {inquiries.filter((i) => i.status === 'New').length}
             </span>
           )}
@@ -560,7 +560,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
           }`}
         >
-          <Package className="w-4 h-4 text-amber-700" />
+          <Package className="w-4 h-4 text-stone-700" />
           <span>Products Catalog ({productsList.length})</span>
         </button>
 
@@ -572,7 +572,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
           }`}
         >
-          <Palette className="w-4 h-4 text-amber-700" />
+          <Palette className="w-4 h-4 text-stone-700" />
           <span>Stone Colors & Swatches ({colorsList.length})</span>
         </button>
 
@@ -584,7 +584,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
           }`}
         >
-          <Briefcase className="w-4 h-4 text-amber-700" />
+          <Briefcase className="w-4 h-4 text-stone-700" />
           <span>Project Cases ({defaultProjects.length})</span>
         </button>
 
@@ -596,7 +596,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
           }`}
         >
-          <FileText className="w-4 h-4 text-amber-700" />
+          <FileText className="w-4 h-4 text-stone-700" />
           <span>Articles & Guides ({defaultNews.length})</span>
         </button>
 
@@ -608,7 +608,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
           }`}
         >
-          <Settings className="w-4 h-4 text-amber-700" />
+          <Settings className="w-4 h-4 text-stone-700" />
           <span>Site Settings & Contact</span>
         </button>
       </div>
@@ -627,7 +627,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 placeholder="Search inquiries by client, company, email, or RFQ#..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500"
+                className="w-full pl-10 pr-4 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-stone-500"
               />
             </div>
 
@@ -636,7 +636,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl text-xs font-medium text-stone-700 focus:outline-none focus:border-amber-500"
+                className="px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl text-xs font-medium text-stone-700 focus:outline-none focus:border-stone-500"
               >
                 <option value="All">All Statuses ({inquiries.length})</option>
                 <option value="New">New</option>
@@ -679,10 +679,10 @@ export const AdminView: React.FC<AdminViewProps> = ({
                         <td className="py-3.5 px-4">
                           <div className="font-bold text-stone-900">{inq.clientName}</div>
                           <div className="text-stone-500 text-[11px]">{inq.companyName}</div>
-                          <div className="text-amber-800 text-[10px] font-mono">{inq.email}</div>
+                          <div className="text-stone-800 text-[10px] font-mono">{inq.email}</div>
                         </td>
                         <td className="py-3.5 px-4">
-                          <span className="inline-block px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 border border-amber-200 font-bold text-[10px] mb-1">
+                          <span className="inline-block px-2 py-0.5 rounded-md bg-stone-50 text-stone-900 border border-stone-200 font-bold text-[10px] mb-1">
                             {inq.type}
                           </span>
                           <div className="text-stone-600 line-clamp-1 max-w-[200px]">
@@ -706,13 +706,13 @@ export const AdminView: React.FC<AdminViewProps> = ({
                             }
                             className={`px-2 py-1 rounded-lg text-[11px] font-bold border focus:outline-none cursor-pointer ${
                               inq.status === 'New'
-                                ? 'bg-amber-100 text-amber-900 border-amber-300'
+                                ? 'bg-stone-100 text-stone-900 border-stone-300'
                                 : inq.status === 'Sample Shipped'
-                                ? 'bg-blue-100 text-blue-900 border-blue-300'
+                                ? 'bg-stone-100 text-stone-900 border-stone-300'
                                 : inq.status === 'Quoted'
-                                ? 'bg-emerald-100 text-emerald-900 border-emerald-300'
+                                ? 'bg-stone-100 text-stone-900 border-stone-300'
                                 : inq.status === 'Contacted'
-                                ? 'bg-purple-100 text-purple-900 border-purple-300'
+                                ? 'bg-stone-100 text-stone-900 border-stone-300'
                                 : 'bg-stone-100 text-stone-700 border-stone-300'
                             }`}
                           >
@@ -726,14 +726,14 @@ export const AdminView: React.FC<AdminViewProps> = ({
                         <td className="py-3.5 px-4 text-right space-x-1.5">
                           <button
                             onClick={() => setSelectedInquiry(inq)}
-                            className="p-1.5 text-stone-600 hover:text-amber-800 hover:bg-stone-100 rounded-lg transition-colors cursor-pointer"
+                            className="p-1.5 text-stone-600 hover:text-stone-800 hover:bg-stone-100 rounded-lg transition-colors cursor-pointer"
                             title="View Full Detail"
                           >
                             <Eye className="w-4 h-4" />
                           </button>
                           <a
                             href={`mailto:${inq.email}?subject=Re: WHITEROCK Quotation ${inq.inquiryNumber} - ${inq.projectType}`}
-                            className="p-1.5 text-stone-600 hover:text-emerald-700 hover:bg-stone-100 rounded-lg transition-colors inline-block"
+                            className="p-1.5 text-stone-600 hover:text-stone-700 hover:bg-stone-100 rounded-lg transition-colors inline-block"
                             title="Reply via Email"
                           >
                             <Send className="w-4 h-4" />
@@ -790,7 +790,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 });
                 setIsProductModalOpen(true);
               }}
-              className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-xs shrink-0"
+              className="px-4 py-2.5 rounded-xl bg-stone-600 hover:bg-stone-700 text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-xs shrink-0"
             >
               <Plus className="w-4 h-4" />
               <span>Add New Product</span>
@@ -801,11 +801,11 @@ export const AdminView: React.FC<AdminViewProps> = ({
             {productsList.map((prod) => (
               <div
                 key={prod.sku}
-                className="bg-white border border-stone-200 rounded-3xl p-5 shadow-xs flex flex-col justify-between space-y-4 hover:border-amber-300 transition-all group"
+                className="bg-white border border-stone-200 rounded-3xl p-5 shadow-xs flex flex-col justify-between space-y-4 hover:border-stone-300 transition-all group"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="px-2 py-0.5 bg-amber-50 text-amber-900 font-mono text-[10px] font-bold rounded-md border border-amber-200">
+                    <span className="px-2 py-0.5 bg-stone-50 text-stone-900 font-mono text-[10px] font-bold rounded-md border border-stone-200">
                       {prod.sku}
                     </span>
                     <span className="text-[11px] text-stone-500 font-medium">
@@ -813,7 +813,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="font-serif font-bold text-stone-900 text-base group-hover:text-amber-900 transition-colors">
+                  <h3 className="font-serif font-bold text-stone-900 text-base group-hover:text-stone-900 transition-colors">
                     {prod.title}
                   </h3>
 
@@ -874,7 +874,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 Stone Colors & Swatches Library ({colorsList.length})
               </h2>
               <p className="text-xs text-stone-600 mt-1">
-                Manage the full catalog of quartz, marble, and granite colors available for 4x4" physical sample dispatch and container orders.
+                Manage the full catalog of quartz, marble, and granite colors available for 102 × 102 mm (4" × 4") physical sample dispatch and container orders.
               </p>
             </div>
             <button
@@ -894,7 +894,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 });
                 setIsColorModalOpen(true);
               }}
-              className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-xs shrink-0"
+              className="px-4 py-2.5 rounded-xl bg-stone-600 hover:bg-stone-700 text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-xs shrink-0"
             >
               <Plus className="w-4 h-4" />
               <span>Add New Color Swatch</span>
@@ -905,7 +905,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
             {colorsList.map((col) => (
               <div
                 key={col.slug}
-                className="bg-white border border-stone-200 rounded-2xl p-3.5 shadow-xs space-y-2.5 flex flex-col justify-between hover:border-amber-300 transition-all group"
+                className="bg-white border border-stone-200 rounded-2xl p-3.5 shadow-xs space-y-2.5 flex flex-col justify-between hover:border-stone-300 transition-all group"
               >
                 <div className="space-y-2">
                   <div className="aspect-square bg-stone-100 rounded-xl overflow-hidden border border-stone-200/80 flex items-center justify-center relative group">
@@ -941,7 +941,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                       setNewColorForm(col);
                       setIsColorModalOpen(true);
                     }}
-                    className="text-[11px] text-amber-800 font-semibold hover:underline cursor-pointer"
+                    className="text-[11px] text-stone-800 font-semibold hover:underline cursor-pointer"
                   >
                     Edit
                   </button>
@@ -980,7 +980,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 className="bg-white border border-stone-200 rounded-3xl p-6 shadow-xs space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-3">
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-stone-50 text-stone-800 border border-stone-200 font-bold">
                     {proj.location}
                   </span>
                   <h3 className="font-serif font-bold text-lg text-stone-900">
@@ -1003,7 +1003,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 </div>
 
                 <div className="text-right">
-                  <span className="text-[11px] text-emerald-700 font-bold bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 inline-block">
+                  <span className="text-[11px] text-stone-700 font-bold bg-stone-50 px-2.5 py-1 rounded-lg border border-stone-200 inline-block">
                     Capability Reference
                   </span>
                 </div>
@@ -1035,7 +1035,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-50 text-amber-900 border border-amber-200 font-bold">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-stone-50 text-stone-900 border border-stone-200 font-bold">
                       {article.category}
                     </span>
                     <span className="text-[11px] text-stone-400 font-mono">{article.date}</span>
@@ -1049,7 +1049,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 </div>
 
                 <div className="pt-2 border-t border-stone-100 flex items-center justify-between">
-                  <span className="text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
+                  <span className="text-[11px] text-stone-700 font-semibold flex items-center gap-1">
                     <Check className="w-3.5 h-3.5" /> Published
                   </span>
                   <span className="text-xs text-stone-400 font-mono">Slug: {article.slug}</span>
@@ -1084,7 +1084,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   onChange={(e) =>
                     setSiteSettings({ ...siteSettings, brandName: e.target.value })
                   }
-                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500"
+                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-stone-500"
                 />
               </div>
 
@@ -1096,7 +1096,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   onChange={(e) =>
                     setSiteSettings({ ...siteSettings, tagline: e.target.value })
                   }
-                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500"
+                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-stone-500"
                 />
               </div>
 
@@ -1108,7 +1108,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   onChange={(e) =>
                     setSiteSettings({ ...siteSettings, companyEmail: e.target.value })
                   }
-                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500 font-mono"
+                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-stone-500 font-mono"
                 />
               </div>
 
@@ -1120,7 +1120,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   onChange={(e) =>
                     setSiteSettings({ ...siteSettings, directPhone: e.target.value })
                   }
-                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500 font-mono"
+                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-stone-500 font-mono"
                 />
               </div>
 
@@ -1132,7 +1132,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   onChange={(e) =>
                     setSiteSettings({ ...siteSettings, whatsApp: e.target.value })
                   }
-                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500 font-mono"
+                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-stone-500 font-mono"
                 />
               </div>
 
@@ -1146,7 +1146,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   onChange={(e) =>
                     setSiteSettings({ ...siteSettings, vietnamAddress: e.target.value })
                   }
-                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500"
+                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-stone-500"
                 />
               </div>
 
@@ -1160,7 +1160,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   onChange={(e) =>
                     setSiteSettings({ ...siteSettings, tariffNotice: e.target.value })
                   }
-                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500"
+                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-stone-500"
                 />
               </div>
 
@@ -1172,7 +1172,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   onChange={(e) =>
                     setSiteSettings({ ...siteSettings, exportCapacity: e.target.value })
                   }
-                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500"
+                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-stone-500"
                 />
               </div>
             </div>
@@ -1205,7 +1205,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
               <button
                 type="submit"
-                className="px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-xs"
+                className="px-6 py-2.5 rounded-xl bg-stone-600 hover:bg-stone-700 text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-xs"
               >
                 <Save className="w-4 h-4" />
                 <span>Save Site Settings</span>
@@ -1223,7 +1223,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
           <div className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 shadow-2xl border border-stone-200 max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-200">
             <div className="flex items-start justify-between">
               <div>
-                <span className="px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 font-mono text-xs font-bold border border-amber-300">
+                <span className="px-2.5 py-0.5 rounded-md bg-stone-100 text-stone-900 font-mono text-xs font-bold border border-stone-300">
                   {selectedInquiry.inquiryNumber}
                 </span>
                 <h3 className="text-xl font-bold font-serif text-stone-900 mt-2">
@@ -1244,7 +1244,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 <span className="text-stone-400 block">Email:</span>
                 <a
                   href={`mailto:${selectedInquiry.email}`}
-                  className="text-amber-800 font-mono font-bold hover:underline"
+                  className="text-stone-800 font-mono font-bold hover:underline"
                 >
                   {selectedInquiry.email}
                 </a>
@@ -1271,8 +1271,8 @@ export const AdminView: React.FC<AdminViewProps> = ({
               <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500 font-mono">
                 Project Scope & Requested Items
               </h4>
-              <div className="p-4 bg-amber-50/60 rounded-2xl border border-amber-200/80 text-xs space-y-2 text-stone-800">
-                <div className="font-bold text-amber-950">
+              <div className="p-4 bg-stone-50/60 rounded-2xl border border-stone-200/80 text-xs space-y-2 text-stone-800">
+                <div className="font-bold text-stone-950">
                   Project: {selectedInquiry.projectType}
                 </div>
                 {selectedInquiry.itemsRequested && selectedInquiry.itemsRequested.length > 0 && (
@@ -1283,7 +1283,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   </ul>
                 )}
                 {selectedInquiry.message && (
-                  <p className="pt-2 border-t border-amber-200/60 text-stone-700 italic">
+                  <p className="pt-2 border-t border-stone-200/60 text-stone-700 italic">
                     "{selectedInquiry.message}"
                   </p>
                 )}
@@ -1303,7 +1303,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   )
                 }
                 placeholder="Enter quotation pricing, container calculations, or dispatch notes..."
-                className="w-full p-3 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500"
+                className="w-full p-3 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-stone-500"
               ></textarea>
             </div>
 
@@ -1331,7 +1331,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               <div className="flex items-center gap-2">
                 <a
                   href={`mailto:${selectedInquiry.email}?subject=WHITEROCK Direct Quotation ${selectedInquiry.inquiryNumber}&body=Dear ${selectedInquiry.clientName},%0D%0A%0D%0AThank you for reaching out to WHITEROCK SURFACES VIETNAM regarding ${selectedInquiry.projectType}...`}
-                  className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs"
+                  className="px-4 py-2 bg-stone-600 hover:bg-stone-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Send Email Reply</span>
@@ -1468,7 +1468,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-xl font-bold shadow-xs"
+                  className="px-5 py-2 bg-stone-600 hover:bg-stone-700 text-white rounded-xl font-bold shadow-xs"
                 >
                   Save Product
                 </button>
@@ -1582,7 +1582,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-xl font-bold shadow-xs"
+                  className="px-5 py-2 bg-stone-600 hover:bg-stone-700 text-white rounded-xl font-bold shadow-xs"
                 >
                   Save Swatch
                 </button>

@@ -28,11 +28,11 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
   currentLocale,
 }) => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 space-y-24 sm:space-y-28">
       {/* Header Banner (Unified Apple Display + Keynote Style) */}
       <div className="space-y-4 max-w-4xl">
         <div className="wr-panel-eyebrow">
-          <Handshake className="w-3.5 h-3.5 text-amber-600" />
+          <Handshake className="w-3.5 h-3.5 text-stone-600" />
           <span className="tech-badge">B2B DISTRIBUTOR & BUILDER PARTNERSHIPS • DIRECT FACTORY</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.035em] text-[#1d1d1f]">
@@ -45,11 +45,11 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
         {/* Industrial Highlights */}
         <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
           <span className="wr-info-pill">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-stone-600 shrink-0" />
             <span className="tech-badge">Direct Container Loading (Cat Lai Port)</span>
           </span>
           <span className="wr-info-pill">
-            <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+            <ShieldCheck className="w-3.5 h-3.5 text-stone-600 shrink-0" />
             <span className="tech-badge">Order-Specific Trade Document Review</span>
           </span>
         </div>
@@ -59,7 +59,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="wr-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
-            <span className="tech-badge text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+            <span className="tech-badge text-stone-800 bg-stone-50 px-2.5 py-1 rounded-full border border-stone-200">
               PROGRAM 01
             </span>
             <h3 className="font-bold text-lg text-[#1d1d1f]">Flexible MOQs</h3>
@@ -74,7 +74,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
 
         <div className="wr-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
-            <span className="tech-badge text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+            <span className="tech-badge text-stone-800 bg-stone-50 px-2.5 py-1 rounded-full border border-stone-200">
               PROGRAM 02
             </span>
             <h3 className="font-bold text-lg text-[#1d1d1f]">Lead Times</h3>
@@ -89,7 +89,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
 
         <div className="wr-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
-            <span className="tech-badge text-sky-800 bg-sky-50 px-2.5 py-1 rounded-full border border-sky-200">
+            <span className="tech-badge text-stone-800 bg-stone-50 px-2.5 py-1 rounded-full border border-stone-200">
               PROGRAM 03
             </span>
             <h3 className="font-bold text-lg text-[#1d1d1f]">OEM / Private Label</h3>
@@ -104,7 +104,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
 
         <div className="wr-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
-            <span className="tech-badge text-purple-800 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">
+            <span className="tech-badge text-stone-800 bg-stone-50 px-2.5 py-1 rounded-full border border-stone-200">
               PROGRAM 04
             </span>
             <h3 className="font-bold text-lg text-[#1d1d1f]">Export Crate Standards</h3>
@@ -135,15 +135,15 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
             <h4 className="font-bold text-base text-[#1d1d1f]">Regional Stone Distributors</h4>
             <ul className="text-xs text-[#6e6e73] space-y-3">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                 <span>Repeat container program tiered pricing</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                 <span>Showroom sample tower & box sets</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                 <span>Exclusive regional color protections</span>
               </li>
             </ul>
@@ -153,15 +153,15 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
             <h4 className="font-bold text-base text-[#1d1d1f]">Multi-Family Builders</h4>
             <ul className="text-xs text-[#6e6e73] space-y-3">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                 <span>Unit-by-unit BOQ cut-to-size kits</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                 <span>Buyer-approved sink and cutout options</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                 <span>Direct job site container deliveries</span>
               </li>
             </ul>
@@ -171,15 +171,15 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
             <h4 className="font-bold text-base text-[#1d1d1f]">Hospitality FF&E Groups</h4>
             <ul className="text-xs text-[#6e6e73] space-y-3">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                 <span>Mockup suite sample room packages</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                 <span>Complex laminated mitered waterfalls</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                 <span>Product-specific test documents when currently available</span>
               </li>
             </ul>
@@ -190,7 +190,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
       {/* Action Banner (Apple Dark Card) */}
       <div className="wr-card wr-card--dark p-10 sm:p-14 text-white flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="space-y-3 max-w-xl">
-          <div className="tech-badge text-amber-300">DIRECT FACTORY ONBOARDING</div>
+          <div className="tech-badge text-stone-300">DIRECT FACTORY ONBOARDING</div>
           <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
             Ready to Onboard as an Official Trade Partner?
           </h3>

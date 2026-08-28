@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Check, GitCompare, Package, Search } from 'lucide-react';
 import { colors } from '../data';
 import { t } from '../i18n';
-import { useUnits } from '../components/UnitContext';
+import { formatMeasurement } from '../utils/measurements';
 import type { ColorItem, LocaleConfig } from '../types';
 
 interface ColorsViewProps {
@@ -19,7 +19,6 @@ export const ColorsView: React.FC<ColorsViewProps> = ({
   const [selectedMaterial, setSelectedMaterial] = useState('All');
   const [selectedFamily, setSelectedFamily] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const { formatMeasurement } = useUnits();
   const materials = ['All', 'Quartz', 'Marble', 'Granite', 'Engineered Marble'];
   const families = ['All', 'White', 'Grey', 'Black', 'Beige', 'Green'];
 
@@ -43,6 +42,7 @@ export const ColorsView: React.FC<ColorsViewProps> = ({
           <label className="wr-search-input"><Search /><input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder={t(currentLocale, 'searchPlaceholder')} /></label>
           <fieldset><legend>{t(currentLocale, 'material')}</legend>{materials.map((material) => <button key={material} className={selectedMaterial === material ? 'is-active' : ''} onClick={() => setSelectedMaterial(material)}><span>{material === 'All' ? t(currentLocale, 'all') : material}</span>{selectedMaterial === material && <Check />}</button>)}</fieldset>
           <fieldset><legend>Color family</legend>{families.map((family) => <button key={family} className={selectedFamily === family ? 'is-active' : ''} onClick={() => setSelectedFamily(family)}><span>{family === 'All' ? t(currentLocale, 'all') : family}</span>{selectedFamily === family && <Check />}</button>)}</fieldset>
+          {!compareIds.length && <div className="wr-filter-note wr-compare-empty"><GitCompare /><strong>No comparison selected</strong><p>Select two or three colors to compare material, finish, and thickness.</p></div>}
         </aside>
 
         <main className="wr-swatch-grid" aria-live="polite">

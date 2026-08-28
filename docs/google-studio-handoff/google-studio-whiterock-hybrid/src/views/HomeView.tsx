@@ -4,6 +4,7 @@ import { colors, factory, products } from '../data';
 import { t } from '../i18n';
 import type { ColorItem, LocaleConfig, ProductItem, RfqCartItem } from '../types';
 import type { ShareContent } from '../components/SocialShareModal';
+import { formatMeasurement } from '../utils/measurements';
 
 interface HomeViewProps {
   setCurrentTab: (tab: string) => void;
@@ -26,9 +27,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
     <div className="wr-home">
       <section className="wr-hero" aria-labelledby="home-hero-title">
         <picture className="wr-hero__poster" aria-hidden="true">
-          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-720.webp" type="image/webp" />
-          <source srcSet="/assets/owner/vietnam/factory-06-1280.webp" type="image/webp" />
-          <img src="/assets/owner/vietnam/factory-06.jpg" alt="" width="1600" height="1067" loading="eager" fetchPriority="high" />
+          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-hero-mobile.avif" type="image/avif" />
+          <source srcSet="/assets/owner/vietnam/factory-06-product-detail-1280.avif" type="image/avif" />
+          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-hero-mobile.webp" type="image/webp" />
+          <source srcSet="/assets/owner/vietnam/factory-06-product-detail-1280.webp" type="image/webp" />
+          <img src="/assets/owner/vietnam/factory-06-product-detail.jpg" alt="" width="1500" height="816" loading="eager" fetchPriority="high" />
         </picture>
         <div className="wr-hero__shade" aria-hidden="true" />
         <div className="wr-hero__content">
@@ -55,9 +58,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
         <figure className="wr-story__media">
           <picture>
-            <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-01-720.webp" type="image/webp" />
-            <source srcSet="/assets/owner/vietnam/factory-01-1280.webp" type="image/webp" />
-            <img src="/assets/owner/vietnam/factory-01.jpg" alt="Owner-supplied photo of the WHITEROCK Vietnam site entrance" width="1600" height="1067" loading="lazy" />
+            <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-01-entrance-bw-720.webp" type="image/webp" />
+            <source srcSet="/assets/owner/vietnam/factory-01-entrance-bw-1280.webp" type="image/webp" />
+            <img src="/assets/owner/vietnam/factory-01-entrance-bw.jpg" alt="Black-and-white detail from the owner-supplied WHITEROCK Vietnam entrance photo" width="900" height="520" loading="lazy" />
           </picture>
           <figcaption>WHITEROCK Vietnam · Binh Phuoc Province</figcaption>
         </figure>
@@ -70,9 +73,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <p>Real production imagery gives buyers a clearer starting point for factory review, drawing approval, inspection planning, and packing discussion.</p>
         </div>
         <div className="wr-factory-feature__grid">
-          <figure className="wr-factory-feature__primary"><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-03-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-03-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-03.jpg" alt="Owner-supplied photo of wet stone processing equipment in Vietnam" width="1600" height="1067" loading="lazy" /></picture><figcaption>Stone processing area · Vietnam</figcaption></figure>
-          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-02-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-02-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-02.jpg" alt="Owner-supplied photo showing stone cutting equipment in Vietnam" width="1600" height="1067" loading="lazy" /></picture><figcaption>Stone cutting reference · Vietnam</figcaption></figure>
-          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-06-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-06.jpg" alt="Owner-supplied photo of finished stone tops under review" width="1600" height="1067" loading="lazy" /></picture><figcaption>Finished top review</figcaption></figure>
+          <figure className="wr-factory-feature__primary"><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-03-equipment-bw-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-03-equipment-bw-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-03-equipment-bw.jpg" alt="Black-and-white detail from the owner-supplied stone processing equipment photo" width="980" height="735" loading="lazy" /></picture><figcaption>Precision processing detail · Vietnam</figcaption></figure>
+          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-02-equipment-bw-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-02-equipment-bw-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-02-equipment-bw.jpg" alt="Black-and-white detail from the owner-supplied stone cutting equipment photo" width="900" height="675" loading="lazy" /></picture><figcaption>Cutting equipment detail · Vietnam</figcaption></figure>
+          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-product-detail-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-06-product-detail-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-06-product-detail.jpg" alt="Color detail from the owner-supplied finished stone tops photo" width="1500" height="816" loading="lazy" /></picture><figcaption>Finished top detail</figcaption></figure>
         </div>
         <button className="wr-button wr-button--outline-light" onClick={() => setCurrentTab('factory')}>Explore factory capability<ArrowRight /></button>
       </section>
@@ -86,11 +89,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="wr-editorial-grid">
           {featuredProducts.map((product, index) => (
             <article className={`wr-product-story ${index === 0 ? 'wr-product-story--wide' : ''}`} key={product.sku}>
-              <button className="wr-product-story__media" onClick={() => onSelectProduct(product)} aria-label={`View ${product.title}`}>
+              <button className="wr-product-story__media" onClick={() => onSelectProduct(product)}>
                 <img src={product.image} alt={product.imageType === 'render' ? `${product.title} illustrative render` : product.title} width={product.imageWidth || 1536} height={product.imageHeight || 1024} loading="lazy" />
                 {product.imageType === 'render' && <span>Illustrative render · not actual product</span>}
               </button>
-              <div><small>{product.sku} · {product.material}</small><h3>{product.title}</h3><p>{product.description}</p><div><button className="wr-text-link" onClick={() => onSelectProduct(product)}>View details<ArrowRight /></button><button className="wr-icon-button" onClick={() => onAddToCart(product)} aria-label={`Add ${product.title} to RFQ`}><Plus /></button></div></div>
+              <div><small>{product.sku} · {product.material}</small><h3>{product.title}</h3><p>{formatMeasurement(product.description)}</p><div><button className="wr-text-link" onClick={() => onSelectProduct(product)}>View details<ArrowRight /></button><button className="wr-icon-button" onClick={() => onAddToCart(product)} aria-label={`Add ${product.title} to RFQ`}><Plus /></button></div></div>
             </article>
           ))}
         </div>
@@ -102,9 +105,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div><span className="wr-eyebrow">{t(currentLocale, 'colorLibrary')}</span><h2>A shortlist begins with color, then moves to sample approval.</h2></div>
           <p>{t(currentLocale, 'colorIntro')}</p>
         </div>
-        <div className="wr-color-strip" role="list">
+        <div className="wr-color-strip">
           {featuredColors.map((color) => (
-            <article key={color.slug} role="listitem">
+            <article key={color.slug}>
               <button onClick={() => onSelectColor(color)}><img src={color.swatchImage} alt={`${color.name} illustrative digital swatch`} width="800" height="800" loading="lazy" /><span>{color.name}</span></button>
               <div><small>{color.material}</small><button className="wr-icon-button" onClick={() => onAddColorSample(color)} aria-label={`Request ${color.name} sample`}><Package /></button></div>
             </article>

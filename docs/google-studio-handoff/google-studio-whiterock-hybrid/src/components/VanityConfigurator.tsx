@@ -131,7 +131,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-black/[0.06] pb-6">
         <div className="space-y-1.5">
           <div className="wr-panel-eyebrow wr-panel-eyebrow--compact">
-            <Layers className="w-3.5 h-3.5 text-amber-600" />
+            <Layers className="w-3.5 h-3.5 text-stone-600" />
             <span className="tech-badge">INTERACTIVE ARCHITECTURAL PROGRAM GENERATOR</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1d1d1f]">
@@ -142,8 +142,8 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
           </p>
         </div>
 
-        <div className="flex items-center gap-2 text-xs font-mono text-emerald-800 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 shrink-0">
-          <ShieldCheck className="w-4 h-4 text-emerald-600" />
+        <div className="flex items-center gap-2 text-xs font-mono text-stone-800 bg-stone-50 px-3.5 py-1.5 rounded-full border border-stone-200 shrink-0">
+          <ShieldCheck className="w-4 h-4 text-stone-600" />
           <span>Buyer-Approved Sink Options</span>
         </div>
       </div>
@@ -289,7 +289,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
                     <div className="flex items-center gap-2">
                       <strong className="text-xs font-bold">{sk.name}</strong>
                       <span className={`text-[9px] px-2 py-0.5 rounded-full font-mono ${
-                        selectedSink.id === sk.id ? 'bg-amber-400 text-black font-bold' : 'bg-amber-50 text-amber-900 border border-amber-200'
+                        selectedSink.id === sk.id ? 'bg-stone-400 text-black font-bold' : 'bg-stone-50 text-stone-900 border border-stone-200'
                       }`}>
                         {sk.badge}
                       </span>
@@ -308,10 +308,10 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
         <div className="lg:col-span-5 flex flex-col justify-between wr-card wr-card--dark p-6 sm:p-8 text-white space-y-6">
           <div className="space-y-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <span className="tech-badge text-amber-300">
+              <span className="tech-badge text-stone-300">
                 PROGRAM SPECIFICATION TAKEOFF
               </span>
-              <span className="text-xs font-mono text-emerald-400">
+              <span className="text-xs font-mono text-stone-400">
                 PLANNING ESTIMATE ONLY
               </span>
             </div>
@@ -332,7 +332,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
               </div>
               <div className="flex justify-between py-1 border-b border-white/10">
                 <span className="text-[#a1a1a6]">Basin Integration:</span>
-                <span className="text-amber-300 font-medium">{selectedSink.name.split('(')[0]}</span>
+                <span className="text-stone-300 font-medium">{selectedSink.name.split('(')[0]}</span>
               </div>
             </div>
 
@@ -346,7 +346,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
               </div>
               <div className="flex items-baseline justify-between pt-2 border-t border-white/10">
                 <span className="text-xs text-[#a1a1a6]">Estimated Total ({quantity} units):</span>
-                <span className="text-xl font-bold font-mono text-emerald-400">
+                <span className="text-xl font-bold font-mono text-stone-400">
                   ${totalFobEstimate.toLocaleString()} USD
                 </span>
               </div>
@@ -374,7 +374,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
               <span>Add Custom Program to RFQ Basket</span>
             </button>
             {addedNotice && (
-              <div className="text-center text-xs text-emerald-400 font-mono animate-fade-in flex items-center justify-center gap-1.5">
+              <div className="text-center text-xs text-stone-400 font-mono animate-fade-in flex items-center justify-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>Program Added to Your RFQ Basket!</span>
               </div>

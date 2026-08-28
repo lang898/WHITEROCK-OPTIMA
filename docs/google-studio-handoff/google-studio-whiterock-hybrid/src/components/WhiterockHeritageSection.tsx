@@ -134,15 +134,15 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
       {/* Heritage Header Strip */}
       {/* ========================================================================= */}
       <div className="text-center max-w-4xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 text-xs font-bold shadow-2xs">
-          <Gem className="w-3.5 h-3.5 text-amber-700" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-500/10 border border-stone-500/20 text-stone-900 text-xs font-bold shadow-2xs">
+          <Gem className="w-3.5 h-3.5 text-stone-700" />
           <span className="tech-badge">WHITEROCK MARBLE & GRANITE • SINCE 2000s</span>
         </div>
         
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]">
           6 Signature Stone Programs.
           <br />
-          <span className="bg-gradient-to-r from-amber-700 via-amber-600 to-[#1d1d1f] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-stone-700 via-stone-600 to-[#1d1d1f] bg-clip-text text-transparent">
             One Direct Manufacturing Group.
           </span>
         </h2>
@@ -159,8 +159,8 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 text-stone-900 text-xs font-bold">
+              <ShieldCheck className="w-3.5 h-3.5 text-stone-700" />
               <span>Vietnam Manufacturing Base</span>
             </div>
             
@@ -175,7 +175,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div className="p-4 rounded-2xl bg-white border border-black/[0.06] shadow-2xs space-y-1">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#1d1d1f]">
-                  <Factory className="w-4 h-4 text-emerald-600" />
+                  <Factory className="w-4 h-4 text-stone-600" />
                   <span>Vietnam Plant (Bình Phước)</span>
                 </div>
                 <p className="text-xs text-[#86868b]">
@@ -185,7 +185,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
 
               <div className="p-4 rounded-2xl bg-white border border-black/[0.06] shadow-2xs space-y-1">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#1d1d1f]">
-                  <Globe2 className="w-4 h-4 text-amber-600" />
+                  <Globe2 className="w-4 h-4 text-stone-600" />
                   <span>International Project Support</span>
                 </div>
                 <p className="text-xs text-[#86868b]">
@@ -215,7 +215,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
 
             <div className="flex items-center justify-between text-xs text-[#6e6e73] px-1">
               <span>Verified Legal Entity: <strong>CÔNG TY TNHH WHITEROCK</strong></span>
-              <span className="text-emerald-700 font-bold">EST. 2020</span>
+              <span className="text-stone-700 font-bold">EST. 2020</span>
             </div>
           </div>
 
@@ -239,7 +239,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
                   : 'bg-white text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-[#f0f0f3] border border-black/[0.06]'
               }`}
             >
-              <span className={`w-1.5 h-1.5 rounded-full ${activePillar === idx ? 'bg-amber-400' : 'bg-black/20'}`}></span>
+              <span className={`w-1.5 h-1.5 rounded-full ${activePillar === idx ? 'bg-stone-400' : 'bg-black/20'}`}></span>
               <span>{item.title}</span>
             </button>
           ))}
@@ -254,10 +254,10 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
               
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[11px] font-bold">
+                  <span className="px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-900 text-[11px] font-bold">
                     {pillars[activePillar].tag}
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">
+                  <span className="px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-800 text-[11px] font-bold">
                     {pillars[activePillar].badge}
                   </span>
                 </div>
@@ -266,7 +266,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
                   {pillars[activePillar].title}
                 </h3>
                 
-                <p className="text-sm font-medium text-amber-700">
+                <p className="text-sm font-medium text-stone-700">
                   {pillars[activePillar].subtitle}
                 </p>
               </div>
@@ -294,7 +294,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
                 {onExploreProducts && (
                   <button
                     onClick={onExploreProducts}
-                    className="px-6 py-3 rounded-full bg-[#111113] hover:bg-black text-white text-xs font-semibold shadow-md hover:scale-[1.02] active:scale-98 transition-all cursor-pointer flex items-center gap-2"
+                    className="px-6 py-3 rounded-full bg-[#111113] hover:bg-black text-white text-xs font-semibold shadow-md transition-all cursor-pointer flex items-center gap-2"
                   >
                     <span>View in Catalog</span>
                     <ArrowRight className="w-3.5 h-3.5" />

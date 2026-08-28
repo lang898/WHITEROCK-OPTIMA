@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUpRight, Mail, MapPin, Phone, Settings, Share2 } from 'lucide-react';
 import { WhatsAppIcon } from './SocialIcons';
+import { FacebookIcon, InstagramIcon, LinkedInIcon, PinterestIcon, XIcon } from './SocialIcons';
 import { siteConfig } from '../data/site';
 import { t } from '../i18n';
 import type { LocaleConfig } from '../types';
@@ -12,6 +13,13 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, onOpenShare }) => {
+  const socialLinks = [
+    { label: 'Facebook', href: siteConfig.social.facebook, Icon: FacebookIcon },
+    { label: 'Instagram', href: siteConfig.social.instagram, Icon: InstagramIcon },
+    { label: 'LinkedIn', href: siteConfig.social.linkedin, Icon: LinkedInIcon },
+    { label: 'Pinterest', href: siteConfig.social.pinterest, Icon: PinterestIcon },
+    { label: 'X', href: siteConfig.social.x, Icon: XIcon }
+  ];
   const sitemap = [
     { title: t(currentLocale, 'collections'), links: [
       ['products', t(currentLocale, 'products')], ['colors', t(currentLocale, 'colors')], ['finishes', t(currentLocale, 'finishes')]
@@ -41,6 +49,13 @@ export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, on
             <a href={`mailto:${siteConfig.email}`}><Mail />{siteConfig.email}</a>
             <a href={`tel:${siteConfig.telHref}`}><Phone />{siteConfig.tel}</a>
           </address>
+          <nav className="wr-footer__socials" aria-label="Social media">
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={`${label} (opens in a new tab)`} title={label}>
+                <Icon />
+              </a>
+            ))}
+          </nav>
         </div>
 
         <nav className="wr-footer__sitemap" aria-label="Footer sitemap">
@@ -52,6 +67,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, on
         <div className="wr-footer__contact">
           <h3>Direct contact</h3>
           <a href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer"><WhatsAppIcon />WhatsApp<ArrowUpRight /></a>
+          <a href={`mailto:${siteConfig.email}`}><Mail />Email<ArrowUpRight /></a>
           {onOpenShare && <button onClick={onOpenShare}><Share2 />Share website</button>}
         </div>
       </div>

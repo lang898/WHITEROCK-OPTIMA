@@ -36,8 +36,8 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       slug: 'eased',
       name: 'Eased Edge (Flat Polished with Micro-Bevel)',
       category: 'standard',
-      thickness: '2cm (3/4") / 3cm (1-1/4")',
-      radius: 'R2-R3mm Top & Bottom',
+      thickness: '20 mm (3/4") / 30 mm (1¼")',
+      radius: 'R2-R3 mm (1/16"-1/8") top and bottom',
       bestFor: 'Modern Apartments, Multi-Family Kitchens, Hotel Bathrooms (#1 North American Spec)',
       features: 'Sleek geometric line, easy to clean, highly chip-resistant.',
       cadDrawing: 'M 10 10 L 80 10 Q 90 10 90 20 L 90 90 L 10 90 Z',
@@ -45,10 +45,10 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
     },
     {
       slug: 'bevel',
-      name: '1/4" & 1/2" Bevel Edge',
+      name: '6 mm (1/4") & 12 mm (1/2") Bevel Edge',
       category: 'standard',
-      thickness: '2cm / 3cm',
-      radius: '45° Chamfer (6mm / 12mm)',
+      thickness: '20 mm (3/4") / 30 mm (1¼")',
+      radius: '45° chamfer, 6 mm (1/4") / 12 mm (1/2")',
       bestFor: 'Transitional Vanity Tops, Contemporary Island Bars',
       features: 'Crisp light reflection, prevents edge chipping during daily usage.',
       cadDrawing: 'M 10 10 L 75 10 L 90 25 L 90 90 L 10 90 Z',
@@ -58,7 +58,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       slug: 'bullnose',
       name: 'Full Bullnose & Half Bullnose',
       category: 'standard',
-      thickness: '2cm / 3cm',
+      thickness: '20 mm (3/4") / 30 mm (1¼")',
       radius: 'Full Semi-Circular Radius',
       bestFor: 'Traditional Bathrooms, High-Traffic Hospitality Counters',
       features: 'Ultra-smooth tactile feel, child-safe radius, timeless aesthetics.',
@@ -67,9 +67,9 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
     },
     {
       slug: 'mitered',
-      name: '40mm - 80mm Mitered Laminated Edge',
+      name: '40-80 mm (1½"-3⅛") Mitered Laminated Edge',
       category: 'mitered',
-      thickness: '4cm to 10cm Built-Up Apron',
+      thickness: '40-100 mm (1½"-4") built-up apron',
       radius: '45° Precision CNC Joint',
       bestFor: 'Luxury Kitchen Islands, Executive Vanity Tops, Commercial Bars',
       features: 'Creates the imposing appearance of an ultra-thick monolithic stone slab with continuous vein matching.',
@@ -80,7 +80,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       slug: 'waterfall',
       name: 'Bookmatched Waterfall Edge Return',
       category: 'mitered',
-      thickness: '2cm / 3cm / 4cm Mitered',
+      thickness: '20 / 30 / 40 mm (3/4" / 1¼" / 1½") mitered',
       radius: '90° Continuous Drop to Floor',
       bestFor: 'Gourmet Kitchen Islands, Modern Office Reception Desks',
       features: 'Seamless floor-to-countertop stone flow with CNC vein tracking.',
@@ -91,7 +91,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       slug: 'ogee',
       name: 'Classic Ogee & Dupont Profile',
       category: 'luxury',
-      thickness: '2cm / 3cm',
+      thickness: '20 mm (3/4") / 30 mm (1¼")',
       radius: 'S-Shaped Roman Curve',
       bestFor: 'Luxury Hotel Suites, Premium Residential Vanities, Fireplaces',
       features: 'Intricate classical shadow line, fabricated on automated multi-spindle profiling lines.',
@@ -108,11 +108,11 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 space-y-24 sm:space-y-28">
       {/* Header Banner (Apple Style Display + Industrial Engineering) */}
       <div className="space-y-4 max-w-4xl">
         <div className="wr-panel-eyebrow">
-          <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+          <Sparkles className="w-3.5 h-3.5 text-stone-600" />
           <span className="tech-badge">SURFACE AND EDGE REFERENCE LIBRARY</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.035em] text-[#1d1d1f]">
@@ -175,7 +175,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
                   <ul className="text-xs text-[#1d1d1f] space-y-2">
                     {f.recommendedFor.map((rec, i) => (
                       <li key={i} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-stone-600 shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
@@ -275,7 +275,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       <section className="wr-card wr-card--dark p-10 sm:p-14 text-white space-y-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <div className="tech-badge text-amber-300">
+            <div className="tech-badge text-stone-300">
               FACTORY ASSEMBLY INTEGRATION
             </div>
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
@@ -296,15 +296,15 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-white/10 text-xs">
           <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-            <strong className="tech-badge text-amber-300 block">MODEL-SPECIFIC DOCUMENTS</strong>
+            <strong className="tech-badge text-stone-300 block">MODEL-SPECIFIC DOCUMENTS</strong>
             <p className="text-[#a1a1a6]">Any required certification must be supported for the exact sink selected.</p>
           </div>
           <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-            <strong className="tech-badge text-amber-300 block">4" OR 8" FAUCET SPREADS</strong>
+            <strong className="tech-badge text-stone-300 block">102 MM (4") OR 203 MM (8") FAUCET SPREADS</strong>
             <p className="text-[#a1a1a6]">Single-hole, centerset, or widespread layouts follow the approved template.</p>
           </div>
           <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-            <strong className="tech-badge text-amber-300 block">AGREED PACKING PLAN</strong>
+            <strong className="tech-badge text-stone-300 block">AGREED PACKING PLAN</strong>
             <p className="text-[#a1a1a6]">Protection and crate details are confirmed for the selected product and route.</p>
           </div>
         </div>

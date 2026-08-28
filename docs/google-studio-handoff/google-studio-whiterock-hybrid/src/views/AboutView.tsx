@@ -57,12 +57,12 @@ export const AboutView: React.FC<AboutViewProps> = ({
 
   const corePillars = [
     {
-      icon: <Factory className="w-6 h-6 text-emerald-600" />,
+      icon: <Factory className="w-6 h-6 text-stone-600" />,
       title: '20,000 m² Vietnam Facility',
       desc: 'Independent export manufacturing plant in Binh Phuoc Province, Vietnam equipped with automated infrared bridge saws, multi-spindle edge polishers, and 5-axis CNC machining centers.'
     },
     {
-      icon: <ShieldCheck className="w-6 h-6 text-amber-600" />,
+      icon: <ShieldCheck className="w-6 h-6 text-stone-600" />,
       title: 'Order-Specific Trade Review',
       desc: 'Product origin, classification, customs treatment, and required export documents must be confirmed for each shipment with qualified advisers.'
     },
@@ -72,7 +72,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
       desc: 'Decades of profound stone fabrication expertise spanning natural marble, granite, quartz, porcelain slabs, waterjet medallions, and hand-carved architectural fireplace mantels.'
     },
     {
-      icon: <Globe2 className="w-6 h-6 text-sky-600" />,
+      icon: <Globe2 className="w-6 h-6 text-stone-600" />,
       title: 'Material Selection Support',
       desc: 'Available stone, slab selection, batch range, samples, and commercial terms are confirmed for each order.'
     }
@@ -90,21 +90,21 @@ export const AboutView: React.FC<AboutViewProps> = ({
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 space-y-24 sm:space-y-28">
       
       {/* ========================================================================= */}
       {/* Hero Header */}
       {/* ========================================================================= */}
       <div className="text-center max-w-4xl mx-auto space-y-5">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 text-xs font-bold shadow-2xs">
-          <Gem className="w-3.5 h-3.5 text-amber-700" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-500/10 border border-stone-500/20 text-stone-900 text-xs font-bold shadow-2xs">
+          <Gem className="w-3.5 h-3.5 text-stone-700" />
           <span className="tech-badge">WHITEROCK MARBLE & GRANITE • COMPANY PROFILE</span>
         </div>
         
         <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#1d1d1f] leading-tight">
           Over 20 Years of Stone Mastery.
           <br />
-          <span className="bg-gradient-to-r from-amber-700 via-amber-600 to-[#1d1d1f] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-stone-700 via-stone-600 to-[#1d1d1f] bg-clip-text text-transparent">
             Direct Vietnam Manufacturing Power.
           </span>
         </h1>
@@ -122,7 +122,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
           
           <div className="lg:col-span-6 space-y-6">
             <div className="space-y-2">
-              <div className="text-xs font-mono uppercase text-amber-700 font-bold tracking-wider">
+              <div className="text-xs font-mono uppercase text-stone-700 font-bold tracking-wider">
                 OUR STORY & LEGACY
               </div>
               <h2 className="text-2xl sm:text-4xl font-bold text-[#1d1d1f] tracking-tight">
@@ -144,7 +144,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                 <div className="text-xs text-[#86868b] mt-0.5">Vietnam Plant Area</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-emerald-700">100,000+ <span className="text-sm font-normal text-[#86868b]">m²/yr</span></div>
+                <div className="text-2xl sm:text-3xl font-bold text-stone-700">100,000+ <span className="text-sm font-normal text-[#86868b]">m²/yr</span></div>
                 <div className="text-xs text-[#86868b] mt-0.5">Annual Output Capacity</div>
               </div>
             </div>
@@ -153,17 +153,17 @@ export const AboutView: React.FC<AboutViewProps> = ({
           <div className="lg:col-span-6 space-y-4">
             <div className="rounded-2xl overflow-hidden border border-black/[0.08] shadow-md aspect-16/10 relative group">
               <img
-                src="/assets/owner/vietnam/factory-01.jpg"
-                alt="Owner-supplied photo of the WHITEROCK Vietnam site entrance"
-                width={1200}
-                height={900}
+                src="/assets/owner/vietnam/vanity-05-entrance-bw.jpg"
+                alt="Black-and-white entrance detail cropped from an owner-supplied WHITEROCK Vietnam photo"
+                width={940}
+                height={300}
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
                 <div className="text-white space-y-1">
                   <div className="text-sm font-bold flex items-center gap-2">
-                    <Factory className="w-4 h-4 text-emerald-400" />
+                    <Factory className="w-4 h-4 text-stone-400" />
                     <span>WHITEROCK VIETNAM PLANT</span>
                   </div>
                   <p className="text-xs text-white/80">
@@ -175,7 +175,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
 
             <div className="flex items-center justify-between text-xs text-[#6e6e73] px-2">
               <span>Legal Name: <strong>{siteConfig.legalName}</strong></span>
-              <span className="text-emerald-700 font-bold">Trade terms confirmed per shipment</span>
+              <span className="text-stone-700 font-bold">Trade terms confirmed per shipment</span>
             </div>
           </div>
 
@@ -217,7 +217,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
       {/* ========================================================================= */}
       <div className="wr-card wr-card--dark p-8 sm:p-12 text-white">
         <div className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-stone-300 text-xs font-bold">
             <CheckCircle2 className="w-3.5 h-3.5" />
             <span>FULL-SCOPE FABRICATION & TURNKEY EXPORT</span>
           </div>
@@ -233,7 +233,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-4">
             {capabilities.map((cap, idx) => (
               <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-white/90">
-                <div className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-4 h-4 rounded-full bg-stone-500/20 text-stone-400 flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3 h-3" />
                 </div>
                 <span>{cap}</span>
@@ -273,14 +273,14 @@ export const AboutView: React.FC<AboutViewProps> = ({
           </h2>
         </div>
 
-        <div className="relative border-l-2 border-amber-200/80 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-10">
+        <div className="relative border-l-2 border-stone-200/80 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-10">
           {milestones.map((m, idx) => (
             <div key={idx} className="relative group">
               {/* Dot */}
-              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-amber-600 shadow-xs"></div>
+              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-stone-600 shadow-xs"></div>
               
               <div className="space-y-1">
-                <span className="inline-block px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 text-xs font-bold font-mono">
+                <span className="inline-block px-2.5 py-0.5 rounded-md bg-stone-100 text-stone-900 text-xs font-bold font-mono">
                   {m.year}
                 </span>
                 <h3 className="text-lg font-bold text-[#1d1d1f]">
@@ -303,7 +303,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
           
           <div className="space-y-2">
             <div className="flex items-center justify-center md:justify-start gap-2 text-xs font-bold text-[#1d1d1f]">
-              <MapPin className="w-4 h-4 text-emerald-600" />
+              <MapPin className="w-4 h-4 text-stone-600" />
               <span>VIETNAM FACTORY ADDRESS</span>
             </div>
             <p className="text-xs text-[#6e6e73] leading-relaxed">
@@ -315,7 +315,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
 
           <div className="space-y-2">
             <div className="flex items-center justify-center md:justify-start gap-2 text-xs font-bold text-[#1d1d1f]">
-              <Ship className="w-4 h-4 text-sky-600" />
+              <Ship className="w-4 h-4 text-stone-600" />
               <span>DIRECT EXPORT DESK</span>
             </div>
             <p className="text-xs text-[#6e6e73] leading-relaxed">

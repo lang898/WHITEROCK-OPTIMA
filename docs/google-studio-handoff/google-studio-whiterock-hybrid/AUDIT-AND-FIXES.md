@@ -109,3 +109,40 @@ This pass replaces the mixed Google Studio/legacy visual layer with one WHITEROC
 - Corrected the HTML image preload from `factory-02` to the actual `factory-06` LCP asset. Lighthouse now confirms the LCP image is discoverable from the initial document, eager, and high priority.
 - Production build: 1,723 modules transformed; public routes remain split and `AdminView` remains a separate 49.80 KB chunk.
 - Production Lighthouse: Performance 92, Accessibility 100, Best Practices 100, SEO 100; LCP 2.8 s, CLS 0.042, TBT 10 ms.
+
+## 2026-08-28: Neutral Editorial System and Owner-Photo Treatment
+
+This pass removes the remaining green-led visual language and applies one restrained, product-led grayscale system across the public experience.
+
+### Design and imagery
+
+- Rebuilt the core tokens around white `#ffffff`, mist `#f5f5f7`, primary ink `#1d1d1f`, secondary text `#6e6e73`, and subtle black-alpha borders. Status red/green remains limited to form feedback.
+- Kept the 2 px geometry and local Inter/Libre Baskerville brand typography while increasing section whitespace and editorial type contrast.
+- Removed hover lifts and ornamental color accents; retained restrained image zoom and reduced-motion behavior.
+- Added `scripts/create-owner-photo-details.mjs` and `npm run images:editorial` to preserve owner originals while producing cropped JPG, 480/720/1280 WebP, and hero AVIF derivatives.
+- Factory/entrance imagery is monochrome or low-saturation; finished-top imagery remains in color. The homepage hero now uses an owner-supplied finished-top crop, with a dedicated vertical mobile crop.
+- Mapped the processed equipment details into Factory capability cards; line diagrams remain in place where no owner equipment photo exists.
+
+### Buyer interface
+
+- Removed `UnitContext.tsx`, the header unit control, stored unit preferences, and the stale legacy modal toggle.
+- Dimensions now use metric-first notation with rounded imperial reference, for example `635 x 559 mm (25\" x 22\")`, across cards, modals, comparison, and descriptive copy.
+- Added Facebook, Instagram, LinkedIn, Pinterest, and X to the footer. The floating contact rail contains only WhatsApp and email and is hidden on small screens.
+- Completed contact-form loading, success, error, honeypot, native validation, and no-key email fallback states.
+- Added comparison and search empty states, visible form focus treatment, 44 px mobile controls, explicit image dimensions, and lazy loading for every non-hero image.
+
+### Verification
+
+```text
+npx tsc --noEmit
+PASS: zero TypeScript errors
+
+npm run build
+PASS: 1,723 modules transformed; route and admin chunks remain split
+
+Lighthouse (mobile production preview)
+Performance 90 / Accessibility 100 / Best Practices 100 / SEO 100
+LCP 3.2 s / CLS 0.041 / TBT 30 ms
+```
+
+Browser checks at 1280 px and 390 px confirmed direct-route loading, no horizontal overflow, zero console errors, mobile navigation, product comparison, global-search empty state, metric-first specifications, and the mobile hero AVIF. Automated source scans report zero green brand tokens, zero `!important`, zero structural `nth-child`/`first-of-type` selectors, zero WeChat references, zero unit-context references, and zero `<img>` loading/width/height gaps.

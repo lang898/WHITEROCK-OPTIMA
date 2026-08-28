@@ -54,7 +54,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
     <button
       type="button"
       onClick={handleClick}
-      className={`p-2.5 rounded-full bg-black/[0.04] hover:bg-black/[0.08] text-[#1d1d1f] transition-all cursor-pointer flex items-center justify-center border border-black/[0.04] hover:scale-105 ${className}`}
+      className={`p-2.5 rounded-full bg-black/[0.04] hover:bg-black/[0.08] text-[#1d1d1f] transition-all cursor-pointer flex items-center justify-center border border-black/[0.04] ${className}`}
       title={`Share ${content.title} to WhatsApp, LinkedIn, or Pinterest`}
       aria-label={`Share ${content.title}`}
     >

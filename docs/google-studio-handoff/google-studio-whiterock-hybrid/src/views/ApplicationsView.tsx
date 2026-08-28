@@ -37,7 +37,7 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
       {/* Header Banner (Unified Apple Display + Keynote Style) */}
       <div className="space-y-4 max-w-4xl">
         <div className="wr-panel-eyebrow">
-          <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+          <Sparkles className="w-3.5 h-3.5 text-stone-600" />
           <span className="tech-badge">PROJECT ARCHITECTURE & COMMERCIAL CASE STUDIES</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.035em] text-[#1d1d1f]">
@@ -50,11 +50,11 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
         {/* Industrial Highlights */}
         <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
           <span className="wr-info-pill">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-stone-600 shrink-0" />
             <span className="tech-badge">Unit-Packaged Multi-Family Crating</span>
           </span>
           <span className="wr-info-pill">
-            <Building className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+            <Building className="w-3.5 h-3.5 text-stone-600 shrink-0" />
             <span className="tech-badge">Hospitality Brand Approvals</span>
           </span>
         </div>
@@ -120,7 +120,7 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
                   <span className="tech-badge text-[#86868b] block">
                     PROJECT EXECUTION
                   </span>
-                  <h3 className="font-bold text-lg text-[#1d1d1f] group-hover:text-amber-900 transition-colors">
+                  <h3 className="font-bold text-lg text-[#1d1d1f] group-hover:text-stone-900 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs text-[#86868b] leading-relaxed">

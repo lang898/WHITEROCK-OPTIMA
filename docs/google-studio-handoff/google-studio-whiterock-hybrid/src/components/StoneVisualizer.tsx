@@ -181,7 +181,7 @@ Image Note: Owner-supplied factory media; not a room rendering or physical color
       <div className="p-6 sm:p-8 border-b border-black/[0.06] flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#fbfbfd]">
         <div className="space-y-1.5">
           <div className="wr-panel-eyebrow wr-panel-eyebrow--compact">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+            <Sparkles className="w-3.5 h-3.5 text-stone-600" />
             <span className="tech-badge">OWNER-SUPPLIED FACTORY MEDIA • PROJECT PLANNING TOOL</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1d1d1f]">
@@ -232,11 +232,11 @@ Image Note: Owner-supplied factory media; not a room rendering or physical color
             {/* Real-time Config Floating HUD Badge */}
             <div className="absolute top-4 left-4 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-black/[0.08] shadow-md space-y-1 text-xs max-w-xs text-[#1d1d1f]">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-stone-500 animate-pulse"></span>
                 <span className="font-bold text-[#1d1d1f] text-sm">{activeColor.name}</span>
               </div>
               <div className="text-[11px] text-[#6e6e73] flex items-center gap-2">
-                <span className="bg-amber-50 text-amber-900 border border-amber-200 px-2 py-0.5 rounded font-mono font-bold">{activeEdge.name.split(' ')[0]}</span>
+                <span className="bg-stone-50 text-stone-900 border border-stone-200 px-2 py-0.5 rounded font-mono font-bold">{activeEdge.name.split(' ')[0]}</span>
                 <span>•</span>
                 <span>{surfaceFinish === 'polished' ? 'Proposed polished finish' : 'Proposed honed finish'}</span>
               </div>
@@ -248,7 +248,7 @@ Image Note: Owner-supplied factory media; not a room rendering or physical color
             {/* Floating Edge Profile Callout */}
             <div className="absolute bottom-4 right-4 p-3 rounded-2xl bg-black/80 backdrop-blur-md border border-white/10 text-right space-y-0.5 text-xs text-white">
               <span className="text-[10px] text-[#a1a1a6] uppercase font-mono block">ACTIVE EDGE DETAIL</span>
-              <strong className="text-amber-300 font-mono text-xs">{activeEdge.name}</strong>
+              <strong className="text-stone-300 font-mono text-xs">{activeEdge.name}</strong>
               <span className="text-[10px] text-[#a1a1a6] block">{activeEdge.spec}</span>
             </div>
           </div>
@@ -257,10 +257,10 @@ Image Note: Owner-supplied factory media; not a room rendering or physical color
           <div className="space-y-2">
             <div className="flex items-center justify-between text-xs">
               <span className="font-bold text-[#1d1d1f] flex items-center gap-1.5">
-                <Layers className="w-3.5 h-3.5 text-amber-700" />
+                <Layers className="w-3.5 h-3.5 text-stone-700" />
                 <span>Select Stone Material ({popularColors.length} Curated Slabs):</span>
               </span>
-              <span className="text-amber-800 font-mono text-[11px] font-bold">{activeColor.material}</span>
+              <span className="text-stone-800 font-mono text-[11px] font-bold">{activeColor.material}</span>
             </div>
 
             <div className="grid grid-cols-3 sm:grid-cols-6 gap-2.5">
@@ -280,7 +280,7 @@ Image Note: Owner-supplied factory media; not a room rendering or physical color
                       className="w-full aspect-square rounded-xl mb-1.5 shadow-2xs border border-black/[0.06]"
                       style={{ background: color.cssTexture }}
                     />
-                    <span className="text-[11px] font-bold text-[#1d1d1f] truncate w-full group-hover:text-amber-800">
+                    <span className="text-[11px] font-bold text-[#1d1d1f] truncate w-full group-hover:text-stone-800">
                       {color.name.split(' ')[0]}
                     </span>
                     <span className="text-[9px] text-[#86868b] truncate w-full">{color.tone}</span>
@@ -313,7 +313,7 @@ Image Note: Owner-supplied factory media; not a room rendering or physical color
             <div className="space-y-2">
               <label className="text-xs font-semibold text-[#1d1d1f] flex justify-between">
                 <span>Edge Profile:</span>
-                <span className="text-amber-800 font-mono text-[11px]">{activeEdge.name}</span>
+                <span className="text-stone-800 font-mono text-[11px]">{activeEdge.name}</span>
               </label>
               <div className="grid grid-cols-2 gap-2">
                 {edgeProfiles.map((edge) => (
@@ -397,7 +397,7 @@ Image Note: Owner-supplied factory media; not a room rendering or physical color
             <div className="bg-[#f5f5f7] rounded-2xl p-4 border border-black/[0.05] space-y-2 text-xs">
               <div className="font-bold text-[#1d1d1f] flex items-center justify-between">
                 <span>Configured Order Specification:</span>
-                <span className="text-[10px] bg-emerald-50 text-emerald-800 px-2.5 py-0.5 rounded-full border border-emerald-200 font-semibold font-mono">
+                <span className="text-[10px] bg-stone-50 text-stone-800 px-2.5 py-0.5 rounded-full border border-stone-200 font-semibold font-mono">
                   Ready for B2B RFQ
                 </span>
               </div>
@@ -426,7 +426,7 @@ Image Note: Owner-supplied factory media; not a room rendering or physical color
             >
               {isCopied ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <Check className="w-3.5 h-3.5 text-stone-400" />
                   <span>Specification Copied to Clipboard!</span>
                 </>
               ) : (

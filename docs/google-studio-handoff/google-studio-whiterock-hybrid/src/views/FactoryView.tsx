@@ -71,11 +71,11 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 space-y-24 sm:space-y-28">
       {/* Top Header & Context Banner (Apple Display + Industrial Precision) */}
       <div className="space-y-4 max-w-4xl">
         <div className="wr-panel-eyebrow">
-          <Factory className="w-3.5 h-3.5 text-emerald-700" />
+          <Factory className="w-3.5 h-3.5 text-stone-700" />
           <span className="tech-badge">20,000 M² DIRECT VIETNAM FABRICATION PLANT • BÌNH PHƯỚC</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.035em] text-[#1d1d1f]">
@@ -100,7 +100,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
               <span className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
                 {stat.value}
               </span>
-              <span className="text-[10px] text-emerald-800 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+              <span className="text-[10px] text-stone-800 font-bold bg-stone-50 px-2 py-0.5 rounded-full border border-stone-200">
                 Active
               </span>
             </div>
@@ -131,14 +131,24 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
           {equipmentItems.map((item, idx) => (
             <div
               key={idx}
-              className="wr-card p-6 sm:p-8 space-y-4 flex flex-col justify-between group"
+              className="wr-card wr-equipment-card p-6 sm:p-8 flex flex-col justify-between group"
             >
+              <figure className={`wr-equipment-card__media ${item.imageType === 'icon' ? 'is-diagram' : ''}`}>
+                <img
+                  src={item.media || item.drawing}
+                  alt={item.alt || `${item.name} visual reference`}
+                  width={item.imageType === 'icon' ? 640 : 980}
+                  height={item.imageType === 'icon' ? 420 : 735}
+                  loading="lazy"
+                />
+                {item.imageType === 'real' && <figcaption>Owner-supplied photo · editorial crop</figcaption>}
+              </figure>
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-2">
                   <span className="text-[11px] font-semibold text-[#1d1d1f] bg-black/[0.04] px-3 py-1 rounded-full border border-black/[0.05]">
                     {item.quantity} In Operation
                   </span>
-                  <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 font-mono">
+                  <span className="text-[11px] font-semibold text-stone-800 bg-stone-50 px-3 py-1 rounded-full border border-stone-200 font-mono">
                     {item.keySpec || item.accuracy || 'Specification confirmed per order'}
                   </span>
                 </div>
@@ -153,7 +163,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
 
               <div className="pt-3 border-t border-black/[0.06] flex items-center justify-between text-xs">
                 <span className="tech-badge text-[#86868b]">{item.location || 'VIETNAM FACTORY REFERENCE'}</span>
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <CheckCircle2 className="w-4 h-4 text-stone-600" />
               </div>
             </div>
           ))}
@@ -202,7 +212,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
               <div
                 key={item.id || idx}
                 onClick={() => setSelectedPhotoIndex(originalIndex >= 0 ? originalIndex : 0)}
-                className="bg-[#fbfbfd] border border-black/[0.06] hover:border-black/20 rounded-3xl overflow-hidden flex flex-col transition-all group cursor-pointer shadow-xs hover:shadow-md"
+                className="wr-gallery-card bg-white border border-black/[0.08] hover:border-black/20 overflow-hidden flex flex-col transition-colors group cursor-pointer"
               >
                 {/* Photo Image Stage */}
                 <div className="relative aspect-4/3 overflow-hidden bg-stone-100">
@@ -223,7 +233,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
                 {/* Card Meta Content */}
                 <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                   <div className="space-y-1">
-                    <h4 className="text-base font-bold text-[#1d1d1f] group-hover:text-amber-900 transition-colors">
+                    <h4 className="text-base font-bold text-[#1d1d1f] group-hover:text-stone-900 transition-colors">
                       {item.title}
                     </h4>
                     <p className="text-xs text-[#86868b] line-clamp-2 leading-relaxed">
@@ -231,7 +241,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
                     </p>
                   </div>
 
-                  <div className="pt-2 border-t border-black/[0.06] flex items-center justify-between text-xs text-[#0071e3] font-semibold">
+                  <div className="pt-2 border-t border-black/[0.06] flex items-center justify-between text-xs text-[#1d1d1f] font-semibold">
                     <span>Inspect High-Res</span>
                     <Maximize2 className="w-3.5 h-3.5" />
                   </div>
@@ -284,7 +294,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
             </div>
 
             <div className="p-6 sm:p-8 text-white space-y-2">
-              <span className="tech-badge text-amber-300">
+              <span className="tech-badge text-stone-300">
                 {galleryItems[selectedPhotoIndex].category}
               </span>
               <h3 className="text-xl font-bold">{galleryItems[selectedPhotoIndex].title}</h3>

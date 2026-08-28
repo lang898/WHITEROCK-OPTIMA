@@ -30,11 +30,11 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ currentLocale }) =
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 space-y-24 sm:space-y-28">
       {/* Toast Notification */}
       {downloadNotification && (
         <div className="fixed bottom-6 right-6 z-50 bg-[#121214] text-white px-5 py-3.5 rounded-full shadow-2xl border border-white/10 flex items-center gap-3 text-xs animate-fade-in backdrop-blur-md">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+          <CheckCircle2 className="w-4 h-4 text-stone-400 shrink-0" />
           <span>{downloadNotification}</span>
         </div>
       )}
@@ -42,7 +42,7 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ currentLocale }) =
       {/* Header Banner (Unified Apple Display + Keynote Style) */}
       <div className="space-y-4 max-w-4xl">
         <div className="wr-panel-eyebrow">
-          <FileText className="w-3.5 h-3.5 text-amber-600" />
+          <FileText className="w-3.5 h-3.5 text-stone-600" />
           <span className="tech-badge">TECHNICAL & COMPLIANCE CENTER • NORTH AMERICAN STANDARDS</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.035em] text-[#1d1d1f]">
@@ -55,11 +55,11 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ currentLocale }) =
         {/* Industrial Specification Badges */}
         <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
           <span className="wr-info-pill">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <ShieldCheck className="w-3.5 h-3.5 text-stone-600 shrink-0" />
             <span className="tech-badge">Product Documents Require Verification</span>
           </span>
           <span className="wr-info-pill">
-            <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-stone-600 shrink-0" />
             <span className="tech-badge">Current Test Reports by Exact Product</span>
           </span>
         </div>
@@ -74,13 +74,13 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ currentLocale }) =
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="tech-badge text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+                <span className="tech-badge text-stone-800 bg-stone-50 px-2.5 py-1 rounded-full border border-stone-200">
                   {res.category}
                 </span>
-                <FileText className="w-4 h-4 text-[#86868b] group-hover:text-amber-700 transition-colors" />
+                <FileText className="w-4 h-4 text-[#86868b] group-hover:text-stone-700 transition-colors" />
               </div>
 
-              <h3 className="font-bold text-lg text-[#1d1d1f] group-hover:text-amber-900 transition-colors">
+              <h3 className="font-bold text-lg text-[#1d1d1f] group-hover:text-stone-900 transition-colors">
                 {res.title}
               </h3>
 
@@ -103,7 +103,7 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ currentLocale }) =
       {/* Regulatory & Safety Notice Box (Apple Precision Callout) */}
       <section className="wr-card p-6 sm:p-10 space-y-6">
         <div className="flex flex-col sm:flex-row items-start gap-4">
-          <div className="p-3.5 bg-amber-50 text-amber-800 rounded-2xl shrink-0 border border-amber-200">
+          <div className="p-3.5 bg-stone-50 text-stone-800 rounded-2xl shrink-0 border border-stone-200">
             <AlertTriangle className="w-6 h-6" />
           </div>
           <div className="space-y-4">

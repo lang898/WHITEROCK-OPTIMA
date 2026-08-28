@@ -11,7 +11,6 @@ import { BackToTop } from './components/BackToTop';
 import { AppErrorBoundary } from './components/AppErrorBoundary';
 import { PageSeo } from './components/PageSeo';
 import { RouteLoading } from './components/RouteLoading';
-import { UnitProvider } from './components/UnitContext';
 import { HomeView } from './views/HomeView';
 
 import { locales } from './data/site';
@@ -153,7 +152,7 @@ function AppContent() {
         type: 'product',
         sku: p.sku,
         material: p.material,
-        selectedThickness: p.specs.Thickness || '2cm / 3cm',
+        selectedThickness: p.specs.Thickness || '20 mm (3/4") / 30 mm (1¼")',
         selectedEdge: p.specs.Edge || 'Eased',
         quantity: 1,
       };
@@ -172,7 +171,7 @@ function AppContent() {
     } else {
       const newItem: RfqCartItem = {
         id: sampleId,
-        title: `${color.name} (4x4" Physical Chip)`,
+        title: `${color.name} - 102 × 102 mm (4" × 4") physical chip`,
         type: 'sample',
         material: color.material,
         selectedColor: color.name,
@@ -180,7 +179,7 @@ function AppContent() {
       };
       setCartItems((prev) => [...prev, newItem]);
     }
-    showToast(`Added ${color.name} 4x4" chip to sample box`);
+    showToast(`Added ${color.name} 102 × 102 mm (4" × 4") chip to sample box`);
   };
 
   const handleUpdateQuantity = (id: string, delta: number) => {
@@ -218,7 +217,7 @@ function AppContent() {
   };
 
   return (
-    <div className="hybrid-site min-h-screen bg-stone-50 text-stone-900 flex flex-col font-sans antialiased selection:bg-amber-200 selection:text-stone-900">
+    <div className="hybrid-site min-h-screen bg-stone-50 text-stone-900 flex flex-col font-sans antialiased selection:bg-stone-200 selection:text-stone-900">
       <PageSeo routeId={currentTab} language={currentLocale.id} />
       {/* Header with Navigation and RFQ Count */}
       <Header
@@ -333,11 +332,7 @@ function AppContent() {
       />
 
       {/* Floating Quick Action Contact & Quote Rail */}
-      <ContactRail
-        onOpenRfq={() => setIsRfqModalOpen(true)}
-        onOpenShare={() => handleOpenShare()}
-        cartCount={cartItems.reduce((sum, item) => sum + item.quantity, 0)}
-      />
+      <ContactRail />
 
       {/* Floating Back to Top Navigation */}
       <BackToTop threshold={350} />
@@ -404,7 +399,7 @@ function AppContent() {
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 bg-stone-900 border border-stone-700 text-white text-xs px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2 animate-in fade-in slide-in-from-bottom-2">
-          <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <span className="w-2 h-2 rounded-full bg-stone-400 animate-pulse"></span>
           <span>{toastMessage}</span>
         </div>
       )}
@@ -415,9 +410,7 @@ function AppContent() {
 export default function App() {
   return (
     <AppErrorBoundary>
-      <UnitProvider>
-        <AppContent />
-      </UnitProvider>
+      <AppContent />
     </AppErrorBoundary>
   );
 }

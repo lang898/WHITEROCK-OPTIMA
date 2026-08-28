@@ -130,8 +130,8 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-stone-200 pb-6">
         <div className="space-y-2 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold border border-emerald-300">
-            <Compass className="w-3.5 h-3.5 text-emerald-700" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-100 text-stone-900 text-xs font-bold border border-stone-300">
+            <Compass className="w-3.5 h-3.5 text-stone-700" />
             <span>Vietnam Manufacturing Hub & Trans-Pacific Freight Logistics</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight">
@@ -162,7 +162,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
                     : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-amber-700' : 'text-stone-400'}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-stone-700' : 'text-stone-400'}`} />
                 <span>{tab.label}</span>
               </button>
             );
@@ -177,7 +177,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
           {/* Map Top Status Strip */}
           <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-stone-100 text-xs">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
+              <span className="w-2.5 h-2.5 rounded-full bg-stone-600 animate-pulse" />
               <span className="text-stone-700 font-medium">
                 Production Hub: <strong className="text-stone-950 font-bold">Binh Phuoc Province, Vietnam</strong>
               </span>
@@ -188,11 +188,11 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
                 onClick={() => setShowShippingLanes(!showShippingLanes)}
                 className={`px-2.5 py-1 rounded-lg text-[11px] font-mono border transition-all cursor-pointer flex items-center gap-1.5 ${
                   showShippingLanes
-                    ? 'bg-emerald-50 border-emerald-300 text-emerald-900 font-bold'
+                    ? 'bg-stone-50 border-stone-300 text-stone-900 font-bold'
                     : 'bg-stone-50 border-stone-200 text-stone-600 hover:text-stone-900'
                 }`}
               >
-                <Ship className="w-3.5 h-3.5 text-emerald-700" />
+                <Ship className="w-3.5 h-3.5 text-stone-700" />
                 <span>{showShippingLanes ? 'Ocean Lanes Active' : 'Show Ocean Lanes'}</span>
               </button>
 
@@ -218,7 +218,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
             <div className="absolute top-3 right-3 z-30 flex flex-col gap-1.5 bg-white/95 backdrop-blur-md p-1.5 rounded-xl border border-stone-300 shadow-md">
               <button
                 onClick={handleZoomIn}
-                className="p-1.5 rounded-lg bg-stone-100 hover:bg-amber-600 hover:text-white text-stone-700 transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg bg-stone-100 hover:bg-stone-600 hover:text-white text-stone-700 transition-colors cursor-pointer"
                 title="Zoom In"
                 aria-label="Zoom in"
               >
@@ -230,7 +230,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
                 className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                   zoom <= 1.0
                     ? 'opacity-40 text-stone-400 bg-stone-50 cursor-not-allowed'
-                    : 'bg-stone-100 hover:bg-amber-600 hover:text-white text-stone-700'
+                    : 'bg-stone-100 hover:bg-stone-600 hover:text-white text-stone-700'
                 }`}
                 title="Zoom Out"
                 aria-label="Zoom out"
@@ -249,7 +249,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
 
             {zoom > 1 && (
               <div className="absolute top-3 left-3 z-30 bg-white/90 border border-stone-300 px-2.5 py-1 rounded-lg text-[10px] font-mono text-stone-700 flex items-center gap-1.5 shadow-xs">
-                <Move className="w-3 h-3 text-amber-700" />
+                <Move className="w-3 h-3 text-stone-700" />
                 <span>Drag to Pan · Wheel to Zoom</span>
               </div>
             )}
@@ -272,7 +272,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
               >
                 <defs>
                   <linearGradient id="vnLandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.8" />
+                    <stop offset="0%" stopColor="#1d1d1f" stopOpacity="0.8" />
                     <stop offset="100%" stopColor="#047857" stopOpacity="0.95" />
                   </linearGradient>
                   <linearGradient id="shippingGradUS" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -377,7 +377,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
                     cx="412"
                     cy="435"
                     r="24"
-                    fill="#10b981"
+                    fill="#1d1d1f"
                     fillOpacity="0.25"
                     className="animate-ping"
                     style={{ transformOrigin: '412px 435px', animationDuration: '2.5s' }}
@@ -446,8 +446,8 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
             </div>
 
             {hoveredPort && (
-              <div className="absolute bottom-4 right-4 bg-white border border-emerald-400 px-3 py-1.5 rounded-xl shadow-md text-xs text-emerald-900 font-mono flex items-center gap-2 z-30">
-                <Anchor className="w-3.5 h-3.5 text-emerald-700" />
+              <div className="absolute bottom-4 right-4 bg-white border border-stone-400 px-3 py-1.5 rounded-xl shadow-md text-xs text-stone-900 font-mono flex items-center gap-2 z-30">
+                <Anchor className="w-3.5 h-3.5 text-stone-700" />
                 <span>Port Gateway: {hoveredPort}</span>
               </div>
             )}
@@ -459,9 +459,9 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
               <span className="text-[10px] font-mono text-stone-500 block uppercase">Plant Footprint</span>
               <strong className="text-stone-900 font-serif text-sm">20,000 m²</strong>
             </div>
-            <div className="bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
-              <span className="text-[10px] font-mono text-emerald-700 block uppercase">Customs Treatment</span>
-              <strong className="text-emerald-900 font-serif text-sm">Broker Review</strong>
+            <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
+              <span className="text-[10px] font-mono text-stone-700 block uppercase">Customs Treatment</span>
+              <strong className="text-stone-900 font-serif text-sm">Broker Review</strong>
             </div>
             <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
               <span className="text-[10px] font-mono text-stone-500 block uppercase">Port Distance</span>
@@ -469,7 +469,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
             </div>
             <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
               <span className="text-[10px] font-mono text-stone-500 block uppercase">Transit Time</span>
-              <strong className="text-amber-800 font-serif text-sm">Carrier Quote</strong>
+              <strong className="text-stone-800 font-serif text-sm">Carrier Quote</strong>
             </div>
           </div>
         </div>
@@ -479,7 +479,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
           {/* Facility Specs View */}
           {activeTab === 'facility' && (
             <div className="space-y-4 animate-in fade-in duration-200">
-              <div className="flex items-center gap-2 text-emerald-800 font-bold text-xs uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 w-fit">
+              <div className="flex items-center gap-2 text-stone-800 font-bold text-xs uppercase tracking-wider bg-stone-50 px-3 py-1 rounded-full border border-stone-200 w-fit">
                 <Building2 className="w-3.5 h-3.5" />
                 <span>Manufacturing Plant Profile</span>
               </div>
@@ -509,7 +509,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
           {/* Ocean Shipping View */}
           {activeTab === 'shipping' && (
             <div className="space-y-4 animate-in fade-in duration-200">
-              <div className="flex items-center gap-2 text-blue-800 font-bold text-xs uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-200 w-fit">
+              <div className="flex items-center gap-2 text-stone-800 font-bold text-xs uppercase tracking-wider bg-stone-50 px-3 py-1 rounded-full border border-stone-200 w-fit">
                 <Ship className="w-3.5 h-3.5" />
                 <span>Ocean Freight Port Timelines</span>
               </div>
@@ -532,7 +532,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
                       <strong className="text-stone-900 block font-sans">{route.port}</strong>
                       <span className="text-[11px] text-stone-500">{route.freq}</span>
                     </div>
-                    <span className="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-900 font-mono font-bold text-xs">
+                    <span className="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-900 font-mono font-bold text-xs">
                       {route.time}
                     </span>
                   </div>
@@ -544,8 +544,8 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
           {/* Machinery View */}
           {activeTab === 'machinery' && (
             <div className="space-y-4 animate-in fade-in duration-200">
-              <div className="flex items-center gap-2 text-amber-900 font-bold text-xs uppercase tracking-wider bg-amber-100 px-3 py-1 rounded-full border border-amber-300 w-fit">
-                <Cpu className="w-3.5 h-3.5 text-amber-700" />
+              <div className="flex items-center gap-2 text-stone-900 font-bold text-xs uppercase tracking-wider bg-stone-100 px-3 py-1 rounded-full border border-stone-300 w-fit">
+                <Cpu className="w-3.5 h-3.5 text-stone-700" />
                 <span>Advanced Automated Machinery</span>
               </div>
               <h3 className="text-xl font-serif font-bold text-stone-900">
@@ -574,8 +574,8 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
           {/* Compliance View */}
           {activeTab === 'compliance' && (
             <div className="space-y-4 animate-in fade-in duration-200">
-              <div className="flex items-center gap-2 text-emerald-900 font-bold text-xs uppercase tracking-wider bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300 w-fit">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
+              <div className="flex items-center gap-2 text-stone-900 font-bold text-xs uppercase tracking-wider bg-stone-100 px-3 py-1 rounded-full border border-stone-300 w-fit">
+                <ShieldCheck className="w-3.5 h-3.5 text-stone-700" />
                 <span>Order Documentation Review</span>
               </div>
               <h3 className="text-xl font-serif font-bold text-stone-900">
@@ -587,19 +587,19 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
 
               <div className="grid grid-cols-2 gap-2 pt-2 text-xs">
                 <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                   <span>Broker Rate Review</span>
                 </div>
                 <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                   <span>Origin Documents Reviewed</span>
                 </div>
                 <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                   <span>Packing Requirements Agreed</span>
                 </div>
                 <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-200 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-stone-600 shrink-0" />
                   <span>Product Documents Confirmed</span>
                 </div>
               </div>
@@ -610,7 +610,7 @@ export const ProductionMap: React.FC<ProductionMapProps> = ({
           <div className="pt-4 border-t border-stone-100 flex flex-col sm:flex-row gap-3">
             <a
               href={`mailto:SALES@WHITEROCKSTONE.COM?subject=Vietnam Factory Inquiry`}
-              className="flex-1 py-3 px-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold text-xs flex items-center justify-center gap-2 shadow-xs transition-all text-center"
+              className="flex-1 py-3 px-4 rounded-xl bg-stone-600 hover:bg-stone-500 text-stone-950 font-bold text-xs flex items-center justify-center gap-2 shadow-xs transition-all text-center"
             >
               <span>Contact Vietnam Engineering Team</span>
               <ArrowRight className="w-3.5 h-3.5" />

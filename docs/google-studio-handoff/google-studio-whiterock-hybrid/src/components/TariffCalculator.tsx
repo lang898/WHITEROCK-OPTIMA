@@ -41,8 +41,8 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({ onStartRfq }
     <div className="wr-card p-6 sm:p-10 space-y-8 text-[#1d1d1f]">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-black/[0.06] pb-6">
         <div className="space-y-1.5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200">
-            <Calculator className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-50 text-stone-800 text-xs font-semibold border border-stone-200">
+            <Calculator className="w-3.5 h-3.5 text-stone-600" />
             <span className="tech-badge">BUYER-ENTERED IMPORT COST WORKSHEET</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1d1d1f]">
@@ -53,8 +53,8 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({ onStartRfq }
           </p>
         </div>
 
-        <div className="flex items-center gap-2 text-xs font-mono text-amber-900 bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200 shrink-0">
-          <FileCheck className="w-4 h-4 text-amber-700" />
+        <div className="flex items-center gap-2 text-xs font-mono text-stone-900 bg-stone-50 px-3.5 py-1.5 rounded-full border border-stone-200 shrink-0">
+          <FileCheck className="w-4 h-4 text-stone-700" />
           <span>Broker confirmation required</span>
         </div>
       </div>
@@ -135,7 +135,7 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({ onStartRfq }
             </div>
           </div>
 
-          <div className="flex gap-3 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 leading-relaxed">
+          <div className="flex gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200 text-xs text-stone-950 leading-relaxed">
             <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
             <p>
               Classification, origin, valuation, trade remedies, taxes, and port charges vary by shipment. Confirm every rate and document requirement with qualified advisers before ordering.
@@ -146,7 +146,7 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({ onStartRfq }
         <div className="lg:col-span-5 flex flex-col justify-between wr-card wr-card--dark p-6 sm:p-8 text-white space-y-6">
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <span className="tech-badge text-amber-300">PLANNING SUMMARY</span>
+              <span className="tech-badge text-stone-300">PLANNING SUMMARY</span>
               <Ship className="w-4 h-4 text-[#a1a1a6]" />
             </div>
 
@@ -158,9 +158,9 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({ onStartRfq }
               <div className="flex justify-between gap-4"><dt className="text-[#a1a1a6]">Freight and destination allowance</dt><dd className="font-mono">${estimatedLogistics.toLocaleString()}</dd></div>
             </dl>
 
-            <div className="p-5 rounded-2xl bg-emerald-950/80 border border-emerald-500/40 text-center space-y-1">
-              <span className="tech-badge text-emerald-400 block">PRELIMINARY LANDED-COST BUDGET</span>
-              <div className="text-3xl sm:text-4xl font-bold tracking-tight text-emerald-300 font-mono">${planningTotal.toLocaleString()}</div>
+            <div className="p-5 rounded-2xl bg-stone-950/80 border border-stone-500/40 text-center space-y-1">
+              <span className="tech-badge text-stone-400 block">PRELIMINARY LANDED-COST BUDGET</span>
+              <div className="text-3xl sm:text-4xl font-bold tracking-tight text-stone-300 font-mono">${planningTotal.toLocaleString()}</div>
               <p className="text-[11px] text-[#a1a1a6]">Excludes taxes and charges not entered above.</p>
             </div>
           </div>
