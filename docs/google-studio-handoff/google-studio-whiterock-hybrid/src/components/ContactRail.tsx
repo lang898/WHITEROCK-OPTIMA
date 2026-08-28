@@ -5,12 +5,11 @@ import {
   FileText,
   Share2
 } from 'lucide-react';
-import { WhatsAppIcon, WeChatIcon } from './SocialIcons';
+import { WhatsAppIcon } from './SocialIcons';
 import { siteConfig } from '../data/site';
 
 interface ContactRailProps {
   onOpenRfq: () => void;
-  onOpenWeChat?: () => void;
   onOpenShare?: () => void;
   cartCount?: number;
   className?: string;
@@ -18,7 +17,6 @@ interface ContactRailProps {
 
 export const ContactRail: React.FC<ContactRailProps> = ({
   onOpenRfq,
-  onOpenWeChat,
   onOpenShare,
   cartCount = 0,
   className = ''
@@ -75,25 +73,7 @@ export const ContactRail: React.FC<ContactRailProps> = ({
         </span>
       </a>
 
-      {/* 3. WeChat Official QR Code */}
-      {onOpenWeChat && (
-        <button
-          type="button"
-          onClick={onOpenWeChat}
-          id="rail-wechat-btn"
-          className="group flex items-center bg-white hover:bg-[#07c160] border border-stone-300 hover:border-[#07c160] rounded-full p-2.5 shadow-lg backdrop-blur-md transition-all duration-300 cursor-pointer overflow-hidden text-[#07c160] hover:text-white"
-          title="WeChat 官方微信直连"
-        >
-          <div className="flex items-center justify-center w-6 h-6 shrink-0">
-            <WeChatIcon className="w-5 h-5" />
-          </div>
-          <span className="wr-contact-rail-label">
-            微信扫码咨询
-          </span>
-        </button>
-      )}
-
-      {/* 4. Social Share */}
+      {/* 3. Social Share */}
       {onOpenShare && (
         <button
           type="button"
@@ -111,7 +91,7 @@ export const ContactRail: React.FC<ContactRailProps> = ({
         </button>
       )}
 
-      {/* 5. Direct Email Contact */}
+      {/* 4. Direct Email Contact */}
       <a
         href={`mailto:${siteConfig.email}?subject=WHITEROCK%20Stone%20Project%20Inquiry`}
         id="rail-email-btn"
@@ -126,7 +106,7 @@ export const ContactRail: React.FC<ContactRailProps> = ({
         </span>
       </a>
 
-      {/* 6. Direct Phone Contact */}
+      {/* 5. Direct Phone Contact */}
       <a
         href={`tel:${siteConfig.telHref}`}
         id="rail-phone-btn"

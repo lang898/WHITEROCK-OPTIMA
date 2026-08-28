@@ -13,40 +13,23 @@ interface HomeViewProps {
   onAddColorSample: (color: ColorItem) => void;
   currentLocale: LocaleConfig;
   onOpenShareModal: (content?: ShareContent) => void;
-  onOpenWeChat: () => void;
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({
   setCurrentTab, onSelectProduct, onSelectColor, onAddToCart, onAddColorSample, currentLocale
 }) => {
-  const [videoEnabled, setVideoEnabled] = React.useState(false);
   const featuredProducts = products.slice(0, 4);
   const featuredColors = colors.slice(0, 8);
   const stats = factory.stats.slice(0, 3);
-
-  React.useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-    const savesData = 'connection' in navigator && Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData);
-    if (prefersReducedMotion || !isDesktop || savesData) return;
-
-    const timer = window.setTimeout(() => setVideoEnabled(true), 1800);
-    return () => window.clearTimeout(timer);
-  }, []);
 
   return (
     <div className="wr-home">
       <section className="wr-hero" aria-labelledby="home-hero-title">
         <picture className="wr-hero__poster" aria-hidden="true">
-          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-02-720.webp" type="image/webp" />
-          <source srcSet="/assets/owner/vietnam/factory-02-1280.webp" type="image/webp" />
-          <img src="/assets/owner/vietnam/factory-02.jpg" alt="" width="1600" height="1067" loading="eager" fetchPriority="high" />
+          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-720.webp" type="image/webp" />
+          <source srcSet="/assets/owner/vietnam/factory-06-1280.webp" type="image/webp" />
+          <img src="/assets/owner/vietnam/factory-06.jpg" alt="" width="1600" height="1067" loading="eager" fetchPriority="high" />
         </picture>
-        {videoEnabled && (
-          <video className="wr-hero__video" autoPlay muted loop playsInline preload="metadata" poster="/assets/owner/vietnam/factory-02-1280.webp" aria-label="Owner-supplied WHITEROCK Vietnam factory tour">
-            <source src="/assets/owner/vietnam/factory-tour.mp4" type="video/mp4" />
-          </video>
-        )}
         <div className="wr-hero__shade" aria-hidden="true" />
         <div className="wr-hero__content">
           <p className="wr-eyebrow wr-eyebrow--light">{t(currentLocale, 'heroEyebrow')}</p>

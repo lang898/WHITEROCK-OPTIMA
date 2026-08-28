@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, Mail, MapPin, Phone, Settings, Share2 } from 'lucide-react';
-import { WhatsAppIcon, WeChatIcon } from './SocialIcons';
+import { WhatsAppIcon } from './SocialIcons';
 import { siteConfig } from '../data/site';
 import { t } from '../i18n';
 import type { LocaleConfig } from '../types';
@@ -8,11 +8,10 @@ import type { LocaleConfig } from '../types';
 interface FooterProps {
   currentLocale: LocaleConfig;
   setCurrentTab: (tab: string) => void;
-  onOpenWeChat?: () => void;
   onOpenShare?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, onOpenWeChat, onOpenShare }) => {
+export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, onOpenShare }) => {
   const sitemap = [
     { title: t(currentLocale, 'collections'), links: [
       ['products', t(currentLocale, 'products')], ['colors', t(currentLocale, 'colors')], ['finishes', t(currentLocale, 'finishes')]
@@ -53,7 +52,6 @@ export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, on
         <div className="wr-footer__contact">
           <h3>Direct contact</h3>
           <a href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer"><WhatsAppIcon />WhatsApp<ArrowUpRight /></a>
-          {onOpenWeChat && <button onClick={onOpenWeChat}><WeChatIcon />WeChat<ArrowUpRight /></button>}
           {onOpenShare && <button onClick={onOpenShare}><Share2 />Share website</button>}
         </div>
       </div>

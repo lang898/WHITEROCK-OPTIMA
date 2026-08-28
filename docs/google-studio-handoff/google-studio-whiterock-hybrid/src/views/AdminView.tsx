@@ -193,7 +193,6 @@ export const AdminView: React.FC<AdminViewProps> = ({
             companyEmail: defaultSiteConfig.email || 'llang@whiterockstone.com',
             directPhone: defaultSiteConfig.tel || '+84 0798 858 220',
             whatsApp: defaultSiteConfig.whatsapp || '+84 798 858 220',
-            wechatId: 'WHITEROCK_STONE_VN',
             vietnamAddress: defaultSiteConfig.address,
             tariffNotice: 'Customs treatment requires buyer broker confirmation',
             exportCapacity: '100,000+ m² Annual Cut-to-Size Capacity',
@@ -207,7 +206,6 @@ export const AdminView: React.FC<AdminViewProps> = ({
         companyEmail: 'llang@whiterockstone.com',
         directPhone: '+84 0798 858 220',
         whatsApp: '+84 798 858 220',
-        wechatId: 'WHITEROCK_STONE_VN',
         vietnamAddress: defaultSiteConfig.address,
         tariffNotice: 'Customs treatment requires buyer broker confirmation',
         exportCapacity: '100,000+ m² Annual Cut-to-Size Capacity',
@@ -1138,18 +1136,6 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 />
               </div>
 
-              <div className="space-y-1.5">
-                <label className="text-xs font-bold text-stone-700">WeChat Official ID</label>
-                <input
-                  type="text"
-                  value={siteSettings.wechatId}
-                  onChange={(e) =>
-                    setSiteSettings({ ...siteSettings, wechatId: e.target.value })
-                  }
-                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-500 font-mono"
-                />
-              </div>
-
               <div className="md:col-span-2 space-y-1.5">
                 <label className="text-xs font-bold text-stone-700">
                   Vietnam Manufacturing Facility Address
@@ -1203,7 +1189,6 @@ export const AdminView: React.FC<AdminViewProps> = ({
                       companyEmail: defaultSiteConfig.email,
                       directPhone: defaultSiteConfig.tel,
                       whatsApp: defaultSiteConfig.whatsapp,
-                      wechatId: 'WHITEROCK_STONE_VN',
                       vietnamAddress: defaultSiteConfig.address,
                       tariffNotice: 'Customs treatment requires buyer broker confirmation',
                       exportCapacity: '100,000+ m² Annual Cut-to-Size Capacity',

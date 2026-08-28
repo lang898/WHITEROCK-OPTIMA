@@ -14,7 +14,6 @@ interface HeaderProps {
   openCart: () => void;
   currentLocale: LocaleConfig;
   setLocale: (loc: LocaleConfig) => void;
-  onOpenWeChat?: () => void;
   onOpenShare?: () => void;
   onOpenSearch: () => void;
 }

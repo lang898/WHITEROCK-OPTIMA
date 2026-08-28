@@ -223,7 +223,6 @@ export interface SiteCmsSettings {
   companyEmail: string;
   directPhone: string;
   whatsApp: string;
-  wechatId: string;
   vietnamAddress: string;
   tariffNotice: string;
   exportCapacity: string;

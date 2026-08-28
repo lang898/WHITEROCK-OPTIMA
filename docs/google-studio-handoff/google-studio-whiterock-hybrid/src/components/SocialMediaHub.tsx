@@ -20,7 +20,6 @@ import {
 } from 'lucide-react';
 import {
   WhatsAppIcon,
-  WeChatIcon,
   LinkedInIcon,
   InstagramIcon,
   YouTubeIcon,
@@ -49,13 +48,11 @@ interface SocialPost {
 
 interface SocialMediaHubProps {
   onOpenShareModal: (content: ShareContent) => void;
-  onOpenWeChat: () => void;
   onSelectColorSlug?: (slug: string) => void;
 }
 
 export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
   onOpenShareModal,
-  onOpenWeChat,
   onSelectColorSlug,
 }) => {
   const [activeTab, setActiveTab] = useState<'all' | 'instagram' | 'linkedin' | 'youtube' | 'pinterest'>('all');
@@ -236,17 +233,6 @@ export const SocialMediaHub: React.FC<SocialMediaHubProps> = ({
             </div>
             <span>Instagram</span>
           </a>
-
-          <button
-            type="button"
-            onClick={onOpenWeChat}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-black/[0.08] hover:border-black/20 text-[#1d1d1f] text-xs font-semibold shadow-2xs hover:scale-102 transition-all cursor-pointer"
-          >
-            <div className="w-5 h-5 rounded-full bg-[#07c160] text-white flex items-center justify-center">
-              <WeChatIcon className="w-3 h-3" />
-            </div>
-            <span>WeChat 微信</span>
-          </button>
 
           <a
             href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Hello WHITEROCK, I would like to connect on stone vanity top orders.')}`}

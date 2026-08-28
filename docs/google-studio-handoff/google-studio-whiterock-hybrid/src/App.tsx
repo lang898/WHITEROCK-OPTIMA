@@ -33,7 +33,6 @@ const AdminView = lazy(() => import('./views/AdminView').then((module) => ({ def
 const RfqModal = lazy(() => import('./components/RfqModal').then((module) => ({ default: module.RfqModal })));
 const ProductModal = lazy(() => import('./components/ProductModal').then((module) => ({ default: module.ProductModal })));
 const ColorModal = lazy(() => import('./components/ColorModal').then((module) => ({ default: module.ColorModal })));
-const WeChatModal = lazy(() => import('./components/WeChatModal').then((module) => ({ default: module.WeChatModal })));
 const SocialShareModal = lazy(() => import('./components/SocialShareModal').then((module) => ({ default: module.SocialShareModal })));
 const GlobalSearch = lazy(() => import('./components/GlobalSearch').then((module) => ({ default: module.GlobalSearch })));
 const ComparePanel = lazy(() => import('./components/ComparePanel').then((module) => ({ default: module.ComparePanel })));
@@ -63,7 +62,6 @@ function AppContent() {
   const [isRfqModalOpen, setIsRfqModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
   const [selectedColor, setSelectedColor] = useState<ColorItem | null>(null);
-  const [isWeChatModalOpen, setIsWeChatModalOpen] = useState(false);
   const [shareModalContent, setShareModalContent] = useState<ShareContent | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [compareItems, setCompareItems] = useState<CompareEntry[]>([]);
@@ -230,7 +228,6 @@ function AppContent() {
         openCart={() => setIsRfqModalOpen(true)}
         currentLocale={currentLocale}
         setLocale={setCurrentLocale}
-        onOpenWeChat={() => setIsWeChatModalOpen(true)}
         onOpenShare={() => handleOpenShare()}
         onOpenSearch={() => setIsSearchOpen(true)}
       />
@@ -247,7 +244,6 @@ function AppContent() {
             onAddColorSample={handleAddColorSample}
             currentLocale={currentLocale}
             onOpenShareModal={handleOpenShare}
-            onOpenWeChat={() => setIsWeChatModalOpen(true)}
           />
         )}
 
@@ -255,7 +251,6 @@ function AppContent() {
           <AboutView
             currentLocale={currentLocale}
             setCurrentTab={handleTabChange}
-            onOpenWeChat={() => setIsWeChatModalOpen(true)}
             onOpenShareModal={handleOpenShare}
           />
         )}
@@ -317,7 +312,6 @@ function AppContent() {
         {currentTab === 'contact' && (
           <ContactView
             currentLocale={currentLocale}
-            onOpenWeChat={() => setIsWeChatModalOpen(true)}
             onOpenShareModal={handleOpenShare}
           />
         )}
@@ -335,14 +329,12 @@ function AppContent() {
       <Footer
         currentLocale={currentLocale}
         setCurrentTab={handleTabChange}
-        onOpenWeChat={() => setIsWeChatModalOpen(true)}
         onOpenShare={() => handleOpenShare()}
       />
 
       {/* Floating Quick Action Contact & Quote Rail */}
       <ContactRail
         onOpenRfq={() => setIsRfqModalOpen(true)}
-        onOpenWeChat={() => setIsWeChatModalOpen(true)}
         onOpenShare={() => handleOpenShare()}
         cartCount={cartItems.reduce((sum, item) => sum + item.quantity, 0)}
       />
@@ -380,10 +372,6 @@ function AppContent() {
             onRequestSample={handleAddColorSample}
             onShare={handleOpenShare}
           />
-        )}
-
-        {isWeChatModalOpen && (
-          <WeChatModal isOpen onClose={() => setIsWeChatModalOpen(false)} />
         )}
 
         {shareModalContent && (

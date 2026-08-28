@@ -20,7 +20,6 @@ import {
 } from 'lucide-react';
 import {
   WhatsAppIcon,
-  WeChatIcon,
   LinkedInIcon,
   InstagramIcon
 } from '../components/SocialIcons';
@@ -31,13 +30,11 @@ import type { ShareContent } from '../components/SocialShareModal';
 
 interface ContactViewProps {
   currentLocale: LocaleConfig;
-  onOpenWeChat?: () => void;
   onOpenShareModal?: (content: ShareContent) => void;
 }
 
 export const ContactView: React.FC<ContactViewProps> = ({
   currentLocale,
-  onOpenWeChat,
   onOpenShareModal
 }) => {
   const [formData, setFormData] = useState({
@@ -188,22 +185,6 @@ export const ContactView: React.FC<ContactViewProps> = ({
                   &lt;15m reply
                 </span>
               </a>
-
-              {onOpenWeChat && (
-                <button
-                  type="button"
-                  onClick={onOpenWeChat}
-                  className="w-full flex items-center justify-between p-3 rounded-2xl bg-[#07c160]/10 hover:bg-[#07c160]/20 text-[#07c160] text-xs font-semibold transition-colors group cursor-pointer"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <WeChatIcon className="w-4 h-4 text-[#07c160]" />
-                    <span>WeChat 微信官方直连 ({(siteConfig as any).wechat || 'WHITEROCK_VIETNAM'})</span>
-                  </div>
-                  <span className="text-[10px] bg-white px-2 py-0.5 rounded-full text-[#07c160] shadow-2xs">
-                    扫码直连
-                  </span>
-                </button>
-              )}
 
               <a
                 href={siteConfig.social.linkedin || 'https://linkedin.com'}

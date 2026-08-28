@@ -24,14 +24,12 @@ import type { LocaleConfig } from '../types';
 interface AboutViewProps {
   currentLocale: LocaleConfig;
   setCurrentTab: (tab: string) => void;
-  onOpenWeChat?: () => void;
   onOpenShareModal?: () => void;
 }
 
 export const AboutView: React.FC<AboutViewProps> = ({
   currentLocale,
   setCurrentTab,
-  onOpenWeChat,
   onOpenShareModal,
 }) => {
   const milestones = [

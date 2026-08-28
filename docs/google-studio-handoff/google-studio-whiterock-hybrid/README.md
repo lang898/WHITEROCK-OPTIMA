@@ -1,20 +1,28 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# WHITEROCK Studio Hybrid
 
-# Run and deploy your AI Studio app
+Static React and Vite website for WHITEROCK COMPANY LIMITED.
 
-This contains everything you need to run your app locally.
+## Local development
 
-View your app in AI Studio: https://ai.studio/apps/75c3d154-ccda-4eb8-8524-9d4eef61cd59
+Requirements: Node.js 20 or newer.
 
-## Run Locally
+```bash
+npm install
+npm run dev
+```
 
-**Prerequisites:**  Node.js
+No API key or server-side runtime is required.
 
+## Production build
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm run build
+```
+
+Publish the generated `dist/` directory. For Cloudflare Pages use:
+
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Environment variables: none required
+
+The Vite build creates static fallback entry files for the public routes and `/admin/`.

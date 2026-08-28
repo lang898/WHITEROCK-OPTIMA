@@ -23,7 +23,7 @@ This pass intentionally covers application structure, code quality, visual consi
 ### Bundle architecture and resilience
 
 - Converted all eleven route views to `React.lazy()` imports with a shared `Suspense` loading state.
-- Converted RFQ, product, color, WeChat, and social-share modals to conditional lazy imports.
+- Converted RFQ, product, color, communications, and social-share modals to conditional lazy imports.
 - `AdminView.tsx` now builds as its own `AdminView-*.js` chunk and its UI code is absent from the initial entry bundle.
 - Split lightweight locale/site configuration into `src/data/site.ts` so the application shell does not eagerly import the complete catalog data barrel.
 - Added a top-level reusable error boundary with a clear page-recovery action.
@@ -70,7 +70,7 @@ This pass replaces the mixed Google Studio/legacy visual layer with one WHITEROC
 ### Editorial homepage and catalogs
 
 - Reworked the homepage into an immersive factory-led narrative using owner-supplied Vietnam media and the confirmed 20+ years, 20,000 m2 factory, and 100,000+ m2 annual capacity figures.
-- Added a desktop factory-video hero with delayed loading, a responsive owner-photo fallback, confirmed metrics, material/product storytelling, real factory strips, buying steps, and a direct RFQ close.
+- Added a responsive owner-supplied finished-stone hero, confirmed metrics, material/product storytelling, real factory strips, buying steps, and a direct RFQ close.
 - Rebuilt Products and Colors with editorial intros, persistent desktop filters, mobile filter controls, better image framing, honest render labels, and clearer product specifications.
 - Generated responsive 720 px and 1280 px WebP variants for six owner-supplied Vietnam factory photos through `npm run images:owner`.
 
@@ -92,10 +92,20 @@ This pass replaces the mixed Google Studio/legacy visual layer with one WHITEROC
 
 - Verified at 1200 px and 390 px: no horizontal overflow, responsive navigation, 44 px controls, global search, product opening, inch/mm conversion, two-item comparison, RFQ quantity/review flow, and English/Vietnamese switching.
 - Verified all source `<img>` elements include loading behavior and explicit dimensions; the hero image alone is eager/high-priority.
-- The latest completed mobile Lighthouse run scored Performance 86, Accessibility 100, Best Practices 100, and SEO 100 with CLS 0 and approximately 556 KB transferred. A later source optimization moved the homepage out of the lazy-route waterfall and built successfully, but the final Lighthouse rerun was unavailable in the local preview environment; therefore no unmeasured 90+ performance claim is made here.
+- The final production Lighthouse run scored Performance 92, Accessibility 100, Best Practices 100, and SEO 100. LCP was 2.8 s, CLS 0.042, and TBT 10 ms.
 - The production build keeps `AdminView` in its own lazy chunk. Public routes remain split, while the homepage is eager to improve LCP.
 
 ### Google AI dependency audit
 
 - No source file imports `@google/genai`, calls Gemini, or reads `GEMINI_API_KEY`.
-- References exist only in dependency metadata, `.env.example`, and README setup text. The dependency and key are Google AI Studio scaffolding residue; they are not required for this site's build or runtime and are not bundled into the public application.
+- Removed the unused Google AI dependency, key example, AI Studio README content, and unused Express/dotenv/tsx server scaffolding.
+- The project is a static Vite build with no API key or server runtime requirement. Cloudflare Pages can publish `dist/` using `npm run build` with no environment variables.
+
+## 2026-08-28: Final Channel, Hero, and Deployment Cleanup
+
+- Removed the WeChat modal, icon, quick-contact entry, contact-page channel, share option, footer link, admin setting, type field, and site-config value. A repository scan confirms no WeChat text or code remains in the application.
+- Replaced the homepage equipment/video hero with owner-supplied `factory-06`, showing finished stone tops under review. Responsive 720 px and 1280 px WebP variants remain in use.
+- Kept the owner-supplied cutting-equipment image `factory-02` in the Factory page/gallery rather than presenting it as the homepage quality image.
+- Corrected the HTML image preload from `factory-02` to the actual `factory-06` LCP asset. Lighthouse now confirms the LCP image is discoverable from the initial document, eager, and high priority.
+- Production build: 1,723 modules transformed; public routes remain split and `AdminView` remains a separate 49.80 KB chunk.
+- Production Lighthouse: Performance 92, Accessibility 100, Best Practices 100, SEO 100; LCP 2.8 s, CLS 0.042, TBT 10 ms.

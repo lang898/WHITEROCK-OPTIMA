@@ -14,7 +14,6 @@ import {
 } from 'lucide-react';
 import {
   WhatsAppIcon,
-  WeChatIcon,
   LinkedInIcon,
   InstagramIcon,
   PinterestIcon,
@@ -37,14 +36,12 @@ interface SocialShareModalProps {
   isOpen: boolean;
   onClose: () => void;
   content: ShareContent | null;
-  onOpenWeChat?: () => void;
 }
 
 export const SocialShareModal: React.FC<SocialShareModalProps> = ({
   isOpen,
   onClose,
   content,
-  onOpenWeChat,
 }) => {
   const [copied, setCopied] = useState(false);
   const [copiedSpec, setCopiedSpec] = useState(false);
@@ -177,7 +174,7 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
             <span className="tech-badge text-[#86868b] block">
               SELECT SOCIAL OR PROCUREMENT CHANNEL
             </span>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {/* WhatsApp */}
               <a
                 href={whatsappUrl}
@@ -191,22 +188,6 @@ Direct Inquiries: ${siteConfig.email} | WhatsApp: ${siteConfig.whatsapp}
                 <span className="text-xs font-bold text-[#1d1d1f]">WhatsApp</span>
                 <span className="text-[9px] text-[#86868b]">Direct Message</span>
               </a>
-
-              {/* WeChat */}
-              <button
-                type="button"
-                onClick={() => {
-                  onClose();
-                  if (onOpenWeChat) onOpenWeChat();
-                }}
-                className="flex flex-col items-center justify-center p-3.5 rounded-2xl bg-[#07c160]/5 hover:bg-[#07c160]/15 border border-[#07c160]/20 text-[#07c160] transition-all hover:scale-102 group cursor-pointer"
-              >
-                <div className="w-9 h-9 rounded-full bg-[#07c160] text-white flex items-center justify-center mb-1.5 shadow-2xs group-hover:scale-110 transition-transform">
-                  <WeChatIcon className="w-5 h-5" />
-                </div>
-                <span className="text-xs font-bold text-[#1d1d1f]">微信 WeChat</span>
-                <span className="text-[9px] text-[#86868b]">QR Code Scan</span>
-              </button>
 
               {/* LinkedIn */}
               <a
