@@ -187,21 +187,21 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
         </div>
       </section>
 
-      {/* Action Banner (Apple Dark Card) */}
-      <div className="wr-card wr-card--dark p-10 sm:p-14 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+      {/* Action Banner */}
+      <div className="wr-card wr-card--soft p-10 sm:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="space-y-3 max-w-xl">
-          <div className="tech-badge text-stone-300">DIRECT FACTORY ONBOARDING</div>
-          <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
+          <div className="tech-badge text-[#6e6e73]">DIRECT FACTORY ONBOARDING</div>
+          <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
             Ready to Onboard as an Official Trade Partner?
           </h3>
-          <p className="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#6e6e73] leading-relaxed">
             Receive wholesale FOB price lists, 40HQ container load maps, physical sample towers, and dedicated engineering support.
           </p>
         </div>
 
         <button
           onClick={() => setCurrentTab('contact')}
-          className="px-8 py-4 rounded-full bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
+          className="wr-button wr-button--primary shrink-0"
         >
           Apply for Trade Partnership
         </button>

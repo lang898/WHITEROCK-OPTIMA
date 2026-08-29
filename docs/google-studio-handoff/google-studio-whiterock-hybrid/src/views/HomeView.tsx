@@ -66,9 +66,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </figure>
       </section>
 
-      <section className="wr-factory-feature wr-section-band wr-section-band--dark">
-        <div className="wr-section-heading wr-section-heading--light">
-          <span className="wr-eyebrow wr-eyebrow--light">Manufacturing capability</span>
+      <section className="wr-factory-feature wr-section-band wr-section-band--mist">
+        <div className="wr-section-heading">
+          <span className="wr-eyebrow">Manufacturing capability</span>
           <h2>See the working environment behind the quotation.</h2>
           <p>Real production imagery gives buyers a clearer starting point for factory review, drawing approval, inspection planning, and packing discussion.</p>
         </div>
@@ -77,7 +77,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-03-equipment-bw-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-03-equipment-bw-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-03-equipment-bw.jpg" alt="Black-and-white detail from the owner-supplied stone processing equipment photo" width="980" height="735" loading="lazy" /></picture><figcaption>Precision processing detail · Vietnam</figcaption></figure>
           <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-product-detail-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-06-product-detail-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-06-product-detail.jpg" alt="Color detail from the owner-supplied finished stone tops photo" width="1500" height="816" loading="lazy" /></picture><figcaption>Finished top detail</figcaption></figure>
         </div>
-        <button className="wr-button wr-button--outline-light" onClick={() => setCurrentTab('factory')}>Explore factory capability<ArrowRight /></button>
+        <button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('factory')}>Explore factory capability<ArrowRight /></button>
       </section>
 
       <section className="wr-catalog-preview wr-section-band">
@@ -129,8 +129,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
       </section>
 
       <section className="wr-home-rfq wr-section-band">
-        <div><span className="wr-eyebrow wr-eyebrow--light">Project inquiry</span><h2>Turn your shortlist into a factory quotation.</h2><p>Send the selected products, dimensions, drawings, destination, and target schedule. Final capability and terms are confirmed in writing.</p></div>
-        <div><button className="wr-button wr-button--light" onClick={() => setCurrentTab('contact')}><FileText />{t(currentLocale, 'requestQuote')}</button><button className="wr-button wr-button--outline-light" onClick={() => setCurrentTab('products')}><Layers />Build a shortlist</button></div>
+        <div><span className="wr-eyebrow">Project inquiry</span><h2>Turn your shortlist into a factory quotation.</h2><p>Send the selected products, dimensions, drawings, destination, and target schedule. Final capability and terms are confirmed in writing.</p></div>
+        <div><button className="wr-button wr-button--primary" onClick={() => setCurrentTab('contact')}><FileText />{t(currentLocale, 'requestQuote')}</button><button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('products')}><Layers />Build a shortlist</button></div>
       </section>
     </div>
   );

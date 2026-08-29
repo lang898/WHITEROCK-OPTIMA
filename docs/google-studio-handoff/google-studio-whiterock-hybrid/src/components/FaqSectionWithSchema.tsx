@@ -150,17 +150,17 @@ export const FaqSectionWithSchema: React.FC<FaqSectionWithSchemaProps> = ({
 
       {/* JSON-LD Schema Drawer */}
       {showRawJsonLd && (
-        <div className="wr-card wr-card--dark p-6 sm:p-8 space-y-4 animate-fade-in">
-          <div className="flex items-center justify-between border-b border-white/10 pb-4">
+        <div className="wr-card wr-card--soft p-6 sm:p-8 space-y-4 animate-fade-in">
+          <div className="flex items-center justify-between border-b border-black/[0.08] pb-4">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-stone-400" />
-              <span className="text-xs font-mono font-bold text-stone-300">
+              <span className="text-xs font-mono font-bold text-[#6e6e73]">
                 SEO Microdata: Schema.org / FAQPage (Auto-Injected in &lt;head&gt;)
               </span>
             </div>
             <button
               onClick={handleCopyJsonLd}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-mono transition-colors text-white cursor-pointer"
+              className="wr-button wr-button--secondary text-xs font-mono"
             >
               {isCopied ? <Check className="w-3.5 h-3.5 text-stone-400" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{isCopied ? 'Copied to Clipboard' : 'Copy JSON-LD'}</span>

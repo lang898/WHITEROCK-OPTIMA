@@ -272,40 +272,40 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       </section>
 
       {/* Part 3: Buyer-approved sink integration options */}
-      <section className="wr-card wr-card--dark p-10 sm:p-14 text-white space-y-8">
+      <section className="wr-card wr-card--soft p-10 sm:p-14 space-y-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <div className="tech-badge text-stone-300">
+            <div className="tech-badge text-[#6e6e73]">
               FACTORY ASSEMBLY INTEGRATION
             </div>
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f]">
               Buyer-Approved Sink Cutout & Assembly Options
             </h2>
-            <p className="text-xs sm:text-sm text-[#a1a1a6] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#6e6e73] leading-relaxed">
               Sink cutouts and optional factory assembly can be quoted against the exact buyer-approved sink model, mounting method, faucet layout, and documentation requirements.
             </p>
           </div>
 
           <button
             onClick={() => setCurrentTab('contact')}
-            className="px-8 py-4 rounded-full bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
+            className="wr-button wr-button--primary shrink-0"
           >
             Request Vanity Top Sample Kit
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-white/10 text-xs">
-          <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-            <strong className="tech-badge text-stone-300 block">MODEL-SPECIFIC DOCUMENTS</strong>
-            <p className="text-[#a1a1a6]">Any required certification must be supported for the exact sink selected.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-black/[0.08] text-xs">
+          <div className="p-5 bg-white border border-black/[0.08] space-y-1">
+            <strong className="tech-badge text-[#1d1d1f] block">MODEL-SPECIFIC DOCUMENTS</strong>
+            <p className="text-[#6e6e73]">Any required certification must be supported for the exact sink selected.</p>
           </div>
-          <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-            <strong className="tech-badge text-stone-300 block">102 MM (4") OR 203 MM (8") FAUCET SPREADS</strong>
-            <p className="text-[#a1a1a6]">Single-hole, centerset, or widespread layouts follow the approved template.</p>
+          <div className="p-5 bg-white border border-black/[0.08] space-y-1">
+            <strong className="tech-badge text-[#1d1d1f] block">102 MM (4") OR 203 MM (8") FAUCET SPREADS</strong>
+            <p className="text-[#6e6e73]">Single-hole, centerset, or widespread layouts follow the approved template.</p>
           </div>
-          <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-            <strong className="tech-badge text-stone-300 block">AGREED PACKING PLAN</strong>
-            <p className="text-[#a1a1a6]">Protection and crate details are confirmed for the selected product and route.</p>
+          <div className="p-5 bg-white border border-black/[0.08] space-y-1">
+            <strong className="tech-badge text-[#1d1d1f] block">AGREED PACKING PLAN</strong>
+            <p className="text-[#6e6e73]">Protection and crate details are confirmed for the selected product and route.</p>
           </div>
         </div>
       </section>

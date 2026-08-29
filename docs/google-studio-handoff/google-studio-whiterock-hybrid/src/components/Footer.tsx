@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, on
     <footer className="wr-footer">
       <section className="wr-footer__cta">
         <div><span className="wr-eyebrow">Direct B2B inquiry</span><h2>Bring us the drawing. We will help define the stone package.</h2></div>
-        <button className="wr-button wr-button--light" onClick={() => setCurrentTab('contact')}>{t(currentLocale, 'requestQuote')}<ArrowUpRight /></button>
+        <button className="wr-button wr-button--primary" onClick={() => setCurrentTab('contact')}>{t(currentLocale, 'requestQuote')}<ArrowUpRight /></button>
       </section>
 
       <div className="wr-footer__main">

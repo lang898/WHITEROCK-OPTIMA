@@ -156,3 +156,14 @@ Browser checks at 1280 px and 390 px confirmed direct-route loading, no horizont
 - Removed six unused monochrome derivative sets while preserving every owner original.
 - Added `PHOTO-TREATMENT-REPORT.md` with the visual issue, treatment decision, and site usage for every reviewed original.
 - Browser verification confirms the Factory equipment cards and gallery contain no black-and-white assets, the homepage references only the intentional `factory-03` monochrome set, no image references are missing, no horizontal overflow is present, and the console has no errors.
+
+## 2026-08-29: Airy Neutral Surface Pass
+
+- Shifted the public experience from frequent dark panels to a white and light-gray hierarchy: white `#ffffff` primary surfaces, light gray `#f5f5f7` section bands, and raised `#fbfbfd` information cards.
+- Reduced the homepage hero overlay while preserving white-text contrast over the owner-supplied finished-stone image.
+- Replaced the homepage dark factory band with a light-gray editorial gallery and converted the final RFQ band to a light surface with a single near-black primary action.
+- Rebuilt the footer as three light layers: white inquiry strip, light-gray company/sitemap area, and white legal strip. Social controls now use white surfaces and subtle gray borders.
+- Converted the About capability panel, Finishes sink-integration reference, Partners onboarding banner, tariff summary, vanity-program summary, and optional FAQ schema inspector from dark cards to light information panels.
+- Preserved near-black only for primary buttons, active controls, image captions, hero text support, modal backdrops, and functional status surfaces.
+- Source scans confirm no `wr-card--dark` or `wr-section-band--dark` usage remains, no green brand tokens returned, and `!important` plus structural `nth-child`/`first-of-type` counts remain zero.
+- `npx tsc --noEmit` and the production Vite build pass. The local preview is available at `http://127.0.0.1:4193/`.

@@ -215,9 +215,9 @@ export const AboutView: React.FC<AboutViewProps> = ({
       {/* ========================================================================= */}
       {/* Comprehensive Capabilities Checklist */}
       {/* ========================================================================= */}
-      <div className="wr-card wr-card--dark p-8 sm:p-12 text-white">
+      <div className="wr-card wr-card--soft p-8 sm:p-12">
         <div className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-stone-300 text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-black/[0.04] text-[#6e6e73] text-xs font-bold">
             <CheckCircle2 className="w-3.5 h-3.5" />
             <span>FULL-SCOPE FABRICATION & TURNKEY EXPORT</span>
           </div>
@@ -226,14 +226,14 @@ export const AboutView: React.FC<AboutViewProps> = ({
             One Direct Manufacturing Partner for All Your Commercial Stone Requirements
           </h2>
 
-          <p className="text-sm sm:text-base text-white/70 leading-relaxed">
+          <p className="text-sm sm:text-base text-[#6e6e73] leading-relaxed">
             From architectural drawing review and custom finish matching to optional sink assembly, packing, and overseas shipment planning.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-4">
             {capabilities.map((cap, idx) => (
-              <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-white/90">
-                <div className="w-4 h-4 rounded-full bg-stone-500/20 text-stone-400 flex items-center justify-center shrink-0 mt-0.5">
+              <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#1d1d1f]">
+                <div className="w-4 h-4 rounded-full bg-black/[0.05] text-[#1d1d1f] flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3 h-3" />
                 </div>
                 <span>{cap}</span>
@@ -244,7 +244,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
           <div className="flex flex-wrap items-center gap-4 pt-6">
             <button
               onClick={() => setCurrentTab('products')}
-              className="px-6 py-3.5 rounded-full bg-white text-[#111113] hover:bg-neutral-100 text-xs font-bold transition-all cursor-pointer flex items-center gap-2 shadow-lg"
+              className="wr-button wr-button--primary"
             >
               <span>Explore 6 Product Lines</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -252,7 +252,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
 
             <button
               onClick={() => setCurrentTab('contact')}
-              className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold transition-all cursor-pointer"
+              className="wr-button wr-button--secondary"
             >
               Request Factory Direct Quote
             </button>

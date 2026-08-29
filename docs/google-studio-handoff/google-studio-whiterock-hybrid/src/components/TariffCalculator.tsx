@@ -143,30 +143,30 @@ export const TariffCalculator: React.FC<TariffCalculatorProps> = ({ onStartRfq }
           </div>
         </div>
 
-        <div className="lg:col-span-5 flex flex-col justify-between wr-card wr-card--dark p-6 sm:p-8 text-white space-y-6">
+        <div className="lg:col-span-5 flex flex-col justify-between wr-card wr-card--soft p-6 sm:p-8 space-y-6">
           <div className="space-y-4">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <span className="tech-badge text-stone-300">PLANNING SUMMARY</span>
+            <div className="flex items-center justify-between border-b border-black/[0.08] pb-4">
+              <span className="tech-badge text-[#6e6e73]">PLANNING SUMMARY</span>
               <Ship className="w-4 h-4 text-[#a1a1a6]" />
             </div>
 
             <dl className="space-y-3 text-xs">
-              <div className="flex justify-between gap-4"><dt className="text-[#a1a1a6]">Destination</dt><dd>{destinationLabels[destination]}</dd></div>
-              <div className="flex justify-between gap-4"><dt className="text-[#a1a1a6]">Product</dt><dd>{productLabels[productType]}</dd></div>
-              <div className="flex justify-between gap-4"><dt className="text-[#a1a1a6]">Estimated FOB total</dt><dd className="font-mono">${totalOrderValue.toLocaleString()}</dd></div>
-              <div className="flex justify-between gap-4"><dt className="text-[#a1a1a6]">Estimated duty</dt><dd className="font-mono">${estimatedDuty.toLocaleString()}</dd></div>
-              <div className="flex justify-between gap-4"><dt className="text-[#a1a1a6]">Freight and destination allowance</dt><dd className="font-mono">${estimatedLogistics.toLocaleString()}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-[#6e6e73]">Destination</dt><dd>{destinationLabels[destination]}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-[#6e6e73]">Product</dt><dd>{productLabels[productType]}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-[#6e6e73]">Estimated FOB total</dt><dd className="font-mono">${totalOrderValue.toLocaleString()}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-[#6e6e73]">Estimated duty</dt><dd className="font-mono">${estimatedDuty.toLocaleString()}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-[#6e6e73]">Freight and destination allowance</dt><dd className="font-mono">${estimatedLogistics.toLocaleString()}</dd></div>
             </dl>
 
-            <div className="p-5 rounded-2xl bg-stone-950/80 border border-stone-500/40 text-center space-y-1">
-              <span className="tech-badge text-stone-400 block">PRELIMINARY LANDED-COST BUDGET</span>
-              <div className="text-3xl sm:text-4xl font-bold tracking-tight text-stone-300 font-mono">${planningTotal.toLocaleString()}</div>
-              <p className="text-[11px] text-[#a1a1a6]">Excludes taxes and charges not entered above.</p>
+            <div className="p-5 bg-white border border-black/[0.08] text-center space-y-1">
+              <span className="tech-badge text-[#6e6e73] block">PRELIMINARY LANDED-COST BUDGET</span>
+              <div className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1d1d1f] font-mono">${planningTotal.toLocaleString()}</div>
+              <p className="text-[11px] text-[#6e6e73]">Excludes taxes and charges not entered above.</p>
             </div>
           </div>
 
           <div className="space-y-3 pt-2">
-            <button type="button" onClick={onStartRfq} className="w-full py-4 rounded-full bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] font-semibold text-xs transition-all shadow-md cursor-pointer flex items-center justify-center gap-2">
+            <button type="button" onClick={onStartRfq} className="wr-button wr-button--primary w-full">
               <span>Request a Project Quotation</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>

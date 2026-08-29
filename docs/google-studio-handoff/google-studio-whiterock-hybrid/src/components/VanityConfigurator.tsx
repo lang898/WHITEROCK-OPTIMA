@@ -304,11 +304,11 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
           </div>
         </div>
 
-        {/* Right Output & Takeoff Summary Card (Apple Keynote Dark Card) */}
-        <div className="lg:col-span-5 flex flex-col justify-between wr-card wr-card--dark p-6 sm:p-8 text-white space-y-6">
+        {/* Right Output & Takeoff Summary Card */}
+        <div className="lg:col-span-5 flex flex-col justify-between wr-card wr-card--soft p-6 sm:p-8 space-y-6">
           <div className="space-y-6">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <span className="tech-badge text-stone-300">
+            <div className="flex items-center justify-between border-b border-black/[0.08] pb-4">
+              <span className="tech-badge text-[#6e6e73]">
                 PROGRAM SPECIFICATION TAKEOFF
               </span>
               <span className="text-xs font-mono text-stone-400">
@@ -318,49 +318,49 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
 
             {/* Config Specs Readout */}
             <div className="space-y-3 text-xs">
-              <div className="flex justify-between py-1 border-b border-white/10">
-                <span className="text-[#a1a1a6]">Program Dimension:</span>
-                <strong className="font-mono text-white">{selectedSize.label}</strong>
+              <div className="flex justify-between py-1 border-b border-black/[0.08]">
+                <span className="text-[#6e6e73]">Program Dimension:</span>
+                <strong className="font-mono text-[#1d1d1f]">{selectedSize.label}</strong>
               </div>
-              <div className="flex justify-between py-1 border-b border-white/10">
-                <span className="text-[#a1a1a6]">Stone Surface:</span>
-                <strong className="text-white">{selectedStone.name.split('(')[0]}</strong>
+              <div className="flex justify-between py-1 border-b border-black/[0.08]">
+                <span className="text-[#6e6e73]">Stone Surface:</span>
+                <strong className="text-[#1d1d1f]">{selectedStone.name.split('(')[0]}</strong>
               </div>
-              <div className="flex justify-between py-1 border-b border-white/10">
-                <span className="text-[#a1a1a6]">Thickness & Edge:</span>
-                <span className="text-white">{selectedThickness} • {selectedEdge.name}</span>
+              <div className="flex justify-between py-1 border-b border-black/[0.08]">
+                <span className="text-[#6e6e73]">Thickness & Edge:</span>
+                <span className="text-[#1d1d1f]">{selectedThickness} • {selectedEdge.name}</span>
               </div>
-              <div className="flex justify-between py-1 border-b border-white/10">
-                <span className="text-[#a1a1a6]">Basin Integration:</span>
-                <span className="text-stone-300 font-medium">{selectedSink.name.split('(')[0]}</span>
+              <div className="flex justify-between py-1 border-b border-black/[0.08]">
+                <span className="text-[#6e6e73]">Basin Integration:</span>
+                <span className="text-[#1d1d1f] font-medium">{selectedSink.name.split('(')[0]}</span>
               </div>
             </div>
 
             {/* Dynamic Financials */}
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+            <div className="p-6 bg-white border border-black/[0.08] space-y-3">
               <div className="flex items-baseline justify-between">
-                <span className="text-xs text-[#a1a1a6]">Estimated FOB Vietnam / Unit:</span>
-                <span className="text-2xl font-bold font-mono text-white">
+                <span className="text-xs text-[#6e6e73]">Estimated FOB Vietnam / Unit:</span>
+                <span className="text-2xl font-bold font-mono text-[#1d1d1f]">
                   ${estimatedUnitFobPrice} <span className="text-xs text-[#86868b] font-normal">USD</span>
                 </span>
               </div>
-              <div className="flex items-baseline justify-between pt-2 border-t border-white/10">
-                <span className="text-xs text-[#a1a1a6]">Estimated Total ({quantity} units):</span>
-                <span className="text-xl font-bold font-mono text-stone-400">
+              <div className="flex items-baseline justify-between pt-2 border-t border-black/[0.08]">
+                <span className="text-xs text-[#6e6e73]">Estimated Total ({quantity} units):</span>
+                <span className="text-xl font-bold font-mono text-[#1d1d1f]">
                   ${totalFobEstimate.toLocaleString()} USD
                 </span>
               </div>
             </div>
 
             {/* Container Packaging Matrix */}
-            <div className="p-4 rounded-xl bg-black/40 border border-white/10 text-xs space-y-1.5 font-mono">
-              <div className="flex justify-between text-[#a1a1a6]">
+            <div className="p-4 bg-white border border-black/[0.08] text-xs space-y-1.5 font-mono">
+              <div className="flex justify-between text-[#6e6e73]">
                 <span>Container Fit:</span>
-                <strong className="text-white">{selectedSize.containerFit} pcs / 40HQ</strong>
+                <strong className="text-[#1d1d1f]">{selectedSize.containerFit} pcs / 40HQ</strong>
               </div>
-              <div className="flex justify-between text-[#a1a1a6]">
+              <div className="flex justify-between text-[#6e6e73]">
                 <span>Estimated Volume:</span>
-                <strong className="text-white">{estimatedContainers} x 40HQ Container(s)</strong>
+                <strong className="text-[#1d1d1f]">{estimatedContainers} x 40HQ Container(s)</strong>
               </div>
             </div>
           </div>
@@ -368,7 +368,7 @@ export const VanityConfigurator: React.FC<VanityConfiguratorProps> = ({
           <div className="space-y-3 pt-2">
             <button
               onClick={handleAddConfigToRfq}
-              className="w-full py-4 rounded-full bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] font-semibold text-xs transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+              className="wr-button wr-button--primary w-full"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Add Custom Program to RFQ Basket</span>
