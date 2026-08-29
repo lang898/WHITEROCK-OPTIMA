@@ -51,9 +51,9 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
                 <button className="wr-catalog-card__media" onClick={() => onSelectProduct(product)} aria-label={`View ${product.title}`}>
                   <img src={product.image} alt={product.imageType === 'render' ? `${product.title} illustrative render` : product.title} width={product.imageWidth || 1536} height={product.imageHeight || 1024} loading="lazy" />
                   <span className="wr-catalog-card__sku">{product.sku}</span>
-                  {product.imageType === 'render' && <span className="wr-media-disclosure">Illustrative render · not actual product</span>}
                 </button>
                 <div className="wr-catalog-card__body">
+                  {product.imageType === 'render' && <span className="wr-catalog-card__render-note">Illustrative render · not actual product</span>}
                   <small>{product.category} · {product.material}</small>
                   <h2>{product.title}</h2>
                   <p>{formatMeasurement(product.description)}</p>

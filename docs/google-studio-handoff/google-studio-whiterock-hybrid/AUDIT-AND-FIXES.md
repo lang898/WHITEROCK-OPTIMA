@@ -167,3 +167,11 @@ Browser checks at 1280 px and 390 px confirmed direct-route loading, no horizont
 - Preserved near-black only for primary buttons, active controls, image captions, hero text support, modal backdrops, and functional status surfaces.
 - Source scans confirm no `wr-card--dark` or `wr-section-band--dark` usage remains, no green brand tokens returned, and `!important` plus structural `nth-child`/`first-of-type` counts remain zero.
 - `npx tsc --noEmit` and the production Vite build pass. The local preview is available at `http://127.0.0.1:4193/`.
+
+## 2026-08-29: Claude Visual QA Fixes
+
+- Removed the product-card overlay collision path: SKU remains as the only image overlay, while the required illustrative-render disclosure now sits in normal card-body flow.
+- Centered the homepage manufacturing section introduction above the full-width image composition, eliminating the unintended empty right column.
+- Replaced the broad Hero frame with a dedicated owner-photo crop focused on finished vanity-top veining, openings, and polished edges. Fire extinguishers, drums, wall fixtures, and the wider workshop are outside the Hero frame.
+- Added tighter homepage-only derivatives for the orange cutting line and central processing machine. Factory-page factual media remains unchanged.
+- Preserved every owner original. The generated visual study was rejected from production to avoid altering factual product details; all shipped Hero and equipment derivatives are deterministic crops from owner-supplied files.

@@ -64,4 +64,43 @@ for (const treatment of treatments) {
   }
 }
 
-console.log(`Generated ${treatments.length} individually tuned editorial crops with JPG/WebP variants and optimized hero AVIF.`);
+const factorySix = path.join(ownerDirectory, 'factory-06.jpg');
+const desktopHero = () => sharp(factorySix)
+  .rotate()
+  .extract({ left: 0, top: 450, width: 1600, height: 400 })
+  .modulate({ saturation: 0.96, brightness: 1.02 })
+  .sharpen({ sigma: 0.7 });
+
+await desktopHero().jpeg({ quality: 86, mozjpeg: true }).toFile(path.join(ownerDirectory, 'factory-06-hero-detail.jpg'));
+await desktopHero().resize({ width: 1280 }).webp({ quality: 72, effort: 6 }).toFile(path.join(ownerDirectory, 'factory-06-hero-detail-1280.webp'));
+await desktopHero().resize({ width: 1280 }).avif({ quality: 48, effort: 6 }).toFile(path.join(ownerDirectory, 'factory-06-hero-detail-1280.avif'));
+
+const factoryFour = path.join(ownerDirectory, 'factory-04.jpg');
+const mobileHero = () => sharp(factoryFour)
+  .rotate()
+  .extract({ left: 360, top: 350, width: 480, height: 503 })
+  .modulate({ saturation: 0.98, brightness: 1.02 })
+  .sharpen({ sigma: 0.7 });
+
+await mobileHero().jpeg({ quality: 86, mozjpeg: true }).toFile(path.join(ownerDirectory, 'factory-04-hero-detail-mobile.jpg'));
+await mobileHero().webp({ quality: 68, effort: 6 }).toFile(path.join(ownerDirectory, 'factory-04-hero-detail-mobile.webp'));
+await mobileHero().avif({ quality: 46, effort: 6 }).toFile(path.join(ownerDirectory, 'factory-04-hero-detail-mobile.avif'));
+
+const machineTreatments = [
+  { source: 'factory-02.jpg', output: 'factory-02-machine-detail', extract: { left: 600, top: 430, width: 650, height: 487 }, saturation: 0.42, brightness: 1.02 },
+  { source: 'factory-03.jpg', output: 'factory-03-machine-detail', extract: { left: 500, top: 370, width: 600, height: 450 }, monochrome: true }
+];
+
+for (const treatment of machineTreatments) {
+  const source = path.join(ownerDirectory, treatment.source);
+  const jpg = path.join(ownerDirectory, `${treatment.output}.jpg`);
+  await treatmentPipeline(source, treatment).jpeg({ quality: 84, mozjpeg: true }).toFile(jpg);
+  for (const width of [720, 1280]) {
+    await treatmentPipeline(source, treatment)
+      .resize({ width, withoutEnlargement: true })
+      .webp({ quality: width === 720 ? 60 : 70, effort: 6 })
+      .toFile(path.join(ownerDirectory, `${treatment.output}-${width}.webp`));
+  }
+}
+
+console.log(`Generated ${treatments.length + machineTreatments.length} editorial crops plus dedicated desktop and mobile close-up hero assets.`);

@@ -27,11 +27,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
     <div className="wr-home">
       <section className="wr-hero" aria-labelledby="home-hero-title">
         <picture className="wr-hero__poster" aria-hidden="true">
-          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-hero-mobile.avif" type="image/avif" />
-          <source srcSet="/assets/owner/vietnam/factory-06-product-detail-1280.avif" type="image/avif" />
-          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-hero-mobile.webp" type="image/webp" />
-          <source srcSet="/assets/owner/vietnam/factory-06-product-detail-1280.webp" type="image/webp" />
-          <img src="/assets/owner/vietnam/factory-06-product-detail.jpg" alt="" width="1500" height="816" loading="eager" fetchPriority="high" />
+          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-04-hero-detail-mobile.avif" type="image/avif" />
+          <source srcSet="/assets/owner/vietnam/factory-06-hero-detail-1280.avif" type="image/avif" />
+          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-04-hero-detail-mobile.webp" type="image/webp" />
+          <source srcSet="/assets/owner/vietnam/factory-06-hero-detail-1280.webp" type="image/webp" />
+          <img src="/assets/owner/vietnam/factory-06-hero-detail.jpg" alt="" width="1600" height="400" loading="eager" fetchPriority="high" />
         </picture>
         <div className="wr-hero__shade" aria-hidden="true" />
         <div className="wr-hero__content">
@@ -67,14 +67,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
       </section>
 
       <section className="wr-factory-feature wr-section-band wr-section-band--mist">
-        <div className="wr-section-heading">
+        <div className="wr-section-heading wr-section-intro">
           <span className="wr-eyebrow">Manufacturing capability</span>
           <h2>See the working environment behind the quotation.</h2>
           <p>Real production imagery gives buyers a clearer starting point for factory review, drawing approval, inspection planning, and packing discussion.</p>
         </div>
         <div className="wr-factory-feature__grid">
-          <figure className="wr-factory-feature__primary"><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-02-equipment-color-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-02-equipment-color-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-02-equipment-color.jpg" alt="Natural color detail from the owner-supplied stone cutting equipment photo" width="900" height="675" loading="lazy" /></picture><figcaption>Cutting equipment detail · Vietnam</figcaption></figure>
-          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-03-equipment-bw-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-03-equipment-bw-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-03-equipment-bw.jpg" alt="Black-and-white detail from the owner-supplied stone processing equipment photo" width="980" height="735" loading="lazy" /></picture><figcaption>Precision processing detail · Vietnam</figcaption></figure>
+          <figure className="wr-factory-feature__primary"><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-02-machine-detail-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-02-machine-detail-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-02-machine-detail.jpg" alt="Low-saturation detail of owner-supplied stone cutting equipment" width="650" height="487" loading="lazy" /></picture><figcaption>Cutting equipment detail · Vietnam</figcaption></figure>
+          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-03-machine-detail-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-03-machine-detail-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-03-machine-detail.jpg" alt="Black-and-white detail of owner-supplied stone processing machinery" width="600" height="450" loading="lazy" /></picture><figcaption>Precision processing detail · Vietnam</figcaption></figure>
           <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-06-product-detail-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-06-product-detail-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-06-product-detail.jpg" alt="Color detail from the owner-supplied finished stone tops photo" width="1500" height="816" loading="lazy" /></picture><figcaption>Finished top detail</figcaption></figure>
         </div>
         <button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('factory')}>Explore factory capability<ArrowRight /></button>
