@@ -175,3 +175,14 @@ Browser checks at 1280 px and 390 px confirmed direct-route loading, no horizont
 - Replaced the broad Hero frame with a dedicated owner-photo crop focused on finished vanity-top veining, openings, and polished edges. Fire extinguishers, drums, wall fixtures, and the wider workshop are outside the Hero frame.
 - Added tighter homepage-only derivatives for the orange cutting line and central processing machine. Factory-page factual media remains unchanged.
 - Preserved every owner original. The generated visual study was rejected from production to avoid altering factual product details; all shipped Hero and equipment derivatives are deterministic crops from owner-supplied files.
+
+## 2026-08-29: Original Website Photo Import
+
+- Audited 159 archived image files as 80 unique JPG/WebP visual groups and compared them against the current public asset library using perceptual hashes and contact sheets.
+- Confirmed that 61 visual groups were already represented in the new site, including all 11 original Vietnam gallery photos, material and color imagery, product renders, finish diagrams, and application renders.
+- Imported three additional owner-photo sources from the original website archive: a production-hall overview, a wide vanity-top production view, and a close vanity-top inspection sequence.
+- Added deterministic, full-color editorial crops with JPG and responsive WebP output. The source originals remain intact and the crop recipe is reproducible through `npm run images:editorial`.
+- Added the wide real-photo production reference to Products, the close product sequence to Home, and all three images to the Factory gallery and project-reference data.
+- Repaired five stale Lookbook paths from the removed `assets/gallery/vietnam/` directory and mapped them to the current owner-photo derivatives, including a new optimized yard reference.
+- Excluded the duplicate lower-quality entrance image plus all China/OPTIMA gallery and factory media, preserving the current Vietnam-only scope.
+- Kept all renders under their existing illustrative-image labels and did not associate a general factory reference with a specific product SKU.

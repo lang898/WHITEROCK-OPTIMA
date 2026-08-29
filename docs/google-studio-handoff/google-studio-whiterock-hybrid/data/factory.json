@@ -309,6 +309,45 @@
       "equipment": "Stone racks",
       "specs": "Packing plan is order-specific",
       "description": "Finished stone components staged on racks before packing."
+    },
+    {
+      "id": "wr-vn-photo-11",
+      "title": "Vanity Top Production Overview",
+      "titleEn": "Vanity Top Production Overview",
+      "category": "Product Preparation",
+      "facility": "WHITEROCK Vietnam factory, Binh Phuoc",
+      "image": "/assets/owner/vietnam/vanity-qc-overview.jpg",
+      "localFile": "/assets/owner/vietnam/vanity-qc-overview.jpg",
+      "alt": "Owner-supplied wide view of finished vanity tops arranged for production review in Vietnam",
+      "equipment": "Worktables and inspection lighting",
+      "specs": "Product details and acceptance criteria are order-specific",
+      "description": "A wide owner-supplied reference showing multiple finished vanity tops before order-specific inspection and packing."
+    },
+    {
+      "id": "wr-vn-photo-12",
+      "title": "Vanity Top Inspection Sequence",
+      "titleEn": "Vanity Top Inspection Sequence",
+      "category": "Inspection",
+      "facility": "WHITEROCK Vietnam factory, Binh Phuoc",
+      "image": "/assets/owner/vietnam/vanity-qc-line.jpg",
+      "localFile": "/assets/owner/vietnam/vanity-qc-line.jpg",
+      "alt": "Owner-supplied close view of finished vanity tops arranged in sequence for inspection",
+      "equipment": "Inspection worktables",
+      "specs": "Material and dimensions are confirmed per order",
+      "description": "A close crop focused on stone pattern, sink cutouts, faucet drilling, and repeated finished-top preparation."
+    },
+    {
+      "id": "wr-vn-photo-13",
+      "title": "Production Hall Overview",
+      "titleEn": "Production Hall Overview",
+      "category": "Production Floor",
+      "facility": "WHITEROCK Vietnam factory, Binh Phuoc",
+      "image": "/assets/owner/vietnam/production-hall-overview.jpg",
+      "localFile": "/assets/owner/vietnam/production-hall-overview.jpg",
+      "alt": "Owner-supplied overview of stone racks and material handling inside the Vietnam production hall",
+      "equipment": "Stone racks and lifting equipment",
+      "specs": "Owner-supplied real photo",
+      "description": "A compact production-hall overview retained from the original website photo library."
     }
   ]
 }

@@ -15,7 +15,11 @@ const treatments = [
   { source: 'factory-06.jpg', output: 'factory-06-product-detail', extract: { left: 20, top: 250, width: 1500, height: 816 }, saturation: 0.96 },
   { source: 'vanity-01.jpg', output: 'vanity-01-workshop-color', extract: { left: 52, top: 72, width: 404, height: 240 }, saturation: 0.82, brightness: 1.02 },
   { source: 'vanity-02.jpg', output: 'vanity-02-workshop-color', extract: { left: 55, top: 62, width: 380, height: 240 }, saturation: 0.9 },
-  { source: 'vanity-04.jpg', output: 'vanity-04-workshop-color', extract: { left: 45, top: 70, width: 410, height: 235 }, saturation: 0.84 }
+  { source: 'vanity-03.jpg', output: 'vanity-03-yard-color', extract: { left: 0, top: 0, width: 499, height: 333 }, saturation: 0.84, brightness: 1.01 },
+  { source: 'vanity-04.jpg', output: 'vanity-04-workshop-color', extract: { left: 45, top: 70, width: 410, height: 235 }, saturation: 0.84 },
+  { source: 'legacy-production-hall-original.jpg', output: 'production-hall-overview', extract: { left: 0, top: 0, width: 595, height: 339 }, saturation: 0.86, brightness: 1.02 },
+  { source: 'legacy-vanity-qc-wide-original.jpg', output: 'vanity-qc-overview', extract: { left: 450, top: 160, width: 1350, height: 760 }, saturation: 0.96, brightness: 1.01 },
+  { source: 'legacy-vanity-qc-line-original.jpg', output: 'vanity-qc-line', extract: { left: 140, top: 850, width: 1260, height: 945 }, saturation: 0.97, brightness: 1.01 }
 ];
 
 function treatmentPipeline(source, treatment) {
