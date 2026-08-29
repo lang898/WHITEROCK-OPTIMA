@@ -35,3 +35,14 @@ The archive `WHITEROCK-OPTIMA-complete_1.zip` contained 159 image files represen
 - One alternate Vietnam entrance image was not imported because the current tighter entrance crop is cleaner and comes from the same owner-supplied scene.
 - Nine China gallery images and six China factory images were excluded to preserve the current Vietnam-only site scope and avoid reintroducing OPTIMA, Yunfu, or China-factory references.
 - Illustrative renders remain labeled as illustrative through their existing data flags. No archive image was reclassified as a real product photograph.
+
+## 2026-08-29 owner-approved image library
+
+The latest delivery contained 19 owner-approved files. Two pairs were exact duplicates, so the site keeps 17 unique images without redundant downloads.
+
+- `07.png` and `18.png` were identical; one edge-polisher image was retained.
+- `08.png` and `19.png` were identical; one edge-line operation image was retained.
+- All 17 unique images have descriptive filenames and optimized JPG, WebP, and AVIF outputs under `public/assets/owner/enhanced/`.
+- Reproducible source masters are stored under `source-assets/owner-enhanced/` and can be regenerated with `npm run images:enhanced -- <source-directory>`.
+- The homepage uses a product-focused vanity-top sequence, Products uses the wide vanity production view, About uses the exterior image, and Factory uses the production-hall hero plus the full categorized library.
+- Equipment diagrams remain unchanged; the new photographs supplement the broader factory gallery rather than replacing the established line-icon reference system.

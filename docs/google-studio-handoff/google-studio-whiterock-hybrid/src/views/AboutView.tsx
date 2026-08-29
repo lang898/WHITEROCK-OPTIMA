@@ -152,14 +152,18 @@ export const AboutView: React.FC<AboutViewProps> = ({
 
           <div className="lg:col-span-6 space-y-4">
             <div className="rounded-2xl overflow-hidden border border-black/[0.08] shadow-md aspect-16/10 relative group">
-              <img
-                src="/assets/owner/vietnam/vanity-05-entrance-color.jpg"
-                alt="Lightly muted color entrance detail cropped from an owner-supplied WHITEROCK Vietnam photo"
-                width={940}
-                height={300}
-                loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out"
-              />
+              <picture className="block w-full h-full">
+                <source srcSet="/assets/owner/enhanced/factory-exterior-enhanced-1280.avif" type="image/avif" />
+                <source srcSet="/assets/owner/enhanced/factory-exterior-enhanced-1280.webp" type="image/webp" />
+                <img
+                  src="/assets/owner/enhanced/factory-exterior-enhanced.jpg"
+                  alt="Owner-supplied exterior image used for the WHITEROCK Vietnam facility overview"
+                  width={1448}
+                  height={1086}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
                 <div className="text-white space-y-1">
                   <div className="text-sm font-bold flex items-center gap-2">

@@ -12,6 +12,7 @@ import newsData from '../../data/news.json';
 import faqData from '../../data/faq.json';
 import lookbookData from '../../data/lookbook.json';
 import projectsData from '../../data/projects.json';
+import ownerImagesData from '../../data/owner-images.json';
 import type {
   ProductItem,
   ColorItem,
@@ -67,3 +68,4 @@ export const faqList: FaqItem[] = ((faqData as any).items || []).map((item: any)
 export const faqIntro: string = (faqData as any).intro || 'Common questions from wholesale, project, and distributor buyers.';
 export const lookbook = lookbookData.items;
 export const projects = projectsData.items;
+export const ownerImages: FactoryGalleryItem[] = ownerImagesData.items as FactoryGalleryItem[];

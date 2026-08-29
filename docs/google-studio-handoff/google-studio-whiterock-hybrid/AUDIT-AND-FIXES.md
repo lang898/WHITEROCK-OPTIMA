@@ -186,3 +186,12 @@ Browser checks at 1280 px and 390 px confirmed direct-route loading, no horizont
 - Repaired five stale Lookbook paths from the removed `assets/gallery/vietnam/` directory and mapped them to the current owner-photo derivatives, including a new optimized yard reference.
 - Excluded the duplicate lower-quality entrance image plus all China/OPTIMA gallery and factory media, preserving the current Vietnam-only scope.
 - Kept all renders under their existing illustrative-image labels and did not associate a general factory reference with a specific product SKU.
+
+## 2026-08-29: Owner Image Library Expansion
+
+- Imported the latest 19 owner-approved files and removed two exact duplicate pairs, leaving 17 unique images.
+- Added a reproducible Sharp workflow through `npm run images:enhanced` that preserves source masters and produces optimized JPG, 720/1280 WebP, and 1280 AVIF assets.
+- Added a centralized `data/owner-images.json` library with neutral titles, alt text, captions, categories, and responsive image paths.
+- Placed the strongest product-preparation view on Products, a matched vanity-top sequence on Home, the exterior image on About, and the central production aisle as the Factory hero.
+- Expanded the Factory gallery with every unique owner image and dynamic filters for product preparation, inspection, edge processing, finishing, staging, facility, CNC/cutting, and production-floor views.
+- Preserved the Factory equipment line-icon system. New photographs appear as contextual owner imagery rather than replacements for the equipment reference cards.

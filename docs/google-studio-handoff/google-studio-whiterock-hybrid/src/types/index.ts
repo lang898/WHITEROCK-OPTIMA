@@ -143,7 +143,10 @@ export interface FactoryGalleryItem {
   image: string;
   localFile?: string;
   imageWebp?: string;
+  imageAvif?: string;
   alt: string;
+  imageType?: string;
+  caption?: string;
   equipment?: string;
   specs?: string;
   description?: string;

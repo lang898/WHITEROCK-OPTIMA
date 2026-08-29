@@ -23,7 +23,7 @@ import {
   Check,
   Ruler
 } from 'lucide-react';
-import { factory, company } from '../data';
+import { factory, company, ownerImages } from '../data';
 import { ProductionMap } from '../components/ProductionMap';
 import type { LocaleConfig, FactoryGalleryItem, EquipmentItem } from '../types';
 
@@ -39,17 +39,11 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
   const [selectedGalleryCategory, setSelectedGalleryCategory] = useState<string>('All');
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
 
+  const galleryItems = [...(factory.gallery as FactoryGalleryItem[]), ...ownerImages];
   const categories = [
     'All',
-    'Bridge Sawing & Slicing',
-    'CNC Machining & Cutouts',
-    'Linear Edge Polishing',
-    'Basin Mounting & Assembly',
-    'Quality Inspection & QC',
-    'ISPM-15 Export Crating'
+    ...Array.from(new Set(galleryItems.map((item) => item.category).filter(Boolean) as string[]))
   ];
-
-  const galleryItems = factory.gallery as FactoryGalleryItem[];
   const equipmentItems = factory.equipment as EquipmentItem[];
 
   const filteredItems = galleryItems.filter((item) => {
@@ -85,6 +79,28 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
           {factory.heroCopy}
         </p>
       </div>
+
+      <figure className="wr-factory-hero-media">
+        <picture>
+          <source
+            srcSet="/assets/owner/enhanced/production-hall-aisle-enhanced-1280.avif"
+            type="image/avif"
+          />
+          <source
+            srcSet="/assets/owner/enhanced/production-hall-aisle-enhanced-1280.webp"
+            type="image/webp"
+          />
+          <img
+            src="/assets/owner/enhanced/production-hall-aisle-enhanced.jpg"
+            alt="Owner-supplied view along a central stone production aisle"
+            width={1448}
+            height={1086}
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
+        <figcaption>Production hall overview · owner supplied</figcaption>
+      </figure>
 
       {/* Production Footprint Stats Grid (Apple Numbers with Monospace Engineering Badges) */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -175,13 +191,13 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-black/[0.06] pb-6">
           <div className="space-y-2">
             <div className="tech-badge text-[#86868b]">
-              PRIMARY PHOTOGRAPHIC EVIDENCE
+              OWNER IMAGE LIBRARY
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1d1d1f]">
-              Workshop Scenes & Stage Inspection
+              Workshop, Product & Equipment Views
             </h2>
             <p className="text-xs sm:text-sm text-[#86868b] max-w-2xl">
-              Inspect our wet-processing lines, bridge saws, undermount sink bonding bays, and heavy plywood export packaging.
+              Browse owner-supplied images covering production staging, equipment, inspection, finishing, and vanity-top preparation.
             </p>
           </div>
 
@@ -216,18 +232,23 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
               >
                 {/* Photo Image Stage */}
                 <div className="relative aspect-4/3 overflow-hidden bg-stone-100">
-                  <img
-                    src={item.image}
-                    alt={item.alt || item.title}
-                    width={960}
-                    height={720}
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                    className="wr-media-zoom"
-                  />
+                  <picture>
+                    {item.imageAvif && <source srcSet={item.imageAvif} type="image/avif" />}
+                    {item.imageWebp && <source srcSet={item.imageWebp} type="image/webp" />}
+                    <img
+                      src={item.image}
+                      alt={item.alt || item.title}
+                      width={960}
+                      height={720}
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                      className="wr-media-zoom"
+                    />
+                  </picture>
                   <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-semibold text-[#1d1d1f] shadow-xs">
                     {item.category || 'Fabrication'}
                   </div>
+                  {item.caption && <span className="wr-media-disclosure">{item.caption}</span>}
                 </div>
 
                 {/* Card Meta Content */}
@@ -301,6 +322,11 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
               <p className="text-sm text-[#a1a1a6] leading-relaxed">
                 {galleryItems[selectedPhotoIndex].description}
               </p>
+              {galleryItems[selectedPhotoIndex].caption && (
+                <p className="text-xs text-[#d2d2d7]">
+                  {galleryItems[selectedPhotoIndex].caption}
+                </p>
+              )}
             </div>
           </div>
         </div>

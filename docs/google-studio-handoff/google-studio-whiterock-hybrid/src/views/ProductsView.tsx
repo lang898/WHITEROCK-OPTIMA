@@ -36,16 +36,17 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
       <section className="wr-production-proof" aria-labelledby="production-proof-title">
         <figure>
           <picture>
-            <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/vanity-qc-overview-720.webp" type="image/webp" />
-            <source srcSet="/assets/owner/vietnam/vanity-qc-overview-1280.webp" type="image/webp" />
-            <img src="/assets/owner/vietnam/vanity-qc-overview.jpg" alt="Owner-supplied photo of finished vanity tops arranged for production review in Vietnam" width="1350" height="760" loading="lazy" />
+            <source srcSet="/assets/owner/enhanced/vanity-production-hall-enhanced-1280.avif" type="image/avif" />
+            <source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/vanity-production-hall-enhanced-720.webp" type="image/webp" />
+            <source srcSet="/assets/owner/enhanced/vanity-production-hall-enhanced-1280.webp" type="image/webp" />
+            <img src="/assets/owner/enhanced/vanity-production-hall-enhanced.jpg" alt="Owner-supplied image showing rows of finished vanity tops in production" width="1448" height="1086" loading="lazy" />
           </picture>
           <figcaption>Owner-supplied production reference · Vietnam</figcaption>
         </figure>
         <div>
           <span className="wr-eyebrow">Real production reference</span>
           <h2 id="production-proof-title">Finished tops shown before order-specific inspection and packing.</h2>
-          <p>This image documents actual vanity-top preparation at the WHITEROCK Vietnam site. It demonstrates production context only; final material, dimensions, cutouts, finish, and acceptance criteria are confirmed in the approved order documents.</p>
+          <p>This owner-supplied image presents a vanity-top production overview. Final material, dimensions, cutouts, finish, and acceptance criteria are confirmed in the approved order documents.</p>
         </div>
       </section>
 
