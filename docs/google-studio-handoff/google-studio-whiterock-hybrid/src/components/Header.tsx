@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       <div className="wr-header__main">
         <a className="wr-brand" href={routePath('home')} aria-label="WHITEROCK home" onClick={(event) => { event.preventDefault(); navigate('home'); }}>
-          <span className="wr-brand__mark" aria-hidden="true">W</span>
+          <img className="wr-brand__mark" src="/assets/brand/whiterock-mark-gray.png" alt="" width="256" height="256" aria-hidden="true" />
           <span><strong>WHITEROCK</strong><small>MARBLE & GRANITE</small></span>
         </a>
 

@@ -65,6 +65,28 @@ for (const visual of visuals) {
     .resize({ width: 1280, withoutEnlargement: true })
     .avif({ quality: 48, effort: 6 })
     .toFile(path.join(publicDirectory, `${baseName}-1280.avif`));
+
+  if (visual.number === '16') {
+    for (const format of ['jpg', 'webp', 'avif']) {
+      const mobilePipeline = pipelineFor(visual).resize({
+        width: 720,
+        height: 960,
+        fit: 'cover',
+        position: 'centre',
+      });
+
+      if (format === 'jpg') {
+        await mobilePipeline.jpeg({ quality: 84, mozjpeg: true })
+          .toFile(path.join(publicDirectory, `${baseName}-mobile.jpg`));
+      } else if (format === 'webp') {
+        await mobilePipeline.webp({ quality: 70, effort: 6 })
+          .toFile(path.join(publicDirectory, `${baseName}-mobile.webp`));
+      } else {
+        await mobilePipeline.avif({ quality: 46, effort: 6 })
+          .toFile(path.join(publicDirectory, `${baseName}-mobile.avif`));
+      }
+    }
+  }
 }
 
 console.log(`Processed ${visuals.length} unique owner-supplied enhanced visuals.`);

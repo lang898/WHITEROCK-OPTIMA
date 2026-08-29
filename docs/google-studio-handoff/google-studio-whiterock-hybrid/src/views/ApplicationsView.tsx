@@ -11,7 +11,7 @@ import {
   SlidersHorizontal,
   Compass
 } from 'lucide-react';
-import { applications, colors } from '../data';
+import { applications, colors, ownerImages } from '../data';
 import type { ApplicationItem, ColorItem, LocaleConfig } from '../types';
 
 interface ApplicationsViewProps {
@@ -25,7 +25,9 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
 }) => {
   const [selectedCat, setSelectedCat] = useState<string>('All');
 
-  const categories = ['All', 'Kitchen', 'Bathroom', 'Hospitality', 'Multi-family', 'Restaurant', 'Outdoor'];
+  const categories = ['All', 'Kitchen', 'Bathroom', 'Furniture', 'Hospitality', 'Multi-family', 'Restaurant', 'Outdoor'];
+  const productionReferenceIds = new Set(['owner-library-07', 'owner-library-13', 'owner-library-17']);
+  const productionReferences = ownerImages.filter((image) => productionReferenceIds.has(image.id));
 
   const filteredApps = applications.filter((app) => {
     if (selectedCat === 'All') return true;
@@ -38,27 +40,47 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
       <div className="space-y-4 max-w-4xl">
         <div className="wr-panel-eyebrow">
           <Sparkles className="w-3.5 h-3.5 text-stone-600" />
-          <span className="tech-badge">PROJECT ARCHITECTURE & COMMERCIAL CASE STUDIES</span>
+          <span className="tech-badge">APPLICATIONS & PRODUCT DIRECTIONS</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.035em] text-[#1d1d1f]">
-          Stone in Space: Architectural Case Studies.
+          Stone in Space: Application Gallery.
         </h1>
         <p className="text-base sm:text-xl text-[#6e6e73] leading-relaxed max-w-3xl font-normal">
-          Explore built environments showcasing high-volume multi-family vanity programs, bookmatched waterfall kitchen islands, and custom hospitality public spaces fabricated in our Vietnam plant.
+          Explore kitchen, vanity, furniture-top, hospitality, and commercial stone possibilities. Owner-supplied previous website images are identified separately from application inspiration.
         </p>
 
         {/* Industrial Highlights */}
         <div className="flex flex-wrap items-center gap-3 pt-1 text-xs">
           <span className="wr-info-pill">
             <CheckCircle2 className="w-3.5 h-3.5 text-stone-600 shrink-0" />
-            <span className="tech-badge">Unit-Packaged Multi-Family Crating</span>
+            <span className="tech-badge">Drawing-Led Project Review</span>
           </span>
           <span className="wr-info-pill">
             <Building className="w-3.5 h-3.5 text-stone-600 shrink-0" />
-            <span className="tech-badge">Hospitality Brand Approvals</span>
+            <span className="tech-badge">Material & Sample Approval</span>
           </span>
         </div>
       </div>
+
+      <section className="wr-application-production" aria-labelledby="application-production-title">
+        <div className="wr-section-heading wr-section-intro">
+          <span className="wr-eyebrow">Production context</span>
+          <h2 id="application-production-title">Inspiration moves into drawing review, preparation, and inspection.</h2>
+          <p>These owner-supplied views show the production environment behind stone preparation. The application gallery below combines owner-supplied previous website references with clearly labeled inspiration.</p>
+        </div>
+        <div className="wr-application-production__grid">
+          {productionReferences.map((item) => (
+            <figure key={item.id}>
+              <picture>
+                {item.imageAvif && <source srcSet={item.imageAvif} type="image/avif" />}
+                {item.imageWebp && <source srcSet={item.imageWebp} type="image/webp" />}
+                <img src={item.image} alt={item.alt} width={1448} height={1086} loading="lazy" />
+              </picture>
+              <figcaption>{item.title} · owner supplied</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
 
       {/* Filter Segment Controls */}
       <div className="wr-card p-4 sm:p-6 flex flex-col md:flex-row gap-4 justify-between items-center">
@@ -78,7 +100,7 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
           ))}
         </div>
         <div className="text-xs text-[#86868b] font-mono">
-          Showing {filteredApps.length} Case Studies
+          Showing {filteredApps.length} Applications
         </div>
       </div>
 
@@ -118,7 +140,7 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
               <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                 <div className="space-y-2">
                   <span className="tech-badge text-[#86868b] block">
-                    PROJECT EXECUTION
+                    APPLICATION DIRECTION
                   </span>
                   <h3 className="font-bold text-lg text-[#1d1d1f] group-hover:text-stone-900 transition-colors">
                     {item.title}

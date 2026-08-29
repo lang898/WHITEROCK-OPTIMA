@@ -152,6 +152,17 @@ export interface FactoryGalleryItem {
   description?: string;
 }
 
+export interface FurnitureTopVisual {
+  id: string;
+  title: string;
+  form: string;
+  image: string;
+  imageWebp?: string;
+  imageAvif?: string;
+  alt: string;
+  caption: string;
+}
+
 export interface ResourceItem {
   title: string;
   category: string;

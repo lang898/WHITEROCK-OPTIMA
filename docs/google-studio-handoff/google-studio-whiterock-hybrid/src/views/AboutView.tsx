@@ -18,7 +18,7 @@ import {
   Calendar,
   Check
 } from 'lucide-react';
-import { siteConfig, company, factory } from '../data';
+import { siteConfig, company, factory, ownerImages } from '../data';
 import type { LocaleConfig } from '../types';
 
 interface AboutViewProps {
@@ -32,6 +32,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
   setCurrentTab,
   onOpenShareModal,
 }) => {
+  const facilityImage = ownerImages.find((image) => image.id === 'owner-library-11')!;
   const milestones = [
     {
       year: '2000s',
@@ -153,11 +154,11 @@ export const AboutView: React.FC<AboutViewProps> = ({
           <div className="lg:col-span-6 space-y-4">
             <div className="rounded-2xl overflow-hidden border border-black/[0.08] shadow-md aspect-16/10 relative group">
               <picture className="block w-full h-full">
-                <source srcSet="/assets/owner/enhanced/factory-exterior-enhanced-1280.avif" type="image/avif" />
-                <source srcSet="/assets/owner/enhanced/factory-exterior-enhanced-1280.webp" type="image/webp" />
+                <source srcSet={facilityImage.imageAvif} type="image/avif" />
+                <source srcSet={facilityImage.imageWebp} type="image/webp" />
                 <img
-                  src="/assets/owner/enhanced/factory-exterior-enhanced.jpg"
-                  alt="Owner-supplied exterior image used for the WHITEROCK Vietnam facility overview"
+                  src={facilityImage.image}
+                  alt={facilityImage.alt}
                   width={1448}
                   height={1086}
                   loading="lazy"

@@ -10,6 +10,8 @@
     "images:owner": "node scripts/optimize-owner-images.mjs",
     "images:editorial": "node scripts/create-owner-photo-details.mjs",
     "images:enhanced": "node scripts/process-enhanced-owner-visuals.mjs",
+    "images:countertops": "node scripts/process-owner-countertop-visuals.mjs",
+    "images:brand": "node scripts/process-brand-assets.mjs",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"
   },

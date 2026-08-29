@@ -3,11 +3,11 @@
     {
       "title": "Modern Kitchen Countertop",
       "category": "Kitchen",
-      "description": "Application inspiration for a clean North American kitchen program with a waterfall island, matching backsplash, and durable daily-use work surface. Illustrative scene only.",
-      "image": "assets/applications/modern-kitchen-inspiration.jpg",
-      "imageType": "render",
-      "caption": "Application inspiration",
-      "imageAlt": "Modern kitchen stone island application inspiration illustrative scene",
+      "description": "Owner-supplied previous website reference showing a bright kitchen island, matching worktops, and full-height stone backsplash treatment.",
+      "image": "assets/owner/countertops/carrara-kitchen-island-1280.webp",
+      "imageType": "owner-original",
+      "caption": "Owner-supplied application reference",
+      "imageAlt": "Bright kitchen with Carrara-style stone island and matching countertops",
       "featuredColor": "Calacatta Crest",
       "featuredColorSlug": "calacatta-crest"
     },
@@ -65,6 +65,17 @@
       "imageAlt": "Retail showroom stone sample library application inspiration illustrative scene",
       "featuredColor": "Alpine Carrara",
       "featuredColorSlug": "alpine-carrara"
+    },
+    {
+      "title": "Custom Marble Coffee Table Top",
+      "category": "Furniture",
+      "description": "Owner-supplied previous website reference showing a marble coffee-table top in a residential setting. Final top, support interface, reinforcement, finish, and packing are confirmed by drawing.",
+      "image": "assets/owner/countertops/marble-coffee-top-living-room-1280.webp",
+      "imageType": "owner-original",
+      "caption": "Owner-supplied furniture reference",
+      "imageAlt": "Square marble coffee table top in a furnished living room",
+      "featuredColor": "Pearl Carrara",
+      "featuredColorSlug": "pearl-carrara"
     },
     {
       "title": "Outdoor Terrace Stone Table",

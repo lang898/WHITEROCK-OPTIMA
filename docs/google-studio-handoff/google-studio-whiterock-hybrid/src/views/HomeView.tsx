@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowDown, ArrowRight, Check, FileText, Layers, Package, Plus } from 'lucide-react';
-import { colors, factory, products } from '../data';
+import { colors, factory, ownerImages, products } from '../data';
 import { t } from '../i18n';
 import type { ColorItem, LocaleConfig, ProductItem, RfqCartItem } from '../types';
 import type { ShareContent } from '../components/SocialShareModal';
@@ -19,19 +19,25 @@ interface HomeViewProps {
 export const HomeView: React.FC<HomeViewProps> = ({
   setCurrentTab, onSelectProduct, onSelectColor, onAddToCart, onAddColorSample, currentLocale
 }) => {
-  const featuredProducts = products.slice(0, 4);
+  const featuredSkus = ['WR-VT31', 'WR-KT-NS', 'WR-FR-RM', 'WR-HT'];
+  const featuredProducts = featuredSkus.map((sku) => products.find((product) => product.sku === sku)!).filter(Boolean);
   const featuredColors = colors.slice(0, 8);
   const stats = factory.stats.slice(0, 3);
+  const heroImage = ownerImages.find((image) => image.id === 'owner-library-16')!;
+  const exteriorImage = ownerImages.find((image) => image.id === 'owner-library-11')!;
+  const edgeLineImage = ownerImages.find((image) => image.id === 'owner-library-04')!;
+  const edgeDetailImage = ownerImages.find((image) => image.id === 'owner-library-07')!;
+  const vanitySequenceImage = ownerImages.find((image) => image.id === 'owner-library-06')!;
 
   return (
     <div className="wr-home">
       <section className="wr-hero" aria-labelledby="home-hero-title">
         <picture className="wr-hero__poster" aria-hidden="true">
-          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-04-hero-detail-mobile.avif" type="image/avif" />
-          <source srcSet="/assets/owner/vietnam/factory-06-hero-detail-1280.avif" type="image/avif" />
-          <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-04-hero-detail-mobile.webp" type="image/webp" />
-          <source srcSet="/assets/owner/vietnam/factory-06-hero-detail-1280.webp" type="image/webp" />
-          <img src="/assets/owner/vietnam/factory-06-hero-detail.jpg" alt="" width="1600" height="400" loading="eager" fetchPriority="high" />
+          <source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/cnc-cutting-line-enhanced-mobile.avif" type="image/avif" />
+          <source srcSet={heroImage.imageAvif} type="image/avif" />
+          <source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/cnc-cutting-line-enhanced-mobile.webp" type="image/webp" />
+          <source srcSet={heroImage.imageWebp} type="image/webp" />
+          <img src={heroImage.image} alt="" width="1448" height="1086" loading="eager" fetchPriority="high" />
         </picture>
         <div className="wr-hero__shade" aria-hidden="true" />
         <div className="wr-hero__content">
@@ -58,24 +64,25 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
         <figure className="wr-story__media">
           <picture>
-            <source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-01-entrance-color-720.webp" type="image/webp" />
-            <source srcSet="/assets/owner/vietnam/factory-01-entrance-color-1280.webp" type="image/webp" />
-            <img src="/assets/owner/vietnam/factory-01-entrance-color.jpg" alt="Lightly muted color detail from the owner-supplied WHITEROCK Vietnam entrance photo" width="900" height="520" loading="lazy" />
+            <source srcSet={exteriorImage.imageAvif} type="image/avif" />
+            <source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/factory-exterior-enhanced-720.webp" type="image/webp" />
+            <source srcSet={exteriorImage.imageWebp} type="image/webp" />
+            <img src={exteriorImage.image} alt={exteriorImage.alt} width="1448" height="1086" loading="lazy" />
           </picture>
           <figcaption>WHITEROCK Vietnam · Binh Phuoc Province</figcaption>
         </figure>
       </section>
 
       <section className="wr-factory-feature wr-section-band wr-section-band--mist">
-        <div className="wr-section-heading wr-section-intro">
+        <div className="wr-section-heading wr-section-intro wr-factory-feature__intro">
           <span className="wr-eyebrow">Manufacturing capability</span>
           <h2>See the working environment behind the quotation.</h2>
           <p>Real production imagery gives buyers a clearer starting point for factory review, drawing approval, inspection planning, and packing discussion.</p>
         </div>
         <div className="wr-factory-feature__grid">
-          <figure className="wr-factory-feature__primary"><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-02-machine-detail-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-02-machine-detail-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-02-machine-detail.jpg" alt="Low-saturation detail of owner-supplied stone cutting equipment" width="650" height="487" loading="lazy" /></picture><figcaption>Cutting equipment detail · Vietnam</figcaption></figure>
-          <figure><picture><source media="(max-width: 767px)" srcSet="/assets/owner/vietnam/factory-03-machine-detail-720.webp" type="image/webp" /><source srcSet="/assets/owner/vietnam/factory-03-machine-detail-1280.webp" type="image/webp" /><img src="/assets/owner/vietnam/factory-03-machine-detail.jpg" alt="Black-and-white detail of owner-supplied stone processing machinery" width="600" height="450" loading="lazy" /></picture><figcaption>Precision processing detail · Vietnam</figcaption></figure>
-          <figure><picture><source srcSet="/assets/owner/enhanced/vanity-inspection-sequence-b-enhanced-1280.avif" type="image/avif" /><source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/vanity-inspection-sequence-b-enhanced-720.webp" type="image/webp" /><source srcSet="/assets/owner/enhanced/vanity-inspection-sequence-b-enhanced-1280.webp" type="image/webp" /><img src="/assets/owner/enhanced/vanity-inspection-sequence-b-enhanced.jpg" alt="Owner-supplied image of matching vanity tops aligned for review" width="1086" height="1448" loading="lazy" /></picture><figcaption>Finished vanity-top sequence · owner supplied</figcaption></figure>
+          <figure className="wr-factory-feature__primary"><picture><source srcSet={edgeLineImage.imageAvif} type="image/avif" /><source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/edge-processing-line-enhanced-720.webp" type="image/webp" /><source srcSet={edgeLineImage.imageWebp} type="image/webp" /><img src={edgeLineImage.image} alt={edgeLineImage.alt} width="1672" height="941" loading="lazy" /></picture><figcaption>Edge-processing line · owner supplied</figcaption></figure>
+          <figure><picture><source srcSet={edgeDetailImage.imageAvif} type="image/avif" /><source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/edge-polisher-close-enhanced-720.webp" type="image/webp" /><source srcSet={edgeDetailImage.imageWebp} type="image/webp" /><img src={edgeDetailImage.image} alt={edgeDetailImage.alt} width="1448" height="1086" loading="lazy" /></picture><figcaption>Edge-polishing equipment · owner supplied</figcaption></figure>
+          <figure><picture><source srcSet={vanitySequenceImage.imageAvif} type="image/avif" /><source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/vanity-inspection-sequence-b-enhanced-720.webp" type="image/webp" /><source srcSet={vanitySequenceImage.imageWebp} type="image/webp" /><img src={vanitySequenceImage.image} alt={vanitySequenceImage.alt} width="1086" height="1448" loading="lazy" /></picture><figcaption>Finished vanity-top sequence · owner supplied</figcaption></figure>
         </div>
         <button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('factory')}>Explore factory capability<ArrowRight /></button>
       </section>
@@ -83,8 +90,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
       <section className="wr-catalog-preview wr-section-band">
         <div className="wr-section-heading">
           <span className="wr-eyebrow">{t(currentLocale, 'productCatalog')}</span>
-          <h2>Start with a product program. Refine it with drawings.</h2>
-          <p>{t(currentLocale, 'productIntro')}</p>
+          <h2>Vanity tops, kitchen countertops, furniture tops, and project products.</h2>
+          <p>Start with one of four core programs, then refine material, dimensions, fabrication, quantity, inspection, and packing through the approved drawing and quotation.</p>
         </div>
         <div className="wr-editorial-grid">
           {featuredProducts.map((product, index) => (

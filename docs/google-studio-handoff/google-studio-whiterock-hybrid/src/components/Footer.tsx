@@ -41,8 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, on
 
       <div className="wr-footer__main">
         <div className="wr-footer__brand">
-          <span className="wr-brand__mark" aria-hidden="true">W</span>
-          <div><strong>WHITEROCK</strong><small>MARBLE & GRANITE</small></div>
+          <img className="wr-footer__logo" src="/assets/brand/whiterock-logo-gray.png" alt="WHITEROCK" width="600" height="468" />
           <p>Natural and engineered stone manufacturing in Binh Phuoc Province, Vietnam. Product specifications, availability, documentation, and commercial terms are confirmed in writing for each order.</p>
           <address>
             <span><MapPin />{siteConfig.address}</span>

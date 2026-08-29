@@ -47,7 +47,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Sink Documentation', value: 'Confirmed for the exact buyer-selected model' },
         { label: 'Edge Profiles', value: 'Eased, 1/4" Bevel, Bullnose, Demi-Bullnose' }
       ],
-      image: '/assets/owner/vietnam/factory-06.jpg',
+      image: '/assets/owner/enhanced/vanity-inspection-sequence-b-enhanced.jpg',
       badge: 'Buyer-Approved Program'
     },
     {
@@ -62,7 +62,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Vein Alignment', value: 'Computerized Slab Vein Matching (DXF)' },
         { label: 'Finishes', value: 'High-Gloss Polished (85+ GU) / Velvet Honed / Leathered' }
       ],
-      image: '/assets/owner/vietnam/factory-02.jpg',
+      image: '/assets/owner/enhanced/cnc-cutting-line-enhanced.jpg',
       badge: 'Drawing-Based CNC'
     },
     {
@@ -77,7 +77,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Edge Details', value: 'Dupont, Triple Pencil, Full Bullnose, Reverse Bevel' },
         { label: 'Application', value: 'Luxury Residential Living & High-End Hotel Lounges' }
       ],
-      image: '/assets/owner/vietnam/factory-04.jpg',
+      image: '/assets/owner/enhanced/vanity-production-detail-enhanced.jpg',
       badge: 'Bespoke Stone Craft'
     },
     {
@@ -92,7 +92,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Backing System', value: 'High-strength fiberglass mesh + resin backing' },
         { label: 'Applications', value: 'Grand Hotel Lobbies, Estate Foyers, Casino Entryways' }
       ],
-      image: '/assets/owner/vietnam/factory-03.jpg',
+      image: '/assets/owner/enhanced/manual-profile-polishing-enhanced.jpg',
       badge: 'Master Inlay Art'
     },
     {
@@ -107,7 +107,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Components', value: 'Mantel shelf, side jambs/corbels, hearth, inner surround' },
         { label: 'Packaging', value: 'Reinforced foam-lined export timber crates' }
       ],
-      image: '/assets/owner/vietnam/factory-06.jpg',
+      image: '/assets/owner/enhanced/vanity-production-hall-enhanced.jpg',
       badge: '20+ Yrs Heritage'
     },
     {
@@ -122,7 +122,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
         { label: 'Mosaic Formats', value: 'Herringbone, Hexagon, Subway, Basketweave on Mesh' },
         { label: 'Packaging', value: 'Container-optimized bundle crates with ID tags' }
       ],
-      image: '/assets/owner/vietnam/factory-05.jpg',
+      image: '/assets/owner/enhanced/vanity-workshop-overhead-enhanced.jpg',
       badge: 'Turnkey Spec'
     }
   ];
@@ -198,7 +198,7 @@ export const WhiterockHeritageSection: React.FC<WhiterockHeritageSectionProps> =
           <div className="lg:col-span-5 flex flex-col gap-3">
             <div className="rounded-2xl overflow-hidden border border-black/[0.08] shadow-md aspect-16/10 relative">
               <img
-                src="/assets/owner/vietnam/factory-01.jpg"
+                src="/assets/owner/enhanced/factory-exterior-enhanced.jpg"
                 alt="Owner-supplied photo of the WHITEROCK Vietnam site entrance"
                 width={1200}
                 height={900}

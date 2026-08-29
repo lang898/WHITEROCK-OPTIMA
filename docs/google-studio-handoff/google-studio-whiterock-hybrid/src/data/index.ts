@@ -13,6 +13,7 @@ import faqData from '../../data/faq.json';
 import lookbookData from '../../data/lookbook.json';
 import projectsData from '../../data/projects.json';
 import ownerImagesData from '../../data/owner-images.json';
+import furnitureTopsData from '../../data/furniture-tops.json';
 import type {
   ProductItem,
   ColorItem,
@@ -23,7 +24,8 @@ import type {
   FactoryGalleryItem,
   ResourceItem,
   NewsItem,
-  FaqItem
+  FaqItem,
+  FurnitureTopVisual
 } from '../types';
 
 export { locales, siteConfig } from './site';
@@ -69,3 +71,9 @@ export const faqIntro: string = (faqData as any).intro || 'Common questions from
 export const lookbook = lookbookData.items;
 export const projects = projectsData.items;
 export const ownerImages: FactoryGalleryItem[] = ownerImagesData.items as FactoryGalleryItem[];
+export const furnitureTops: FurnitureTopVisual[] = (furnitureTopsData.items as FurnitureTopVisual[]).map((item) => ({
+  ...item,
+  image: publicAsset(item.image) || '',
+  imageWebp: publicAsset(item.imageWebp),
+  imageAvif: publicAsset(item.imageAvif)
+}));

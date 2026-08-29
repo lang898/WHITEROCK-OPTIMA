@@ -195,3 +195,24 @@ Browser checks at 1280 px and 390 px confirmed direct-route loading, no horizont
 - Placed the strongest product-preparation view on Products, a matched vanity-top sequence on Home, the exterior image on About, and the central production aisle as the Factory hero.
 - Expanded the Factory gallery with every unique owner image and dynamic filters for product preparation, inspection, edge processing, finishing, staging, facility, CNC/cutting, and production-floor views.
 - Preserved the Factory equipment line-icon system. New photographs appear as contextual owner imagery rather than replacements for the equipment reference cards.
+
+## 2026-08-29: Full-Color Owner Library Rollout
+
+- Replaced the old homepage vanity-top Hero with the enhanced full-color CNC cutting-line image and synchronized the HTML preload with the new AVIF asset.
+- Added dedicated 720 x 960 JPG, WebP, and AVIF mobile Hero crops so the equipment remains the focal point on narrow screens.
+- Rebuilt the homepage story and manufacturing gallery with the enhanced exterior, edge-processing, edge-polishing, and finished-top images.
+- Centered and narrowed the homepage manufacturing introduction and Factory page introduction above their full-width photography.
+- Added a three-image owner-supplied production-context band to Applications and connected Home, About, and Applications directly to `owner-images.json`.
+- Remapped Factory data, Companies, Lookbook, Projects, Finishes, and supporting visual components from legacy `owner/vietnam` photos to the full-color enhanced library.
+- Retained the original photo files and processing scripts as an archive; no public photo component references the earlier muted or monochrome derivatives.
+
+## 2026-08-29: Four-Program Product Architecture
+
+- Reorganized Products around the confirmed commercial pillars: Vanity Tops, Kitchen Countertops, Furniture Tops, and Project Products.
+- Kept the existing detailed product records but mapped their filters and homepage preview into the four-program structure, so buyers see one coherent offer without losing SKU-level information.
+- Added owner-supplied kitchen and furniture application photography from the previous website, plus a curated Furniture Tops gallery backed by optimized responsive assets.
+- Added a Carrara White sourcing section that states WHITEROCK regularly visits the Carrara quarry region in Italy to procure blocks used as a principal vanity-top raw material. Natural variation and order-specific sample approval remain explicit.
+- Reframed Applications as product and application directions instead of completed case studies. Project Products stays present as a full program, while specific project stories remain reserved for the owner's forthcoming project photographs.
+- Integrated the supplied WHITEROCK source logo into the header, footer, and favicon; no brand from the furniture-reference PDF appears on the site.
+- Added reproducible image commands for the countertop/furniture library and brand assets, preserving source masters separately from public derivatives.
+- Verified Products, Home, Applications, and footer layouts at desktop and 390 px mobile widths with no console errors or horizontal overflow.

@@ -41,7 +41,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       bestFor: 'Modern Apartments, Multi-Family Kitchens, Hotel Bathrooms (#1 North American Spec)',
       features: 'Sleek geometric line, easy to clean, highly chip-resistant.',
       cadDrawing: 'M 10 10 L 80 10 Q 90 10 90 20 L 90 90 L 10 90 Z',
-      image: '/assets/owner/vietnam/factory-02.jpg'
+      image: '/assets/owner/enhanced/edge-polisher-close-enhanced.jpg'
     },
     {
       slug: 'bevel',
@@ -52,7 +52,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       bestFor: 'Transitional Vanity Tops, Contemporary Island Bars',
       features: 'Crisp light reflection, prevents edge chipping during daily usage.',
       cadDrawing: 'M 10 10 L 75 10 L 90 25 L 90 90 L 10 90 Z',
-      image: '/assets/owner/vietnam/factory-06.jpg'
+      image: '/assets/owner/enhanced/vanity-production-detail-enhanced.jpg'
     },
     {
       slug: 'bullnose',
@@ -63,7 +63,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       bestFor: 'Traditional Bathrooms, High-Traffic Hospitality Counters',
       features: 'Ultra-smooth tactile feel, child-safe radius, timeless aesthetics.',
       cadDrawing: 'M 10 10 L 50 10 Q 90 50 50 90 L 10 90 Z',
-      image: '/assets/owner/vietnam/factory-05.jpg'
+      image: '/assets/owner/enhanced/vanity-production-hall-enhanced.jpg'
     },
     {
       slug: 'mitered',
@@ -74,7 +74,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       bestFor: 'Luxury Kitchen Islands, Executive Vanity Tops, Commercial Bars',
       features: 'Creates the imposing appearance of an ultra-thick monolithic stone slab with continuous vein matching.',
       cadDrawing: 'M 10 10 L 90 10 L 90 90 L 70 90 L 70 30 L 10 30 Z',
-      image: '/assets/owner/vietnam/factory-04.jpg'
+      image: '/assets/owner/enhanced/vanity-inspection-sequence-a-enhanced.jpg'
     },
     {
       slug: 'waterfall',
@@ -85,7 +85,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       bestFor: 'Gourmet Kitchen Islands, Modern Office Reception Desks',
       features: 'Seamless floor-to-countertop stone flow with CNC vein tracking.',
       cadDrawing: 'M 10 10 L 90 10 L 90 150 L 70 150 L 70 30 L 10 30 Z',
-      image: '/assets/owner/vietnam/factory-06.jpg'
+      image: '/assets/owner/enhanced/vanity-inspection-sequence-b-enhanced.jpg'
     },
     {
       slug: 'ogee',
@@ -96,7 +96,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
       bestFor: 'Luxury Hotel Suites, Premium Residential Vanities, Fireplaces',
       features: 'Intricate classical shadow line, fabricated on automated multi-spindle profiling lines.',
       cadDrawing: 'M 10 10 L 60 10 Q 75 10 75 25 Q 75 40 90 50 L 90 90 L 10 90 Z',
-      image: '/assets/owner/vietnam/factory-06.jpg'
+      image: '/assets/owner/enhanced/vanity-production-detail-enhanced.jpg'
     }
   ];
 
@@ -150,7 +150,7 @@ export const FinishesEdgesView: React.FC<FinishesEdgesViewProps> = ({
                   className="wr-media-zoom"
                   onError={(e) => {
                     const target = e.currentTarget;
-                    target.src = '/assets/owner/vietnam/factory-02.jpg';
+                    target.src = '/assets/owner/enhanced/edge-polisher-close-enhanced.jpg';
                   }}
                 />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-semibold text-[#1d1d1f] shadow-xs">

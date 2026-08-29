@@ -56,7 +56,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       category: 'Factory Reference',
       defaultSize: 'Dimensions by approved drawing',
       description: 'Owner-supplied photo of finished stone tops staged for review in the Vietnam factory.',
-      baseImage: '/assets/owner/vietnam/factory-06.jpg'
+      baseImage: '/assets/owner/enhanced/vanity-inspection-sequence-b-enhanced.jpg'
     },
     {
       id: 'kitchen',
@@ -64,7 +64,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       category: 'Factory Reference',
       defaultSize: 'Order-specific',
       description: 'Owner-supplied photo of the stone cutting area. Equipment model and process limits require confirmation.',
-      baseImage: '/assets/owner/vietnam/factory-02.jpg'
+      baseImage: '/assets/owner/enhanced/cnc-cutting-line-enhanced.jpg'
     },
     {
       id: 'table',
@@ -72,7 +72,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       category: 'Factory Reference',
       defaultSize: 'Order-specific',
       description: 'Owner-supplied photo showing the production hall, stone racks, and staged components.',
-      baseImage: '/assets/owner/vietnam/vanity-01.jpg'
+      baseImage: '/assets/owner/enhanced/production-hall-aisle-enhanced.jpg'
     },
     {
       id: 'bar',
@@ -80,7 +80,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       category: 'Factory Reference',
       defaultSize: 'Order-specific',
       description: 'Owner-supplied photo of finished components staged on racks before order-specific packing.',
-      baseImage: '/assets/owner/vietnam/vanity-04.jpg'
+      baseImage: '/assets/owner/enhanced/material-staging-hall-enhanced.jpg'
     }
   ];
 
@@ -92,7 +92,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Engineered Quartz',
       tone: 'White / Gold Vein',
       cssTexture: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 40%, #cbd5e1 60%, #94a3b8 100%)',
-      image: '/assets/owner/vietnam/factory-06.jpg',
+      image: '/assets/owner/enhanced/vanity-inspection-sequence-b-enhanced.jpg',
       desc: 'Digital planning palette only. Confirm color and veining with an approved physical sample.'
     },
     {
@@ -101,7 +101,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Natural Marble',
       tone: 'Cool White / Grey',
       cssTexture: 'linear-gradient(120deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%)',
-      image: '/assets/owner/vietnam/factory-05.jpg',
+      image: '/assets/owner/enhanced/vanity-production-hall-enhanced.jpg',
       desc: 'Digital planning palette only. Natural stone appearance varies and requires sample approval.'
     },
     {
@@ -110,7 +110,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Natural Marble',
       tone: 'Deep Black / White Vein',
       cssTexture: 'linear-gradient(145deg, #09090b 0%, #18181b 50%, #27272a 100%)',
-      image: '/assets/owner/vietnam/factory-04.jpg',
+      image: '/assets/owner/enhanced/vanity-production-detail-enhanced.jpg',
       desc: 'Digital planning palette only. Confirm the actual slab selection before production.'
     },
     {
@@ -119,7 +119,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Engineered Quartz',
       tone: 'Mid-Tone Warm Grey',
       cssTexture: 'linear-gradient(135deg, #78716c 0%, #57534e 50%, #44403c 100%)',
-      image: '/assets/owner/vietnam/factory-03.jpg',
+      image: '/assets/owner/enhanced/manual-profile-polishing-enhanced.jpg',
       desc: 'Digital planning palette only. Performance and finish require product-specific documentation.'
     },
     {
@@ -128,7 +128,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Engineered Quartz',
       tone: 'Pure White / Bold Grey',
       cssTexture: 'linear-gradient(135deg, #ffffff 0%, #f1f5f9 45%, #cbd5e1 75%, #64748b 100%)',
-      image: '/assets/owner/vietnam/factory-02.jpg',
+      image: '/assets/owner/enhanced/cnc-cutting-line-enhanced.jpg',
       desc: 'Digital planning palette only. Confirm color and veining with an approved physical sample.'
     },
     {
@@ -137,7 +137,7 @@ export const StoneVisualizer: React.FC<StoneVisualizerProps> = ({
       material: 'Natural Granite',
       tone: 'Jet Black / Golden Flakes',
       cssTexture: 'linear-gradient(135deg, #020617 0%, #0f172a 60%, #1e293b 100%)',
-      image: '/assets/owner/vietnam/factory-02.jpg',
+      image: '/assets/owner/enhanced/edge-processing-line-enhanced.jpg',
       desc: 'Digital planning palette only. Natural stone appearance and properties vary by selected slab.'
     }
   ];

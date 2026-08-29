@@ -39,7 +39,11 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
   const [selectedGalleryCategory, setSelectedGalleryCategory] = useState<string>('All');
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
 
-  const galleryItems = [...(factory.gallery as FactoryGalleryItem[]), ...ownerImages];
+  const ownerImagePaths = new Set(ownerImages.map((item) => item.image));
+  const galleryItems = [
+    ...(factory.gallery as FactoryGalleryItem[]).filter((item) => !ownerImagePaths.has(item.image)),
+    ...ownerImages
+  ];
   const categories = [
     'All',
     ...Array.from(new Set(galleryItems.map((item) => item.category).filter(Boolean) as string[]))
@@ -67,7 +71,7 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 space-y-24 sm:space-y-28">
       {/* Top Header & Context Banner (Apple Display + Industrial Precision) */}
-      <div className="space-y-4 max-w-4xl">
+      <div className="wr-factory-intro space-y-4">
         <div className="wr-panel-eyebrow">
           <Factory className="w-3.5 h-3.5 text-stone-700" />
           <span className="tech-badge">20,000 M² DIRECT VIETNAM FABRICATION PLANT • BÌNH PHƯỚC</span>
