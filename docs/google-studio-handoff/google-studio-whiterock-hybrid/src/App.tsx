@@ -11,9 +11,11 @@ import { BackToTop } from './components/BackToTop';
 import { AppErrorBoundary } from './components/AppErrorBoundary';
 import { PageSeo } from './components/PageSeo';
 import { RouteLoading } from './components/RouteLoading';
+import { ImageLightbox, type LightboxImage } from './components/ImageLightbox';
 import { HomeView } from './views/HomeView';
 
 import { locales } from './data/site';
+import { colors } from './data';
 import type { ProductItem, ColorItem, RfqCartItem, LocaleConfig, CompareEntry } from './types';
 import type { ShareContent } from './components/SocialShareModal';
 import { routeIdFromLocation, routePath, routesById, type RouteId } from './routes';
@@ -27,6 +29,9 @@ const ApplicationsView = lazy(() => import('./views/ApplicationsView').then((mod
 const PartnersView = lazy(() => import('./views/PartnersView').then((module) => ({ default: module.PartnersView })));
 const ResourcesView = lazy(() => import('./views/ResourcesView').then((module) => ({ default: module.ResourcesView })));
 const ContactView = lazy(() => import('./views/ContactView').then((module) => ({ default: module.ContactView })));
+const SampleRequestView = lazy(() => import('./views/SampleRequestView').then((module) => ({ default: module.SampleRequestView })));
+const StoneTypeView = lazy(() => import('./views/StoneTypeView').then((module) => ({ default: module.StoneTypeView })));
+const EventsView = lazy(() => import('./views/EventsView').then((module) => ({ default: module.EventsView })));
 const AdminView = lazy(() => import('./views/AdminView').then((module) => ({ default: module.AdminView })));
 
 const RfqModal = lazy(() => import('./components/RfqModal').then((module) => ({ default: module.RfqModal })));
@@ -64,12 +69,21 @@ function AppContent() {
   const [shareModalContent, setShareModalContent] = useState<ShareContent | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [compareItems, setCompareItems] = useState<CompareEntry[]>([]);
+  const [lightboxImage, setLightboxImage] = useState<LightboxImage | null>(null);
+  const [sampleSlugs, setSampleSlugs] = useState<string[]>(() => {
+    try {
+      const saved = localStorage.getItem('whiterock_sample_box');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
 
   // RFQ Cart State
   const [cartItems, setCartItems] = useState<RfqCartItem[]>(() => {
     try {
       const saved = localStorage.getItem('whiterock_rfq_cart');
-      return saved ? JSON.parse(saved) : [];
+      return saved ? (JSON.parse(saved) as RfqCartItem[]).filter((item) => item.type !== 'sample') : [];
     } catch {
       return [];
     }
@@ -84,6 +98,14 @@ function AppContent() {
       console.error(e);
     }
   }, [cartItems]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('whiterock_sample_box', JSON.stringify(sampleSlugs));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [sampleSlugs]);
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -106,6 +128,20 @@ function AppContent() {
     };
     window.addEventListener('keydown', openSearch);
     return () => window.removeEventListener('keydown', openSearch);
+  }, []);
+
+  useEffect(() => {
+    const openContentImage = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof HTMLImageElement)) return;
+      if (!target.closest('main')) return;
+      if (target.closest('button, a, [data-lightbox-ignore], .wr-gallery-card, .wr-modal-backdrop')) return;
+      const src = target.currentSrc || target.src;
+      if (!src || src.startsWith('data:')) return;
+      setLightboxImage({ src, alt: target.alt || 'WHITEROCK image detail' });
+    };
+    document.addEventListener('click', openContentImage);
+    return () => document.removeEventListener('click', openContentImage);
   }, []);
 
   const toggleCompare = (entry: CompareEntry) => {
@@ -162,24 +198,16 @@ function AppContent() {
   };
 
   const handleAddColorSample = (color: ColorItem) => {
-    const sampleId = `sample_${color.slug}`;
-    const existing = cartItems.find((item) => item.id === sampleId);
-    if (existing) {
-      setCartItems((prev) =>
-        prev.map((i) => (i.id === sampleId ? { ...i, quantity: i.quantity + 1 } : i))
-      );
-    } else {
-      const newItem: RfqCartItem = {
-        id: sampleId,
-        title: `${color.name} - 102 × 102 mm (4" × 4") physical chip`,
-        type: 'sample',
-        material: color.material,
-        selectedColor: color.name,
-        quantity: 1,
-      };
-      setCartItems((prev) => [...prev, newItem]);
+    if (sampleSlugs.includes(color.slug)) {
+      showToast(`${color.name} is already in the sample box`);
+      return;
     }
-    showToast(`Added ${color.name} 102 × 102 mm (4" × 4") chip to sample box`);
+    if (sampleSlugs.length >= 6) {
+      showToast('The sample box holds up to 6 colors');
+      return;
+    }
+    setSampleSlugs((current) => [...current, color.slug]);
+    showToast(`Added ${color.name} to the sample box`);
   };
 
   const handleUpdateQuantity = (id: string, delta: number) => {
@@ -225,6 +253,8 @@ function AppContent() {
         setCurrentTab={handleTabChange}
         cartCount={cartItems.reduce((sum, item) => sum + item.quantity, 0)}
         openCart={() => setIsRfqModalOpen(true)}
+        sampleCount={sampleSlugs.length}
+        openSamples={() => handleTabChange('samples')}
         currentLocale={currentLocale}
         setLocale={setCurrentLocale}
         onOpenShare={() => handleOpenShare()}
@@ -315,6 +345,30 @@ function AppContent() {
           />
         )}
 
+        {currentTab === 'samples' && (
+          <SampleRequestView
+            samples={colors.filter((color) => sampleSlugs.includes(color.slug))}
+            currentLocale={currentLocale}
+            onRemove={(slug) => setSampleSlugs((current) => current.filter((item) => item !== slug))}
+            onClear={() => setSampleSlugs([])}
+            setCurrentTab={handleTabChange}
+          />
+        )}
+
+        {currentTab.startsWith('stone-') && (
+          <StoneTypeView
+            stoneTypeId={currentTab.replace('stone-', '') as 'marble' | 'granite' | 'quartz' | 'quartzite' | 'travertine' | 'engineered-marble'}
+            currentLocale={currentLocale}
+            onSelectColor={(color) => setSelectedColor(color)}
+            onAddColorSample={handleAddColorSample}
+            setCurrentTab={handleTabChange}
+          />
+        )}
+
+        {currentTab === 'events' && (
+          <EventsView currentLocale={currentLocale} setCurrentTab={handleTabChange} />
+        )}
+
         {currentTab === 'admin' && (
           <AdminView
             currentLocale={currentLocale}
@@ -337,6 +391,8 @@ function AppContent() {
 
       {/* Floating Back to Top Navigation */}
       <BackToTop threshold={350} />
+
+      <ImageLightbox image={lightboxImage} onClose={() => setLightboxImage(null)} />
 
       {/* Modal code is requested only after the related interaction begins. */}
       <Suspense fallback={null}>

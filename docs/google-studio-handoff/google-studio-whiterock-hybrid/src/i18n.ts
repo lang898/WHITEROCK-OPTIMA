@@ -4,7 +4,8 @@ const copy = {
   en: {
     home: 'Home', collections: 'Collections', products: 'Products', colors: 'Colors', finishes: 'Finishes & Edges',
     company: 'Company', about: 'About', factory: 'Factory', inspiration: 'Inspiration', applications: 'Applications',
-    partners: 'Trade Program', resources: 'Resources', contact: 'Contact', search: 'Search', rfq: 'RFQ',
+    partners: 'Trade Program', resources: 'Resources', contact: 'Contact', search: 'Search', rfq: 'RFQ', trade: 'Trade',
+    stoneTypes: 'Stone Types', samples: 'Samples', events: 'Fairs & Events',
     heroEyebrow: 'Natural stone surfaces • Vietnam fabrication',
     heroTitle: 'Selected stone. Made to fit the drawing.',
     heroBody: 'Custom vanity tops, kitchen countertops, furniture tops, and project stone fabricated for international B2B programs.',
@@ -20,7 +21,8 @@ const copy = {
   vi: {
     home: 'Trang chủ', collections: 'Bộ sưu tập', products: 'Sản phẩm', colors: 'Màu đá', finishes: 'Bề mặt & cạnh',
     company: 'Công ty', about: 'Giới thiệu', factory: 'Nhà máy', inspiration: 'Ứng dụng', applications: 'Không gian',
-    partners: 'Đối tác', resources: 'Tài liệu', contact: 'Liên hệ', search: 'Tìm kiếm', rfq: 'Báo giá',
+    partners: 'Đối tác', resources: 'Tài liệu', contact: 'Liên hệ', search: 'Tìm kiếm', rfq: 'Báo giá', trade: 'Thương mại',
+    stoneTypes: 'Loại đá', samples: 'Mẫu đá', events: 'Hội chợ & sự kiện',
     heroEyebrow: 'Bề mặt đá tự nhiên • Gia công tại Việt Nam',
     heroTitle: 'Đá được tuyển chọn. Gia công theo bản vẽ.',
     heroBody: 'Gia công mặt lavabo, mặt bếp, mặt bàn nội thất và sản phẩm dự án cho các chương trình B2B quốc tế.',

@@ -121,12 +121,30 @@ export const FactoryView: React.FC<FactoryViewProps> = ({
                 {stat.value}
               </span>
               <span className="text-[10px] text-stone-800 font-bold bg-stone-50 px-2 py-0.5 rounded-full border border-stone-200">
-                Active
+                {stat.confirmed ? 'Confirmed' : 'Pending'}
               </span>
             </div>
           </div>
         ))}
       </div>
+
+      <section className="wr-retailer-audits" aria-labelledby="retailer-audits-title">
+        <div className="wr-section-heading wr-section-intro">
+          <span className="wr-eyebrow">Retailer approval & audit framework</span>
+          <h2 id="retailer-audits-title">Owner-confirmed THD factory status with document boundaries.</h2>
+          <p>{factory.retailerAudits.intro}</p>
+        </div>
+        <div className="wr-retailer-audits__grid">
+          {factory.retailerAudits.items.map((item) => (
+            <article key={item.code}>
+              <span>{item.code}</span>
+              <h3>{item.name}</h3>
+              <p>{item.scope}</p>
+              <small>{item.status}</small>
+            </article>
+          ))}
+        </div>
+      </section>
 
       {/* Interactive Vietnam Production Base Map & Logistics Matrix */}
       <div className="wr-card p-4 sm:p-8">

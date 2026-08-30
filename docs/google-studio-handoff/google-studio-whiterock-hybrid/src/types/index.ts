@@ -69,7 +69,7 @@ export interface ProductItem {
 export interface ColorItem {
   slug: string;
   name: string;
-  material: 'Marble' | 'Granite' | 'Quartz' | 'Engineered Marble';
+  material: 'Marble' | 'Granite' | 'Quartz' | 'Quartzite' | 'Travertine' | 'Engineered Marble';
   colorFamily: 'White' | 'Grey' | 'Black' | 'Beige' | 'Green';
   finishes: string[];
   thicknesses: string[];
@@ -84,6 +84,25 @@ export interface ColorItem {
   pattern?: string;
   primaryTone?: string;
   applications?: string[];
+  recommendedUses?: string[];
+  suitability?: string[];
+  maintenanceLevel?: 'Low' | 'Moderate' | 'Elevated';
+}
+
+export interface StoneTypeInfo {
+  id: 'marble' | 'granite' | 'quartz' | 'quartzite' | 'travertine' | 'engineered-marble';
+  name: ColorItem['material'];
+  eyebrow: string;
+  headline: string;
+  summary: string;
+  image: string;
+  imageAlt: string;
+  imageCaption: string;
+  hardness: string;
+  absorption: string;
+  maintenance: string;
+  applications: string[];
+  caveat: string;
 }
 
 export interface FinishItem {

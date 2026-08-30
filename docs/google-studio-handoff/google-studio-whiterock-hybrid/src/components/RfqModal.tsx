@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Check, CheckCircle2, ChevronLeft, ChevronRight, FileText, Minus, Package, Plus, Send, Trash2, X } from 'lucide-react';
+import { Check, CheckCircle2, ChevronLeft, ChevronRight, File, FileText, Minus, Package, Plus, Send, Trash2, UploadCloud, X } from 'lucide-react';
 import { siteConfig } from '../data';
 import { t } from '../i18n';
 import type { LocaleConfig, RfqCartItem } from '../types';
@@ -22,6 +22,8 @@ export const RfqModal: React.FC<RfqModalProps> = ({
   const [step, setStep] = useState<Step>('items');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionNote, setSubmissionNote] = useState('');
+  const [drawingFiles, setDrawingFiles] = useState<File[]>([]);
+  const [fileError, setFileError] = useState('');
   const [formData, setFormData] = useState({ name: '', email: '', company: '', country: '', destinationPort: '', projectType: '', targetTimeline: '', customNotes: '' });
 
   useEffect(() => {
@@ -51,11 +53,14 @@ export const RfqModal: React.FC<RfqModalProps> = ({
 
     try {
       if (siteConfig.web3FormsAccessKey) {
-        const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        const formPayload = new FormData();
+        Object.entries(payload).forEach(([key, value]) => formPayload.append(key, String(value)));
+        drawingFiles.forEach((file, index) => formPayload.append(`drawing_${index + 1}`, file, file.name));
+        const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formPayload });
         if (!response.ok) throw new Error('Submission failed');
         setSubmissionNote('Your inquiry was submitted. The sales team will confirm receipt and next steps.');
       } else {
-        const body = encodeURIComponent(`Contact\n${formData.name}\n${formData.company}\n${formData.email}\n${formData.country}\n${formData.destinationPort}\n\nSelected items\n${itemSummary}\n\nNotes\n${formData.customNotes}`);
+        const body = encodeURIComponent(`Contact\n${formData.name}\n${formData.company}\n${formData.email}\n${formData.country}\n${formData.destinationPort}\n\nSelected items\n${itemSummary}\n\nSelected drawing files\n${drawingFiles.map((file) => `${file.name} (${Math.ceil(file.size / 1024 / 1024)} MB)`).join('\n') || 'None'}\n\nNotes\n${formData.customNotes}\n\nAttach the selected files to this email before sending.`);
         window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(`WHITEROCK RFQ - ${formData.company || formData.name}`)}&body=${body}`;
         setSubmissionNote('An email draft was opened because the website form access key has not yet been configured.');
       }
@@ -65,6 +70,28 @@ export const RfqModal: React.FC<RfqModalProps> = ({
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const addDrawingFiles = (files: FileList | null) => {
+    if (!files) return;
+    const acceptedTypes = new Set(['application/pdf', 'image/jpeg']);
+    const incoming = Array.from(files);
+    if (drawingFiles.length + incoming.length > 3) {
+      setFileError('Upload up to 3 files in total.');
+      return;
+    }
+    const invalidType = incoming.find((file) => !acceptedTypes.has(file.type) && !/\.(pdf|jpe?g)$/i.test(file.name));
+    if (invalidType) {
+      setFileError('Only JPG, JPEG, and PDF files are accepted.');
+      return;
+    }
+    const oversized = incoming.find((file) => file.size > 30 * 1024 * 1024);
+    if (oversized) {
+      setFileError(`${oversized.name} exceeds the 30 MB per-file limit.`);
+      return;
+    }
+    setDrawingFiles((current) => [...current, ...incoming]);
+    setFileError('');
   };
 
   const close = () => {
@@ -114,6 +141,11 @@ export const RfqModal: React.FC<RfqModalProps> = ({
                 <label><span>Destination port</span><input value={formData.destinationPort} onChange={(event) => setFormData({ ...formData, destinationPort: event.target.value })} /></label>
                 <label><span>Project type</span><input value={formData.projectType} onChange={(event) => setFormData({ ...formData, projectType: event.target.value })} /></label>
                 <label><span>Target timeline</span><input value={formData.targetTimeline} onChange={(event) => setFormData({ ...formData, targetTimeline: event.target.value })} /></label>
+                <div className="wr-file-upload wr-form-grid__wide">
+                  <label><UploadCloud /><span><strong>Upload drawings</strong><small>JPG or PDF · up to 3 files · 30 MB each</small></span><input type="file" accept=".jpg,.jpeg,.pdf,image/jpeg,application/pdf" multiple onChange={(event) => { addDrawingFiles(event.target.files); event.currentTarget.value = ''; }} /></label>
+                  {drawingFiles.length > 0 && <ul>{drawingFiles.map((file, index) => <li key={`${file.name}-${file.lastModified}`}><File /><span>{file.name}<small>{(file.size / 1024 / 1024).toFixed(1)} MB</small></span><button type="button" className="wr-icon-button" onClick={() => setDrawingFiles((current) => current.filter((_, fileIndex) => fileIndex !== index))} aria-label={`Remove ${file.name}`}><X /></button></li>)}</ul>}
+                  {fileError && <p className="wr-form-error">{fileError}</p>}
+                </div>
                 <label className="wr-form-grid__wide"><span>Notes, drawings, edge details, or required documents</span><textarea rows={4} value={formData.customNotes} onChange={(event) => setFormData({ ...formData, customNotes: event.target.value })} /></label>
               </div>
               <footer><button type="button" className="wr-button wr-button--ghost" onClick={() => setStep('items')}><ChevronLeft />{t(currentLocale, 'back')}</button><button className="wr-button wr-button--primary">{t(currentLocale, 'review')}<ChevronRight /></button></footer>
@@ -123,7 +155,7 @@ export const RfqModal: React.FC<RfqModalProps> = ({
           {step === 'review' && (
             <section className="wr-rfq-review">
               <div className="wr-rfq-section-title"><div><h3>Confirm before sending</h3><p>Review the selected items and contact details. Submission is an inquiry, not a purchase order.</p></div></div>
-              <div className="wr-rfq-review__grid"><div><h4>Selected list</h4><pre>{itemSummary}</pre></div><div><h4>Buyer details</h4><dl><div><dt>Name</dt><dd>{formData.name}</dd></div><div><dt>Company</dt><dd>{formData.company}</dd></div><div><dt>Email</dt><dd>{formData.email}</dd></div><div><dt>Destination</dt><dd>{[formData.country, formData.destinationPort].filter(Boolean).join(' · ') || 'Not provided'}</dd></div></dl></div></div>
+              <div className="wr-rfq-review__grid"><div><h4>Selected list</h4><pre>{itemSummary}</pre>{drawingFiles.length > 0 && <div className="wr-rfq-review__files"><h4>Drawings</h4>{drawingFiles.map((file) => <span key={`${file.name}-${file.lastModified}`}><File />{file.name}</span>)}</div>}</div><div><h4>Buyer details</h4><dl><div><dt>Name</dt><dd>{formData.name}</dd></div><div><dt>Company</dt><dd>{formData.company}</dd></div><div><dt>Email</dt><dd>{formData.email}</dd></div><div><dt>Destination</dt><dd>{[formData.country, formData.destinationPort].filter(Boolean).join(' · ') || 'Not provided'}</dd></div></dl></div></div>
               <p className="wr-rfq-confirmation"><Check />Final dimensions, material availability, capacity, lead time, packing, trade documents, and price remain subject to the written quotation.</p>
               {submissionNote && <p className="wr-form-error">{submissionNote}</p>}
               <footer><button className="wr-button wr-button--ghost" onClick={() => setStep('details')}><ChevronLeft />{t(currentLocale, 'back')}</button><button className="wr-button wr-button--primary" disabled={isSubmitting} onClick={submitInquiry}><Send />{isSubmitting ? 'Sending…' : t(currentLocale, 'submit')}</button></footer>

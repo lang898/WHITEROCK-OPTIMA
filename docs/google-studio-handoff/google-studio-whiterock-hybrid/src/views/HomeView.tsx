@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowDown, ArrowRight, Check, FileText, Package, Plus } from 'lucide-react';
+import React, { useRef } from 'react';
+import { ArrowDown, ArrowRight, Check, ChevronLeft, ChevronRight, FileText, Package, Plus } from 'lucide-react';
 import { colors, factory, ownerImages, products } from '../data';
 import { t } from '../i18n';
 import type { ColorItem, LocaleConfig, ProductItem, RfqCartItem } from '../types';
@@ -25,6 +25,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
   onAddColorSample,
   currentLocale
 }) => {
+  const colorStripRef = useRef<HTMLDivElement>(null);
+  const dragState = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false });
   const featuredColors = colors.slice(0, 8);
   const showcaseSkus = ['WR-KT-QC', 'WR-FR-RM', 'WR-KT-NS'];
   const showcaseProducts = showcaseSkus.map((sku) => products.find((product) => product.sku === sku)!).filter(Boolean);
@@ -36,6 +38,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
     if (product.category === 'Kitchen Countertop') return 'Kitchen countertops';
     if (product.category === 'Furniture Top' || product.category === 'Stone Furniture') return 'Furniture tops';
     return 'Project products';
+  };
+
+  const scrollMaterials = (direction: -1 | 1) => {
+    colorStripRef.current?.scrollBy({ left: direction * Math.min(720, window.innerWidth * 0.72), behavior: 'smooth' });
   };
 
   return (
@@ -95,7 +101,38 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <h2 id="home-colors-title">Start with the surface. Confirm with a physical sample.</h2>
           <p>Compare eight leading visual directions at full texture scale, then review the physical sample and lot-specific range before approval.</p>
         </div>
-        <div className="wr-color-strip" aria-label="Featured material colors">
+        <div className="wr-material-wall-controls"><button className="wr-icon-button" onClick={() => scrollMaterials(-1)} aria-label="Previous materials"><ChevronLeft /></button><button className="wr-icon-button" onClick={() => scrollMaterials(1)} aria-label="Next materials"><ChevronRight /></button></div>
+        <div
+          className="wr-color-strip wr-material-wall"
+          ref={colorStripRef}
+          aria-label="Featured material colors"
+          onWheel={(event) => {
+            if (Math.abs(event.deltaY) > Math.abs(event.deltaX) && colorStripRef.current) colorStripRef.current.scrollLeft += event.deltaY;
+          }}
+          onPointerDown={(event) => {
+            const current = colorStripRef.current;
+            if (!current) return;
+            dragState.current = { active: true, startX: event.clientX, scrollLeft: current.scrollLeft, moved: false };
+            current.setPointerCapture(event.pointerId);
+          }}
+          onPointerMove={(event) => {
+            const current = colorStripRef.current;
+            if (!current || !dragState.current.active) return;
+            const distance = event.clientX - dragState.current.startX;
+            if (Math.abs(distance) > 5) dragState.current.moved = true;
+            current.scrollLeft = dragState.current.scrollLeft - distance;
+          }}
+          onPointerUp={(event) => {
+            dragState.current.active = false;
+            colorStripRef.current?.releasePointerCapture(event.pointerId);
+          }}
+          onClickCapture={(event) => {
+            if (!dragState.current.moved) return;
+            event.preventDefault();
+            event.stopPropagation();
+            dragState.current.moved = false;
+          }}
+        >
           {featuredColors.map((color) => (
             <article key={color.slug}>
               <button onClick={() => onSelectColor(color)}>

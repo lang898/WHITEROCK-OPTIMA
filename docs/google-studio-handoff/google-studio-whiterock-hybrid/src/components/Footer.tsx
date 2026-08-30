@@ -25,11 +25,14 @@ export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, on
     { title: t(currentLocale, 'collections'), links: [
       ['products', t(currentLocale, 'products')], ['colors', t(currentLocale, 'colors')], ['finishes', t(currentLocale, 'finishes')]
     ] },
-    { title: t(currentLocale, 'company'), links: [
-      ['about', t(currentLocale, 'about')], ['factory', t(currentLocale, 'factory')], ['applications', t(currentLocale, 'applications')]
+    { title: t(currentLocale, 'stoneTypes'), links: [
+      ['stone-marble', 'Marble'], ['stone-granite', 'Granite'], ['stone-quartz', 'Quartz'], ['stone-quartzite', 'Quartzite'], ['stone-travertine', 'Travertine'], ['stone-engineered-marble', 'Engineered Marble']
     ] },
-    { title: 'Trade', links: [
-      ['partners', t(currentLocale, 'partners')], ['resources', t(currentLocale, 'resources')], ['contact', t(currentLocale, 'contact')]
+    { title: t(currentLocale, 'company'), links: [
+      ['about', t(currentLocale, 'about')], ['factory', t(currentLocale, 'factory')], ['events', t(currentLocale, 'events')]
+    ] },
+    { title: t(currentLocale, 'trade'), links: [
+      ['applications', t(currentLocale, 'applications')], ['partners', t(currentLocale, 'partners')], ['samples', t(currentLocale, 'samples')], ['resources', t(currentLocale, 'resources')], ['contact', t(currentLocale, 'contact')]
     ] }
   ];
 
@@ -42,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, on
 
       <div className="wr-footer__main">
         <div className="wr-footer__brand">
-          <img className="wr-footer__logo" src="/assets/brand/whiterock-logo-gray.png" alt="WHITEROCK" width="600" height="468" />
+          <img className="wr-footer__logo" src="/assets/brand/whiterock-logo-refined.svg" alt="WHITEROCK Marble &amp; Granite" width="360" height="82" />
           <p>Natural and engineered stone manufacturing in Binh Phuoc Province, Vietnam. Product specifications, availability, documentation, and commercial terms are confirmed in writing for each order.</p>
           <address>
             <span><MapPin />{siteConfig.address}</span>

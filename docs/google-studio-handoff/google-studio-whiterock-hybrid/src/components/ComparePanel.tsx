@@ -34,7 +34,10 @@ function entryTitle(entry: CompareEntry): string {
 
 export const ComparePanel: React.FC<ComparePanelProps> = ({ items, locale, onRemove, onClear }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [revealPosition, setRevealPosition] = useState(50);
   if (!items.length) return null;
+
+  const colorEntries = items.filter((entry): entry is Extract<CompareEntry, { kind: 'color' }> => entry.kind === 'color');
 
   const fields = [
     ['material', t(locale, 'material')],
@@ -58,6 +61,25 @@ export const ComparePanel: React.FC<ComparePanelProps> = ({ items, locale, onRem
         <div className="wr-modal-backdrop" role="dialog" aria-modal="true" aria-label={t(locale, 'compare')}>
           <div className="wr-compare-dialog">
             <header><div><span className="wr-eyebrow">B2B shortlist</span><h2>{t(locale, 'compare')}</h2></div><button className="wr-icon-button" onClick={() => setIsOpen(false)} aria-label="Close comparison"><X /></button></header>
+            <div className="wr-compare-media-grid" style={{ '--compare-columns': items.length } as React.CSSProperties}>
+              {items.map((entry) => {
+                const image = entry.kind === 'color' ? entry.item.swatchImage : entry.item.image;
+                return <figure key={entry.id}><img src={image} alt={`${entryTitle(entry)} comparison view`} width="900" height="700" /><figcaption>{entryTitle(entry)}{entry.kind === 'color' ? ' · illustrative digital swatch' : ''}</figcaption></figure>;
+              })}
+            </div>
+            {colorEntries.length >= 2 && (
+              <section className="wr-color-reveal" aria-label={`Drag to compare ${colorEntries[0].item.name} and ${colorEntries[1].item.name}`}>
+                <div className="wr-color-reveal__stage">
+                  <img src={colorEntries[0].item.swatchImage} alt={`${colorEntries[0].item.name} illustrative digital swatch`} width="1200" height="700" />
+                  <div className="wr-color-reveal__overlay" style={{ width: `${revealPosition}%` }}><img src={colorEntries[1].item.swatchImage} alt={`${colorEntries[1].item.name} illustrative digital swatch`} width="1200" height="700" /></div>
+                  <span className="wr-color-reveal__line" style={{ left: `${revealPosition}%` }} aria-hidden="true" />
+                  <span className="wr-color-reveal__label wr-color-reveal__label--left">{colorEntries[1].item.name}</span>
+                  <span className="wr-color-reveal__label wr-color-reveal__label--right">{colorEntries[0].item.name}</span>
+                </div>
+                <input type="range" min="5" max="95" value={revealPosition} onInput={(event) => setRevealPosition(Number(event.currentTarget.value))} aria-label="Texture comparison position" />
+                <p>Digital swatches are visual planning references. Confirm color, movement, and batch range with physical samples.</p>
+              </section>
+            )}
             <div className="wr-compare-table" style={{ '--compare-columns': items.length } as React.CSSProperties}>
               <div className="wr-compare-table__label" />
               {items.map((entry) => <div className="wr-compare-table__head" key={entry.id}><span>{entry.kind}</span><strong>{entryTitle(entry)}</strong><small>{entry.kind === 'product' ? entry.item.sku : entry.item.colorFamily}</small></div>)}

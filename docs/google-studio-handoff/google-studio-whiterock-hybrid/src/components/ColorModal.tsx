@@ -177,7 +177,7 @@ export const ColorModal: React.FC<ColorModalProps> = ({
             className="px-6 py-3 rounded-full bg-[#111113] hover:bg-black text-white text-xs font-medium flex items-center gap-2 cursor-pointer shadow-xs transition-all"
           >
             <Plus className="w-3.5 h-3.5" />
-            <span>Add 102 × 102 mm (4" × 4") swatch to RFQ</span>
+            <span>Order sample</span>
           </button>
         </div>
       </div>

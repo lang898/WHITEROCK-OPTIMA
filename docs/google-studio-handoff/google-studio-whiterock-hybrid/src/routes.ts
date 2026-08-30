@@ -9,6 +9,14 @@ export type RouteId =
   | 'partners'
   | 'resources'
   | 'contact'
+  | 'samples'
+  | 'events'
+  | 'stone-marble'
+  | 'stone-granite'
+  | 'stone-quartz'
+  | 'stone-quartzite'
+  | 'stone-travertine'
+  | 'stone-engineered-marble'
   | 'admin';
 
 export interface RouteDefinition {
@@ -92,6 +100,62 @@ export const routes: RouteDefinition[] = [
     schemaType: 'ContactPage',
   },
   {
+    id: 'samples',
+    path: '/samples/',
+    title: 'Order Stone Samples | WHITEROCK',
+    description: 'Build a sample box of up to six WHITEROCK material colors and submit delivery and project details.',
+    schemaType: 'WebPage',
+  },
+  {
+    id: 'events',
+    path: '/events/',
+    title: 'Fairs & Events | WHITEROCK',
+    description: 'WHITEROCK fairs and events information. No participation schedule is currently announced.',
+    schemaType: 'WebPage',
+  },
+  {
+    id: 'stone-marble',
+    path: '/stone-types/marble/',
+    title: 'Marble | Stone Types | WHITEROCK',
+    description: 'Review WHITEROCK marble characteristics, maintenance considerations, applications, and available color directions.',
+    schemaType: 'CollectionPage',
+  },
+  {
+    id: 'stone-granite',
+    path: '/stone-types/granite/',
+    title: 'Granite | Stone Types | WHITEROCK',
+    description: 'Review WHITEROCK granite characteristics, maintenance considerations, applications, and available color directions.',
+    schemaType: 'CollectionPage',
+  },
+  {
+    id: 'stone-quartz',
+    path: '/stone-types/quartz/',
+    title: 'Quartz | Stone Types | WHITEROCK',
+    description: 'Review engineered quartz characteristics, maintenance considerations, applications, and available color directions.',
+    schemaType: 'CollectionPage',
+  },
+  {
+    id: 'stone-quartzite',
+    path: '/stone-types/quartzite/',
+    title: 'Quartzite | Stone Types | WHITEROCK',
+    description: 'Review quartzite characteristics, maintenance considerations, applications, and published material availability.',
+    schemaType: 'CollectionPage',
+  },
+  {
+    id: 'stone-travertine',
+    path: '/stone-types/travertine/',
+    title: 'Travertine | Stone Types | WHITEROCK',
+    description: 'Review travertine characteristics, maintenance considerations, applications, and published material availability.',
+    schemaType: 'CollectionPage',
+  },
+  {
+    id: 'stone-engineered-marble',
+    path: '/stone-types/engineered-marble/',
+    title: 'Engineered Marble | Stone Types | WHITEROCK',
+    description: 'Review engineered marble characteristics, maintenance considerations, applications, and available color directions.',
+    schemaType: 'CollectionPage',
+  },
+  {
     id: 'admin',
     path: '/admin/',
     title: 'WHITEROCK Content Admin',
@@ -125,6 +189,9 @@ export function routeIdFromLocation(location: Location = window.location): Route
     return 'home';
   }
 
-  const match = routes.find((route) => route.id === lastSegment);
+  const match = routes.find((route) => {
+    const routeSegment = route.path.split('/').filter(Boolean).at(-1);
+    return route.id === lastSegment || routeSegment === lastSegment;
+  });
   return match?.id ?? 'home';
 }

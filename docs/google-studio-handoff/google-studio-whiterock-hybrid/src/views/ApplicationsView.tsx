@@ -25,13 +25,17 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({
 }) => {
   const [selectedCat, setSelectedCat] = useState<string>('All');
 
-  const categories = ['All', 'Kitchen', 'Bathroom', 'Furniture', 'Hospitality', 'Multi-family', 'Restaurant', 'Outdoor'];
+  const categories = ['All', 'Kitchen', 'Bathroom', 'Hotel', 'Commercial'];
   const productionReferenceIds = new Set(['owner-library-07', 'owner-library-13', 'owner-library-17']);
   const productionReferences = ownerImages.filter((image) => productionReferenceIds.has(image.id));
 
   const filteredApps = applications.filter((app) => {
     if (selectedCat === 'All') return true;
-    return app.category.toLowerCase().includes(selectedCat.toLowerCase());
+    const category = app.category.toLowerCase();
+    if (selectedCat === 'Kitchen') return category.includes('kitchen');
+    if (selectedCat === 'Bathroom') return category.includes('bath') || category.includes('multi-family');
+    if (selectedCat === 'Hotel') return category.includes('hospitality') || category.includes('hotel');
+    return ['commercial', 'restaurant', 'retail', 'furniture', 'outdoor'].some((term) => category.includes(term));
   });
 
   return (

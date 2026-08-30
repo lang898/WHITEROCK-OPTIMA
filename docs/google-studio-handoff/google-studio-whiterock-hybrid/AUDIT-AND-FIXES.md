@@ -228,3 +228,17 @@ Browser checks at 1280 px and 390 px confirmed direct-route loading, no horizont
 - Reduced the default Products view to eight representative SKUs while preserving the complete catalog through category filters and search.
 - Centered the Home, Products, Colors, and Factory introductions; other page titles use near-full-width editorial layouts instead of a half-empty split.
 - Desktop browser measurements at 957 px record Home at 5,882 px and Products at 4,732 px. All ten public pages have zero horizontal overflow at desktop and 390 px, and browser console checks report zero warnings or errors.
+
+## 2026-08-30: Stone Discovery, Samples, and Trade Tools
+
+- Added one data-driven Stone Types template and six public routes for Marble, Granite, Quartz, Quartzite, Travertine, and Engineered Marble. Each route filters `colors.json` by material and keeps empty categories transparent instead of inventing colors.
+- Added a separate sample workflow with per-color `Order Sample` actions, a persistent six-item limit, a dedicated sample box, and a delivery/project request form. Samples remain separate from the higher-commitment RFQ cart.
+- Upgraded Colors with two large comparison views, a draggable adjacent-texture reveal, richer suitability and maintenance metadata, and a four-scene material visualizer for kitchen, bathroom, hotel, and furniture directions.
+- Added wheel, pointer-drag, and arrow control to the homepage material wall; added a global image lightbox; and grouped Applications into Kitchen, Bathroom, Hotel, and Commercial filters.
+- Rebuilt Resources as a clear download center for catalog, thickness data, care, packing/loading, and CAD/DXF files. Owner files remain visibly pending where no approved download exists.
+- Extended the three-step RFQ to accept up to three JPG/PDF drawings at 30 MB per file while preserving the transparent email fallback.
+- Added a Fairs & Events route that explicitly states no WHITEROCK participation is currently published. No fairs, booths, dates, or attendance history were invented.
+- Added owner-supplied THD, RESA, C-TPAT, and EQA/QSA information with certificate boundaries. SCAN is presented only as the likely match for the recalled supply-chain audit, pending source-certificate review.
+- Refined the supplied overlapping-square WHITEROCK logo into crisp vector mark and lockup assets for compact header and full footer use.
+- Browser-tested the sample limit, sample form, comparison reveal, scene and texture switching, image lightbox, and RFQ upload step. All 18 public routes have zero horizontal overflow at a 390 px viewport; desktop Home measures 5,849 px. The browser console contains no warnings or errors.
+- `npx tsc --noEmit`, `npm run build`, and `git diff --check` pass. The production build transforms 1,731 modules and retains route-level chunks.

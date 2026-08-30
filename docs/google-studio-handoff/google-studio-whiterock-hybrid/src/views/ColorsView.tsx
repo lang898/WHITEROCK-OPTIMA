@@ -3,6 +3,7 @@ import { Check, GitCompare, Package, Search } from 'lucide-react';
 import { colors } from '../data';
 import { t } from '../i18n';
 import { formatMeasurement } from '../utils/measurements';
+import { StoneVisualizer } from '../components/StoneVisualizer';
 import type { ColorItem, LocaleConfig } from '../types';
 
 interface ColorsViewProps {
@@ -19,7 +20,7 @@ export const ColorsView: React.FC<ColorsViewProps> = ({
   const [selectedMaterial, setSelectedMaterial] = useState('All');
   const [selectedFamily, setSelectedFamily] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const materials = ['All', 'Quartz', 'Marble', 'Granite', 'Engineered Marble'];
+  const materials = ['All', 'Marble', 'Granite', 'Quartz', 'Quartzite', 'Travertine', 'Engineered Marble'];
   const families = ['All', 'White', 'Grey', 'Black', 'Beige', 'Green'];
 
   const filteredColors = colors.filter((color) => {
@@ -35,6 +36,8 @@ export const ColorsView: React.FC<ColorsViewProps> = ({
         <div><span className="wr-eyebrow">{t(currentLocale, 'colorLibrary')}</span><h1>Color is the first decision. A physical sample is the final one.</h1></div>
         <p>{t(currentLocale, 'colorIntro')} Digital textures are illustrative references and do not guarantee slab or batch appearance.</p>
       </header>
+
+      <StoneVisualizer currentLocale={currentLocale} onRequestSample={onAddColorSample} />
 
       <div className="wr-catalog-layout">
         <aside className="wr-filter-rail" aria-label="Color filters">
@@ -56,8 +59,8 @@ export const ColorsView: React.FC<ColorsViewProps> = ({
                 </button>
                 <div className="wr-swatch-card__body">
                   <small>{color.material} · {color.colorFamily}</small><h2>{color.name}</h2><p>{color.description}</p>
-                  <dl><div><dt>{t(currentLocale, 'finish')}</dt><dd>{color.finishes.join(', ')}</dd></div><div><dt>{t(currentLocale, 'thickness')}</dt><dd>{formatMeasurement(color.thicknesses.join(', '))}</dd></div></dl>
-                  <div className="wr-catalog-card__actions"><button className="wr-button wr-button--primary" onClick={() => onAddColorSample(color)}><Package />{t(currentLocale, 'sample')}</button><button className={`wr-button wr-button--ghost ${compared ? 'is-active' : ''}`} onClick={() => onToggleCompare(color)}><GitCompare />{compared ? t(currentLocale, 'compared') : t(currentLocale, 'compare')}</button></div>
+                  <dl><div><dt>{t(currentLocale, 'finish')}</dt><dd>{color.finishes.join(', ')}</dd></div><div><dt>{t(currentLocale, 'thickness')}</dt><dd>{formatMeasurement(color.thicknesses.join(', '))}</dd></div><div><dt>Suitability</dt><dd>{color.suitability?.join(', ')}</dd></div><div><dt>Maintenance</dt><dd>{color.maintenanceLevel}</dd></div></dl>
+                  <div className="wr-catalog-card__actions"><button className="wr-button wr-button--primary" onClick={() => onAddColorSample(color)}><Package />Order sample</button><button className={`wr-button wr-button--ghost ${compared ? 'is-active' : ''}`} onClick={() => onToggleCompare(color)}><GitCompare />{compared ? t(currentLocale, 'compared') : t(currentLocale, 'compare')}</button></div>
                 </div>
               </article>
             );

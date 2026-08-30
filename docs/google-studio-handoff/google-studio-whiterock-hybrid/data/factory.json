@@ -25,8 +25,48 @@
       "label": "Specifications & Terms",
       "value": "Order-specific",
       "confirmed": true
+    },
+    {
+      "label": "Monthly Container Output",
+      "value": "Owner input pending",
+      "confirmed": false
     }
   ],
+  "retailerAudits": {
+    "intro": "The factory status and named audit programs are based on owner-supplied information. Certificate numbers, grades, validity dates, product scope, and downloadable source documents remain pending owner upload. SCAN and the QSA / EQA title must be checked against the original certificates before final publication.",
+    "items": [
+      {
+        "code": "THD",
+        "name": "The Home Depot Approved Factory",
+        "scope": "Retailer factory approval",
+        "status": "Owner confirmed"
+      },
+      {
+        "code": "RESA",
+        "name": "Retail Ethical Sourcing Assessment",
+        "scope": "Responsible sourcing audit",
+        "status": "Owner confirmed"
+      },
+      {
+        "code": "C-TPAT",
+        "name": "Customs Trade Partnership Against Terrorism",
+        "scope": "Supply-chain security program / audit status",
+        "status": "Owner confirmed"
+      },
+      {
+        "code": "SCAN",
+        "name": "Supplier Compliance Audit Network",
+        "scope": "Supply-chain security audit framework",
+        "status": "Likely match for the recalled supply-chain audit; certificate review pending"
+      },
+      {
+        "code": "QSA / EQA",
+        "name": "Quality-system audit title pending certificate review",
+        "scope": "Public THD terminology is Quality System Assessment (QSA); owner supplied EQA",
+        "status": "Do not finalize title before source document upload"
+      }
+    ]
+  },
   "equipment": [
     {
       "name": "Bridge Cutting Equipment",

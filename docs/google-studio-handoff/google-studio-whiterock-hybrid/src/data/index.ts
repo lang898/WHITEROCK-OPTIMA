@@ -14,6 +14,7 @@ import lookbookData from '../../data/lookbook.json';
 import projectsData from '../../data/projects.json';
 import ownerImagesData from '../../data/owner-images.json';
 import furnitureTopsData from '../../data/furniture-tops.json';
+import stoneTypesData from '../../data/stone-types.json';
 import type {
   ProductItem,
   ColorItem,
@@ -25,7 +26,8 @@ import type {
   ResourceItem,
   NewsItem,
   FaqItem,
-  FurnitureTopVisual
+  FurnitureTopVisual,
+  StoneTypeInfo
 } from '../types';
 
 export { locales, siteConfig } from './site';
@@ -49,7 +51,21 @@ export const colors: ColorItem[] = (colorsData.colors as ColorItem[]).map((item)
   ...item,
   swatchImage: publicAsset(item.swatchImage) || '',
   image: publicAsset(item.image),
-  techSheetPdf: publicAsset(item.techSheetPdf)
+  techSheetPdf: publicAsset(item.techSheetPdf),
+  applications: item.applications?.length ? item.applications : item.relatedProducts || ['Interior project review'],
+  recommendedUses: item.recommendedUses?.length ? item.recommendedUses : item.relatedProducts || ['Confirm by project'],
+  suitability: item.suitability?.length ? item.suitability : (
+    item.material === 'Granite'
+      ? ['Interior', 'Wet-area by review', 'Exterior by exact stone review']
+      : ['Interior', 'Wet-area by review']
+  ),
+  maintenanceLevel: item.maintenanceLevel || (
+    item.material === 'Quartz' ? 'Low' : item.material === 'Engineered Marble' ? 'Moderate' : 'Elevated'
+  )
+}));
+export const stoneTypes: StoneTypeInfo[] = (stoneTypesData.items as StoneTypeInfo[]).map((item) => ({
+  ...item,
+  image: publicAsset(item.image) || ''
 }));
 export const finishes: FinishItem[] = (finishesData.finishes as FinishItem[]).map((item) => ({ ...item, image: publicAsset(item.image) || '' }));
 export const edges: EdgeItem[] = (edgesData.edges as EdgeItem[]).map((item) => ({ ...item, image: publicAsset(item.image) || '' }));
