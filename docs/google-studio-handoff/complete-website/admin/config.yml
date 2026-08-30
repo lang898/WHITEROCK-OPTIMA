@@ -1,0 +1,618 @@
+backend:
+  name: github
+  # TODO: Replace with the GitHub repository that owns this site.
+  repo: OWNER/REPO
+  branch: main
+  # TODO: Replace with the deployed Cloudflare OAuth Worker origin (no trailing slash).
+  base_url: https://YOUR-WORKER.workers.dev
+  auth_endpoint: auth
+
+site_url: "https://www.whiterockstone.com"
+display_url: "https://www.whiterockstone.com"
+logo_url: "/assets/brand/favicon.png"
+media_folder: "assets"
+public_folder: "assets"
+publish_mode: simple
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Company & Site Config"
+        name: "site_config"
+        file: "data/site.config.json"
+        format: "json"
+        fields:
+          - { label: "Brand", name: "brand", widget: "string" }
+          - { label: "Legal Name", name: "legalName", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Production Domain", name: "productionDomain", widget: "string" }
+          - { label: "OPTIMA Domain", name: "secondaryDomain", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Telephone", name: "tel", widget: "string" }
+          - { label: "Telephone Link", name: "telHref", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string", required: false }
+          - { label: "Factory Address", name: "address", widget: "text" }
+          - { label: "Zip Code", name: "zip", widget: "string" }
+          - { label: "Web3Forms Access Key", name: "web3FormsAccessKey", widget: "string" }
+          - { label: "OG Image", name: "ogImage", widget: "image" }
+          - { label: "Favicon", name: "favicon", widget: "image" }
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+
+  - name: "catalog"
+    label: "Products"
+    files:
+      - label: "Product Catalog"
+        name: "products"
+        file: "data/products.json"
+        format: "json"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.sku}} — {{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "SKU", name: "sku", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["Bathroom Vanity Top", "Kitchen Countertop", "Stone Furniture", "Commercial Project"]
+              - { label: "Material", name: "material", widget: "string" }
+              - { label: "Product Image", name: "image", widget: "image", media_folder: "/assets/products", public_folder: "assets/products", hint: "Upload a WHITEROCK-owned JPG or PNG. The build creates WebP and dimensions automatically." }
+              - { label: "WebP Image", name: "imageWebp", widget: "hidden", required: false }
+              - { label: "Image Width", name: "imageWidth", widget: "hidden", required: false }
+              - { label: "Image Height", name: "imageHeight", widget: "hidden", required: false }
+              - label: "Image Type"
+                name: "imageType"
+                widget: "select"
+                options:
+                  - { label: "Real Photo", value: "real" }
+                  - { label: "Illustrative Render", value: "render" }
+              - { label: "Illustrative Render?", name: "isIllustrative", widget: "hidden", required: false }
+              - { label: "Caption", name: "caption", widget: "hidden", required: false }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Technical Sheet PDF", name: "techSheetPdf", widget: "file", media_folder: "/assets/resources/products", public_folder: "assets/resources/products", required: false, hint: "Optional. The download button is hidden until a PDF is uploaded." }
+              - label: "Specs"
+                name: "specs"
+                widget: "object"
+                collapsed: false
+                fields:
+                  - { label: "SKU", name: "SKU", widget: "string", required: false }
+                  - { label: "Use", name: "Use", widget: "string", required: false }
+                  - { label: "Size", name: "Size", widget: "string", required: false }
+                  - { label: "Colors", name: "Colors", widget: "string", required: false }
+                  - { label: "Sink", name: "Sink", widget: "string", required: false }
+                  - { label: "Edge", name: "Edge", widget: "string", required: false }
+                  - { label: "MOQ", name: "MOQ", widget: "string", required: false }
+                  - { label: "Lead Time", name: "LeadTime", widget: "string", required: false }
+                  - { label: "Packaging", name: "Packaging", widget: "string", required: false }
+
+  - name: "page_data"
+    label: "Editable Page Content"
+    files:
+      - label: "Page Content"
+        name: "pages"
+        file: "data/pages.json"
+        format: "json"
+        fields:
+          - { label: "Home Hero Eyebrow", name: "homeHeroEyebrow", widget: "string" }
+          - { label: "Home Hero Title", name: "homeHeroTitle", widget: "string" }
+          - { label: "Home Hero Copy", name: "homeHeroCopy", widget: "text" }
+          - { label: "About Facts", name: "aboutFacts", widget: "list", field: { label: "Fact", name: "fact", widget: "string" } }
+          - { label: "Factory Capacity Notes", name: "factoryCapacity", widget: "list", field: { label: "Note", name: "note", widget: "string" } }
+          - { label: "Order Terms", name: "orderTerms", widget: "list", field: { label: "Term", name: "term", widget: "string" } }
+          - { label: "Materials Copy", name: "materialsCopy", widget: "text" }
+
+      - label: "Buyer Journey & Conversion Content"
+        name: "buyer_journey"
+        file: "data/buyer-journey.json"
+        format: "json"
+        fields:
+          - label: "Home Buyer Routing"
+            name: "home"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - label: "Buyer Paths"
+                name: "paths"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Summary", name: "summary", widget: "text" }
+                  - { label: "Best Start", name: "bestStart", widget: "string" }
+                  - { label: "Link URL", name: "href", widget: "string" }
+                  - { label: "CTA Label", name: "ctaLabel", widget: "string" }
+                  - { label: "Highlights", name: "highlights", widget: "list", field: { label: "Highlight", name: "highlight", widget: "string" } }
+          - label: "Fast Start Panel"
+            name: "decisionPanel"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Copy", name: "copy", widget: "text" }
+                  - { label: "Metric", name: "metric", widget: "string" }
+                  - { label: "Link URL", name: "href", widget: "string" }
+                  - { label: "CTA Label", name: "ctaLabel", widget: "string" }
+          - label: "Trust Proof Points"
+            name: "proof"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Points"
+                name: "points"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Copy", name: "copy", widget: "text" }
+          - label: "Product Selection Guide"
+            name: "products"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - label: "Guide Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Copy", name: "copy", widget: "text" }
+                  - { label: "Product Filter", name: "filter", widget: "select", options: ["Bathroom Vanity Top", "Kitchen Countertop", "Stone Furniture", "Commercial Project"] }
+                  - { label: "CTA Label", name: "ctaLabel", widget: "string" }
+          - label: "Quote Checklist"
+            name: "quoteChecklist"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Items", name: "items", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+          - label: "Color Route Shortcuts"
+            name: "colors"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Routes"
+                name: "routes"
+                widget: "list"
+                fields:
+                  - { label: "Color Family", name: "family", widget: "select", options: ["White", "Grey", "Black", "Beige", "Green", "Blue", "Brown", "Other"] }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Copy", name: "copy", widget: "text" }
+          - label: "Contact Page Preparation Copy"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Copy", name: "copy", widget: "text" }
+
+  - name: "lookbook"
+    label: "Lookbook / Projects"
+    files:
+      - label: "Gallery"
+        name: "gallery"
+        file: "data/lookbook.json"
+        format: "json"
+        fields:
+          - label: "Gallery Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", media_folder: "/assets/lookbook", public_folder: "assets/lookbook" }
+              - label: "Image Type"
+                name: "imageType"
+                widget: "select"
+                default: "real"
+                options:
+                  - { label: "Real WHITEROCK Photo", value: "real" }
+                  - { label: "Illustrative Render", value: "render" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
+              - { label: "Image Width", name: "imageWidth", widget: "hidden", required: false }
+              - { label: "Image Height", name: "imageHeight", widget: "hidden", required: false }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+
+  - name: "design_library"
+    label: "Colors & Design Library"
+    files:
+      - label: "Surface Colors"
+        name: "colors"
+        file: "data/colors.json"
+        format: "json"
+        fields:
+          - label: "Colors"
+            name: "colors"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.material}}"
+            fields:
+              - { label: "Slug", name: "slug", widget: "string", hint: "Lowercase URL-safe name, e.g. alpine-carrara" }
+              - { label: "Name", name: "name", widget: "string" }
+              - label: "Material"
+                name: "material"
+                widget: "select"
+                options: ["Marble", "Granite", "Quartz", "Engineered Marble"]
+              - { label: "Color Family", name: "colorFamily", widget: "select", options: ["White", "Grey", "Black", "Beige", "Green", "Blue", "Brown", "Other"] }
+              - { label: "Finishes", name: "finishes", widget: "list", field: { label: "Finish", name: "finish", widget: "string" } }
+              - { label: "Thicknesses", name: "thicknesses", widget: "list", field: { label: "Thickness", name: "thickness", widget: "string" } }
+              - { label: "Sizes / Formats", name: "sizes", widget: "list", field: { label: "Size", name: "size", widget: "string" } }
+              - { label: "Swatch Image", name: "swatchImage", widget: "image", media_folder: "/assets/colors", public_folder: "assets/colors" }
+              - { label: "Swatch WebP", name: "swatchImageWebp", widget: "hidden", required: false }
+              - { label: "Image Width", name: "imageWidth", widget: "hidden", required: false }
+              - { label: "Image Height", name: "imageHeight", widget: "hidden", required: false }
+              - label: "Image Type"
+                name: "imageType"
+                widget: "select"
+                default: "render"
+                options:
+                  - { label: "Real WHITEROCK Sample Photo", value: "real" }
+                  - { label: "Illustrative Render", value: "render" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Visible Caption", name: "caption", widget: "string", required: false, hint: "Use for illustrative-swatch disclosure." }
+              - { label: "Related Products", name: "relatedProducts", widget: "list", required: false, field: { label: "Product Direction", name: "productDirection", widget: "string" } }
+              - { label: "Technical Sheet PDF", name: "techSheetPdf", widget: "file", media_folder: "/assets/resources/colors", public_folder: "assets/resources/colors", required: false }
+
+  - name: "finish_edge_library"
+    label: "Finishes & Edges"
+    files:
+      - label: "Surface Finishes"
+        name: "finishes"
+        file: "data/finishes.json"
+        format: "json"
+        fields:
+          - label: "Finishes"
+            name: "finishes"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Reference Image", name: "image", widget: "image", media_folder: "/assets/finishes", public_folder: "assets/finishes" }
+              - { label: "Image Type", name: "imageType", widget: "select", options: [{ label: "Real WHITEROCK Photo", value: "real" }, { label: "Illustrative Render", value: "render" }] }
+              - { label: "Recommended For", name: "recommendedFor", widget: "list", field: { label: "Application", name: "application", widget: "string" } }
+      - label: "Edge Profiles"
+        name: "edges"
+        file: "data/edges.json"
+        format: "json"
+        fields:
+          - label: "Edges"
+            name: "edges"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Reference Image", name: "image", widget: "image", media_folder: "/assets/edges", public_folder: "assets/edges" }
+              - { label: "Image Type", name: "imageType", widget: "select", options: [{ label: "Real WHITEROCK Photo", value: "real" }, { label: "Illustrative Render", value: "render" }] }
+
+  - name: "commercial_content"
+    label: "Resources, Trade & Compliance"
+    files:
+      - label: "Resources & Downloads"
+        name: "resources"
+        file: "data/resources.json"
+        format: "json"
+        fields:
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - label: "Resources"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.category}} — {{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "PDF File", name: "file", widget: "file", media_folder: "/assets/resources", public_folder: "assets/resources", required: false }
+      - label: "Distributor Program"
+        name: "partners"
+        file: "data/partners.json"
+        format: "json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - { label: "Target Regions", name: "targetRegions", widget: "list", field: { label: "Region", name: "region", widget: "string" } }
+          - { label: "Business Types", name: "businessTypes", widget: "list", field: { label: "Type", name: "type", widget: "string" } }
+          - label: "Program Terms"
+            name: "terms"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Copy", name: "copy", widget: "text" }
+      - label: "Compliance & Safety"
+        name: "compliance"
+        file: "data/compliance.json"
+        format: "json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Silica Heading", name: "silicaTitle", widget: "string" }
+          - { label: "Silica Copy", name: "silicaCopy", widget: "text" }
+          - { label: "Prop 65 Heading", name: "prop65Title", widget: "string" }
+          - { label: "Prop 65 Copy", name: "prop65Copy", widget: "text" }
+          - { label: "Certifications Heading", name: "certificationsTitle", widget: "string" }
+          - { label: "Certifications", name: "certifications", widget: "list", field: { label: "Certification", name: "certification", widget: "string" } }
+          - { label: "Resource CTA", name: "resourceCta", widget: "string" }
+
+  - name: "applications"
+    label: "Applications / In-room Gallery"
+    files:
+      - label: "Application Scenes"
+        name: "applications"
+        file: "data/applications.json"
+        format: "json"
+        fields:
+          - label: "Scenes"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.category}} — {{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", media_folder: "/assets/applications", public_folder: "assets/applications" }
+              - { label: "Image Alt Text", name: "imageAlt", widget: "string", required: false }
+              - { label: "Visible Caption", name: "caption", widget: "string", required: false }
+              - label: "Image Type"
+                name: "imageType"
+                widget: "select"
+                options:
+                  - { label: "Real WHITEROCK Project Photo", value: "real" }
+                  - { label: "Illustrative Render", value: "render" }
+              - { label: "Featured Color", name: "featuredColor", widget: "string" }
+              - { label: "Featured Color Slug", name: "featuredColorSlug", widget: "string", required: false, hint: "Match a slug from the Colors collection." }
+
+  - name: "factory_content"
+    label: "Factory"
+    files:
+      - label: "Factory Capability"
+        name: "factory"
+        file: "data/factory.json"
+        format: "json"
+        fields:
+          - { label: "Hero Copy", name: "heroCopy", widget: "text" }
+          - label: "Factory Stats"
+            name: "stats"
+            widget: "list"
+            summary: "{{fields.label}} — {{fields.value}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Owner Confirmed", name: "confirmed", widget: "boolean", default: false }
+          - label: "Equipment"
+            name: "equipment"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Function", name: "function", widget: "text" }
+              - { label: "Brand / Model", name: "brand", widget: "string" }
+              - { label: "Quantity", name: "quantity", widget: "string" }
+              - { label: "Key Specification / Precision", name: "keySpec", widget: "string" }
+              - { label: "Line Drawing", name: "drawing", widget: "string", required: false }
+              - { label: "Real Machine Photo", name: "media", widget: "image", media_folder: "/assets/factory", public_folder: "assets/factory", required: false, hint: "Upload only a real WHITEROCK-owned factory photo. It replaces the line drawing automatically." }
+              - { label: "Location / Label", name: "location", widget: "string", required: false }
+              - { label: "Alt Text", name: "alt", widget: "string", required: false }
+              - label: "Image Type"
+                name: "imageType"
+                widget: "select"
+                default: "real"
+                options:
+                  - { label: "Real WHITEROCK Photo", value: "real" }
+                  - { label: "Illustrative Equipment Image", value: "render" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+          - label: "Processing Capabilities"
+            name: "capabilities"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Copy", name: "copy", widget: "text" }
+          - label: "Production Flow Steps"
+            name: "flowSteps"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Copy", name: "copy", widget: "text" }
+          - label: "Quality Control"
+            name: "qc"
+            widget: "object"
+            fields:
+              - { label: "Inspection Points", name: "inspectionPoints", widget: "list", field: { label: "Point", name: "point", widget: "string" } }
+              - { label: "AQL Sampling", name: "aql", widget: "string" }
+              - { label: "Measuring Tools", name: "tools", widget: "text" }
+              - { label: "Third-party Inspection", name: "thirdParty", widget: "text" }
+          - label: "R&D / Design"
+            name: "rnd"
+            widget: "object"
+            fields:
+              - { label: "Capabilities", name: "capabilities", widget: "list", field: { label: "Capability", name: "capability", widget: "string" } }
+              - { label: "Sample Lead Time", name: "sampleLeadTime", widget: "string" }
+          - label: "Materials & Traceability"
+            name: "materials"
+            widget: "object"
+            fields:
+              - { label: "Copy", name: "copy", widget: "text" }
+              - { label: "Traceability", name: "traceability", widget: "text" }
+          - label: "Packing"
+            name: "packing"
+            widget: "object"
+            fields:
+              - { label: "Copy", name: "copy", widget: "text" }
+              - { label: "Loadability", name: "loadability", widget: "text" }
+              - { label: "Line Drawing", name: "drawing", widget: "string", required: false }
+          - { label: "Verified Factory Tour URL", name: "tourVideo", widget: "string", required: false }
+          - label: "Real Factory Gallery"
+            name: "gallery"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", media_folder: "/assets/factory", public_folder: "assets/factory" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
+
+  - name: "enriched_content"
+    label: "Company, Projects, News & FAQ"
+    files:
+      - label: "Company / About"
+        name: "company"
+        file: "data/company.json"
+        format: "json"
+        fields:
+          - { label: "Mission", name: "mission", widget: "text" }
+          - label: "Milestones"
+            name: "milestones"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Copy", name: "copy", widget: "text" }
+          - { label: "Advantages", name: "advantages", widget: "list", field: { label: "Advantage", name: "advantage", widget: "string" } }
+          - { label: "Why Vietnam", name: "whyVietnam", widget: "text" }
+      - label: "Projects / Case Studies"
+        name: "projects"
+        file: "data/projects.json"
+        format: "json"
+        fields:
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - label: "Verified Projects"
+            name: "items"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - { label: "Material", name: "material", widget: "string" }
+              - { label: "Scope", name: "scope", widget: "string" }
+              - { label: "Quantity", name: "quantity", widget: "string" }
+              - { label: "Owner Photo", name: "image", widget: "image", media_folder: "/assets/projects", public_folder: "assets/projects" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
+              - label: "Image Type"
+                name: "imageType"
+                widget: "select"
+                default: "render"
+                options:
+                  - { label: "Real WHITEROCK Project Photo", value: "real" }
+                  - { label: "Illustrative Render / Planning Study", value: "render" }
+      - label: "News & Buyer Guides"
+        name: "news"
+        file: "data/news.json"
+        format: "json"
+        fields:
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - label: "Articles"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "datetime", time_format: false }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Excerpt", name: "excerpt", widget: "text" }
+              - { label: "Body", name: "body", widget: "text" }
+              - { label: "Optional Image", name: "image", widget: "image", media_folder: "/assets/news", public_folder: "assets/news", required: false }
+              - { label: "Image Alt Text", name: "imageAlt", widget: "string", required: false }
+              - label: "Image Type"
+                name: "imageType"
+                widget: "select"
+                default: "render"
+                options:
+                  - { label: "Real WHITEROCK Photo", value: "real" }
+                  - { label: "Illustrative Cover", value: "render" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+      - label: "Buyer FAQ"
+        name: "faq"
+        file: "data/faq.json"
+        format: "json"
+        fields:
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - label: "Questions"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+  - name: "translations"
+    label: "Translations"
+    label_singular: "Translation Catalog"
+    folder: "data/i18n"
+    create: false
+    extension: "json"
+    format: "json"
+    identifier_field: "id"
+    i18n:
+      structure: "multiple_files"
+      locales: ["en", "zh-Hans", "vi"]
+      default_locale: "en"
+    fields:
+      - { label: "Catalog ID", name: "id", widget: "hidden", i18n: "duplicate" }
+      - label: "Review Metadata"
+        name: "_meta"
+        widget: "object"
+        i18n: true
+        fields:
+          - { label: "Locale", name: "locale", widget: "string", i18n: true }
+          - { label: "Label", name: "label", widget: "string", i18n: true }
+          - { label: "Review Status", name: "reviewStatus", widget: "select", options: ["draft", "in-review", "approved"], i18n: true }
+          - { label: "Translation Method / Note", name: "translationMethod", widget: "text", required: false, i18n: true }
+          - { label: "Generated Catalog", name: "generated", widget: "boolean", i18n: "duplicate" }
+          - { label: "Total Strings", name: "totalStrings", widget: "number", i18n: "duplicate" }
+          - { label: "Translated Strings", name: "translatedStrings", widget: "number", required: false, i18n: true }
+      - label: "Reviewable Strings"
+        name: "strings"
+        widget: "list"
+        i18n: true
+        summary: "{{fields.id}} — {{fields.source}}"
+        fields:
+          - { label: "Stable ID", name: "id", widget: "string" }
+          - { label: "English Source", name: "source", widget: "text" }
+          - { label: "Translation", name: "translation", widget: "text", required: false }
+          - { label: "Status", name: "status", widget: "select", options: ["needs-translation", "draft", "in-review", "approved"] }
+
+  - name: "company_directory"
+    label: "Vietnam & China Companies"
+    files:
+      - label: "Company Directory"
+        name: "companies"
+        file: "data/companies.json"
+        format: "json"
+        fields:
+          - label: "Companies"
+            name: "companies"
+            widget: "list"
+            summary: "{{fields.country}} — {{fields.localName}}"
+            fields:
+              - { label: "ID", name: "id", widget: "select", options: ["vietnam", "china"] }
+              - { label: "Country", name: "country", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "English Company Name", name: "companyName", widget: "string" }
+              - { label: "Local Name Label", name: "localNameLabel", widget: "string" }
+              - { label: "Local Company Name", name: "localName", widget: "string" }
+              - { label: "Tax Code", name: "taxCode", widget: "string", required: false }
+              - { label: "Factory Address", name: "address", widget: "text", required: false }
+              - { label: "Contact Person", name: "contactPerson", widget: "string" }
+              - { label: "Telephone", name: "tel", widget: "string" }
+              - { label: "Telephone Link", name: "telHref", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Domain", name: "domain", widget: "string" }
+              - { label: "Factory Image", name: "image", widget: "image", media_folder: "/assets/factory", public_folder: "assets/factory" }
+              - { label: "Image Alt Text", name: "imageAlt", widget: "string" }

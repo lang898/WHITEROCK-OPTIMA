@@ -1,0 +1,10 @@
+name = "whiterock-decap-oauth"
+main = "src/index.js"
+compatibility_date = "2026-06-30"
+
+[vars]
+SITE_URL = "https://www.whiterockstone.com"
+GITHUB_REPO_PRIVATE = "1"
+
+[secrets]
+required = ["OAUTH_CLIENT_ID", "OAUTH_CLIENT_SECRET"]
