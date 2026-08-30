@@ -10,9 +10,10 @@ interface FooterProps {
   currentLocale: LocaleConfig;
   setCurrentTab: (tab: string) => void;
   onOpenShare?: () => void;
+  showInquiryCta?: boolean;
 }
 
-export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, onOpenShare }) => {
+export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, onOpenShare, showInquiryCta = true }) => {
   const socialLinks = [
     { label: 'Facebook', href: siteConfig.social.facebook, Icon: FacebookIcon },
     { label: 'Instagram', href: siteConfig.social.instagram, Icon: InstagramIcon },
@@ -34,10 +35,10 @@ export const Footer: React.FC<FooterProps> = ({ currentLocale, setCurrentTab, on
 
   return (
     <footer className="wr-footer">
-      <section className="wr-footer__cta">
+      {showInquiryCta && <section className="wr-footer__cta">
         <div><span className="wr-eyebrow">Direct B2B inquiry</span><h2>Bring us the drawing. We will help define the stone package.</h2></div>
         <button className="wr-button wr-button--primary" onClick={() => setCurrentTab('contact')}>{t(currentLocale, 'requestQuote')}<ArrowUpRight /></button>
-      </section>
+      </section>}
 
       <div className="wr-footer__main">
         <div className="wr-footer__brand">

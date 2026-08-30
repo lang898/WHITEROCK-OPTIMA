@@ -31,7 +31,7 @@ export const ColorsView: React.FC<ColorsViewProps> = ({
 
   return (
     <div className="wr-catalog-page wr-color-page">
-      <header className="wr-catalog-hero wr-catalog-hero--color">
+      <header className="wr-catalog-hero wr-catalog-hero--color wr-catalog-hero--centered">
         <div><span className="wr-eyebrow">{t(currentLocale, 'colorLibrary')}</span><h1>Color is the first decision. A physical sample is the final one.</h1></div>
         <p>{t(currentLocale, 'colorIntro')} Digital textures are illustrative references and do not guarantee slab or batch appearance.</p>
       </header>

@@ -216,3 +216,15 @@ Browser checks at 1280 px and 390 px confirmed direct-route loading, no horizont
 - Integrated the supplied WHITEROCK source logo into the header, footer, and favicon; no brand from the furniture-reference PDF appears on the site.
 - Added reproducible image commands for the countertop/furniture library and brand assets, preserving source masters separately from public derivatives.
 - Verified Products, Home, Applications, and footer layouts at desktop and 390 px mobile widths with no console errors or horizontal overflow.
+
+## 2026-08-30: Material-First Homepage Rebuild
+
+- Reordered the homepage around buyer decisions: finished stone application, Carrara sourcing, material colors, product applications, manufacturing capability, and one consolidated quotation step.
+- Replaced the CNC hero with owner-supplied finished-product photography and moved factory equipment below the material and product story.
+- Promoted the Carrara White sourcing story to the second homepage section. Copy states that WHITEROCK visits the Carrara region to select and purchase blocks as a principal vanity-top material, without implying quarry ownership or exclusivity; both images retain the `owner supplied` caption.
+- Rebuilt the homepage color rail with eight full-texture swatches linked to Colors. The `illustrative digital swatch` disclosure remains visible until real slab photography is supplied.
+- Removed the illustrative WR-VT31 render from the homepage lead position. The product section now uses only owner-supplied kitchen and furniture application photographs, with WR-KT-QC in the largest frame.
+- Consolidated the two adjacent homepage quotation prompts into one process CTA and suppressed the repeated footer CTA on Home only.
+- Reduced the default Products view to eight representative SKUs while preserving the complete catalog through category filters and search.
+- Centered the Home, Products, Colors, and Factory introductions; other page titles use near-full-width editorial layouts instead of a half-empty split.
+- Desktop browser measurements at 957 px record Home at 5,882 px and Products at 4,732 px. All ten public pages have zero horizontal overflow at desktop and 390 px, and browser console checks report zero warnings or errors.

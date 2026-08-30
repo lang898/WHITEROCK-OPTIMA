@@ -1,10 +1,9 @@
 import React from 'react';
-import { ArrowDown, ArrowRight, Check, FileText, Layers, Package, Plus } from 'lucide-react';
+import { ArrowDown, ArrowRight, Check, FileText, Package, Plus } from 'lucide-react';
 import { colors, factory, ownerImages, products } from '../data';
 import { t } from '../i18n';
 import type { ColorItem, LocaleConfig, ProductItem, RfqCartItem } from '../types';
 import type { ShareContent } from '../components/SocialShareModal';
-import { formatMeasurement } from '../utils/measurements';
 
 interface HomeViewProps {
   setCurrentTab: (tab: string) => void;
@@ -16,28 +15,38 @@ interface HomeViewProps {
   onOpenShareModal: (content?: ShareContent) => void;
 }
 
+const assetPath = (path: string) => `/${path.replace(/^\/+/, '')}`;
+
 export const HomeView: React.FC<HomeViewProps> = ({
-  setCurrentTab, onSelectProduct, onSelectColor, onAddToCart, onAddColorSample, currentLocale
+  setCurrentTab,
+  onSelectProduct,
+  onSelectColor,
+  onAddToCart,
+  onAddColorSample,
+  currentLocale
 }) => {
-  const featuredSkus = ['WR-VT31', 'WR-KT-NS', 'WR-FR-RM', 'WR-HT'];
-  const featuredProducts = featuredSkus.map((sku) => products.find((product) => product.sku === sku)!).filter(Boolean);
   const featuredColors = colors.slice(0, 8);
-  const stats = factory.stats.slice(0, 3);
-  const heroImage = ownerImages.find((image) => image.id === 'owner-library-16')!;
-  const exteriorImage = ownerImages.find((image) => image.id === 'owner-library-11')!;
-  const edgeLineImage = ownerImages.find((image) => image.id === 'owner-library-04')!;
-  const edgeDetailImage = ownerImages.find((image) => image.id === 'owner-library-07')!;
+  const showcaseSkus = ['WR-KT-QC', 'WR-FR-RM', 'WR-KT-NS'];
+  const showcaseProducts = showcaseSkus.map((sku) => products.find((product) => product.sku === sku)!).filter(Boolean);
+  const stats = factory.stats.slice(0, 4);
+  const cncImage = ownerImages.find((image) => image.id === 'owner-library-16')!;
   const vanitySequenceImage = ownerImages.find((image) => image.id === 'owner-library-06')!;
+
+  const programName = (product: ProductItem) => {
+    if (product.category === 'Kitchen Countertop') return 'Kitchen countertops';
+    if (product.category === 'Furniture Top' || product.category === 'Stone Furniture') return 'Furniture tops';
+    return 'Project products';
+  };
 
   return (
     <div className="wr-home">
-      <section className="wr-hero" aria-labelledby="home-hero-title">
+      <section className="wr-hero wr-hero--stone" aria-labelledby="home-hero-title">
         <picture className="wr-hero__poster" aria-hidden="true">
-          <source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/cnc-cutting-line-enhanced-mobile.avif" type="image/avif" />
-          <source srcSet={heroImage.imageAvif} type="image/avif" />
-          <source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/cnc-cutting-line-enhanced-mobile.webp" type="image/webp" />
-          <source srcSet={heroImage.imageWebp} type="image/webp" />
-          <img src={heroImage.image} alt="" width="1448" height="1086" loading="eager" fetchPriority="high" />
+          <source media="(max-width: 767px)" srcSet="/assets/owner/countertops/marble-coffee-top-living-room-1280.avif" type="image/avif" />
+          <source srcSet="/assets/owner/countertops/waterfall-kitchen-island-1280.avif" type="image/avif" />
+          <source media="(max-width: 767px)" srcSet="/assets/owner/countertops/marble-coffee-top-living-room-720.webp" type="image/webp" />
+          <source srcSet="/assets/owner/countertops/waterfall-kitchen-island-1280.webp" type="image/webp" />
+          <img src="/assets/owner/countertops/waterfall-kitchen-island.jpg" alt="" width="2000" height="956" loading="eager" fetchPriority="high" />
         </picture>
         <div className="wr-hero__shade" aria-hidden="true" />
         <div className="wr-hero__content">
@@ -46,98 +55,116 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <p className="wr-hero__lead">{t(currentLocale, 'heroBody')}</p>
           <div className="wr-hero__actions">
             <button className="wr-button wr-button--light" onClick={() => setCurrentTab('products')}>{t(currentLocale, 'exploreProducts')}<ArrowRight /></button>
-            <button className="wr-button wr-button--outline-light" onClick={() => setCurrentTab('factory')}>{t(currentLocale, 'viewFactory')}</button>
+            <button className="wr-button wr-button--outline-light" onClick={() => setCurrentTab('colors')}>Explore materials</button>
           </div>
         </div>
-        <div className="wr-hero__stats">
-          {stats.map((stat, index) => <div key={stat.label}><strong>{stat.value}</strong><span>{index === 0 ? t(currentLocale, 'experience') : index === 1 ? t(currentLocale, 'plantArea') : t(currentLocale, 'annualCapacity')}</span></div>)}
-        </div>
-        <a className="wr-hero__scroll" href="#story" aria-label="Continue to company story"><ArrowDown /></a>
+        <span className="wr-hero__caption">Finished stone application · owner supplied</span>
+        <a className="wr-hero__scroll" href="#origin" aria-label="Continue to Carrara sourcing"><ArrowDown /></a>
       </section>
 
-      <section id="story" className="wr-story wr-section-band">
-        <div className="wr-story__copy">
-          <span className="wr-eyebrow">Established stone experience</span>
-          <h2>Marble and granite expertise, organized for international buying.</h2>
-          <p>WHITEROCK combines more than two decades of stone-industry experience with a 20,000 m² manufacturing site in Binh Phuoc. The site is presented through owner-supplied media, while specifications and commercial terms remain order-specific.</p>
-          <button className="wr-text-link" onClick={() => setCurrentTab('about')}>Read the company profile<ArrowRight /></button>
+      <section id="origin" className="wr-origin wr-section-band" aria-labelledby="home-origin-title">
+        <div className="wr-section-heading wr-section-intro">
+          <span className="wr-eyebrow">Stone origin · Carrara, Italy</span>
+          <h2 id="home-origin-title">Carrara White selected at its source.</h2>
+          <p>WHITEROCK regularly visits the Carrara quarry region in Italy to select and purchase Carrara White blocks used as a principal raw material for vanity-top production. WHITEROCK is a stone fabricator sourcing from the region, not a quarry operator.</p>
         </div>
-        <figure className="wr-story__media">
-          <picture>
-            <source srcSet={exteriorImage.imageAvif} type="image/avif" />
-            <source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/factory-exterior-enhanced-720.webp" type="image/webp" />
-            <source srcSet={exteriorImage.imageWebp} type="image/webp" />
-            <img src={exteriorImage.image} alt={exteriorImage.alt} width="1448" height="1086" loading="lazy" />
-          </picture>
-          <figcaption>WHITEROCK Vietnam · Binh Phuoc Province</figcaption>
-        </figure>
+        <div className="wr-origin__media">
+          <figure>
+            <picture>
+              <source srcSet="/assets/owner/countertops/carrara-white-quarry-overview-1280.avif" type="image/avif" />
+              <source srcSet="/assets/owner/countertops/carrara-white-quarry-overview-1280.webp" type="image/webp" />
+              <img src="/assets/owner/countertops/carrara-white-quarry-overview.jpg" alt="Carrara White quarry interior visited for block sourcing" width="2000" height="1500" loading="lazy" />
+            </picture>
+            <figcaption>Carrara White quarry sourcing · owner supplied</figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source srcSet="/assets/owner/countertops/carrara-white-quarry-workface-1280.avif" type="image/avif" />
+              <source srcSet="/assets/owner/countertops/carrara-white-quarry-workface-1280.webp" type="image/webp" />
+              <img src="/assets/owner/countertops/carrara-white-quarry-workface.jpg" alt="Carrara quarry workface reviewed during block sourcing" width="2000" height="1500" loading="lazy" />
+            </picture>
+            <figcaption>Carrara quarry workface · owner supplied</figcaption>
+          </figure>
+        </div>
+        <p className="wr-origin__note">Veining and color movement vary by block and lot. Final range, finish, dimensions, and acceptance criteria are confirmed through the approved sample and order documents.</p>
       </section>
 
-      <section className="wr-factory-feature wr-section-band wr-section-band--mist">
-        <div className="wr-section-heading wr-section-intro wr-factory-feature__intro">
-          <span className="wr-eyebrow">Manufacturing capability</span>
-          <h2>See the working environment behind the quotation.</h2>
-          <p>Real production imagery gives buyers a clearer starting point for factory review, drawing approval, inspection planning, and packing discussion.</p>
+      <section className="wr-home-colors wr-section-band wr-section-band--mist" aria-labelledby="home-colors-title">
+        <div className="wr-section-heading wr-section-intro">
+          <span className="wr-eyebrow">{t(currentLocale, 'colorLibrary')}</span>
+          <h2 id="home-colors-title">Start with the surface. Confirm with a physical sample.</h2>
+          <p>Compare eight leading visual directions at full texture scale, then review the physical sample and lot-specific range before approval.</p>
         </div>
-        <div className="wr-factory-feature__grid">
-          <figure className="wr-factory-feature__primary"><picture><source srcSet={edgeLineImage.imageAvif} type="image/avif" /><source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/edge-processing-line-enhanced-720.webp" type="image/webp" /><source srcSet={edgeLineImage.imageWebp} type="image/webp" /><img src={edgeLineImage.image} alt={edgeLineImage.alt} width="1672" height="941" loading="lazy" /></picture><figcaption>Edge-processing line · owner supplied</figcaption></figure>
-          <figure><picture><source srcSet={edgeDetailImage.imageAvif} type="image/avif" /><source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/edge-polisher-close-enhanced-720.webp" type="image/webp" /><source srcSet={edgeDetailImage.imageWebp} type="image/webp" /><img src={edgeDetailImage.image} alt={edgeDetailImage.alt} width="1448" height="1086" loading="lazy" /></picture><figcaption>Edge-polishing equipment · owner supplied</figcaption></figure>
-          <figure><picture><source srcSet={vanitySequenceImage.imageAvif} type="image/avif" /><source media="(max-width: 767px)" srcSet="/assets/owner/enhanced/vanity-inspection-sequence-b-enhanced-720.webp" type="image/webp" /><source srcSet={vanitySequenceImage.imageWebp} type="image/webp" /><img src={vanitySequenceImage.image} alt={vanitySequenceImage.alt} width="1086" height="1448" loading="lazy" /></picture><figcaption>Finished vanity-top sequence · owner supplied</figcaption></figure>
-        </div>
-        <button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('factory')}>Explore factory capability<ArrowRight /></button>
-      </section>
-
-      <section className="wr-catalog-preview wr-section-band">
-        <div className="wr-section-heading">
-          <span className="wr-eyebrow">{t(currentLocale, 'productCatalog')}</span>
-          <h2>Vanity tops, kitchen countertops, furniture tops, and project products.</h2>
-          <p>Start with one of four core programs, then refine material, dimensions, fabrication, quantity, inspection, and packing through the approved drawing and quotation.</p>
-        </div>
-        <div className="wr-editorial-grid">
-          {featuredProducts.map((product, index) => (
-            <article className={`wr-product-story ${index === 0 ? 'wr-product-story--wide' : ''}`} key={product.sku}>
-              <button className="wr-product-story__media" onClick={() => onSelectProduct(product)}>
-                <img src={product.image} alt={product.imageType === 'render' ? `${product.title} illustrative render` : product.title} width={product.imageWidth || 1536} height={product.imageHeight || 1024} loading="lazy" />
-                {product.imageType === 'render' && <span>Illustrative render · not actual product</span>}
-              </button>
-              <div><small>{product.sku} · {product.material}</small><h3>{product.title}</h3><p>{formatMeasurement(product.description)}</p><div><button className="wr-text-link" onClick={() => onSelectProduct(product)}>View details<ArrowRight /></button><button className="wr-icon-button" onClick={() => onAddToCart(product)} aria-label={`Add ${product.title} to RFQ`}><Plus /></button></div></div>
-            </article>
-          ))}
-        </div>
-        <button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('products')}>View complete catalog<ArrowRight /></button>
-      </section>
-
-      <section className="wr-color-preview wr-section-band wr-section-band--mist">
-        <div className="wr-section-heading wr-section-heading--split">
-          <div><span className="wr-eyebrow">{t(currentLocale, 'colorLibrary')}</span><h2>A shortlist begins with color, then moves to sample approval.</h2></div>
-          <p>{t(currentLocale, 'colorIntro')}</p>
-        </div>
-        <div className="wr-color-strip">
+        <div className="wr-color-strip" aria-label="Featured material colors">
           {featuredColors.map((color) => (
             <article key={color.slug}>
-              <button onClick={() => onSelectColor(color)}><img src={color.swatchImage} alt={`${color.name} illustrative digital swatch`} width="800" height="800" loading="lazy" /><span>{color.name}</span></button>
-              <div><small>{color.material}</small><button className="wr-icon-button" onClick={() => onAddColorSample(color)} aria-label={`Request ${color.name} sample`}><Package /></button></div>
+              <button onClick={() => onSelectColor(color)}>
+                <img src={assetPath(color.swatchImage)} alt={`${color.name} illustrative digital swatch`} width="800" height="800" loading="lazy" />
+                <span>{color.name}</span>
+              </button>
+              <div><small>{color.material} · illustrative digital swatch</small><button className="wr-icon-button" onClick={() => onAddColorSample(color)} aria-label={`Request ${color.name} sample`}><Package /></button></div>
             </article>
           ))}
         </div>
-        <button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('colors')}>Open color library<ArrowRight /></button>
+        <div className="wr-section-action"><button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('colors')}>Open color library<ArrowRight /></button></div>
       </section>
 
-      <section className="wr-process wr-section-band">
-        <div className="wr-section-heading"><span className="wr-eyebrow">From drawing to shipment</span><h2>A buying process built around written approval.</h2></div>
+      <section className="wr-home-applications wr-section-band" aria-labelledby="home-products-title">
+        <div className="wr-section-heading wr-section-intro">
+          <span className="wr-eyebrow">Finished applications</span>
+          <h2 id="home-products-title">Drawing-led stone surfaces for established product programs.</h2>
+          <p>Begin with North American vanity dimensions or a buyer drawing, then confirm material, edge, cutouts, support details, quantity, inspection, and packing for the order.</p>
+        </div>
+        <div className="wr-home-applications__grid">
+          {showcaseProducts.map((product, index) => (
+            <article className={index === 0 ? 'wr-home-application wr-home-application--lead' : 'wr-home-application'} key={product.sku}>
+              <button className="wr-home-application__media" onClick={() => onSelectProduct(product)}>
+                {product.imageWebp && <picture><source srcSet={assetPath(product.imageWebp)} type="image/webp" /><img src={assetPath(product.image)} alt={product.title} width={product.imageWidth || 1600} height={product.imageHeight || 1200} loading="lazy" /></picture>}
+                {!product.imageWebp && <img src={assetPath(product.image)} alt={product.title} width={product.imageWidth || 1600} height={product.imageHeight || 1200} loading="lazy" />}
+              </button>
+              <div className="wr-home-application__body">
+                <span>{programName(product)}</span>
+                <h3>{product.title}</h3>
+                <div><button className="wr-text-link" onClick={() => onSelectProduct(product)}>View details<ArrowRight /></button><button className="wr-icon-button" onClick={() => onAddToCart(product)} aria-label={`Add ${product.title} to RFQ`}><Plus /></button></div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="wr-section-action"><button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('products')}>Explore all four product programs<ArrowRight /></button></div>
+      </section>
+
+      <section className="wr-home-manufacturing wr-section-band wr-section-band--mist" aria-labelledby="home-manufacturing-title">
+        <div className="wr-section-heading wr-section-intro">
+          <span className="wr-eyebrow">Vietnam manufacturing</span>
+          <h2 id="home-manufacturing-title">Fabrication capability after material and drawing approval.</h2>
+          <p>Owner-supplied production views support factory review. Order-specific capability, tolerances, inspection, and packing remain confirmed in writing.</p>
+        </div>
+        <div className="wr-home-manufacturing__stats">
+          {stats.map((stat) => <div key={stat.label}><strong>{stat.value}</strong><span>{stat.label}</span></div>)}
+        </div>
+        <div className="wr-home-manufacturing__media">
+          <figure><picture><source srcSet={cncImage.imageAvif} type="image/avif" /><source srcSet={cncImage.imageWebp} type="image/webp" /><img src={cncImage.image} alt={cncImage.alt} width="1448" height="1086" loading="lazy" /></picture><figcaption>CNC cutting line · owner supplied</figcaption></figure>
+          <figure><picture><source srcSet={vanitySequenceImage.imageAvif} type="image/avif" /><source srcSet={vanitySequenceImage.imageWebp} type="image/webp" /><img src={vanitySequenceImage.image} alt={vanitySequenceImage.alt} width="1086" height="1448" loading="lazy" /></picture><figcaption>Finished vanity-top sequence · owner supplied</figcaption></figure>
+        </div>
+        <div className="wr-section-action"><button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('factory')}>Review the factory<ArrowRight /></button></div>
+      </section>
+
+      <section className="wr-home-process wr-section-band" aria-labelledby="home-process-title">
+        <div className="wr-section-heading wr-section-intro">
+          <span className="wr-eyebrow">From drawing to shipment</span>
+          <h2 id="home-process-title">A buying process built around written approval.</h2>
+        </div>
         <ol>
           {[
             ['01', 'Share the brief', 'Send drawings, target material, destination, quantity, and schedule.'],
             ['02', 'Confirm the specification', 'Review samples, dimensions, edges, cutouts, quality plan, and packing method.'],
-            ['03', 'Approve production', 'Production begins against the approved drawing, sample, and written order terms.'],
-            ['04', 'Inspect and ship', 'Inspection evidence, packing list, and shipment details are agreed for the order.']
+            ['03', 'Approve, inspect, and ship', 'Production follows the approved documents; inspection and shipment evidence are agreed for the order.']
           ].map(([number, title, body]) => <li key={number}><span>{number}</span><div><h3>{title}</h3><p>{body}</p></div><Check /></li>)}
         </ol>
-      </section>
-
-      <section className="wr-home-rfq wr-section-band">
-        <div><span className="wr-eyebrow">Project inquiry</span><h2>Turn your shortlist into a factory quotation.</h2><p>Send the selected products, dimensions, drawings, destination, and target schedule. Final capability and terms are confirmed in writing.</p></div>
-        <div><button className="wr-button wr-button--primary" onClick={() => setCurrentTab('contact')}><FileText />{t(currentLocale, 'requestQuote')}</button><button className="wr-button wr-button--secondary" onClick={() => setCurrentTab('products')}><Layers />Build a shortlist</button></div>
+        <div className="wr-process-cta">
+          <div><span className="wr-eyebrow">Direct B2B inquiry</span><h2>Bring us the drawing. We will help define the stone package.</h2></div>
+          <button className="wr-button wr-button--primary" onClick={() => setCurrentTab('contact')}><FileText />{t(currentLocale, 'requestQuote')}</button>
+        </div>
       </section>
     </div>
   );

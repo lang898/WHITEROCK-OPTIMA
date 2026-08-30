@@ -329,6 +329,7 @@ function AppContent() {
         currentLocale={currentLocale}
         setCurrentTab={handleTabChange}
         onOpenShare={() => handleOpenShare()}
+        showInquiryCta={currentTab !== 'home'}
       />
 
       {/* Floating Quick Action Contact & Quote Rail */}
